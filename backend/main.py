@@ -309,7 +309,10 @@ async def owner_upload(
             content_type=content_type,
         )
     except Exception as exc:
-        raise HTTPException(status_code=502, detail="STORAGE_UPLOAD_FAILED") from exc
+        raise HTTPException(
+            status_code=502,
+            detail="STORAGE_UPLOAD_FAILED:" + str(exc),
+        ) from exc
 
     with Session(engine) as db:
         row = Content(
