@@ -229,7 +229,7 @@ def health():
 
 
 @app.post("/api/owner/login")
-def owner_login(body: LoginBody, response: Response):
+def owner_login(body: LoginBody, response: Response, request: Request):
     if not re.fullmatch(r"\d{10}", body.code or ""):
         raise HTTPException(status_code=400, detail="OWNER_CODE_MUST_BE_10_DIGITS")
     if not hmac.compare_digest(body.code, OWNER_ACCESS_CODE):
@@ -241,7 +241,7 @@ def owner_login(body: LoginBody, response: Response):
         OWNER_COOKIE,
         token,
         httponly=True,
-        secure=True,
+        secure=request.url.hostname not in {"localhost", "127.0.0.1", "::1"},
         samesite="none",
         max_age=SESSION_TTL_HOURS * 3600,
         path="/",
@@ -427,4 +427,5 @@ def public_content(category: Optional[str] = None):
             }
             for row in rows
         ]
+
 

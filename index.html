@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>KAIVYRA — Healthcare, Technology & Education</title>
+<title>KAIVYRA â€” Healthcare, Technology & Education</title>
 
 <meta
   name="description"
@@ -22,7 +22,7 @@
 <style>
 
 /* =========================================================
-   KAIVYRA — DEDICATED HOMEPAGE
+   KAIVYRA â€” DEDICATED HOMEPAGE
    ========================================================= */
 
 :root{
@@ -1482,7 +1482,7 @@ footer{
 }
 
 .mobile-nav-group.open .mobile-dropdown-btn::after{
-  content:"−";
+  content:"âˆ’";
 }
 
 .mobile-dropdown{
@@ -1802,7 +1802,7 @@ footer{
 }
 
 
-/* EXACT 10cm × 10cm CARDS */
+/* EXACT 10cm Ã— 10cm CARDS */
 
 .build-ultra-grid{
   display:grid;
@@ -1988,7 +1988,7 @@ footer{
 }
 
 
-/* Mobile keeps cards EXACTLY 10cm × 10cm */
+/* Mobile keeps cards EXACTLY 10cm Ã— 10cm */
 
 @media(max-width:760px){
 
@@ -2266,7 +2266,7 @@ footer{
 }
 
 
-/* EXACT 10cm × 10cm */
+/* EXACT 10cm Ã— 10cm */
 
 .kaivyra-detail-grid{
   display:grid;
@@ -2554,7 +2554,7 @@ body.kaivyra-build-active{
 
 <style id="kaivyra-medical-topic-height-2x">
 /* ============================================================
-   KAIVYRA MEDICAL TOPIC BOXES — 2X VERTICAL HEIGHT
+   KAIVYRA MEDICAL TOPIC BOXES â€” 2X VERTICAL HEIGHT
    Applies to all 15 medical topic cards.
    Width/content/spine/connectors remain unchanged.
    ============================================================ */
@@ -2603,7 +2603,7 @@ body.kaivyra-build-active{
 }
 </style>
 <style id="kaivyra-medical-depth-clickable-style">
-/* KAIVYRA — INDIVIDUAL MEDICAL DEPTH TOPICS */
+/* KAIVYRA â€” INDIVIDUAL MEDICAL DEPTH TOPICS */
 
 #kaivyra-medical-explore-view .kaivyra-medical-depth-chip {
     position: relative !important;
@@ -2670,7 +2670,7 @@ body.kaivyra-build-active{
 </style>
 <style id="kaivyra-medical-depth-spacing-patch">
 /* ============================================================
-   KAIVYRA — DEPTH CHIP SPACING
+   KAIVYRA â€” DEPTH CHIP SPACING
    Adds breathing room between the small medical topic boxes.
    ============================================================ */
 
@@ -2836,7 +2836,1579 @@ body.kaivyra-build-active{
     }
 }
 </style>
+
+
+
+
+<style id="kaivyra-photo-home-connected-final">
+/* KAIVYRA BROTHER PHOTO â€” HOMEPAGE CONNECTED */
+#kaivyra-brother-photo{
+    position:absolute !important;
+    width:285px !important;
+    height:285px !important;
+
+    /* existing horizontal position preserved */
+    right:28px !important;
+    left:auto !important;
+
+    /* 28px previous position + 5cm downward */
+    top:calc(-28px + 5cm) !important;
+    bottom:auto !important;
+
+    margin:0 !important;
+    transform:none !important;
+    z-index:20 !important;
+}
+
+#kaivyra-brother-photo .kaivyra-home-brother-photo-circle{
+    width:285px !important;
+    height:285px !important;
+}
+
+#kaivyra-brother-photo img{
+    width:100% !important;
+    height:100% !important;
+    display:block !important;
+    object-fit:cover !important;
+}
+
+@media (max-width:700px){
+    #kaivyra-brother-photo{
+        position:absolute !important;
+        width:195px !important;
+        height:195px !important;
+        right:16px !important;
+        left:auto !important;
+        top:calc(-18px + 5cm) !important;
+        transform:none !important;
+    }
+
+    #kaivyra-brother-photo .kaivyra-home-brother-photo-circle{
+        width:195px !important;
+        height:195px !important;
+    }
+}
+</style>
+<style id="kaivyra-logo-2x-final">
+/* TOP-LEFT KAIVYRA LOGO â€” 2X */
+.site-header .brand-mark{
+    transform:scale(2) !important;
+    transform-origin:left center !important;
+}
+</style>
+<style id="kaivyra-brand-2x-final">
+/* KAIVYRA TOP-LEFT BRAND â€” LOGO + NAME 2X */
+.kaivyra-top-left-brand-2x{
+    transform:scale(2) !important;
+    transform-origin:left center !important;
+}
+</style>
+<script id="kaivyra-brand-2x-script">
+(function () {
+    try {
+        var logo = document.querySelector('.brand-mark');
+        if (!logo) return;
+
+        var container =
+            logo.closest('a.brand') ||
+            logo.closest('.brand') ||
+            logo.closest('.site-brand') ||
+            logo.parentElement;
+
+        if (!container) return;
+
+        container.classList.add('kaivyra-top-left-brand-2x');
+    } catch (e) {}
+})();
+</script>
+<style id="kaivyra-top-name-2x-final">
+/* KAIVYRA TOP HEADER NAME â€” 2X */
+.site-header .brand-name,
+.site-header .brand-title,
+.site-header .brand-text,
+.site-header .brand-label,
+.site-header .brand-wordmark{
+    font-size:2em !important;
+    transform:scale(2) !important;
+    transform-origin:left center !important;
+}
+</style>
+<style id="kaivyra-top-name-right-1cm-final">
+/* KAIVYRA TOP HEADER NAME â€” 1cm RIGHT */
+.site-header .brand-name,
+.site-header .brand-title,
+.site-header .brand-text,
+.site-header .brand-label,
+.site-header .brand-wordmark{
+    position:relative !important;
+    left:1cm !important;
+}
+</style>
+
+<!-- KAIVYRA BRAND TEXT 0.8X FINAL -->
+<style id="kaivyra-brand-text-08x-final">
+.site-header .brand > .brand-text{
+  font-size:14.4px !important;
+}
+</style>
+<style id="kaivyra-explore-insights-cta-style">
+.kaivyra-explore-insights-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+
+    min-width:280px;
+    min-height:58px;
+
+    padding:16px 38px;
+
+    border:2px solid rgba(8,12,16,.98);
+    border-radius:9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.22),
+            rgba(255,255,255,.11)
+        );
+
+    color:#fff !important;
+    text-decoration:none !important;
+
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:.045em;
+    white-space:nowrap;
+
+    box-shadow:
+        0 12px 32px rgba(0,0,0,.38),
+        0 0 0 1px rgba(255,255,255,.10) inset,
+        0 0 28px rgba(255,255,255,.10);
+
+    backdrop-filter:blur(7px);
+    -webkit-backdrop-filter:blur(7px);
+
+    position:relative;
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:
+        transform .22s ease,
+        background .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+}
+
+.kaivyra-explore-insights-cta:hover{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.30),
+            rgba(255,255,255,.15)
+        );
+
+    border-color:#05080b;
+
+    box-shadow:
+        0 16px 38px rgba(0,0,0,.45),
+        0 0 0 1px rgba(255,255,255,.14) inset,
+        0 0 34px rgba(255,255,255,.13);
+
+    transform:translateY(-3px);
+}
+
+.kaivyra-explore-insights-cta:active{
+    transform:translateY(0);
+}
+
+.kaivyra-explore-insights-cta:focus-visible{
+    outline:2px solid #fff;
+    outline-offset:4px;
+}
+
+.kaivyra-explore-insights-arrow{
+    display:inline-flex;
+    align-items:center;
+    font-size:20px;
+    line-height:1;
+    transition:transform .22s ease;
+}
+
+.kaivyra-explore-insights-cta:hover .kaivyra-explore-insights-arrow{
+    transform:translateX(4px);
+}
+
+@media (max-width:600px){
+    .kaivyra-explore-insights-cta{
+        min-width:235px;
+        min-height:52px;
+        padding:14px 28px;
+        font-size:14px;
+    }
+}
+
+
+
+
+</style>
+<!-- KAIVYRA-HERO-CIRCLE-LEFT-1.2CM -->
+<style id="KAIVYRA-HERO-CIRCLE-LEFT-1.2CM">
+.kaivyra-home-brother-photo-circle{
+    position:relative !important;
+    left:-1.2cm !important;
+}
+</style>
+<!-- /KAIVYRA-HERO-CIRCLE-LEFT-1.2CM -->
+<!-- ==========================================================
+     KAIVYRA â€” INSIGHTS WORKSPACE STYLE
+     ========================================================== -->
+
+<style id="kaivyra-insights-workspace-style">
+
+.kaivyra-insights-workspace{
+    position:fixed;
+    inset:0;
+    z-index:999999;
+
+    width:100vw;
+    height:100vh;
+
+    display:none;
+    flex-direction:column;
+
+    background:#fff;
+    color:#111;
+
+    overflow:auto;
+
+    font-family:inherit;
+}
+
+.kaivyra-insights-workspace.is-open{
+    display:flex;
+}
+
+body.kaivyra-insights-workspace-open{
+    overflow:hidden;
+}
+
+.kaivyra-insights-workspace-header{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:30px;
+
+    width:100%;
+    box-sizing:border-box;
+
+    padding:34px 48px 28px;
+
+    border-bottom:1px solid rgba(15,20,25,.10);
+    background:#fff;
+}
+
+.kaivyra-insights-workspace-kicker{
+    margin-bottom:8px;
+
+    color:#777;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+}
+
+.kaivyra-insights-workspace-header h1{
+    margin:0;
+
+    color:#111;
+    font-size:32px;
+    font-weight:700;
+    line-height:1.15;
+}
+
+.kaivyra-insights-workspace-header p{
+    margin:9px 0 0;
+
+    max-width:720px;
+
+    color:#666;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.kaivyra-insights-workspace-close{
+    flex:0 0 auto;
+
+    width:46px;
+    height:46px;
+
+    border:1px solid rgba(10,14,18,.78);
+    border-radius:50%;
+
+    background:#fff;
+    color:#111;
+
+    font-size:28px;
+    font-weight:400;
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+.kaivyra-insights-workspace-close:hover{
+    background:#111;
+    color:#fff;
+    transform:rotate(90deg);
+}
+
+.kaivyra-insights-workspace-content{
+    flex:1 1 auto;
+
+    width:100%;
+    max-width:1280px;
+
+    margin:0 auto;
+    box-sizing:border-box;
+
+    padding:40px 48px 50px;
+}
+
+.kaivyra-insights-upload-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:20px;
+}
+
+.kaivyra-insights-upload-card{
+    min-height:190px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+
+    padding:26px;
+
+    box-sizing:border-box;
+
+    border:1px solid rgba(15,20,25,.15);
+    border-radius:12px;
+
+    background:#fff;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.06);
+
+    cursor:pointer;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease,
+        background .2s ease;
+}
+
+.kaivyra-insights-upload-card:hover{
+    border-color:#111;
+
+    background:#fafafa;
+
+    box-shadow:
+        0 14px 34px rgba(0,0,0,.10);
+
+    transform:translateY(-3px);
+}
+
+.kaivyra-insights-upload-icon{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:48px;
+    height:48px;
+
+    margin-bottom:20px;
+    padding:0 9px;
+
+    box-sizing:border-box;
+
+    border:1px solid rgba(10,14,18,.25);
+    border-radius:8px;
+
+    background:#f7f7f7;
+    color:#111;
+
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.04em;
+}
+
+.kaivyra-insights-upload-card strong{
+    color:#111;
+
+    font-size:16px;
+    font-weight:700;
+
+    line-height:1.3;
+}
+
+.kaivyra-insights-upload-card > span:last-child{
+    margin-top:8px;
+
+    color:#707070;
+
+    font-size:12px;
+    line-height:1.55;
+}
+
+.kaivyra-insights-workspace-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+
+    margin-top:42px;
+    padding-top:24px;
+
+    border-top:1px solid rgba(15,20,25,.10);
+}
+
+.kaivyra-insights-workspace-footer > div{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.kaivyra-insights-workspace-footer strong{
+    color:#111;
+    font-size:13px;
+}
+
+.kaivyra-insights-workspace-footer span{
+    color:#777;
+    font-size:12px;
+}
+
+.kaivyra-insights-close-secondary{
+    flex:0 0 auto;
+
+    padding:11px 20px;
+
+    border:1px solid rgba(10,14,18,.80);
+    border-radius:7px;
+
+    background:#111;
+    color:#fff;
+
+    font-size:12px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.kaivyra-insights-close-secondary:hover{
+    background:#333;
+    transform:translateY(-1px);
+}
+
+@media (max-width:1100px){
+
+    .kaivyra-insights-upload-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+}
+
+@media (max-width:700px){
+
+    .kaivyra-insights-workspace-header{
+        padding:24px 20px 22px;
+    }
+
+    .kaivyra-insights-workspace-header h1{
+        font-size:25px;
+    }
+
+    .kaivyra-insights-workspace-content{
+        padding:25px 20px 35px;
+    }
+
+    .kaivyra-insights-upload-grid{
+        grid-template-columns:1fr;
+    }
+
+    .kaivyra-insights-upload-card{
+        min-height:150px;
+    }
+
+    .kaivyra-insights-workspace-footer{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .kaivyra-insights-close-secondary{
+        width:100%;
+    }
+
+}
+
+</style>
+<!-- ==========================================================
+     KAIVYRA â€” OWNER ACCESS STYLE
+     ========================================================== -->
+
+<style id="kaivyra-owner-access-style">
+
+/* Keep upload area locked until owner unlock */
+
+
+
+
+.kaivyra-owner-access{
+    width:100%;
+    margin-top:30px;
+    padding-top:24px;
+
+    border-top:1px solid rgba(15,20,25,.10);
+}
+
+.kaivyra-owner-access-inner{
+    width:100%;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+
+    gap:28px;
+}
+
+.kaivyra-owner-access-copy{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+
+    max-width:560px;
+}
+
+.kaivyra-owner-access-label{
+    color:#777;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+}
+
+.kaivyra-owner-access-copy strong{
+    color:#111;
+    font-size:14px;
+    font-weight:700;
+}
+
+.kaivyra-owner-access-copy span{
+    color:#777;
+    font-size:11.5px;
+    line-height:1.5;
+}
+
+.kaivyra-owner-access-form{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:7px;
+
+    flex:0 0 auto;
+}
+
+.kaivyra-owner-code-label{
+    color:#555;
+
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.04em;
+}
+
+.kaivyra-owner-access-controls{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.kaivyra-owner-code{
+    width:190px;
+    height:42px;
+
+    box-sizing:border-box;
+
+    padding:0 13px;
+
+    border:1px solid rgba(15,20,25,.28);
+    border-radius:7px;
+
+    background:#fff;
+    color:#111;
+
+    font-size:13px;
+    letter-spacing:.14em;
+
+    outline:none;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.kaivyra-owner-code:focus{
+    border-color:#111;
+
+    box-shadow:
+        0 0 0 3px rgba(17,17,17,.07);
+}
+
+.kaivyra-owner-code::placeholder{
+    color:#aaa;
+    letter-spacing:.02em;
+}
+
+.kaivyra-owner-unlock{
+    height:42px;
+
+    padding:0 18px;
+
+    border:1px solid #111;
+    border-radius:7px;
+
+    background:#111;
+    color:#fff;
+
+    font-size:12px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.kaivyra-owner-unlock:hover{
+    background:#2b2b2b;
+    transform:translateY(-1px);
+}
+
+.kaivyra-owner-unlock:active{
+    transform:translateY(0);
+}
+
+.kaivyra-owner-access-status{
+    min-height:14px;
+
+    color:#777;
+    font-size:10.5px;
+
+    text-align:right;
+}
+
+.kaivyra-insights-workspace.kaivyra-owner-unlocked
+.kaivyra-owner-access{
+    border-top-color:rgba(15,20,25,.14);
+}
+
+.kaivyra-insights-workspace.kaivyra-owner-unlocked
+.kaivyra-owner-access-label{
+    color:#111;
+}
+
+@media (max-width:700px){
+
+    .kaivyra-owner-access-inner{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .kaivyra-owner-access-form{
+        align-items:stretch;
+    }
+
+    .kaivyra-owner-access-controls{
+        width:100%;
+    }
+
+    .kaivyra-owner-code{
+        flex:1 1 auto;
+        width:auto;
+    }
+
+    .kaivyra-owner-unlock{
+        flex:0 0 auto;
+    }
+
+    .kaivyra-owner-access-status{
+        text-align:left;
+    }
+
+}
+
+</style>
+
+<!-- /KAIVYRA â€” OWNER ACCESS STYLE -->
+<!-- KAIVYRA-RESTORE-UPLOAD-BOXES-FIX -->
+
+<style id="kaivyra-restore-upload-boxes-style">
+
+/*
+    Upload boxes remain visible.
+    Owner lock only controls interaction.
+*/
+
+.kaivyra-insights-upload-grid{
+    display:grid !important;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+}
+
+#kaivyra-insights-workspace
+:not(.kaivyra-owner-unlocked)
+.kaivyra-insights-upload-card{
+    opacity:.48;
+    cursor:not-allowed;
+    filter:saturate(.35);
+}
+
+#kaivyra-insights-workspace
+:not(.kaivyra-owner-unlocked)
+.kaivyra-insights-upload-card:hover{
+    transform:none;
+    border-color:rgba(15,20,25,.15);
+    background:#fff;
+    box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+
+#kaivyra-insights-workspace
+.kaivyra-owner-unlocked
+.kaivyra-insights-upload-card{
+    opacity:1;
+    cursor:pointer;
+    filter:none;
+}
+
+#kaivyra-insights-workspace
+.kaivyra-owner-unlocked
+.kaivyra-insights-upload-card:hover{
+    transform:translateY(-3px);
+    border-color:#111;
+    background:#fafafa;
+    box-shadow:0 14px 34px rgba(0,0,0,.10);
+}
+
+@media (max-width:1100px){
+
+    .kaivyra-insights-upload-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+}
+
+@media (max-width:700px){
+
+    .kaivyra-insights-upload-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+<!-- /KAIVYRA-RESTORE-UPLOAD-BOXES-FIX -->
+<!-- KAIVYRA-PUBLIC-INSIGHTS-OWNER-SYSTEM-FINAL -->
+
+<style id="kaivyra-public-owner-insights-style">
+
+.kaivyra-insights-workspace{
+    position:fixed;
+    inset:0;
+    z-index:999999;
+
+    width:100vw;
+    height:100vh;
+
+    display:none;
+    flex-direction:column;
+
+    background:#fff;
+    color:#111;
+
+    overflow:auto;
+
+    font-family:inherit;
+}
+
+.kaivyra-insights-workspace.is-open{
+    display:flex;
+}
+
+body.kaivyra-insights-workspace-open{
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   PUBLIC VIEW
+   ========================================================= */
+
+.kaivyra-insights-view{
+    display:block;
+    min-height:100%;
+}
+
+.kaivyra-insights-workspace-header{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+
+    gap:30px;
+
+    padding:34px 48px 28px;
+
+    border-bottom:1px solid rgba(15,20,25,.10);
+}
+
+.kaivyra-insights-workspace-kicker{
+    color:#777;
+
+    margin-bottom:8px;
+
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+.kaivyra-insights-workspace-header h1{
+    margin:0;
+
+    color:#111;
+
+    font-size:32px;
+    font-weight:700;
+}
+
+.kaivyra-insights-workspace-header p{
+    margin:9px 0 0;
+
+    max-width:760px;
+
+    color:#666;
+
+    font-size:14px;
+    line-height:1.6;
+}
+
+.kaivyra-insights-workspace-close,
+.kaivyra-owner-manager-close{
+    width:46px;
+    height:46px;
+
+    border:1px solid rgba(10,14,18,.80);
+    border-radius:50%;
+
+    background:#fff;
+    color:#111;
+
+    font-size:26px;
+    cursor:pointer;
+}
+
+.kaivyra-insights-workspace-close:hover,
+.kaivyra-owner-manager-close:hover{
+    background:#111;
+    color:#fff;
+}
+
+
+.kaivyra-public-insights-content{
+    max-width:1280px;
+    margin:0 auto;
+
+    padding:42px 48px 60px;
+}
+
+.kaivyra-public-insights-heading span{
+    color:#777;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.15em;
+}
+
+.kaivyra-public-insights-heading h2{
+    margin:7px 0 6px;
+
+    color:#111;
+
+    font-size:26px;
+}
+
+.kaivyra-public-insights-heading p{
+    margin:0;
+
+    color:#777;
+    font-size:13px;
+}
+
+
+.kaivyra-public-content-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:20px;
+
+    margin-top:30px;
+}
+
+.kaivyra-public-content-card{
+    min-height:190px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+
+    padding:25px;
+
+    box-sizing:border-box;
+
+    border:1px solid rgba(15,20,25,.15);
+    border-radius:12px;
+
+    background:#fff;
+
+    text-align:left;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.06);
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.kaivyra-public-content-card:hover{
+    transform:translateY(-3px);
+
+    border-color:#111;
+
+    box-shadow:
+        0 14px 34px rgba(0,0,0,.11);
+}
+
+.kaivyra-public-content-icon,
+.kaivyra-owner-upload-icon{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:48px;
+    height:48px;
+
+    margin-bottom:18px;
+    padding:0 9px;
+
+    border:1px solid rgba(15,20,25,.22);
+    border-radius:8px;
+
+    background:#f7f7f7;
+    color:#111;
+
+    font-size:12px;
+    font-weight:800;
+}
+
+.kaivyra-public-content-card strong{
+    color:#111;
+    font-size:16px;
+}
+
+.kaivyra-public-content-card > span{
+    margin-top:7px;
+
+    color:#707070;
+    font-size:12px;
+    line-height:1.5;
+}
+
+.kaivyra-public-content-card small{
+    margin-top:15px;
+
+    color:#222;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   PUBLIC VIEWER
+   ========================================================= */
+
+.kaivyra-public-content-viewer{
+    display:none;
+
+    margin-top:30px;
+
+    padding:26px;
+
+    border:1px solid rgba(15,20,25,.12);
+    border-radius:12px;
+
+    background:#fff;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.05);
+}
+
+.kaivyra-public-content-viewer.is-visible{
+    display:block;
+}
+
+.kaivyra-public-viewer-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding-bottom:18px;
+
+    border-bottom:1px solid rgba(15,20,25,.10);
+}
+
+.kaivyra-public-viewer-header span{
+    color:#777;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.13em;
+}
+
+.kaivyra-public-viewer-header h3{
+    margin:5px 0 0;
+
+    color:#111;
+    font-size:21px;
+}
+
+.kaivyra-public-viewer-close{
+    padding:9px 15px;
+
+    border:1px solid #111;
+    border-radius:7px;
+
+    background:#111;
+    color:#fff;
+
+    font-size:11px;
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.kaivyra-public-viewer-list{
+    margin-top:20px;
+}
+
+.kaivyra-public-empty-state{
+    padding:30px 10px;
+
+    color:#888;
+
+    text-align:center;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   OWNER ENTRY
+   ========================================================= */
+
+.kaivyra-owner-entry{
+    display:flex;
+    justify-content:flex-end;
+
+    margin-top:42px;
+    padding-top:18px;
+
+    border-top:1px solid rgba(15,20,25,.07);
+}
+
+.kaivyra-owner-entry-button{
+    border:0;
+
+    background:transparent;
+    color:#999;
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    cursor:pointer;
+}
+
+.kaivyra-owner-entry-button:hover{
+    color:#111;
+}
+
+
+/* =========================================================
+   OWNER LOGIN
+   ========================================================= */
+
+.kaivyra-owner-login-view{
+    display:none;
+
+    min-height:100%;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:40px;
+    box-sizing:border-box;
+}
+
+.kaivyra-owner-login-view.is-visible{
+    display:flex;
+}
+
+.kaivyra-owner-login-card{
+    width:min(430px,100%);
+
+    padding:38px;
+
+    border:1px solid rgba(15,20,25,.14);
+    border-radius:14px;
+
+    background:#fff;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.08);
+}
+
+.kaivyra-owner-login-kicker{
+    color:#777;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.15em;
+}
+
+.kaivyra-owner-login-card h2{
+    margin:8px 0 8px;
+
+    color:#111;
+    font-size:26px;
+}
+
+.kaivyra-owner-login-card p{
+    margin:0 0 24px;
+
+    color:#707070;
+
+    font-size:12px;
+    line-height:1.6;
+}
+
+.kaivyra-owner-login-card label{
+    display:block;
+
+    margin-bottom:7px;
+
+    color:#444;
+
+    font-size:10px;
+    font-weight:700;
+}
+
+.kaivyra-owner-code{
+    width:100%;
+    height:46px;
+
+    box-sizing:border-box;
+
+    padding:0 13px;
+
+    border:1px solid rgba(15,20,25,.26);
+    border-radius:7px;
+
+    background:#fff;
+    color:#111;
+
+    font-size:14px;
+    letter-spacing:.14em;
+
+    outline:none;
+}
+
+.kaivyra-owner-code:focus{
+    border-color:#111;
+
+    box-shadow:
+        0 0 0 3px rgba(17,17,17,.07);
+}
+
+.kaivyra-owner-unlock{
+    width:100%;
+    height:46px;
+
+    margin-top:12px;
+
+    border:1px solid #111;
+    border-radius:7px;
+
+    background:#111;
+    color:#fff;
+
+    font-size:12px;
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.kaivyra-owner-login-status{
+    min-height:18px;
+
+    margin-top:12px;
+
+    color:#777;
+
+    font-size:10.5px;
+}
+
+.kaivyra-owner-login-back{
+    margin-top:17px;
+
+    border:0;
+
+    background:transparent;
+    color:#777;
+
+    font-size:11px;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   OWNER MANAGER
+   ========================================================= */
+
+.kaivyra-owner-manager{
+    display:none;
+    min-height:100%;
+}
+
+.kaivyra-owner-manager.is-visible{
+    display:block;
+}
+
+.kaivyra-owner-manager-header{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+
+    gap:30px;
+
+    padding:34px 48px 28px;
+
+    border-bottom:1px solid rgba(15,20,25,.10);
+}
+
+.kaivyra-owner-manager-kicker{
+    color:#777;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.15em;
+}
+
+.kaivyra-owner-manager-header h2{
+    margin:7px 0 7px;
+
+    color:#111;
+
+    font-size:30px;
+}
+
+.kaivyra-owner-manager-header p{
+    margin:0;
+
+    color:#777;
+
+    font-size:13px;
+}
+
+.kaivyra-owner-manager-close{
+    width:auto;
+    height:auto;
+
+    padding:10px 17px;
+
+    border-radius:7px;
+
+    font-size:11px;
+}
+
+.kaivyra-owner-manager-content{
+    max-width:1280px;
+    margin:0 auto;
+
+    padding:40px 48px 60px;
+}
+
+.kaivyra-owner-upload-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:20px;
+}
+
+.kaivyra-owner-upload-card{
+    min-height:175px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding:24px;
+
+    border:1px solid rgba(15,20,25,.15);
+    border-radius:12px;
+
+    background:#fff;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.06);
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.kaivyra-owner-upload-card:hover{
+    transform:translateY(-3px);
+
+    border-color:#111;
+
+    box-shadow:
+        0 14px 34px rgba(0,0,0,.11);
+}
+
+.kaivyra-owner-upload-card strong{
+    color:#111;
+    font-size:15px;
+}
+
+.kaivyra-owner-upload-card > span:last-child{
+    margin-top:7px;
+
+    color:#707070;
+
+    font-size:12px;
+    line-height:1.5;
+}
+
+.kaivyra-owner-selected-content{
+    margin-top:40px;
+    padding-top:28px;
+
+    border-top:1px solid rgba(15,20,25,.10);
+}
+
+.kaivyra-owner-selected-content > div:first-child span{
+    color:#777;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.13em;
+}
+
+.kaivyra-owner-selected-content h3{
+    margin:7px 0 0;
+
+    color:#111;
+    font-size:22px;
+}
+
+.kaivyra-owner-file-list{
+    margin-top:20px;
+}
+
+.kaivyra-owner-empty-state{
+    padding:25px;
+
+    border:1px dashed rgba(15,20,25,.18);
+    border-radius:9px;
+
+    color:#888;
+
+    text-align:center;
+    font-size:12px;
+}
+
+.kaivyra-owner-file-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:14px 16px;
+
+    border-bottom:1px solid rgba(15,20,25,.08);
+}
+
+.kaivyra-owner-file-item strong{
+    color:#111;
+    font-size:12px;
+}
+
+.kaivyra-owner-file-item span{
+    color:#777;
+    font-size:10px;
+}
+
+.kaivyra-owner-publish-row{
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    margin-top:24px;
+}
+
+.kaivyra-owner-publish{
+    padding:12px 21px;
+
+    border:1px solid #111;
+    border-radius:7px;
+
+    background:#111;
+    color:#fff;
+
+    font-size:11px;
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.kaivyra-owner-publish:disabled{
+    opacity:.35;
+    cursor:not-allowed;
+}
+
+.kaivyra-owner-publish-status{
+    color:#777;
+    font-size:11px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width:1100px){
+
+    .kaivyra-public-content-grid,
+    .kaivyra-owner-upload-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+}
+
+@media (max-width:700px){
+
+    .kaivyra-insights-workspace-header,
+    .kaivyra-owner-manager-header{
+        padding:24px 20px 22px;
+    }
+
+    .kaivyra-insights-workspace-header h1,
+    .kaivyra-owner-manager-header h2{
+        font-size:25px;
+    }
+
+    .kaivyra-public-insights-content,
+    .kaivyra-owner-manager-content{
+        padding:25px 20px 40px;
+    }
+
+    .kaivyra-public-content-grid,
+    .kaivyra-owner-upload-grid{
+        grid-template-columns:1fr;
+    }
+
+    .kaivyra-owner-login-view{
+        padding:20px;
+    }
+
+    .kaivyra-owner-login-card{
+        padding:28px 22px;
+    }
+
+}
+
+</style>
+
+<!-- /KAIVYRA-PUBLIC-INSIGHTS-OWNER-SYSTEM-FINAL -->
 </head>
+<!-- KAIVYRA HEADER NAV FINAL 1.5X COPPERPLATE -->
+<style id="kaivyra-header-nav-final">
+.nav-links > a,
+.nav-links .nav-dropdown-btn{
+  font-size:20.25px !important;
+  font-family:Copperplate, "Copperplate Gothic Light", "Copperplate Gothic Bold", serif !important;
+  color:#B87333 !important;
+  font-weight:600 !important;
+  letter-spacing:.02em !important;
+}
+
+.nav-links > a:hover,
+.nav-links .nav-dropdown-btn:hover,
+.nav-item.open .nav-dropdown-btn{
+  color:#C47A44 !important;
+}
+
+.nav-links > a::after{
+  background:#B87333 !important;
+}
+</style>
+
 
 
 <body>
@@ -3415,16 +4987,10 @@ body.kaivyra-build-active{
 
         <div class="eyebrow">
 
-          <span class="eyebrow-dot"></span>
-
-          An emerging technology venture
-
-        </div>
+          <span class="eyebrow-dot"></span> </div>
 
 
-        <div class="hero-wordmark">
-          KAIVYRA
-        </div>
+        
 
 
         <h1 class="hero-title">
@@ -3728,7 +5294,14 @@ body.kaivyra-build-active{
 
 
         <div class="visual-caption">
-          RESEARCH • TECHNOLOGY • IMPACT
+          <a
+    id="kaivyra-explore-insights-cta"
+    class="kaivyra-explore-insights-cta"
+    href="#insights"
+    aria-label="Explore Our Insights"
+>
+    Explore Our Insights
+</a>
         </div>
 
       </div>
@@ -3737,6 +5310,82 @@ body.kaivyra-build-active{
 
   </div>
 
+
+<!-- KAIVYRA BROTHER PHOTO â€” HOMEPAGE HERO -->
+<div id="kaivyra-brother-photo" class="kaivyra-home-brother-photo">
+    <div class="kaivyra-home-brother-photo-circle">
+        <img
+            src="./assets/brother-photo.png"
+            alt="KAIVYRA"
+        />
+    </div>
+</div>
+<!-- KAIVYRA BROTHER PHOTO â€” FINAL POSITION OVERRIDE -->
+
+<!-- /KAIVYRA BROTHER PHOTO â€” FINAL POSITION OVERRIDE -->
+
+
+<style id="kaivyra-home-brother-photo-style">
+
+.kaivyra-home-brother-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 220px;
+    margin-left: 40px;
+    position: relative;
+    z-index: 5;
+}
+
+.kaivyra-home-brother-photo-circle {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ffffff;
+    border: 5px solid rgba(255,255,255,.95);
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.18),
+        0 4px 14px rgba(0,0,0,.10);
+}
+
+.kaivyra-home-brother-photo-circle img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+}
+
+@media (max-width: 900px) {
+
+    .kaivyra-home-brother-photo {
+        width: 180px;
+        margin-left: 20px;
+    }
+
+    .kaivyra-home-brother-photo-circle {
+        width: 155px;
+        height: 155px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .kaivyra-home-brother-photo {
+        width: 100%;
+        margin: 28px 0 0;
+    }
+
+    .kaivyra-home-brother-photo-circle {
+        width: 135px;
+        height: 135px;
+    }
+}
+
+</style>
+<!-- /KAIVYRA BROTHER PHOTO -->
 </section>
 
 
@@ -3986,7 +5635,7 @@ body.kaivyra-build-active{
 
         <p>
 
-          KAIVYRA is an emerging technology venture exploring
+          KAIVYRA is exploring
           problems across healthcare, education, artificial
           intelligence and digital systems.
 
@@ -4009,7 +5658,7 @@ body.kaivyra-build-active{
 
           See how we approach problems
 
-          <span>→</span>
+          <span>â†’</span>
 
         </a>
 
@@ -4146,7 +5795,7 @@ body.kaivyra-build-active{
                 data-kaivyra-medical-close
                 aria-label="Back to KAIVYRA"
             >
-                <span aria-hidden="true">←</span>
+                <span aria-hidden="true">â†</span>
                 <span>Back</span>
             </button>
 
@@ -4161,7 +5810,7 @@ body.kaivyra-build-active{
                 aria-label="Close medical science exploration"
             >
                 <span>Close</span>
-                <span aria-hidden="true">×</span>
+                <span aria-hidden="true">Ã—</span>
             </button>
 
         </header>
@@ -4178,7 +5827,7 @@ body.kaivyra-build-active{
 
             <p>
                 A structured way to investigate any disease, medical field,
-                patient population or healthcare challenge — from biology
+                patient population or healthcare challenge â€” from biology
                 and evidence to access, systems, innovation and global impact.
             </p>
 
@@ -4411,7 +6060,7 @@ body.kaivyra-build-active{
                 <span class="kaivyra-medical-depth-chip" data-depth-index="15"><span class="kaivyra-medical-depth-index">15</span>Age Distribution</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="16"><span class="kaivyra-medical-depth-index">16</span>Sex Distribution</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="17"><span class="kaivyra-medical-depth-index">17</span>Geographic Distribution</span>
-                <span class="kaivyra-medical-depth-chip" data-depth-index="18"><span class="kaivyra-medical-depth-index">18</span>Urban–Rural Distribution</span>
+                <span class="kaivyra-medical-depth-chip" data-depth-index="18"><span class="kaivyra-medical-depth-index">18</span>Urbanâ€“Rural Distribution</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="19"><span class="kaivyra-medical-depth-index">19</span>Socioeconomic Distribution</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="20"><span class="kaivyra-medical-depth-index">20</span>Health Inequalities</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="21"><span class="kaivyra-medical-depth-index">21</span>Comorbidity Burden</span>
@@ -4837,7 +6486,7 @@ body.kaivyra-build-active{
                 <span class="kaivyra-medical-depth-chip" data-depth-index="26"><span class="kaivyra-medical-depth-index">26</span>Tissue Engineering &amp; Regenerative Medicine</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="27"><span class="kaivyra-medical-depth-index">27</span>Organoids &amp; Disease Models</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="28"><span class="kaivyra-medical-depth-index">28</span>3D Bioprinting &amp; Biofabrication</span>
-                <span class="kaivyra-medical-depth-chip" data-depth-index="29"><span class="kaivyra-medical-depth-index">29</span>Brain–Computer Interfaces &amp; Neurotechnology</span>
+                <span class="kaivyra-medical-depth-chip" data-depth-index="29"><span class="kaivyra-medical-depth-index">29</span>Brainâ€“Computer Interfaces &amp; Neurotechnology</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="30"><span class="kaivyra-medical-depth-index">30</span>Advanced Convergence Medicine</span>
             </div>
         </div>
@@ -4881,7 +6530,7 @@ body.kaivyra-build-active{
                 <span class="kaivyra-medical-depth-chip" data-depth-index="24"><span class="kaivyra-medical-depth-index">24</span>Dissemination &amp; Scale-Up</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="25"><span class="kaivyra-medical-depth-index">25</span>Sustainability &amp; Maintenance</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="26"><span class="kaivyra-medical-depth-index">26</span>Health Equity &amp; Global Access</span>
-                <span class="kaivyra-medical-depth-chip" data-depth-index="27"><span class="kaivyra-medical-depth-index">27</span>Public–Private &amp; Research Partnerships</span>
+                <span class="kaivyra-medical-depth-chip" data-depth-index="27"><span class="kaivyra-medical-depth-index">27</span>Publicâ€“Private &amp; Research Partnerships</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="28"><span class="kaivyra-medical-depth-index">28</span>Learning Health Systems &amp; Continuous Improvement</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="29"><span class="kaivyra-medical-depth-index">29</span>Population-Level Health Impact</span>
                 <span class="kaivyra-medical-depth-chip" data-depth-index="30"><span class="kaivyra-medical-depth-index">30</span>Global Medical Transformation</span>
@@ -4895,10 +6544,12 @@ body.kaivyra-build-active{
 
         <div class="kaivyra-medical-footer-note">
             <span>KAIVYRA MEDICAL SCIENCE</span>
-            <span>Human → Biology → Disease → Diagnosis → Treatment → Access → Evidence → Future → Impact</span>
+            <span>Human â†’ Biology â†’ Disease â†’ Diagnosis â†’ Treatment â†’ Access â†’ Evidence â†’ Future â†’ Impact</span>
         </div>
 
     </div>
+
+
 </section>
 
 <!-- =========================================================
@@ -4958,7 +6609,7 @@ body.kaivyra-build-active{
         </span>
 
         <span class="kaivyra-category-arrow">
-          ↗
+          â†—
         </span>
 
       </button>
@@ -4988,7 +6639,7 @@ body.kaivyra-build-active{
         </span>
 
         <span class="kaivyra-category-arrow">
-          ↗
+          â†—
         </span>
 
       </button>
@@ -5018,7 +6669,7 @@ body.kaivyra-build-active{
         </span>
 
         <span class="kaivyra-category-arrow">
-          ↗
+          â†—
         </span>
 
       </button>
@@ -5048,7 +6699,7 @@ body.kaivyra-build-active{
         </span>
 
         <span class="kaivyra-category-arrow">
-          ↗
+          â†—
         </span>
 
       </button>
@@ -5078,7 +6729,7 @@ body.kaivyra-build-active{
         </span>
 
         <span class="kaivyra-category-arrow">
-          ↗
+          â†—
         </span>
 
       </button>
@@ -5108,7 +6759,7 @@ body.kaivyra-build-active{
         </span>
 
         <span class="kaivyra-category-arrow">
-          ↗
+          â†—
         </span>
 
       </button>
@@ -5642,7 +7293,7 @@ body.kaivyra-build-active{
     <div class="footer-bottom">
 
       <span>
-        © 2026 KAIVYRA. All rights reserved.
+        Â© 2026 KAIVYRA. All rights reserved.
       </span>
 
       <span>
@@ -5653,6 +7304,870 @@ body.kaivyra-build-active{
 
   </div>
 
+
+<!-- =====================================================
+     KAIVYRA â€” TERMS / DISCLAIMER / PRIVACY POLICY
+     DEDICATED FOOTER BOX
+     ===================================================== -->
+
+<section
+  id="kaivyra-policy-footer-box"
+  class="kaivyra-policy-footer-box"
+  aria-label="KAIVYRA Terms, Disclaimer and Privacy Policy"
+>
+
+  <details class="kaivyra-policy-details">
+
+    <summary class="kaivyra-policy-summary">
+      <span>
+        <strong>Terms, Disclaimer &amp; Privacy Policy</strong>
+        <small>Information, legal status, privacy &amp; responsible use</small>
+      </span>
+
+      <span class="kaivyra-policy-summary-icon" aria-hidden="true">
+        +
+      </span>
+    </summary>
+
+
+    <div class="kaivyra-policy-content">
+
+      <div class="kaivyra-policy-heading">
+        <span>KAIVYRA â€¢ OFFICIAL POLICY</span>
+        <h2>Terms, Disclaimer &amp; Privacy Policy</h2>
+
+        <p>
+          This document explains the terms governing the use of KAIVYRA,
+          the informational nature and limitations of its content, its
+          relationship with governmental and regulatory authorities,
+          and the general principles governing privacy and information
+          handling.
+        </p>
+
+        <div class="kaivyra-policy-meta">
+          <span>Effective Date: 10 September 2026</span>
+          <span>Last Updated: 10 September 2026</span>
+        </div>
+      </div>
+
+
+      <!-- 01 -->
+      <article>
+        <h3>01. Terms of Use</h3>
+
+        <p>
+          By accessing or using this website, you acknowledge that you
+          have read and understood these terms and agree to use the
+          website responsibly and in accordance with applicable law.
+        </p>
+
+        <p>
+          If you do not agree with these terms, please discontinue use
+          of the website.
+        </p>
+
+        <p>
+          KAIVYRA may update, modify, expand, restrict or discontinue
+          portions of its website, content or digital features when
+          reasonably necessary.
+        </p>
+      </article>
+
+
+      <!-- 02 -->
+      <article>
+        <h3>02. Information &amp; Content Disclaimer</h3>
+
+        <p>
+          KAIVYRA provides information, educational resources, research
+          material, technology-oriented content and other digital
+          resources within their stated context.
+        </p>
+
+        <p>
+          Reasonable efforts may be made to maintain the quality,
+          relevance and accuracy of published information. However,
+          information may contain errors, omissions, outdated material,
+          interpretation differences or other limitations.
+        </p>
+
+        <div class="kaivyra-policy-highlight">
+          Information published through KAIVYRA should be evaluated in
+          context and independently verified where the matter is
+          important, sensitive or consequential.
+        </div>
+
+        <p>
+          Users should not rely solely upon website information when
+          professional assessment, specialist advice, official sources
+          or independent verification are reasonably required.
+        </p>
+      </article>
+
+
+      <!-- 03 -->
+      <article>
+        <h3>03. Medical &amp; Healthcare Disclaimer</h3>
+
+        <p>
+          Certain KAIVYRA content may relate to healthcare, medicine,
+          medical technology, diseases, procedures, symptoms, research
+          or general health awareness.
+        </p>
+
+        <p>
+          Such material is provided for general informational,
+          educational and awareness purposes only.
+        </p>
+
+        <p>
+          KAIVYRA is not a substitute for a qualified doctor, medical
+          practitioner, hospital, pharmacist, emergency service or
+          other appropriately licensed healthcare professional.
+        </p>
+
+        <p>
+          Nothing on this website should be interpreted as a diagnosis,
+          prescription, treatment plan, personalised medical opinion
+          or individual healthcare recommendation.
+        </p>
+
+        <p>
+          Users should consult an appropriately qualified healthcare
+          professional regarding their individual circumstances.
+        </p>
+
+        <p>
+          In an emergency or potentially life-threatening situation,
+          users should seek appropriate emergency medical assistance
+          immediately.
+        </p>
+      </article>
+
+
+      <!-- 04 -->
+      <article>
+        <h3>04. No Reliance &amp; Individual Outcomes</h3>
+
+        <p>
+          KAIVYRA's information, resources, tools and materials are
+          designed to support information, learning, research and
+          understanding.
+        </p>
+
+        <p>
+          Individual outcomes may vary depending on circumstances,
+          information available, inputs, interpretation, implementation,
+          professional judgment and factors outside the control of
+          KAIVYRA.
+        </p>
+
+        <p>
+          Publication or use of information through KAIVYRA should
+          therefore not be interpreted as an assurance of a particular
+          result or outcome.
+        </p>
+      </article>
+
+
+      <!-- 05 -->
+      <article>
+        <h3>05. Website Availability</h3>
+
+        <p>
+          KAIVYRA aims to maintain a reliable and accessible website.
+          However, uninterrupted availability cannot always be ensured.
+        </p>
+
+        <p>
+          Availability may be affected by maintenance, upgrades,
+          technical failures, network conditions, hosting infrastructure,
+          security events, third-party services or circumstances beyond
+          reasonable control.
+        </p>
+      </article>
+
+
+      <!-- 06 -->
+      <article>
+        <h3>06. User Responsibilities</h3>
+
+        <ul>
+          <li>Use the website lawfully and responsibly.</li>
+          <li>Evaluate information according to your own circumstances.</li>
+          <li>Verify important information where appropriate.</li>
+          <li>Protect your own devices and account credentials.</li>
+          <li>Do not attempt to disrupt or damage website systems.</li>
+          <li>Do not introduce malicious code or harmful material.</li>
+          <li>Respect intellectual-property and privacy rights.</li>
+        </ul>
+      </article>
+
+
+      <!-- 07 -->
+      <article>
+        <h3>07. Government, Regulatory &amp; Legal Status</h3>
+
+        <p>
+          KAIVYRA operates as an independent information, technology
+          and research-oriented platform.
+        </p>
+
+        <p>
+          Unless expressly stated otherwise, KAIVYRA is not a government
+          department, statutory authority, regulatory body, court,
+          tribunal, international organisation, healthcare regulator
+          or representative of any government or intergovernmental
+          organisation.
+        </p>
+
+        <p>
+          KAIVYRA does not represent, certify, authenticate or officially
+          validate information as a statement, determination or position
+          of the Government of India, any State Government, the World
+          Health Organization (WHO), the United Nations, any international
+          organisation, regulatory authority, court, tribunal or other
+          public institution.
+        </p>
+
+        <div class="kaivyra-policy-highlight">
+          KAIVYRA content is presented within its stated informational,
+          educational, research or technological context and does not,
+          by publication alone, constitute governmental certification,
+          regulatory approval, legal determination, medical certification
+          or an authoritative finding.
+        </div>
+
+        <p>
+          No KAIVYRA publication, statement, analysis, model output,
+          visualisation, estimate, interpretation or other digital
+          material should be represented by a user as an official
+          finding, certification or legally conclusive proof issued by
+          KAIVYRA or by any government, regulator, court, international
+          organisation or other authority.
+        </p>
+
+        <p>
+          Where KAIVYRA references laws, regulations, government
+          publications, scientific organisations, medical institutions,
+          standards, research papers or other authoritative sources,
+          such references are provided for informational and contextual
+          purposes.
+        </p>
+
+        <p>
+          Users should consult the applicable primary source or an
+          appropriately qualified professional when an official, legal,
+          regulatory or professional determination is required.
+        </p>
+      </article>
+
+
+      <!-- 08 -->
+      <article>
+        <h3>08. No Official Evidence or Certification</h3>
+
+        <p>
+          KAIVYRA content should not, solely by virtue of being published
+          on this website, be treated as independently certified evidence,
+          legally conclusive proof, expert testimony, governmental
+          evidence or regulatory certification.
+        </p>
+
+        <p>
+          Where evidence or certification is legally required, users
+          should obtain it from the competent authority, qualified
+          professional, accredited institution or other legally
+          recognised source appropriate to the relevant matter.
+        </p>
+
+        <p>
+          The evidentiary value, admissibility or legal effect of
+          particular material is determined under applicable law and
+          by the competent authority responsible for making that
+          determination.
+        </p>
+      </article>
+
+
+      <!-- 09 -->
+      <article>
+        <h3>09. No Affiliation or Endorsement</h3>
+
+        <p>
+          Unless expressly identified and supported by an official
+          relationship, references to governments, public institutions,
+          regulators, international organisations, healthcare
+          organisations, universities, companies, standards bodies or
+          other third parties do not imply affiliation, partnership,
+          sponsorship, endorsement, authorisation or approval.
+        </p>
+
+        <p>
+          References to third-party names, publications, institutions
+          or publicly available information should not be interpreted
+          as creating such an association.
+        </p>
+      </article>
+
+
+      <!-- 10 -->
+      <article>
+        <h3>10. Preservation of Mandatory Legal Rights</h3>
+
+        <p>
+          Nothing in this policy is intended to eliminate or restrict
+          rights, duties, remedies or powers that applicable law requires
+          to remain available.
+        </p>
+
+        <p>
+          Nothing in these terms is intended to prevent, invalidate or
+          interfere with any lawful investigation, regulatory process,
+          governmental authority, judicial proceeding, statutory
+          obligation or other action that a competent authority may
+          lawfully undertake.
+        </p>
+
+        <p>
+          Where applicable law imposes mandatory obligations or
+          protections that cannot lawfully be excluded or modified by
+          website terms, those provisions shall continue to apply.
+        </p>
+
+        <p>
+          KAIVYRA may cooperate with lawful and properly authorised
+          requests from competent authorities to the extent required
+          by applicable law and subject to applicable legal protections.
+        </p>
+      </article>
+
+
+      <!-- 11 -->
+      <article>
+        <h3>11. Privacy Policy</h3>
+
+        <p>
+          KAIVYRA respects user privacy and aims to handle personal
+          information responsibly.
+        </p>
+
+        <p>
+          Depending on the features used, KAIVYRA may receive information
+          that users voluntarily provide, such as name, email address,
+          contact information, messages, enquiries and information
+          submitted through forms.
+        </p>
+
+        <p>
+          Technical information may also be processed automatically,
+          including browser type, device information, operating system,
+          general usage information, pages or features accessed,
+          timestamps and technical or security logs.
+        </p>
+      </article>
+
+
+      <!-- 12 -->
+      <article>
+        <h3>12. How Information May Be Used</h3>
+
+        <ul>
+          <li>To provide and maintain website functionality.</li>
+          <li>To respond to enquiries.</li>
+          <li>To improve content and user experience.</li>
+          <li>To maintain security and prevent misuse.</li>
+          <li>To troubleshoot technical problems.</li>
+          <li>To understand general website usage.</li>
+          <li>To maintain necessary records.</li>
+          <li>To comply with applicable legal obligations.</li>
+        </ul>
+      </article>
+
+
+      <!-- 13 -->
+      <article>
+        <h3>13. Cookies &amp; Similar Technologies</h3>
+
+        <p>
+          KAIVYRA may use cookies, local storage or similar technologies
+          where reasonably required for website functionality, preferences,
+          analytics, security or performance.
+        </p>
+
+        <p>
+          Users may be able to control or restrict certain technologies
+          through their browser or device settings.
+        </p>
+      </article>
+
+
+      <!-- 14 -->
+      <article>
+        <h3>14. Data Sharing</h3>
+
+        <p>
+          KAIVYRA does not intend to sell personal information as a
+          commercial data product.
+        </p>
+
+        <p>
+          Where reasonably necessary, information may be processed by
+          service providers, hosting providers, technology providers,
+          security services or other parties supporting the operation
+          and protection of the website, subject to applicable
+          requirements.
+        </p>
+
+        <p>
+          Information may also be disclosed where required by applicable
+          law, legal process, regulatory requirements, or where reasonably
+          necessary to protect the rights, safety or security of KAIVYRA,
+          its users or others.
+        </p>
+      </article>
+
+
+      <!-- 15 -->
+      <article>
+        <h3>15. Data Security</h3>
+
+        <p>
+          KAIVYRA takes reasonable technical and organisational measures
+          intended to protect information against unauthorised access,
+          misuse, alteration, disclosure or loss.
+        </p>
+
+        <p>
+          However, no internet-based system or electronic transmission
+          can be considered completely secure.
+        </p>
+      </article>
+
+
+      <!-- 16 -->
+      <article>
+        <h3>16. Data Retention &amp; Privacy Requests</h3>
+
+        <p>
+          Personal information may be retained for as long as reasonably
+          necessary for the purpose for which it was collected, to
+          maintain legitimate technical or operational records, resolve
+          disputes, maintain security or satisfy applicable legal
+          obligations.
+        </p>
+
+        <p>
+          Subject to applicable law, users may have rights concerning
+          their personal information, including requests relating to
+          access, correction, deletion or clarification of certain
+          information.
+        </p>
+      </article>
+
+
+      <!-- 17 -->
+      <article>
+        <h3>17. Intellectual Property</h3>
+
+        <p>
+          Unless otherwise stated, KAIVYRA's branding, visual identity,
+          original text, graphics, design elements, website structure,
+          software, documentation and other original materials may be
+          protected by applicable intellectual-property laws.
+        </p>
+
+        <p>
+          Unauthorised reproduction, redistribution, modification,
+          commercial exploitation or republication of protected material
+          may require prior permission.
+        </p>
+      </article>
+
+
+      <!-- 18 -->
+      <article>
+        <h3>18. Third-Party Websites &amp; Services</h3>
+
+        <p>
+          KAIVYRA may reference or provide links to third-party websites,
+          publications, platforms, services or resources.
+        </p>
+
+        <p>
+          KAIVYRA does not necessarily control, endorse or assume
+          responsibility for the content, availability, security or
+          privacy practices of third-party services.
+        </p>
+      </article>
+
+
+      <!-- 19 -->
+      <article>
+        <h3>19. Limitation of Responsibility</h3>
+
+        <p>
+          To the maximum extent permitted by applicable law, KAIVYRA and
+          its associated contributors, where applicable, should not be
+          understood as assuming responsibility for decisions, actions,
+          outcomes or losses arising solely from a user's reliance on
+          general website information without appropriate independent
+          evaluation or professional advice.
+        </p>
+
+        <p>
+          Nothing in this document is intended to exclude or restrict
+          any responsibility that cannot lawfully be excluded or
+          restricted under applicable law.
+        </p>
+      </article>
+
+
+      <!-- 20 -->
+      <article>
+        <h3>20. Governing Law</h3>
+
+        <p>
+          These terms and policies shall generally be interpreted in
+          accordance with the applicable laws of India, subject to
+          mandatory rights and protections available to users under
+          applicable law.
+        </p>
+
+        <p>
+          Any dispute shall be subject to the jurisdiction of the courts
+          or competent authorities having lawful jurisdiction.
+        </p>
+      </article>
+
+
+      <!-- 21 -->
+      <article>
+        <h3>21. Changes to This Policy</h3>
+
+        <p>
+          KAIVYRA may periodically update this Terms, Disclaimer,
+          Information &amp; Privacy Policy to reflect changes in its
+          website, services, technology, legal requirements or
+          operational practices.
+        </p>
+
+        <p>
+          The updated version becomes effective when published on the
+          website unless otherwise stated.
+        </p>
+      </article>
+
+
+      <!-- 22 -->
+      <article>
+        <h3>22. Acceptance</h3>
+
+        <p>
+          By accessing or using the KAIVYRA website, you acknowledge
+          that you have had an opportunity to review this document and
+          agree to use the website responsibly and in accordance with
+          applicable law.
+        </p>
+
+        <p>
+          If you do not agree with these terms, please discontinue use
+          of the website.
+        </p>
+      </article>
+
+
+      <div class="kaivyra-policy-contact">
+        <strong>KAIVYRA</strong>
+        <span>
+          Technology â€¢ Healthcare Information â€¢ Research â€¢ Digital Innovation
+        </span>
+      </div>
+
+    </div>
+
+  </details>
+
+</section>
+
+<style id="kaivyra-policy-footer-box-style">
+
+  .kaivyra-policy-footer-box{
+    width:100%;
+    margin:30px 0 0;
+    border:1px solid rgba(184,115,51,.34);
+    border-radius:18px;
+    background:
+      linear-gradient(
+        145deg,
+        rgba(184,115,51,.075),
+        rgba(255,255,255,.025)
+      );
+    overflow:hidden;
+  }
+
+  .kaivyra-policy-summary{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+
+    width:100%;
+    padding:20px 23px;
+
+    cursor:pointer;
+    list-style:none;
+
+    color:#B87333;
+
+    user-select:none;
+  }
+
+  .kaivyra-policy-summary::-webkit-details-marker{
+    display:none;
+  }
+
+  .kaivyra-policy-summary strong{
+    display:block;
+
+    color:#C47A44;
+
+    font-family:'Poppins',sans-serif;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.02em;
+  }
+
+  .kaivyra-policy-summary small{
+    display:block;
+
+    margin-top:4px;
+
+    color:rgba(255,255,255,.43);
+
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    font-weight:400;
+  }
+
+  .kaivyra-policy-summary-icon{
+    flex:0 0 auto;
+
+    width:30px;
+    height:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid rgba(184,115,51,.35);
+    border-radius:50%;
+
+    color:#B87333;
+
+    font-size:20px;
+    font-weight:400;
+
+    transition:
+      transform .2s ease,
+      background .2s ease;
+  }
+
+  .kaivyra-policy-details[open]
+  .kaivyra-policy-summary-icon{
+    transform:rotate(45deg);
+    background:rgba(184,115,51,.08);
+  }
+
+  .kaivyra-policy-summary:hover{
+    background:rgba(184,115,51,.045);
+  }
+
+  .kaivyra-policy-content{
+    padding:0 28px 30px;
+
+    border-top:1px solid rgba(255,255,255,.07);
+
+    color:rgba(255,255,255,.63);
+
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    line-height:1.75;
+  }
+
+  .kaivyra-policy-heading{
+    padding:30px 0 25px;
+
+    border-bottom:1px solid rgba(255,255,255,.07);
+  }
+
+  .kaivyra-policy-heading > span{
+    color:#B87333;
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:.14em;
+  }
+
+  .kaivyra-policy-heading h2{
+    margin-top:8px;
+
+    color:#fff;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:26px;
+    line-height:1.25;
+    font-weight:600;
+  }
+
+  .kaivyra-policy-heading p{
+    max-width:850px;
+
+    margin-top:12px;
+
+    color:rgba(255,255,255,.52);
+
+    font-size:13px;
+  }
+
+  .kaivyra-policy-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 20px;
+
+    margin-top:15px;
+
+    color:rgba(255,255,255,.34);
+
+    font-size:10.5px;
+  }
+
+  .kaivyra-policy-content article{
+    padding:24px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.055);
+  }
+
+  .kaivyra-policy-content article:last-of-type{
+    border-bottom:0;
+  }
+
+  .kaivyra-policy-content h3{
+    margin:0 0 9px;
+
+    color:#fff;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:15px;
+    line-height:1.35;
+    font-weight:600;
+  }
+
+  .kaivyra-policy-content p{
+    margin:0 0 10px;
+
+    color:rgba(255,255,255,.58);
+
+    font-size:12.5px;
+    line-height:1.75;
+  }
+
+  .kaivyra-policy-content p:last-child{
+    margin-bottom:0;
+  }
+
+  .kaivyra-policy-content ul{
+    margin:8px 0 0;
+    padding-left:21px;
+
+    color:rgba(255,255,255,.58);
+
+    font-size:12.5px;
+  }
+
+  .kaivyra-policy-content li{
+    margin:5px 0;
+  }
+
+  .kaivyra-policy-highlight{
+    margin:15px 0;
+    padding:14px 16px;
+
+    border-left:2px solid #B87333;
+    border-radius:0 9px 9px 0;
+
+    background:rgba(184,115,51,.065);
+
+    color:rgba(255,255,255,.67);
+
+    font-size:12.5px;
+  }
+
+  .kaivyra-policy-contact{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+
+    margin-top:28px;
+    padding:20px;
+
+    border:1px solid rgba(184,115,51,.20);
+    border-radius:13px;
+
+    background:rgba(184,115,51,.045);
+
+    text-align:center;
+  }
+
+  .kaivyra-policy-contact strong{
+    color:#C47A44;
+
+    font-family:'Poppins',sans-serif;
+    font-size:14px;
+  }
+
+  .kaivyra-policy-contact span{
+    color:rgba(255,255,255,.42);
+
+    font-size:11px;
+  }
+
+  @media(max-width:760px){
+
+    .kaivyra-policy-box{
+      margin-top:22px;
+    }
+
+    .kaivyra-policy-summary{
+      padding:16px;
+    }
+
+    .kaivyra-policy-summary strong{
+      font-size:13px;
+    }
+
+    .kaivyra-policy-summary small{
+      font-size:10px;
+    }
+
+    .kaivyra-policy-content{
+      padding:0 18px 22px;
+    }
+
+    .kaivyra-policy-heading h2{
+      font-size:21px;
+    }
+
+    .kaivyra-policy-meta{
+      flex-direction:column;
+      gap:4px;
+    }
+  }
+
+</style>
 </footer>
 
 
@@ -5722,7 +8237,7 @@ navItems.forEach(item => {
 
 
 /* =========================================================
-   CLOSE DESKTOP DROPDOWN — OUTSIDE CLICK
+   CLOSE DESKTOP DROPDOWN â€” OUTSIDE CLICK
    ========================================================= */
 
 document.addEventListener("click", event => {
@@ -5755,7 +8270,7 @@ document.addEventListener("click", event => {
 
 
 /* =========================================================
-   CLOSE DROPDOWN — ESCAPE
+   CLOSE DROPDOWN â€” ESCAPE
    ========================================================= */
 
 document.addEventListener("keydown", event => {
@@ -5964,7 +8479,7 @@ if("IntersectionObserver" in window){
 
 <style>
 /* =========================================================
-   KAIVYRA — NAV LANGUAGE + COMPACT SEARCH
+   KAIVYRA â€” NAV LANGUAGE + COMPACT SEARCH
    ========================================================= */
 
 .header-actions{
@@ -6326,7 +8841,7 @@ if("IntersectionObserver" in window){
 }
 
 
-/* EXACT 10cm × 10cm CARDS */
+/* EXACT 10cm Ã— 10cm CARDS */
 
 .build-ultra-grid{
   display:grid;
@@ -6512,7 +9027,7 @@ if("IntersectionObserver" in window){
 }
 
 
-/* Mobile keeps cards EXACTLY 10cm × 10cm */
+/* Mobile keeps cards EXACTLY 10cm Ã— 10cm */
 
 @media(max-width:760px){
 
@@ -6605,7 +9120,7 @@ if("IntersectionObserver" in window){
         '</button>' +
 
         '<button type="button" class="kaivyra-lang-option" data-lang="hi">' +
-          'हिन्दी' +
+          'à¤¹à¤¿à¤¨à¥à¤¦à¥€' +
         '</button>';
 
 
@@ -6966,11 +9481,11 @@ if("IntersectionObserver" in window){
       },
 
       hi: {
-        "About":"हमारे बारे में",
-        "Focus":"मुख्य क्षेत्र",
-        "What We Build":"हम क्या बनाते हैं",
-        "Approach":"हमारा दृष्टिकोण",
-        "Contact":"संपर्क"
+        "About":"à¤¹à¤®à¤¾à¤°à¥‡ à¤¬à¤¾à¤°à¥‡ à¤®à¥‡à¤‚",
+        "Focus":"à¤®à¥à¤–à¥à¤¯ à¤•à¥à¤·à¥‡à¤¤à¥à¤°",
+        "What We Build":"à¤¹à¤® à¤•à¥à¤¯à¤¾ à¤¬à¤¨à¤¾à¤¤à¥‡ à¤¹à¥ˆà¤‚",
+        "Approach":"à¤¹à¤®à¤¾à¤°à¤¾ à¤¦à¥ƒà¤·à¥à¤Ÿà¤¿à¤•à¥‹à¤£",
+        "Contact":"à¤¸à¤‚à¤ªà¤°à¥à¤•"
       }
 
     };
@@ -7135,7 +9650,7 @@ if("IntersectionObserver" in window){
 <!-- KAIVYRA NAV LANGUAGE + SEARCH v1 END -->
 <!-- KAIVYRA ULTRA BOXES START -->
 <style>
-/* Individual content cards only — page sections untouched */
+/* Individual content cards only â€” page sections untouched */
 main .card,
 main .feature-card,
 main .focus-card,
@@ -7251,7 +9766,7 @@ main .item-card:hover {
 }
 
 
-/* EXACT 10cm × 10cm CARDS */
+/* EXACT 10cm Ã— 10cm CARDS */
 
 .build-ultra-grid{
   display:grid;
@@ -7437,7 +9952,7 @@ main .item-card:hover {
 }
 
 
-/* Mobile keeps cards EXACTLY 10cm × 10cm */
+/* Mobile keeps cards EXACTLY 10cm Ã— 10cm */
 
 @media(max-width:760px){
 
@@ -7598,7 +10113,7 @@ main .item-card:hover {
 }
 
 
-/* EXACT 10cm × 10cm CARDS */
+/* EXACT 10cm Ã— 10cm CARDS */
 
 .build-ultra-grid{
   display:grid;
@@ -7784,7 +10299,7 @@ main .item-card:hover {
 }
 
 
-/* Mobile keeps cards EXACTLY 10cm × 10cm */
+/* Mobile keeps cards EXACTLY 10cm Ã— 10cm */
 
 @media(max-width:760px){
 
@@ -7889,7 +10404,7 @@ main .item-card:hover {
       >
 
         <span class="kaivyra-back-icon">
-          ←
+          â†
         </span>
 
         <span>
@@ -7921,7 +10436,7 @@ main .item-card:hover {
         class="kaivyra-build-close"
         aria-label="Close"
       >
-        ×
+        Ã—
       </button>
 
     </header>
@@ -8217,7 +10732,7 @@ main .item-card:hover {
         "kaivyra-detail-card-mark";
 
       mark.textContent =
-        "↗";
+        "â†—";
 
 
       card.appendChild(n);
@@ -9081,7 +11596,7 @@ body.kaivyra-medical-explore-active{
 </script>
 <script id="kaivyra-medical-topic-clickable-patch">
 /* ============================================================
-   KAIVYRA MEDICAL EXPLORE — FULL TOPIC CLICK BEHAVIOUR
+   KAIVYRA MEDICAL EXPLORE â€” FULL TOPIC CLICK BEHAVIOUR
    ============================================================ */
 (function () {
     "use strict";
@@ -9251,7 +11766,7 @@ body.kaivyra-medical-explore-active{
                     "true"
                 );
 
-                indicator.textContent = "→";
+                indicator.textContent = "â†’";
 
                 chip.appendChild(indicator);
             }
@@ -9416,7 +11931,7 @@ body.kaivyra-medical-explore-active{
     <header class="kaivyra-research-50-header">
 
       <button type="button" class="kaivyra-research-50-back" id="kaivyraResearch50Back">
-        <span aria-hidden="true">←</span>
+        <span aria-hidden="true">â†</span>
         <span>Back</span>
       </button>
 
@@ -9427,7 +11942,7 @@ body.kaivyra-medical-explore-active{
       </div>
 
       <button type="button" class="kaivyra-research-50-close" id="kaivyraResearch50Close">
-        ×
+        Ã—
       </button>
 
     </header>
@@ -9468,7 +11983,7 @@ body.kaivyra-medical-explore-active{
             <h3>Foundation & Basic Medical Sciences</h3>
             <p>Core scientific foundations underlying medicine and human biology.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-01-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="01">
@@ -9506,7 +12021,7 @@ body.kaivyra-medical-explore-active{
             <h3>Medicine / Internal Medicine</h3>
             <p>Comprehensive diagnosis, prevention and management of adult diseases.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-02-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="02">
@@ -9534,7 +12049,7 @@ body.kaivyra-medical-explore-active{
             <h3>Cardiovascular Medicine</h3>
             <p>Heart, blood vessels, circulation and cardiovascular disease.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-03-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="03">
@@ -9557,7 +12072,7 @@ body.kaivyra-medical-explore-active{
             <h3>Respiratory / Pulmonary</h3>
             <p>Lungs, airways, breathing disorders and respiratory physiology.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-04-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="04">
@@ -9577,7 +12092,7 @@ body.kaivyra-medical-explore-active{
             <h3>Gastrointestinal & Hepatobiliary</h3>
             <p>Digestive system, liver, biliary tract and gastrointestinal disease.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-05-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="05">
@@ -9599,7 +12114,7 @@ body.kaivyra-medical-explore-active{
             <h3>Kidney & Genitourinary</h3>
             <p>Renal, urinary and genitourinary systems and their disorders.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-06-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="06">
@@ -9621,7 +12136,7 @@ body.kaivyra-medical-explore-active{
             <h3>Endocrine & Metabolic Medicine</h3>
             <p>Hormones, metabolism, diabetes and endocrine disorders.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-07-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="07">
@@ -9642,7 +12157,7 @@ body.kaivyra-medical-explore-active{
             <h3>Neurological Sciences</h3>
             <p>Brain, spinal cord, peripheral nerves and neurological disease.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-08-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="08">
@@ -9670,7 +12185,7 @@ body.kaivyra-medical-explore-active{
             <h3>Psychiatry & Behavioral Sciences</h3>
             <p>Mental health, behavior, cognition and psychological science.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-09-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="09">
@@ -9691,7 +12206,7 @@ body.kaivyra-medical-explore-active{
             <h3>Musculoskeletal Medicine</h3>
             <p>Bones, joints, muscles, connective tissue and movement disorders.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-10-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="10">
@@ -9715,7 +12230,7 @@ body.kaivyra-medical-explore-active{
             <h3>Skin & Related Sciences</h3>
             <p>Skin, hair, nails and dermatological science.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-11-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="11">
@@ -9736,7 +12251,7 @@ body.kaivyra-medical-explore-active{
             <h3>Eye Sciences</h3>
             <p>Vision, ophthalmology, ocular biology and eye disease.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-12-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="12">
@@ -9758,7 +12273,7 @@ body.kaivyra-medical-explore-active{
             <h3>ENT / Head & Neck</h3>
             <p>Ear, nose, throat, airway and head-and-neck medicine.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-13-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="13">
@@ -9780,7 +12295,7 @@ body.kaivyra-medical-explore-active{
             <h3>Dental & Oral Sciences</h3>
             <p>Teeth, oral cavity, maxillofacial health and oral disease.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-14-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="14">
@@ -9804,7 +12319,7 @@ body.kaivyra-medical-explore-active{
             <h3>Cancer Sciences</h3>
             <p>Cancer biology, diagnosis, prevention, treatment and survivorship.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-15-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="15">
@@ -9831,7 +12346,7 @@ body.kaivyra-medical-explore-active{
             <h3>Blood & Transfusion Medicine</h3>
             <p>Hematology, blood disorders, transfusion and blood safety.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-16-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="16">
@@ -9852,7 +12367,7 @@ body.kaivyra-medical-explore-active{
             <h3>Infectious Diseases</h3>
             <p>Pathogens, infection, antimicrobial therapy and infectious disease control.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-17-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="17">
@@ -9873,7 +12388,7 @@ body.kaivyra-medical-explore-active{
             <h3>Immunology & Allergy</h3>
             <p>Immune mechanisms, immune disorders, allergy and hypersensitivity.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-18-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="18">
@@ -9891,7 +12406,7 @@ body.kaivyra-medical-explore-active{
             <h3>Reproductive & Women's Health</h3>
             <p>Reproductive biology, obstetrics, gynecology and women's health.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-19-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="19">
@@ -9914,7 +12429,7 @@ body.kaivyra-medical-explore-active{
             <h3>Pediatrics</h3>
             <p>Infant, child and adolescent health, development and disease.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-20-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="20">
@@ -9940,7 +12455,7 @@ body.kaivyra-medical-explore-active{
             <h3>Surgery</h3>
             <p>Operative medicine, surgical science and procedural treatment.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-21-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="21">
@@ -9965,7 +12480,7 @@ body.kaivyra-medical-explore-active{
             <h3>Plastic, Reconstructive & Aesthetic</h3>
             <p>Reconstruction, tissue restoration, burns and aesthetic medicine.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-22-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="22">
@@ -9985,7 +12500,7 @@ body.kaivyra-medical-explore-active{
             <h3>Anesthesia & Perioperative Medicine</h3>
             <p>Anesthesia, pain, perioperative physiology and patient safety.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-23-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="23">
@@ -10007,7 +12522,7 @@ body.kaivyra-medical-explore-active{
             <h3>Diagnostic Imaging</h3>
             <p>Radiology, imaging science and image-guided diagnosis.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-24-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="24">
@@ -10031,7 +12546,7 @@ body.kaivyra-medical-explore-active{
             <h3>Laboratory & Diagnostic Medicine</h3>
             <p>Clinical pathology, laboratory testing and diagnostic biomarkers.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-25-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="25">
@@ -10054,7 +12569,7 @@ body.kaivyra-medical-explore-active{
             <h3>Rehabilitation & Disability Sciences</h3>
             <p>Recovery, function, disability, mobility and participation.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-26-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="26">
@@ -10076,7 +12591,7 @@ body.kaivyra-medical-explore-active{
             <h3>Public & Population Health</h3>
             <p>Population health, prevention, epidemiology and health systems.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-27-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="27">
@@ -10101,7 +12616,7 @@ body.kaivyra-medical-explore-active{
             <h3>Emergency, Trauma & Critical Care</h3>
             <p>Acute illness, trauma, resuscitation and intensive care.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-28-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="28">
@@ -10124,7 +12639,7 @@ body.kaivyra-medical-explore-active{
             <h3>Geriatrics & Long-Term Care</h3>
             <p>Aging, frailty, multimorbidity and long-term health.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-29-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="29">
@@ -10144,7 +12659,7 @@ body.kaivyra-medical-explore-active{
             <h3>Nutrition & Lifestyle Medicine</h3>
             <p>Nutrition, physical activity, behavior and lifestyle-related health.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-30-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="30">
@@ -10164,7 +12679,7 @@ body.kaivyra-medical-explore-active{
             <h3>Genomic / Precision / Advanced Medicine</h3>
             <p>Genomics, precision diagnostics and individualized medical care.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-31-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="31">
@@ -10188,7 +12703,7 @@ body.kaivyra-medical-explore-active{
             <h3>Regenerative & Cellular Medicine</h3>
             <p>Stem cells, tissue repair, cellular therapies and regeneration.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-32-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="32">
@@ -10212,7 +12727,7 @@ body.kaivyra-medical-explore-active{
             <h3>Gene & Genome Engineering</h3>
             <p>Gene editing, genome engineering and therapeutic genetic technologies.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-33-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="33">
@@ -10233,7 +12748,7 @@ body.kaivyra-medical-explore-active{
             <h3>AI, Digital & Computational Medicine</h3>
             <p>Artificial intelligence, digital health and computational medicine.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-34-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="34">
@@ -10261,7 +12776,7 @@ body.kaivyra-medical-explore-active{
             <h3>Biomedical Engineering & Technology</h3>
             <p>Engineering principles, devices, sensors and medical technologies.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-35-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="35">
@@ -10285,7 +12800,7 @@ body.kaivyra-medical-explore-active{
             <h3>Pharmaceutical & Therapeutic Sciences</h3>
             <p>Drug discovery, pharmacology, therapeutics and treatment development.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-36-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="36">
@@ -10310,7 +12825,7 @@ body.kaivyra-medical-explore-active{
             <h3>Medical Research & Evidence Science</h3>
             <p>Clinical research, evidence synthesis, trials and scientific validation.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-37-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="37">
@@ -10337,7 +12852,7 @@ body.kaivyra-medical-explore-active{
             <h3>Medical Ethics, Law & Governance</h3>
             <p>Ethics, regulation, law, policy and responsible medical practice.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-38-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="38">
@@ -10363,7 +12878,7 @@ body.kaivyra-medical-explore-active{
             <h3>Forensic & Legal Medicine</h3>
             <p>Medicine applied to law, forensic investigation and legal questions.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-39-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="39">
@@ -10383,7 +12898,7 @@ body.kaivyra-medical-explore-active{
             <h3>Environmental, Occupational & Extreme Medicine</h3>
             <p>Health effects of work, environment and extreme conditions.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-40-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="40">
@@ -10405,7 +12920,7 @@ body.kaivyra-medical-explore-active{
             <h3>Military & Disaster Medicine</h3>
             <p>Medical response in conflict, disasters and mass-casualty settings.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-41-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="41">
@@ -10426,13 +12941,13 @@ body.kaivyra-medical-explore-active{
             <h3>One Health & Planetary Health</h3>
             <p>Interconnections among human, animal, environmental and planetary health.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-42-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="42">
 <button type="button" class="kaivyra-research-subtopic" data-topic="One Health" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">One Health</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Zoonotic Disease Science" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Zoonotic Disease Science</button>
-<button type="button" class="kaivyra-research-subtopic" data-topic="Veterinary–Human Health Interface" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Veterinary–Human Health Interface</button>
+<button type="button" class="kaivyra-research-subtopic" data-topic="Veterinaryâ€“Human Health Interface" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Veterinaryâ€“Human Health Interface</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Planetary Health" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Planetary Health</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Climate &amp; Health" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Climate &amp; Health</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Environmental Epidemiology" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Environmental Epidemiology</button>
@@ -10447,14 +12962,14 @@ body.kaivyra-medical-explore-active{
             <h3>Advanced Neuroscience & Neurotechnology</h3>
             <p>Advanced brain science, neural interfaces and neurotechnology.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-43-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="43">
 <button type="button" class="kaivyra-research-subtopic" data-topic="Neuroscience" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Neuroscience</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Computational Neuroscience" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Computational Neuroscience</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Neuroengineering" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Neuroengineering</button>
-<button type="button" class="kaivyra-research-subtopic" data-topic="Brain–Computer Interfaces" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Brain–Computer Interfaces</button>
+<button type="button" class="kaivyra-research-subtopic" data-topic="Brainâ€“Computer Interfaces" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Brainâ€“Computer Interfaces</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Neural Prosthetics" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Neural Prosthetics</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Neurostimulation" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Neurostimulation</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Neuromodulation" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Neuromodulation</button>
@@ -10470,7 +12985,7 @@ body.kaivyra-medical-explore-active{
             <h3>Advanced Cardiovascular Technology</h3>
             <p>Advanced cardiovascular devices, intervention and therapeutic technology.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-44-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="44">
@@ -10490,7 +13005,7 @@ body.kaivyra-medical-explore-active{
             <h3>Advanced Cancer & Immunotherapy</h3>
             <p>Immuno-oncology, targeted therapies and next-generation cancer treatment.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-45-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="45">
@@ -10512,7 +13027,7 @@ body.kaivyra-medical-explore-active{
             <h3>Future / Convergence Medicine</h3>
             <p>Emerging disciplines and convergence across medical sciences and technology.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
 
 <!-- KAIVYRA-RESEARCH-SUBTOPICS-46-START -->
 <div class="kaivyra-research-topic-grid kaivyra-research-topic-grid-2col" data-kaivyra-research-topic-grid="46">
@@ -10524,7 +13039,7 @@ body.kaivyra-medical-explore-active{
 <button type="button" class="kaivyra-research-subtopic" data-topic="Organoid-Based Medicine" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Organoid-Based Medicine</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Digital Twins in Medicine" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Digital Twins in Medicine</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Autonomous Medical Systems" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Autonomous Medical Systems</button>
-<button type="button" class="kaivyra-research-subtopic" data-topic="Human–AI Clinical Collaboration" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Human–AI Clinical Collaboration</button>
+<button type="button" class="kaivyra-research-subtopic" data-topic="Humanâ€“AI Clinical Collaboration" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Humanâ€“AI Clinical Collaboration</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Human Augmentation" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Human Augmentation</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Regenerative Organ Replacement" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Regenerative Organ Replacement</button>
 <button type="button" class="kaivyra-research-subtopic" data-topic="Personalized Drug Manufacturing" data-kaivyra-research-expandable="true" tabindex="0" role="button" aria-expanded="false">Personalized Drug Manufacturing</button>
@@ -10544,7 +13059,7 @@ body.kaivyra-medical-explore-active{
             <h3>Evidence & Validation</h3>
             <p>Evidence quality, reproducibility, validation and confidence in findings.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
         </article>
         <article class="kaivyra-research-domain" data-research-domain="48" tabindex="0" role="button">
           <div class="kaivyra-research-domain-number">48</div>
@@ -10552,7 +13067,7 @@ body.kaivyra-medical-explore-active{
             <h3>Translation & Impact</h3>
             <p>Moving discoveries from research into clinical, societal and practical impact.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
         </article>
         <article class="kaivyra-research-domain" data-research-domain="49" tabindex="0" role="button">
           <div class="kaivyra-research-domain-number">49</div>
@@ -10560,7 +13075,7 @@ body.kaivyra-medical-explore-active{
             <h3>Research Methods</h3>
             <p>Study design, statistics, methodology, measurement and scientific rigor.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
         </article>
         <article class="kaivyra-research-domain" data-research-domain="50" tabindex="0" role="button">
           <div class="kaivyra-research-domain-number">50</div>
@@ -10568,7 +13083,7 @@ body.kaivyra-medical-explore-active{
             <h3>Cross-Cutting & Emerging Research</h3>
             <p>Interdisciplinary themes and emerging questions spanning multiple fields.</p>
           </div>
-          <div class="kaivyra-research-domain-arrow" aria-hidden="true">↗</div>
+          <div class="kaivyra-research-domain-arrow" aria-hidden="true">â†—</div>
         </article>
 
 
@@ -10988,9 +13503,3453 @@ body.kaivyra-research-50-active{
         }
     });
 })();
+</script><!-- KAIVYRA ABOUT KAIVYRA FINAL PATCH START -->
+
+<style id="kaivyra-about-v3-css">
+
+#kaivyra-about-document-view-v3 {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 2147483000;
+    display: none;
+    overflow: hidden;
+    background: #ffffff;
+    color: #111111;
+    box-sizing: border-box;
+}
+
+#kaivyra-about-document-view-v3.kaivyra-about-open {
+    display: block;
+}
+
+#kaivyra-about-document-view-v3 *,
+#kaivyra-about-document-view-v3 *::before,
+#kaivyra-about-document-view-v3 *::after {
+    box-sizing: border-box;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-shell {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    scroll-behavior: auto;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px clamp(20px, 5vw, 72px);
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid rgba(0,0,0,.10);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-brand {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-close {
+    appearance: none;
+    border: 1px solid rgba(0,0,0,.18);
+    background: #ffffff;
+    color: #111111;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-close:hover {
+    background: #111111;
+    color: #ffffff;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-content {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 70px 0 110px;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-kicker {
+    margin: 0 0 18px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    opacity: .58;
+}
+
+#kaivyra-about-document-view-v3 h1 {
+    margin: 0;
+    max-width: 900px;
+    font-size: clamp(42px, 7vw, 88px);
+    line-height: .98;
+    letter-spacing: -.045em;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-intro {
+    max-width: 850px;
+    margin: 30px 0 80px;
+    font-size: clamp(19px, 2vw, 27px);
+    line-height: 1.55;
+    opacity: .78;
+}
+
+#kaivyra-about-document-view-v3 section {
+    padding: 55px 0;
+    border-top: 1px solid rgba(0,0,0,.12);
+}
+
+#kaivyra-about-document-view-v3 section:first-of-type {
+    border-top: 0;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-number {
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    opacity: .48;
+}
+
+#kaivyra-about-document-view-v3 h2 {
+    margin: 0 0 20px;
+    font-size: clamp(27px, 4vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -.025em;
+}
+
+#kaivyra-about-document-view-v3 h3 {
+    margin: 28px 0 12px;
+    font-size: 20px;
+}
+
+#kaivyra-about-document-view-v3 p {
+    max-width: 850px;
+    margin: 0 0 18px;
+    font-size: 17px;
+    line-height: 1.8;
+    opacity: .82;
+}
+
+#kaivyra-about-document-view-v3 ul {
+    max-width: 850px;
+    margin: 20px 0 0;
+    padding-left: 22px;
+}
+
+#kaivyra-about-document-view-v3 li {
+    margin: 9px 0;
+    line-height: 1.65;
+    opacity: .82;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-principle {
+    margin: 35px 0;
+    padding: 28px 30px;
+    border-left: 4px solid currentColor;
+    background: rgba(0,0,0,.035);
+    font-size: clamp(21px, 3vw, 34px);
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-chain {
+    margin-top: 25px;
+    font-size: clamp(16px, 2vw, 23px);
+    line-height: 1.7;
+    font-weight: 700;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-final {
+    padding-top: 75px;
+    text-align: center;
+}
+
+#kaivyra-about-document-view-v3 .kaivyra-about-v3-final p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 700px) {
+
+    #kaivyra-about-document-view-v3 .kaivyra-about-v3-topbar {
+        min-height: 62px;
+        padding: 14px 18px;
+    }
+
+    #kaivyra-about-document-view-v3 .kaivyra-about-v3-content {
+        width: min(100% - 30px, 1100px);
+        padding-top: 45px;
+    }
+
+    #kaivyra-about-document-view-v3 .kaivyra-about-v3-intro {
+        margin-bottom: 50px;
+    }
+
+    #kaivyra-about-document-view-v3 section {
+        padding: 40px 0;
+    }
+
+    #kaivyra-about-document-view-v3 p {
+        font-size: 16px;
+    }
+
+}
+
+</style>
+
+<div id="kaivyra-about-document-view-v3" aria-hidden="true">
+
+    <div class="kaivyra-about-v3-shell">
+
+        <div class="kaivyra-about-v3-topbar">
+            <div class="kaivyra-about-v3-brand">KAIVYRA</div>
+
+            <button
+                type="button"
+                class="kaivyra-about-v3-close"
+                data-kaivyra-about-close="1"
+                aria-label="Close About KAIVYRA"
+            >
+                Close Ã—
+            </button>
+        </div>
+
+        <main class="kaivyra-about-v3-content">
+
+            <div class="kaivyra-about-v3-kicker">
+                About KAIVYRA
+            </div>
+
+            <h1>
+                Understanding What KAIVYRA Is
+            </h1>
+
+            <p class="kaivyra-about-v3-intro">
+                KAIVYRA is exploring meaningful
+                problems across healthcare, technology, education, artificial
+                intelligence and research â€” with a focus on understanding deeply,
+                connecting ideas intelligently and building useful systems.
+            </p>
+
+            <div class="kaivyra-about-v3-principle">
+                Meaningful progress begins with meaningful understanding.
+            </div>
+
+            <section>
+                <div class="kaivyra-about-v3-number">01</div>
+                <h2>The Origin of KAIVYRA</h2>
+                <p>
+                    KAIVYRA begins with curiosity about difficult problems and
+                    the belief that useful innovation starts with understanding
+                    the problem before attempting to build the solution.
+                </p>
+                <p>
+                    The idea is to explore complex human and technological
+                    challenges systematically, identify what matters, connect
+                    knowledge across disciplines and turn meaningful findings
+                    into practical systems.
+                </p>
+            </section>
+
+            <section>
+                <div class="kaivyra-about-v3-number">02</div>
+                <h2>The Problem KAIVYRA Exists to Explore</h2>
+                <p>
+                    Many important problems are not isolated problems. They sit
+                    at the intersection of people, science, technology,
+                    information, economics, education, access and systems.
+                </p>
+                <p>
+                    KAIVYRA therefore looks beyond individual technologies and
+                    asks how different pieces of knowledge can work together
+                    to create better outcomes.
+                </p>
+            </section>
+
+            <section>
+                <div class="kaivyra-about-v3-number">03</div>
+                <h2>A Broader Understanding of Medical Science</h2>
+                <p>
+                    Healthcare cannot be understood only through diseases or
+                    treatments. A meaningful view must also consider the human
+                    being, biology, diagnosis, evidence, healthcare systems,
+                    accessibility, technology, ethics and future possibilities.
+                </p>
+                <p>
+                    KAIVYRA's medical exploration therefore follows a broad,
+                    structured perspective rather than reducing medicine to
+                    isolated facts.
+                </p>
+            </section>
+
+            <section>
+                <div class="kaivyra-about-v3-number">04</div>
+                <h2>From Human Being to Healthcare System</h2>
+                <p>
+                    Every healthcare problem ultimately connects back to a
+                    human being and the systems surrounding that person.
+                </p>
+                <p>
+                    Understanding a problem can require looking at biology,
+                    disease mechanisms, diagnosis, treatment, patient
+                    experience, access, evidence, infrastructure, technology
+                    and long-term outcomes together.
+                </p>
+            </section>
+
+            <section>
+                <div class="kaivyra-about-v3-number">05</div>
+                <h2>The Full Spectrum of Medical Problems</h2>
+                <p>
+                    KAIVYRA explores medical problems across the complete
+                    spectrum â€” from foundational biology and disease
+                    mechanisms to diagnostics, therapeutics, healthcare
+                    delivery, evidence, safety, ethics, access and frontier
+                    medicine.
+                </p>
+                <p>
+                    The objective is not to replace professional medicine,
+                    but to create a stronger framework for understanding the
+                    enormous landscape in which modern healthcare operates.
+                </p>
+            </section>
+
+            <section>
+                <div class="kaivyra-about-v3-number">06</div>
+                <h2>Connecting Science, Medicine, Technology and Education</h2>
+                <p>
+                    Healthcare, technology and education increasingly depend
+                    on one another.
+                </p>
+                <p>
+                    Scientific knowledge becomes more useful when it can be
+                    understood. Technology becomes more valuable when it
+                    addresses a real problem. Education becomes more powerful
+                    when knowledge can be connected to practical systems.
+                </p>
+                <p>
+                    KAIVYRA explores this intersection deliberately.
+                </p>
+            </section>
+
+            <section>
+                <div class="kaivyra-about-v3-number">07</div>
+                <h2>KAIVYRA's Research Universe</h2>
+                <p>
+                    KAIVYRA's research direction is designed as a structured
+                    universe rather than a collection of disconnected topics.
+                </p>
+                <p>
+                    It can span medical science, healthcare systems,
+                    artificial intelligence, data, research methodology,
+                    education, emerging technologies and interdisciplinary
+                    problems.
+                </p>
+            </section>
+
+            <section>
+                <div class="kaivyra-about-v3-number">08</div>
+                <h2>Problems, Evidence, Solutions and Possibilities</h2>
+                <p>
+                    KAIVYRA approaches an idea through a continuous chain:
+                    identify the problem, understand the evidence, explore
+                    possibilities, evaluate assumptions, build carefully,
+                    validate what can be validated and improve continuously.
+                </p>
+
+                <div class="kaivyra-about-v3-principle">
+                    Explore â†’ Research â†’ Build â†’ Validate â†’ Improve
+                </div>
+            </section>
+
+            <section>
+                <div class="kaivyra-about-v3-number">09</div>
+                <h2>From Knowledge to Useful Systems</h2>
+                <p>
+                    Knowledge alone does not automatically create impact.
+                    KAIVYRA therefore explores how knowledge can become
+                    understandable interfaces, research tools, intelligent
+                    systems, educational platforms, healthcare technologies
+                    and other useful digital experiences.
+                </p>
+            </section>
+
+            <section>
+                <div class="kaivyra-about-v3-number">10</div>
+                <h2>KAIVYRA as an Evolving Medical-Technology Ecosystem</h2>
+                <p>
+                    KAIVYRA is intended to remain an evolving ecosystem.
+                    Its areas of exploration may expand as research,
+                    technology and real-world needs change.
+                </p>
+                <p>
+                    The constant is the method: understand deeply, connect
+                    intelligently, build responsibly and improve continuously.
+                </p>
+            </section>
+
+            <section>
+                <div class="kaivyra-about-v3-number">IDENTITY</div>
+                <h2>KAIVYRA's Identity</h2>
+
+                <h3>What KAIVYRA Is</h3>
+                <p> exploring healthcare,
+                    technology, education, artificial intelligence, research
+                    and practical digital systems.
+                </p>
+
+                <h3>What KAIVYRA Is Not</h3>
+                <ul>
+                    <li>Not a replacement for qualified medical professionals.</li>
+                    <li>Not a substitute for clinical judgement.</li>
+                    <li>Not an independent authority over medical standards.</li>
+                    <li>Not a guarantee of medical or technological outcomes.</li>
+                    <li>Not a replacement for peer-reviewed evidence.</li>
+                    <li>Not technology created merely for technology's sake.</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="kaivyra-about-v3-number">PERSPECTIVE</div>
+                <h2>KAIVYRA Perspective</h2>
+
+                <div class="kaivyra-about-v3-chain">
+                    Human â†’ Biology â†’ Disease â†’ Diagnosis â†’ Treatment â†’
+                    Access â†’ Evidence â†’ Technology â†’ Future â†’ Impact
+                </div>
+
+                <div class="kaivyra-about-v3-principle">
+                    Understand deeply.<br>
+                    Connect intelligently.<br>
+                    Build responsibly.<br>
+                    Improve continuously.
+                </div>
+            </section>
+
+            <section class="kaivyra-about-v3-final">
+                <div class="kaivyra-about-v3-number">KAIVYRA</div>
+
+                <h2>
+                    From understanding the human being
+                    to exploring the future of medicine.
+                </h2>
+
+                <p>
+                    KAIVYRA exists to explore meaningful questions,
+                    understand difficult problems and build useful
+                    possibilities at the intersection of healthcare,
+                    technology and education.
+                </p>
+            </section>
+
+        </main>
+    </div>
+</div>
+
+<script id="kaivyra-about-kaivyra-final-js">
+(function () {
+    "use strict";
+
+    function initKaivyraAboutV3() {
+
+        var view = document.getElementById(
+            "kaivyra-about-document-view-v3"
+        );
+
+        if (!view) {
+            return;
+        }
+
+        var shell = view.querySelector(
+            ".kaivyra-about-v3-shell"
+        );
+
+        if (!shell) {
+            return;
+        }
+
+        var previousBodyOverflow = "";
+        var previousHtmlOverflow = "";
+
+        function lockPage() {
+
+            previousBodyOverflow = document.body.style.overflow;
+            previousHtmlOverflow = document.documentElement.style.overflow;
+
+            document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden";
+        }
+
+        function unlockPage() {
+
+            document.body.style.overflow = previousBodyOverflow;
+            document.documentElement.style.overflow = previousHtmlOverflow;
+        }
+
+        function openAbout() {
+
+            view.classList.add("kaivyra-about-open");
+            view.setAttribute("aria-hidden", "false");
+
+            shell.scrollTop = 0;
+
+            lockPage();
+        }
+
+        function closeAbout() {
+
+            view.classList.remove("kaivyra-about-open");
+            view.setAttribute("aria-hidden", "true");
+
+            unlockPage();
+        }
+
+        function getClickableAboutElement(target) {
+
+            var el = target;
+
+            while (el && el !== document.body) {
+
+                if (
+                    el.tagName === "A" ||
+                    el.tagName === "BUTTON"
+                ) {
+
+                    var text = (el.textContent || "")
+                        .replace(/\s+/g, " ")
+                        .trim()
+                        .toLowerCase();
+
+                    if (text === "about kaivyra") {
+                        return el;
+                    }
+
+                    /*
+                     * Also support an About KAIVYRA link containing
+                     * nested spans/icons.
+                     */
+                    if (
+                        text.indexOf("about kaivyra") !== -1 &&
+                        text.length < 120
+                    ) {
+                        return el;
+                    }
+                }
+
+                el = el.parentElement;
+            }
+
+            return null;
+        }
+
+        /*
+         * CAPTURE PHASE:
+         * Runs before the site's existing navigation handler.
+         * This prevents the browser from scrolling to a hash/anchor.
+         */
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                var target = getClickableAboutElement(
+                    event.target
+                );
+
+                if (!target) {
+                    return;
+                }
+
+                /*
+                 * Do not allow the original navigation to execute.
+                 */
+                event.preventDefault();
+                event.stopPropagation();
+                event.stopImmediatePropagation();
+
+                openAbout();
+
+            },
+            true
+        );
+
+        /*
+         * Close button
+         */
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                var closeButton = event.target.closest
+                    ? event.target.closest(
+                        "[data-kaivyra-about-close='1']"
+                    )
+                    : null;
+
+                if (!closeButton) {
+                    return;
+                }
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                closeAbout();
+
+            },
+            true
+        );
+
+        /*
+         * Escape closes the document.
+         */
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    view.classList.contains(
+                        "kaivyra-about-open"
+                    )
+                ) {
+
+                    event.preventDefault();
+                    closeAbout();
+                }
+
+            },
+            true
+        );
+
+        /*
+         * Prevent clicks inside the document from reaching
+         * the underlying website.
+         */
+        view.addEventListener(
+            "click",
+            function (event) {
+
+                if (event.target === view) {
+                    event.preventDefault();
+                    closeAbout();
+                }
+
+            }
+        );
+
+        /*
+         * If this is ever opened by another script, make sure
+         * the underlying page remains locked.
+         */
+        var observer = new MutationObserver(function () {
+
+            if (
+                view.classList.contains(
+                    "kaivyra-about-open"
+                )
+            ) {
+                document.body.style.overflow = "hidden";
+                document.documentElement.style.overflow = "hidden";
+            }
+
+        });
+
+        observer.observe(view, {
+            attributes: true,
+            attributeFilter: ["class"]
+        });
+    }
+
+    if (document.readyState === "loading") {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initKaivyraAboutV3
+        );
+
+    } else {
+
+        initKaivyraAboutV3();
+    }
+
+})();
 </script>
-</body>
+
+<!-- KAIVYRA ABOUT KAIVYRA FINAL PATCH END -->
+<!-- KAIVYRA ABOUT KAIVYRA CLICK FIX v4 START -->
+
+<script id="kaivyra-about-click-fix-v4">
+(function () {
+    "use strict";
+
+    var initialized = false;
+
+    function isAboutKaivyraLink(el) {
+
+        if (!el) {
+            return false;
+        }
+
+        var tag = (el.tagName || "").toLowerCase();
+
+        if (tag !== "a" && tag !== "button") {
+            return false;
+        }
+
+        var text = (el.textContent || "")
+            .replace(/\s+/g, " ")
+            .trim()
+            .toLowerCase();
+
+        return text === "about kaivyra";
+    }
+
+    function findAboutLink(target) {
+
+        var el = target;
+
+        while (el && el !== document.documentElement) {
+
+            if (isAboutKaivyraLink(el)) {
+                return el;
+            }
+
+            el = el.parentElement;
+        }
+
+        return null;
+    }
+
+    function openAboutView() {
+
+        var view = document.getElementById(
+            "kaivyra-about-document-view-v3"
+        );
+
+        if (!view) {
+            return false;
+        }
+
+        var shell = view.querySelector(
+            ".kaivyra-about-v3-shell"
+        );
+
+        view.classList.add("kaivyra-about-open");
+        view.setAttribute("aria-hidden", "false");
+
+        if (shell) {
+            shell.scrollTop = 0;
+        }
+
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+
+        return true;
+    }
+
+    /*
+     * IMPORTANT:
+     * Capture phase runs before normal click handlers and
+     * before browser anchor/hash navigation.
+     */
+    function captureAboutClick(event) {
+
+        var link = findAboutLink(event.target);
+
+        if (!link) {
+            return;
+        }
+
+        /*
+         * Stop the original navigation completely.
+         */
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+
+        /*
+         * Remove any hash currently being targeted.
+         * This prevents the browser from jumping Home -> section.
+         */
+        if (
+            window.location.hash &&
+            window.history &&
+            window.history.replaceState
+        ) {
+            try {
+                window.history.replaceState(
+                    null,
+                    document.title,
+                    window.location.pathname +
+                    window.location.search
+                );
+            } catch (ignore) {}
+        }
+
+        openAboutView();
+    }
+
+    /*
+     * Register at WINDOW level.
+     * This is intentionally stronger than document-level
+     * delegation because existing site handlers may be
+     * attached to document.
+     */
+    window.addEventListener(
+        "click",
+        captureAboutClick,
+        true
+    );
+
+    /*
+     * Also stop keyboard activation of the existing link.
+     */
+    window.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key !== "Enter" &&
+                event.key !== " "
+            ) {
+                return;
+            }
+
+            var link = findAboutLink(event.target);
+
+            if (!link) {
+                return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+
+            openAboutView();
+
+        },
+        true
+    );
+
+    /*
+     * Patch existing About links directly after DOM is ready.
+     *
+     * This does NOT create new links.
+     * It only marks the already-existing About KAIVYRA
+     * navigation elements so their native anchor behavior
+     * cannot perform a page jump.
+     */
+    function patchExistingLinks() {
+
+        var elements = document.querySelectorAll(
+            "a, button"
+        );
+
+        var count = 0;
+
+        for (var i = 0; i < elements.length; i++) {
+
+            var el = elements[i];
+
+            if (!isAboutKaivyraLink(el)) {
+                continue;
+            }
+
+            if (
+                el.getAttribute(
+                    "data-kaivyra-about-v4"
+                ) === "1"
+            ) {
+                continue;
+            }
+
+            el.setAttribute(
+                "data-kaivyra-about-v4",
+                "1"
+            );
+
+            /*
+             * Inline onclick is deliberately avoided.
+             * The window capture handler is the actual
+             * navigation guard.
+             */
+
+            count++;
+        }
+
+        initialized = true;
+
+        return count;
+    }
+
+    function start() {
+
+        patchExistingLinks();
+
+        /*
+         * Existing site may build/rebuild mobile navigation
+         * dynamically. Watch only for newly-created About
+         * links; do not modify any other elements.
+         */
+        if (window.MutationObserver) {
+
+            var observer = new MutationObserver(
+                function () {
+                    patchExistingLinks();
+                }
+            );
+
+            observer.observe(
+                document.body,
+                {
+                    childList: true,
+                    subtree: true
+                }
+            );
+        }
+    }
+
+    if (document.readyState === "loading") {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            start
+        );
+
+    } else {
+
+        start();
+    }
+
+})();
+</script>
+
+<!-- KAIVYRA ABOUT KAIVYRA CLICK FIX v4 END -->
+
+
+<!-- ==========================================================
+     KAIVYRA-PUBLIC-INSIGHTS-OWNER-SYSTEM-FINAL
+     ========================================================== -->
+
+<div
+    id="kaivyra-insights-workspace"
+    class="kaivyra-insights-workspace"
+    aria-hidden="true"
+>
+
+    <!-- ======================================================
+         PUBLIC INSIGHTS VIEW
+         ====================================================== -->
+
+    <section
+        id="kaivyra-public-insights-view"
+        class="kaivyra-insights-view"
+    >
+
+        <div class="kaivyra-insights-workspace-header">
+
+            <div>
+
+                <div class="kaivyra-insights-workspace-kicker">
+                    KAIVYRA INSIGHTS
+                </div>
+
+                <h1>
+                    Explore Our Insights
+                </h1>
+
+                <p>
+                    Explore published research, medical information,
+                    documents, visual material and structured content.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                id="kaivyra-insights-workspace-close"
+                class="kaivyra-insights-workspace-close"
+                aria-label="Close Insights"
+            >
+                Ã—
+            </button>
+
+        </div>
+
+
+        <div class="kaivyra-public-insights-content">
+
+            <div class="kaivyra-public-insights-heading">
+
+                <span>
+                    CONTENT LIBRARY
+                </span>
+
+                <h2>
+                    Browse Published Content
+                </h2>
+
+                <p>
+                    Choose a category to view the content published by KAIVYRA.
+                </p>
+
+            </div>
+
+
+            <div
+                id="kaivyra-public-content-grid"
+                class="kaivyra-public-content-grid"
+            >
+
+                <button
+                    type="button"
+                    class="kaivyra-public-content-card"
+                    data-category="pdf"
+                >
+                    <span class="kaivyra-public-content-icon">PDF</span>
+                    <strong>PDF Documents</strong>
+                    <span>Research papers, reports and medical documents.</span>
+                    <small>View content â†’</small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="kaivyra-public-content-card"
+                    data-category="images"
+                >
+                    <span class="kaivyra-public-content-icon">IMG</span>
+                    <strong>Images</strong>
+                    <span>Medical images, figures, charts and visual material.</span>
+                    <small>View content â†’</small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="kaivyra-public-content-card"
+                    data-category="word"
+                >
+                    <span class="kaivyra-public-content-icon">DOC</span>
+                    <strong>Word Files</strong>
+                    <span>Published DOC and DOCX documents.</span>
+                    <small>View content â†’</small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="kaivyra-public-content-card"
+                    data-category="markdown"
+                >
+                    <span class="kaivyra-public-content-icon">MD</span>
+                    <strong>Markdown</strong>
+                    <span>Structured articles, notes and documentation.</span>
+                    <small>View content â†’</small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="kaivyra-public-content-card"
+                    data-category="text"
+                >
+                    <span class="kaivyra-public-content-icon">TXT</span>
+                    <strong>Text / Notes</strong>
+                    <span>Published plain-text medical and research notes.</span>
+                    <small>View content â†’</small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="kaivyra-public-content-card"
+                    data-category="formula"
+                >
+                    <span class="kaivyra-public-content-icon">âˆ‘</span>
+                    <strong>Formulas / LaTeX</strong>
+                    <span>Equations, mathematical notation and formulas.</span>
+                    <small>View content â†’</small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="kaivyra-public-content-card"
+                    data-category="spreadsheet"
+                >
+                    <span class="kaivyra-public-content-icon">XLS</span>
+                    <strong>Excel / CSV</strong>
+                    <span>Published tables, datasets and structured data.</span>
+                    <small>View content â†’</small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="kaivyra-public-content-card"
+                    data-category="presentation"
+                >
+                    <span class="kaivyra-public-content-icon">PPT</span>
+                    <strong>PowerPoint</strong>
+                    <span>Published presentations and slide-based material.</span>
+                    <small>View content â†’</small>
+                </button>
+
+            </div>
+
+
+            <!-- PUBLIC CONTENT VIEWER -->
+
+            <section
+                id="kaivyra-public-content-viewer"
+                class="kaivyra-public-content-viewer"
+                aria-hidden="true"
+            >
+
+                <div class="kaivyra-public-viewer-header">
+
+                    <div>
+
+                        <span id="kaivyra-public-viewer-category">
+                            CONTENT
+                        </span>
+
+                        <h3 id="kaivyra-public-viewer-title">
+                            Published Content
+                        </h3>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="kaivyra-public-viewer-close"
+                        class="kaivyra-public-viewer-close"
+                    >
+                        Close
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="kaivyra-public-viewer-list"
+                    class="kaivyra-public-viewer-list"
+                >
+
+                    <div class="kaivyra-public-empty-state">
+                        No published content is available in this category yet.
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- SUBTLE OWNER ENTRY -->
+
+        <div class="kaivyra-owner-entry">
+
+            <button
+                type="button"
+                id="kaivyra-open-owner-login"
+                class="kaivyra-owner-entry-button"
+            >
+                Owner Access
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         OWNER LOGIN VIEW
+         ====================================================== -->
+
+    <section
+        id="kaivyra-owner-login-view"
+        class="kaivyra-owner-login-view"
+        aria-hidden="true"
+    >
+
+        <div class="kaivyra-owner-login-card">
+
+            <div class="kaivyra-owner-login-kicker">
+                PRIVATE ACCESS
+            </div>
+
+            <h2>
+                Owner Access Only
+            </h2>
+
+            <p>
+                Enter the 10-digit owner access code to open
+                the private content management workspace.
+            </p>
+
+
+            <label
+                for="kaivyra-owner-code"
+            >
+                10-digit owner access code
+            </label>
+
+            <input
+                id="kaivyra-owner-code"
+                type="password"
+                inputmode="numeric"
+                maxlength="10"
+                autocomplete="off"
+                placeholder="Enter 10 digits"
+            >
+
+
+            <button
+                type="button"
+                id="kaivyra-owner-unlock"
+                class="kaivyra-owner-unlock"
+            >
+                Enter Owner Workspace
+            </button>
+
+
+            <div
+                id="kaivyra-owner-login-status"
+                class="kaivyra-owner-login-status"
+                aria-live="polite"
+            ></div>
+
+
+            <button
+                type="button"
+                id="kaivyra-owner-login-back"
+                class="kaivyra-owner-login-back"
+            >
+                Back to Insights
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         OWNER CONTENT MANAGER
+         ====================================================== -->
+
+    <section
+        id="kaivyra-owner-manager"
+        class="kaivyra-owner-manager"
+        aria-hidden="true"
+    >
+
+        <div class="kaivyra-owner-manager-header">
+
+            <div>
+
+                <div class="kaivyra-owner-manager-kicker">
+                    OWNER CONTENT MANAGEMENT
+                </div>
+
+                <h2>
+                    Content Manager
+                </h2>
+
+                <p>
+                    Upload and prepare content for publication in the
+                    public Insights library.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="kaivyra-owner-manager-close"
+                class="kaivyra-owner-manager-close"
+            >
+                Exit
+            </button>
+
+        </div>
+
+
+        <div class="kaivyra-owner-manager-content">
+
+            <div class="kaivyra-owner-upload-grid">
+
+                <label class="kaivyra-owner-upload-card">
+
+                    <input
+                        type="file"
+                        accept=".pdf,application/pdf"
+                        data-owner-category="pdf"
+                        hidden
+                    >
+
+                    <span class="kaivyra-owner-upload-icon">
+                        PDF
+                    </span>
+
+                    <strong>
+                        Upload PDF
+                    </strong>
+
+                    <span>
+                        Research papers and medical documents.
+                    </span>
+
+                </label>
+
+
+                <label class="kaivyra-owner-upload-card">
+
+                    <input
+                        type="file"
+                        accept="image/*"
+                        multiple
+                        data-owner-category="images"
+                        hidden
+                    >
+
+                    <span class="kaivyra-owner-upload-icon">
+                        IMG
+                    </span>
+
+                    <strong>
+                        Upload Images
+                    </strong>
+
+                    <span>
+                        Figures, charts and medical images.
+                    </span>
+
+                </label>
+
+
+                <label class="kaivyra-owner-upload-card">
+
+                    <input
+                        type="file"
+                        accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                        data-owner-category="word"
+                        hidden
+                    >
+
+                    <span class="kaivyra-owner-upload-icon">
+                        DOC
+                    </span>
+
+                    <strong>
+                        Upload Word
+                    </strong>
+
+                    <span>
+                        DOC and DOCX content.
+                    </span>
+
+                </label>
+
+
+                <label class="kaivyra-owner-upload-card">
+
+                    <input
+                        type="file"
+                        accept=".md,text/markdown"
+                        data-owner-category="markdown"
+                        hidden
+                    >
+
+                    <span class="kaivyra-owner-upload-icon">
+                        MD
+                    </span>
+
+                    <strong>
+                        Upload Markdown
+                    </strong>
+
+                    <span>
+                        Structured articles and documentation.
+                    </span>
+
+                </label>
+
+
+                <label class="kaivyra-owner-upload-card">
+
+                    <input
+                        type="file"
+                        accept=".txt,text/plain"
+                        data-owner-category="text"
+                        hidden
+                    >
+
+                    <span class="kaivyra-owner-upload-icon">
+                        TXT
+                    </span>
+
+                    <strong>
+                        Upload Text / Notes
+                    </strong>
+
+                    <span>
+                        Plain-text research and medical notes.
+                    </span>
+
+                </label>
+
+
+                <label class="kaivyra-owner-upload-card">
+
+                    <input
+                        type="file"
+                        accept=".tex,text/x-tex"
+                        data-owner-category="formula"
+                        hidden
+                    >
+
+                    <span class="kaivyra-owner-upload-icon">
+                        âˆ‘
+                    </span>
+
+                    <strong>
+                        Upload Formulas / LaTeX
+                    </strong>
+
+                    <span>
+                        Equations and mathematical notation.
+                    </span>
+
+                </label>
+
+
+                <label class="kaivyra-owner-upload-card">
+
+                    <input
+                        type="file"
+                        accept=".csv,.xls,.xlsx,text/csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                        multiple
+                        data-owner-category="spreadsheet"
+                        hidden
+                    >
+
+                    <span class="kaivyra-owner-upload-icon">
+                        XLS
+                    </span>
+
+                    <strong>
+                        Upload Excel / CSV
+                    </strong>
+
+                    <span>
+                        Tables, datasets and structured data.
+                    </span>
+
+                </label>
+
+
+                <label class="kaivyra-owner-upload-card">
+
+                    <input
+                        type="file"
+                        accept=".ppt,.pptx,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation"
+                        data-owner-category="presentation"
+                        hidden
+                    >
+
+                    <span class="kaivyra-owner-upload-icon">
+                        PPT
+                    </span>
+
+                    <strong>
+                        Upload PowerPoint
+                    </strong>
+
+                    <span>
+                        Presentations and slide-based content.
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <div class="kaivyra-owner-selected-content">
+
+                <div>
+
+                    <span>
+                        SELECTED CONTENT
+                    </span>
+
+                    <h3>
+                        Ready for publishing
+                    </h3>
+
+                </div>
+
+
+                <div
+                    id="kaivyra-owner-file-list"
+                    class="kaivyra-owner-file-list"
+                >
+
+                    <div class="kaivyra-owner-empty-state">
+                        No files selected yet.
+                    </div>
+
+                </div>
+
+
+                <div class="kaivyra-owner-publish-row">
+
+                    <button
+                        type="button"
+                        id="kaivyra-owner-publish"
+                        class="kaivyra-owner-publish"
+                        disabled
+                    >
+                        Publish Content
+                    </button>
+
+                    <span
+                        id="kaivyra-owner-publish-status"
+                        class="kaivyra-owner-publish-status"
+                        aria-live="polite"
+                    ></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- /KAIVYRA-PUBLIC-INSIGHTS-OWNER-SYSTEM-FINAL -->
+<!-- ==========================================================
+     KAIVYRA â€” INSIGHTS WORKSPACE SCRIPT
+     ========================================================== -->
+
+
+
+<!-- /KAIVYRA â€” INSIGHTS WORKSPACE SCRIPT -->
+<!-- ==========================================================
+     KAIVYRA â€” OWNER ACCESS SCRIPT
+     ========================================================== -->
+
+
+
+<!-- /KAIVYRA â€” OWNER ACCESS SCRIPT -->
+<!-- KAIVYRA-PUBLIC-INSIGHTS-OWNER-SYSTEM-FINAL -->
+
+<script id="kaivyra-public-owner-insights-script">
+(function () {
+    "use strict";
+
+    function initKaivyraInsightsSystem() {
+
+        var workspace =
+            document.getElementById(
+                "kaivyra-insights-workspace"
+            );
+
+        var publicView =
+            document.getElementById(
+                "kaivyra-public-insights-view"
+            );
+
+        var ownerLogin =
+            document.getElementById(
+                "kaivyra-owner-login-view"
+            );
+
+        var ownerManager =
+            document.getElementById(
+                "kaivyra-owner-manager"
+            );
+
+        var openOwnerLogin =
+            document.getElementById(
+                "kaivyra-open-owner-login"
+            );
+
+        var ownerCode =
+            document.getElementById(
+                "kaivyra-owner-code"
+            );
+
+        var ownerUnlock =
+            document.getElementById(
+                "kaivyra-owner-unlock"
+            );
+
+        var ownerStatus =
+            document.getElementById(
+                "kaivyra-owner-login-status"
+            );
+
+        var ownerBack =
+            document.getElementById(
+                "kaivyra-owner-login-back"
+            );
+
+        var managerClose =
+            document.getElementById(
+                "kaivyra-owner-manager-close"
+            );
+
+        var workspaceClose =
+            document.getElementById(
+                "kaivyra-insights-workspace-close"
+            );
+
+        var viewer =
+            document.getElementById(
+                "kaivyra-public-content-viewer"
+            );
+
+        var viewerClose =
+            document.getElementById(
+                "kaivyra-public-viewer-close"
+            );
+
+        var viewerTitle =
+            document.getElementById(
+                "kaivyra-public-viewer-title"
+            );
+
+        var viewerCategory =
+            document.getElementById(
+                "kaivyra-public-viewer-category"
+            );
+
+        var viewerList =
+            document.getElementById(
+                "kaivyra-public-viewer-list"
+            );
+
+        var fileList =
+            document.getElementById(
+                "kaivyra-owner-file-list"
+            );
+
+        var publishButton =
+            document.getElementById(
+                "kaivyra-owner-publish"
+            );
+
+        var publishStatus =
+            document.getElementById(
+                "kaivyra-owner-publish-status"
+            );
+
+        if (
+            !workspace ||
+            !publicView ||
+            !ownerLogin ||
+            !ownerManager
+        ) {
+            return;
+        }
+
+
+        function showPublicView() {
+
+            publicView.classList.add(
+                "kaivyra-insights-view"
+            );
+
+            publicView.style.display = "block";
+
+            ownerLogin.classList.remove(
+                "is-visible"
+            );
+
+            ownerManager.classList.remove(
+                "is-visible"
+            );
+
+        }
+
+
+        function showOwnerLogin() {
+
+            publicView.style.display = "none";
+
+            ownerLogin.classList.add(
+                "is-visible"
+            );
+
+            ownerManager.classList.remove(
+                "is-visible"
+            );
+
+            ownerStatus.textContent = "";
+
+            ownerCode.value = "";
+
+            setTimeout(function () {
+                ownerCode.focus();
+            }, 50);
+
+        }
+
+
+        function showOwnerManager() {
+
+            publicView.style.display = "none";
+
+            ownerLogin.classList.remove(
+                "is-visible"
+            );
+
+            ownerManager.classList.add(
+                "is-visible"
+            );
+
+            ownerCode.value = "";
+
+            ownerStatus.textContent = "";
+
+        }
+
+
+        function closeWorkspace() {
+
+            workspace.classList.remove(
+                "is-open"
+            );
+
+            workspace.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.classList.remove(
+                "kaivyra-insights-workspace-open"
+            );
+
+            showPublicView();
+
+        }
+
+
+        /* Existing Explore Our Insights CTA */
+        var cta =
+            document.getElementById(
+                "kaivyra-explore-insights-cta"
+            );
+
+        if (cta) {
+
+            cta.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    workspace.classList.add(
+                        "is-open"
+                    );
+
+                    workspace.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+                    document.body.classList.add(
+                        "kaivyra-insights-workspace-open"
+                    );
+
+                    showPublicView();
+
+                }
+            );
+
+        }
+
+
+        if (workspaceClose) {
+
+            workspaceClose.addEventListener(
+                "click",
+                closeWorkspace
+            );
+
+        }
+
+
+        if (openOwnerLogin) {
+
+            openOwnerLogin.addEventListener(
+                "click",
+                function () {
+                    showOwnerLogin();
+                }
+            );
+
+        }
+
+
+        if (ownerBack) {
+
+            ownerBack.addEventListener(
+                "click",
+                function () {
+                    showPublicView();
+                }
+            );
+
+        }
+
+
+        /*
+         * IMPORTANT:
+         * This is only the frontend gate.
+         * Real production authentication must be
+         * verified by the backend/API.
+         */
+        function attemptOwnerLogin() {
+
+            var code = String(
+                ownerCode.value || ""
+            ).trim();
+
+            if (!/^[0-9]{10}$/.test(code)) {
+
+                ownerStatus.textContent =
+                    "Enter exactly 10 digits.";
+
+                return;
+            }
+
+            /*
+             * Frontend structural gate only.
+             * Replace with backend verification.
+             */
+            showOwnerManager();
+
+        }
+
+
+        if (ownerUnlock) {
+
+            ownerUnlock.addEventListener(
+                "click",
+                attemptOwnerLogin
+            );
+
+        }
+
+
+        if (ownerCode) {
+
+            ownerCode.addEventListener(
+                "input",
+                function () {
+
+                    this.value =
+                        this.value
+                            .replace(
+                                /[^0-9]/g,
+                                ""
+                            )
+                            .slice(
+                                0,
+                                10
+                            );
+
+                }
+            );
+
+            ownerCode.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Enter"
+                    ) {
+
+                        event.preventDefault();
+
+                        attemptOwnerLogin();
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        if (managerClose) {
+
+            managerClose.addEventListener(
+                "click",
+                function () {
+                    showPublicView();
+                }
+            );
+
+        }
+
+
+        /* -----------------------------------------------------
+           OWNER FILE SELECTION
+           ----------------------------------------------------- */
+
+        var ownerInputs =
+            ownerManager.querySelectorAll(
+                "input[type='file'][data-owner-category]"
+            );
+
+        var selectedFiles = [];
+
+
+        function renderSelectedFiles() {
+
+            if (!fileList || !publishButton) {
+                return;
+            }
+
+            if (
+                selectedFiles.length === 0
+            ) {
+
+                fileList.innerHTML =
+                    '<div class="kaivyra-owner-empty-state">' +
+                    'No files selected yet.' +
+                    '</div>';
+
+                publishButton.disabled = true;
+
+                return;
+            }
+
+
+            var html = "";
+
+            selectedFiles.forEach(
+                function (item) {
+
+                    html +=
+                        '<div class="kaivyra-owner-file-item">' +
+                        '<div>' +
+                        '<strong>' +
+                        escapeHtml(item.name) +
+                        '</strong>' +
+                        '</div>' +
+                        '<span>' +
+                        escapeHtml(item.category) +
+                        '</span>' +
+                        '</div>';
+
+                }
+            );
+
+            fileList.innerHTML = html;
+
+            publishButton.disabled = false;
+
+        }
+
+
+        function escapeHtml(value) {
+
+            return String(value)
+                .replace(/&/g,"&amp;")
+                .replace(/</g,"&lt;")
+                .replace(/>/g,"&gt;")
+                .replace(/"/g,"&quot;")
+                .replace(/'/g,"&#039;");
+
+        }
+
+
+        for (
+            var i = 0;
+            i < ownerInputs.length;
+            i++
+        ) {
+
+            ownerInputs[i].addEventListener(
+                "change",
+                function () {
+
+                    var category =
+                        this.getAttribute(
+                            "data-owner-category"
+                        );
+
+                    for (
+                        var j = 0;
+                        j < this.files.length;
+                        j++
+                    ) {
+
+                        selectedFiles.push({
+                            name:
+                                this.files[j].name,
+                            category:
+                                category
+                        });
+
+                    }
+
+                    renderSelectedFiles();
+
+                }
+            );
+
+        }
+
+
+        if (publishButton) {
+
+            publishButton.addEventListener(
+                "click",
+                function () {
+
+                    if (
+                        selectedFiles.length === 0
+                    ) {
+                        return;
+                    }
+
+                    /*
+                     * Frontend demo/presentation state.
+                     * Backend API must persist actual files.
+                     */
+
+                    var status =
+                        "Selected " +
+                        selectedFiles.length +
+                        " file(s) for publication.";
+
+                    if (publishStatus) {
+                        publishStatus.textContent =
+                            status;
+                    }
+
+                }
+            );
+
+        }
+
+
+        /* -----------------------------------------------------
+           PUBLIC CATEGORY VIEWER
+           ----------------------------------------------------- */
+
+        var publicCards =
+            document.querySelectorAll(
+                ".kaivyra-public-content-card"
+            );
+
+
+        function openPublicCategory(
+            category,
+            title
+        ) {
+
+            if (!viewer) {
+                return;
+            }
+
+            viewer.classList.add(
+                "is-visible"
+            );
+
+            viewer.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            if (viewerCategory) {
+                viewerCategory.textContent =
+                    category.toUpperCase();
+            }
+
+            if (viewerTitle) {
+                viewerTitle.textContent =
+                    title;
+            }
+
+            if (viewerList) {
+
+                viewerList.innerHTML =
+                    '<div class="kaivyra-public-empty-state">' +
+                    'No published content is available in this category yet.' +
+                    '</div>';
+
+            }
+
+            viewer.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        }
+
+
+        for (
+            var k = 0;
+            k < publicCards.length;
+            k++
+        ) {
+
+            publicCards[k].addEventListener(
+                "click",
+                function () {
+
+                    var category =
+                        this.getAttribute(
+                            "data-category"
+                        );
+
+                    var title =
+                        this.querySelector(
+                            "strong"
+                        );
+
+                    openPublicCategory(
+                        category,
+                        title
+                            ? title.textContent
+                            : "Published Content"
+                    );
+
+                }
+            );
+
+        }
+
+
+        if (viewerClose) {
+
+            viewerClose.addEventListener(
+                "click",
+                function () {
+
+                    viewer.classList.remove(
+                        "is-visible"
+                    );
+
+                    viewer.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                }
+            );
+
+        }
+
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    workspace.classList.contains(
+                        "is-open"
+                    )
+                ) {
+
+                    closeWorkspace();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    if (
+        document.readyState === "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initKaivyraInsightsSystem
+        );
+
+    } else {
+
+        initKaivyraInsightsSystem();
+
+    }
+
+})();
+</script>
+
+<!-- /KAIVYRA-PUBLIC-INSIGHTS-OWNER-SYSTEM-FINAL -->
+<script>
+/*
+ KAIVYRA_REAL_INSIGHTS_FLOW_BRIDGE_V2
+ Real backend authentication + upload + publish + public viewer.
+ Existing UI/CSS/HTML is preserved.
+*/
+(function () {
+    "use strict";
+
+    var API_BASE = "https://kaivyra-content-api.onrender.com";
+    var ownerCSRF = "";
+    var selectedFiles = [];
+
+    function id(name) {
+        return document.getElementById(name);
+    }
+
+    function esc(value) {
+        return String(value == null ? "" : value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    function bytes(value) {
+        var n = Number(value || 0);
+
+        if (n < 1024) return n + " B";
+        if (n < 1024 * 1024) return (n / 1024).toFixed(1) + " KB";
+        if (n < 1024 * 1024 * 1024) {
+            return (n / (1024 * 1024)).toFixed(1) + " MB";
+        }
+
+        return (n / (1024 * 1024 * 1024)).toFixed(1) + " GB";
+    }
+
+    async function request(path, options) {
+
+        var config = options || {};
+
+        config.credentials = "include";
+        config.headers = config.headers || {};
+
+        if (ownerCSRF) {
+            config.headers["X-Owner-CSRF"] = ownerCSRF;
+        }
+
+        var response =
+            await fetch(API_BASE + path, config);
+
+        var text = await response.text();
+        var data = null;
+
+        if (text) {
+            try {
+                data = JSON.parse(text);
+            }
+            catch (e) {
+                data = { detail: text };
+            }
+        }
+
+        if (!response.ok) {
+            throw new Error(
+                data && data.detail
+                    ? data.detail
+                    : "HTTP " + response.status
+            );
+        }
+
+        return data;
+    }
+
+    function showStatus(text) {
+        var status = id("kaivyra-owner-login-status");
+
+        if (status) {
+            status.textContent = text || "";
+        }
+    }
+
+    async function realOwnerLogin() {
+
+        var codeInput = id("kaivyra-owner-code");
+
+        if (!codeInput) {
+            return;
+        }
+
+        var code = String(codeInput.value || "").trim();
+
+        if (!/^\d{10}$/.test(code)) {
+            showStatus("Enter exactly 10 digits.");
+            return;
+        }
+
+        showStatus("Authenticating...");
+
+        try {
+
+            var response =
+                await fetch(
+                    API_BASE + "/api/owner/login",
+                    {
+                        method: "POST",
+                        credentials: "include",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            code: code
+                        })
+                    }
+                );
+
+            var text = await response.text();
+            var data = null;
+
+            if (text) {
+                try {
+                    data = JSON.parse(text);
+                }
+                catch (e) {}
+            }
+
+            if (!response.ok) {
+                throw new Error(
+                    data && data.detail
+                        ? data.detail
+                        : "Authentication failed."
+                );
+            }
+
+            if (!data || data.ok !== true || !data.csrf) {
+                throw new Error(
+                    "Invalid authentication response."
+                );
+            }
+
+            ownerCSRF = data.csrf;
+
+            /*
+             Verify that the browser actually retained
+             the authenticated session cookie.
+            */
+            await request(
+                "/api/owner/content",
+                {
+                    method: "GET"
+                }
+            );
+
+            showStatus("Owner access verified.");
+
+            var loginView =
+                id("kaivyra-owner-login-view");
+
+            var publicView =
+                id("kaivyra-public-insights-view");
+
+            var manager =
+                id("kaivyra-owner-manager");
+
+            if (loginView) {
+                loginView.classList.remove("is-visible");
+            }
+
+            if (publicView) {
+                publicView.style.display = "none";
+            }
+
+            if (manager) {
+                manager.classList.add("is-visible");
+            }
+
+            await loadOwnerContent();
+
+        }
+        catch (error) {
+            ownerCSRF = "";
+
+            showStatus(
+                error.message ||
+                "Authentication failed."
+            );
+        }
+    }
+
+    function categoryForInput(input) {
+
+        var candidates = [
+            input.getAttribute("data-owner-category"),
+            input.getAttribute("data-category"),
+            input.getAttribute("name"),
+            input.getAttribute("id"),
+            input.getAttribute("accept")
+        ];
+
+        var value = candidates
+            .filter(Boolean)
+            .join(" ")
+            .toLowerCase();
+
+        if (
+            value.indexOf("pdf") >= 0
+        ) return "pdf";
+
+        if (
+            value.indexOf("image") >= 0 ||
+            value.indexOf("images") >= 0
+        ) return "images";
+
+        if (
+            value.indexOf("word") >= 0 ||
+            value.indexOf("doc") >= 0
+        ) return "word";
+
+        if (
+            value.indexOf("markdown") >= 0 ||
+            value.indexOf("md") >= 0
+        ) return "markdown";
+
+        if (
+            value.indexOf("text") >= 0 ||
+            value.indexOf("txt") >= 0 ||
+            value.indexOf("note") >= 0
+        ) return "text";
+
+        if (
+            value.indexOf("formula") >= 0 ||
+            value.indexOf("latex") >= 0 ||
+            value.indexOf("tex") >= 0
+        ) return "formula";
+
+        if (
+            value.indexOf("spreadsheet") >= 0 ||
+            value.indexOf("excel") >= 0 ||
+            value.indexOf("csv") >= 0 ||
+            value.indexOf("xls") >= 0
+        ) return "spreadsheet";
+
+        if (
+            value.indexOf("presentation") >= 0 ||
+            value.indexOf("powerpoint") >= 0 ||
+            value.indexOf("ppt") >= 0
+        ) return "presentation";
+
+        return null;
+    }
+
+    function categoryFromFile(file) {
+
+        var name =
+            String(file.name || "").toLowerCase();
+
+        if (name.endsWith(".pdf"))
+            return "pdf";
+
+        if (
+            name.endsWith(".png") ||
+            name.endsWith(".jpg") ||
+            name.endsWith(".jpeg") ||
+            name.endsWith(".webp") ||
+            name.endsWith(".gif") ||
+            name.endsWith(".svg")
+        )
+            return "images";
+
+        if (
+            name.endsWith(".doc") ||
+            name.endsWith(".docx")
+        )
+            return "word";
+
+        if (
+            name.endsWith(".md") ||
+            name.endsWith(".markdown")
+        )
+            return "markdown";
+
+        if (name.endsWith(".txt"))
+            return "text";
+
+        if (name.endsWith(".tex"))
+            return "formula";
+
+        if (
+            name.endsWith(".csv") ||
+            name.endsWith(".xls") ||
+            name.endsWith(".xlsx")
+        )
+            return "spreadsheet";
+
+        if (
+            name.endsWith(".ppt") ||
+            name.endsWith(".pptx")
+        )
+            return "presentation";
+
+        return null;
+    }
+
+    function renderSelected() {
+
+        var box =
+            id("kaivyra-owner-file-list");
+
+        if (!box) {
+            return;
+        }
+
+        var html = "";
+
+        if (selectedFiles.length) {
+
+            html +=
+                '<div class="kaivyra-real-selected-files">';
+
+            selectedFiles.forEach(
+                function (item, index) {
+
+                    html +=
+                        '<div class="kaivyra-real-selected-file">' +
+                        '<strong>' +
+                        esc(item.file.name) +
+                        '</strong>' +
+                        '<span>' +
+                        esc(item.category) +
+                        " - " +
+                        esc(bytes(item.file.size)) +
+                        '</span>' +
+                        '<button type="button" data-real-remove="' +
+                        index +
+                        '">Remove</button>' +
+                        '</div>';
+                }
+            );
+
+            html +=
+                "</div>";
+        }
+
+        box.innerHTML =
+            html ||
+            '<div class="kaivyra-owner-empty-state">' +
+            "No files selected yet." +
+            "</div>";
+
+        var removeButtons =
+            box.querySelectorAll(
+                "[data-real-remove]"
+            );
+
+        for (
+            var i = 0;
+            i < removeButtons.length;
+            i++
+        ) {
+
+            removeButtons[i].addEventListener(
+                "click",
+                function () {
+
+                    var index =
+                        parseInt(
+                            this.getAttribute(
+                                "data-real-remove"
+                            ),
+                            10
+                        );
+
+                    if (!isNaN(index)) {
+                        selectedFiles.splice(
+                            index,
+                            1
+                        );
+
+                        renderSelected();
+                    }
+                }
+            );
+        }
+    }
+
+    async function uploadAndPublish() {
+
+        var status =
+            id("kaivyra-owner-publish-status");
+
+        var button =
+            id("kaivyra-owner-publish");
+
+        if (!selectedFiles.length) {
+
+            if (status) {
+                status.textContent =
+                    "Select at least one file.";
+            }
+
+            return;
+        }
+
+        if (!ownerCSRF) {
+
+            if (status) {
+                status.textContent =
+                    "Owner session is not authenticated.";
+            }
+
+            return;
+        }
+
+        if (button) {
+            button.disabled = true;
+        }
+
+        try {
+
+            for (
+                var i = 0;
+                i < selectedFiles.length;
+                i++
+            ) {
+
+                var item = selectedFiles[i];
+
+                if (status) {
+                    status.textContent =
+                        "Uploading " +
+                        (i + 1) +
+                        " of " +
+                        selectedFiles.length +
+                        "...";
+                }
+
+                var form =
+                    new FormData();
+
+                form.append(
+                    "category",
+                    item.category
+                );
+
+                form.append(
+                    "title",
+                    item.file.name.replace(
+                        /\.[^/.]+$/,
+                        ""
+                    )
+                );
+
+                form.append(
+                    "file",
+                    item.file,
+                    item.file.name
+                );
+
+                var uploaded =
+                    await request(
+                        "/api/owner/upload",
+                        {
+                            method: "POST",
+                            body: form
+                        }
+                    );
+
+                if (!uploaded || !uploaded.id) {
+                    throw new Error(
+                        "Upload response missing content ID."
+                    );
+                }
+
+                await request(
+                    "/api/owner/content/" +
+                    encodeURIComponent(
+                        uploaded.id
+                    ) +
+                    "/publish",
+                    {
+                        method: "POST"
+                    }
+                );
+            }
+
+            selectedFiles = [];
+
+            renderSelected();
+
+            if (status) {
+                status.textContent =
+                    "Published successfully.";
+            }
+
+            await loadOwnerContent();
+
+        }
+        catch (error) {
+
+            if (status) {
+                status.textContent =
+                    error.message ||
+                    "Upload/publish failed.";
+            }
+
+        }
+        finally {
+
+            if (button) {
+                button.disabled = false;
+            }
+        }
+    }
+
+    async function loadOwnerContent() {
+
+        var box =
+            id("kaivyra-owner-file-list");
+
+        if (!box) {
+            return;
+        }
+
+        try {
+
+            var result =
+                await request(
+                    "/api/owner/content",
+                    {
+                        method: "GET"
+                    }
+                );
+
+            var items =
+                Array.isArray(result)
+                    ? result
+                    : (
+                        result &&
+                        Array.isArray(result.items)
+                            ? result.items
+                            : []
+                    );
+
+            var html = "";
+
+            if (selectedFiles.length) {
+
+                html +=
+                    '<div class="kaivyra-real-selected-files">';
+
+                selectedFiles.forEach(
+                    function (item, index) {
+
+                        html +=
+                            '<div class="kaivyra-real-selected-file">' +
+                            '<strong>' +
+                            esc(item.file.name) +
+                            '</strong>' +
+                            '<span>' +
+                            esc(item.category) +
+                            " - " +
+                            esc(bytes(item.file.size)) +
+                            '</span>' +
+                            '<button type="button" data-real-remove="' +
+                            index +
+                            '">Remove</button>' +
+                            '</div>';
+                    }
+                );
+
+                html +=
+                    "</div>";
+            }
+
+            html +=
+                '<div class="kaivyra-real-existing-content">' +
+                '<strong>Stored Content</strong>';
+
+            if (!items.length) {
+
+                html +=
+                    '<div class="kaivyra-owner-empty-state">' +
+                    "No uploaded content yet." +
+                    "</div>";
+
+            }
+            else {
+
+                items.forEach(
+                    function (item) {
+
+                        var title =
+                            item.title ||
+                            item.filename ||
+                            "Untitled";
+
+                        html +=
+                            '<div class="kaivyra-real-existing-item">' +
+                            '<div>' +
+                            '<strong>' +
+                            esc(title) +
+                            '</strong>' +
+                            '<span>' +
+                            esc(item.category || "") +
+                            " - " +
+                            esc(item.filename || "") +
+                            " - " +
+                            esc(bytes(item.size_bytes)) +
+                            '</span>' +
+                            '<small>' +
+                            (
+                                item.is_published
+                                    ? "Published"
+                                    : "Draft"
+                            ) +
+                            '</small>' +
+                            '</div>' +
+                            '<div>';
+
+                        if (item.is_published) {
+
+                            html +=
+                                '<button type="button" ' +
+                                'data-real-unpublish="' +
+                                esc(item.id) +
+                                '">' +
+                                "Unpublish" +
+                                "</button>";
+
+                        }
+                        else {
+
+                            html +=
+                                '<button type="button" ' +
+                                'data-real-publish="' +
+                                esc(item.id) +
+                                '">' +
+                                "Publish" +
+                                "</button>";
+                        }
+
+                        html +=
+                            '<button type="button" ' +
+                            'data-real-delete="' +
+                            esc(item.id) +
+                            '">' +
+                            "Delete" +
+                            "</button>" +
+                            "</div>" +
+                            "</div>";
+                    }
+                );
+            }
+
+            html +=
+                "</div>";
+
+            box.innerHTML = html;
+
+            var removeButtons =
+                box.querySelectorAll(
+                    "[data-real-remove]"
+                );
+
+            for (
+                var r = 0;
+                r < removeButtons.length;
+                r++
+            ) {
+
+                removeButtons[r].addEventListener(
+                    "click",
+                    function () {
+
+                        var index =
+                            parseInt(
+                                this.getAttribute(
+                                    "data-real-remove"
+                                ),
+                                10
+                            );
+
+                        if (!isNaN(index)) {
+                            selectedFiles.splice(
+                                index,
+                                1
+                            );
+
+                            loadOwnerContent();
+                        }
+                    }
+                );
+            }
+
+            var publishButtons =
+                box.querySelectorAll(
+                    "[data-real-publish]"
+                );
+
+            for (
+                var p = 0;
+                p < publishButtons.length;
+                p++
+            ) {
+
+                publishButtons[p].addEventListener(
+                    "click",
+                    async function () {
+
+                        var contentId =
+                            this.getAttribute(
+                                "data-real-publish"
+                            );
+
+                        this.disabled = true;
+
+                        try {
+
+                            await request(
+                                "/api/owner/content/" +
+                                encodeURIComponent(
+                                    contentId
+                                ) +
+                                "/publish",
+                                {
+                                    method: "POST"
+                                }
+                            );
+
+                            await loadOwnerContent();
+
+                        }
+                        catch (error) {
+
+                            var status =
+                                id(
+                                    "kaivyra-owner-publish-status"
+                                );
+
+                            if (status) {
+                                status.textContent =
+                                    error.message;
+                            }
+
+                            this.disabled = false;
+                        }
+                    }
+                );
+            }
+
+            var unpublishButtons =
+                box.querySelectorAll(
+                    "[data-real-unpublish]"
+                );
+
+            for (
+                var u = 0;
+                u < unpublishButtons.length;
+                u++
+            ) {
+
+                unpublishButtons[u].addEventListener(
+                    "click",
+                    async function () {
+
+                        var contentId =
+                            this.getAttribute(
+                                "data-real-unpublish"
+                            );
+
+                        this.disabled = true;
+
+                        try {
+
+                            await request(
+                                "/api/owner/content/" +
+                                encodeURIComponent(
+                                    contentId
+                                ) +
+                                "/unpublish",
+                                {
+                                    method: "POST"
+                                }
+                            );
+
+                            await loadOwnerContent();
+
+                        }
+                        catch (error) {
+
+                            var status =
+                                id(
+                                    "kaivyra-owner-publish-status"
+                                );
+
+                            if (status) {
+                                status.textContent =
+                                    error.message;
+                            }
+
+                            this.disabled = false;
+                        }
+                    }
+                );
+            }
+
+            var deleteButtons =
+                box.querySelectorAll(
+                    "[data-real-delete]"
+                );
+
+            for (
+                var d = 0;
+                d < deleteButtons.length;
+                d++
+            ) {
+
+                deleteButtons[d].addEventListener(
+                    "click",
+                    async function () {
+
+                        var contentId =
+                            this.getAttribute(
+                                "data-real-delete"
+                            );
+
+                        this.disabled = true;
+
+                        try {
+
+                            await request(
+                                "/api/owner/content/" +
+                                encodeURIComponent(
+                                    contentId
+                                ),
+                                {
+                                    method: "DELETE"
+                                }
+                            );
+
+                            await loadOwnerContent();
+
+                        }
+                        catch (error) {
+
+                            var status =
+                                id(
+                                    "kaivyra-owner-publish-status"
+                                );
+
+                            if (status) {
+                                status.textContent =
+                                    error.message;
+                            }
+
+                            this.disabled = false;
+                        }
+                    }
+                );
+            }
+
+        }
+        catch (error) {
+
+            box.innerHTML =
+                '<div class="kaivyra-owner-empty-state">' +
+                esc(
+                    error.message ||
+                    "Unable to load owner content."
+                ) +
+                "</div>";
+        }
+    }
+
+    async function openPublic(category, title) {
+
+        var viewer =
+            id("kaivyra-public-content-viewer");
+
+        var list =
+            id("kaivyra-public-viewer-list");
+
+        var viewerTitle =
+            id("kaivyra-public-viewer-title");
+
+        var viewerCategory =
+            id("kaivyra-public-viewer-category");
+
+        if (!viewer || !list) {
+            return;
+        }
+
+        viewer.classList.add("is-visible");
+        viewer.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        if (viewerTitle) {
+            viewerTitle.textContent =
+                title ||
+                "Published Content";
+        }
+
+        if (viewerCategory) {
+            viewerCategory.textContent =
+                String(category || "")
+                    .toUpperCase();
+        }
+
+        list.innerHTML =
+            '<div class="kaivyra-public-empty-state">' +
+            "Loading..." +
+            "</div>";
+
+        try {
+
+            var items =
+                await request(
+                    "/api/public/content?category=" +
+                    encodeURIComponent(category),
+                    {
+                        method: "GET"
+                    }
+                );
+
+            if (
+                !Array.isArray(items) ||
+                !items.length
+            ) {
+
+                list.innerHTML =
+                    '<div class="kaivyra-public-empty-state">' +
+                    "No published content is available in this category yet." +
+                    "</div>";
+
+                return;
+            }
+
+            var html = "";
+
+            items.forEach(
+                function (item) {
+
+                    var fileUrl =
+                        item.url || "";
+
+                    var itemTitle =
+                        item.title ||
+                        item.filename ||
+                        "Published file";
+
+                    html +=
+                        '<article class="kaivyra-real-public-item">' +
+                        '<strong>' +
+                        esc(itemTitle) +
+                        '</strong>' +
+                        '<span>' +
+                        esc(item.filename || "") +
+                        " - " +
+                        esc(bytes(item.size_bytes)) +
+                        '</span>';
+
+                    if (
+                        category === "images" &&
+                        fileUrl
+                    ) {
+
+                        html +=
+                            '<img src="' +
+                            esc(fileUrl) +
+                            '" alt="' +
+                            esc(itemTitle) +
+                            '" loading="lazy">';
+
+                    }
+                    else if (
+                        category === "pdf" &&
+                        fileUrl
+                    ) {
+
+                        html +=
+                            '<iframe src="' +
+                            esc(fileUrl) +
+                            '" title="' +
+                            esc(itemTitle) +
+                            '"></iframe>';
+
+                    }
+                    else if (
+                        (
+                            category === "text" ||
+                            category === "markdown" ||
+                            category === "formula"
+                        ) &&
+                        fileUrl
+                    ) {
+
+                        html +=
+                            '<pre data-real-text-url="' +
+                            esc(fileUrl) +
+                            '">' +
+                            "Loading preview..." +
+                            "</pre>";
+                    }
+
+                    if (fileUrl) {
+
+                        html +=
+                            '<a href="' +
+                            esc(fileUrl) +
+                            '" target="_blank" rel="noopener noreferrer">' +
+                            "Open file" +
+                            "</a>";
+                    }
+
+                    html +=
+                        "</article>";
+                }
+            );
+
+            list.innerHTML = html;
+
+            var textPreviews =
+                list.querySelectorAll(
+                    "[data-real-text-url]"
+                );
+
+            for (
+                var t = 0;
+                t < textPreviews.length;
+                t++
+            ) {
+
+                loadText(
+                    textPreviews[t]
+                );
+            }
+
+        }
+        catch (error) {
+
+            list.innerHTML =
+                '<div class="kaivyra-public-empty-state">' +
+                esc(
+                    error.message ||
+                    "Unable to load published content."
+                ) +
+                "</div>";
+        }
+    }
+
+    async function loadText(element) {
+
+        var url =
+            element.getAttribute(
+                "data-real-text-url"
+            );
+
+        try {
+
+            var response =
+                await fetch(url);
+
+            if (!response.ok) {
+                throw new Error();
+            }
+
+            element.textContent =
+                await response.text();
+
+        }
+        catch (error) {
+
+            element.textContent =
+                "Preview unavailable. Use Open file.";
+        }
+    }
+
+    function block(event) {
+
+        event.preventDefault();
+
+        if (event.stopImmediatePropagation) {
+            event.stopImmediatePropagation();
+        }
+
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        }
+    }
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            var target = event.target;
+
+            if (!target) {
+                return;
+            }
+
+            var ownerUnlock =
+                target.closest(
+                    "#kaivyra-owner-unlock"
+                );
+
+            if (ownerUnlock) {
+
+                block(event);
+
+                realOwnerLogin();
+
+                return;
+            }
+
+            var publish =
+                target.closest(
+                    "#kaivyra-owner-publish"
+                );
+
+            if (publish) {
+
+                block(event);
+
+                uploadAndPublish();
+
+                return;
+            }
+
+            var publicCard =
+                target.closest(
+                    ".kaivyra-public-content-card"
+                );
+
+            if (publicCard) {
+
+                block(event);
+
+                var category =
+                    publicCard.getAttribute(
+                        "data-category"
+                    );
+
+                var heading =
+                    publicCard.querySelector(
+                        "strong"
+                    );
+
+                openPublic(
+                    category,
+                    heading
+                        ? heading.textContent
+                        : "Published Content"
+                );
+
+                return;
+            }
+
+        },
+        true
+    );
+
+    document.addEventListener(
+        "change",
+        function (event) {
+
+            var target = event.target;
+
+            if (
+                !target ||
+                target.type !== "file"
+            ) {
+                return;
+            }
+
+            var manager =
+                id("kaivyra-owner-manager");
+
+            if (
+                !manager ||
+                !manager.contains(target)
+            ) {
+                return;
+            }
+
+            block(event);
+
+            var category =
+                categoryForInput(target);
+
+            for (
+                var i = 0;
+                i < target.files.length;
+                i++
+            ) {
+
+                var file =
+                    target.files[i];
+
+                var resolvedCategory =
+                    category ||
+                    categoryFromFile(file);
+
+                if (!resolvedCategory) {
+                    continue;
+                }
+
+                selectedFiles.push({
+                    file: file,
+                    category: resolvedCategory
+                });
+            }
+
+            target.value = "";
+
+            renderSelected();
+        },
+        true
+    );
+
+})();
+</script></body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
