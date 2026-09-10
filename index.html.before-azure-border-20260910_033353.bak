@@ -1,0 +1,7279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>KAIVYRA — Healthcare, Technology & Education</title>
+
+<meta
+  name="description"
+  content="KAIVYRA explores meaningful problems across healthcare, technology, artificial intelligence and education, turning research and ideas into useful solutions."
+/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+  rel="stylesheet"
+/>
+
+<style>
+
+/* =========================================================
+   KAIVYRA — DEDICATED HOMEPAGE
+   ========================================================= */
+
+:root{
+  --navy-950:#050f1f;
+  --navy-900:#09172c;
+  --navy-850:#0c203b;
+  --navy-800:#102e54;
+  --navy-700:#154676;
+
+  --cyan-500:#1fc5c6;
+  --cyan-400:#33d6d1;
+  --cyan-300:#8beae6;
+
+  --ink:#102039;
+  --ink-soft:#263852;
+  --muted:#65748a;
+
+  --bg:#f5f8fb;
+  --white:#ffffff;
+  --line:#e5ebf2;
+
+  --shadow-sm:0 10px 30px rgba(5,15,31,.06);
+  --shadow-md:0 20px 55px rgba(5,15,31,.09);
+  --shadow-lg:0 30px 80px rgba(5,15,31,.13);
+
+  --max:1200px;
+  --radius:24px;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+body.menu-open{
+  overflow:hidden;
+}
+
+h1,
+h2,
+h3,
+h4{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+}
+
+p{
+  margin:0;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+img,
+svg{
+  display:block;
+}
+
+.wrap{
+  width:min(calc(100% - 48px),var(--max));
+  margin-inline:auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header{
+  position:absolute;
+  inset:0 0 auto;
+  z-index:100;
+  padding:24px 0;
+}
+
+.nav-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:11px;
+  flex-shrink:0;
+}
+
+.brand-mark{
+  width:32px;
+  height:32px;
+}
+
+.brand-text{
+  color:#fff;
+  font-family:'Poppins',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:.045em;
+}
+
+
+/* =========================================================
+   DESKTOP NAV
+   ========================================================= */
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  margin-left:auto;
+}
+
+.nav-links > a,
+.nav-dropdown-btn{
+  position:relative;
+  color:rgba(255,255,255,.78);
+  font-size:13.5px;
+  font-weight:500;
+  transition:color .2s ease;
+}
+
+.nav-links > a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:-7px;
+  height:1px;
+  background:var(--cyan-400);
+  transition:right .2s ease;
+}
+
+.nav-links > a:hover{
+  color:#fff;
+}
+
+.nav-links > a:hover::after{
+  right:0;
+}
+
+
+/* =========================================================
+   NAV DROPDOWN
+   ========================================================= */
+
+.nav-item{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.nav-dropdown-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:0;
+  border:0;
+  background:none;
+  font-family:'Inter',sans-serif;
+  cursor:pointer;
+}
+
+.nav-dropdown-btn:hover,
+.nav-item.open .nav-dropdown-btn{
+  color:#fff;
+}
+
+.nav-dropdown-btn::after{
+  content:"";
+  width:6px;
+  height:6px;
+  margin-top:-3px;
+  border-right:1.5px solid currentColor;
+  border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg);
+  transition:transform .2s ease,margin .2s ease;
+}
+
+.nav-item.open .nav-dropdown-btn::after{
+  transform:rotate(225deg);
+  margin-top:3px;
+}
+
+
+/* Dropdown box */
+
+.nav-dropdown{
+  position:absolute;
+  top:calc(100% + 18px);
+  left:50%;
+  width:250px;
+  padding:9px;
+
+  border:1px solid #e5ebf2;
+  border-radius:16px;
+  background:#fff;
+
+  box-shadow:0 22px 60px rgba(5,15,31,.18);
+
+  opacity:0;
+  visibility:hidden;
+  transform:translate(-50%,-8px);
+  pointer-events:none;
+
+  transition:
+    opacity .18s ease,
+    transform .18s ease,
+    visibility .18s ease;
+}
+
+.nav-item.open .nav-dropdown{
+  opacity:1;
+  visibility:visible;
+  transform:translate(-50%,0);
+  pointer-events:auto;
+}
+
+
+/* Dropdown arrow */
+
+.nav-dropdown::before{
+  content:"";
+  position:absolute;
+  top:-6px;
+  left:50%;
+
+  width:11px;
+  height:11px;
+
+  background:#fff;
+  border-left:1px solid #e5ebf2;
+  border-top:1px solid #e5ebf2;
+
+  transform:translateX(-50%) rotate(45deg);
+}
+
+
+/* Dropdown links */
+
+.nav-dropdown a{
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+
+  width:100%;
+  padding:12px 13px;
+
+  border-radius:10px;
+
+  color:#102039;
+
+  font-size:13px;
+  font-weight:600;
+  line-height:1.35;
+
+  transition:
+    background .18s ease,
+    color .18s ease;
+}
+
+.nav-dropdown a::after{
+  display:none;
+}
+
+.nav-dropdown a:hover{
+  color:#087f88;
+  background:#f0f8f9;
+}
+
+.nav-dropdown a span{
+  margin-top:2px;
+
+  color:#718096;
+
+  font-size:11px;
+  font-weight:400;
+  line-height:1.4;
+}
+
+.nav-dropdown a:hover span{
+  color:#5d707f;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.header-icon{
+  width:38px;
+  height:38px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.13);
+
+  background:rgba(255,255,255,.07);
+  color:#fff;
+
+  transition:.2s ease;
+}
+
+.header-icon:hover{
+  background:rgba(255,255,255,.14);
+}
+
+.lang{
+  width:auto;
+  padding:0 14px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.mobile-menu-btn{
+  display:none;
+
+  width:40px;
+  height:40px;
+
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:50%;
+
+  background:rgba(255,255,255,.08);
+  color:#fff;
+
+  cursor:pointer;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+  position:relative;
+  min-height:720px;
+  overflow:hidden;
+
+  color:#fff;
+
+  background:
+    radial-gradient(
+      circle at 80% 25%,
+      rgba(51,214,209,.13),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      var(--navy-950) 0%,
+      var(--navy-900) 45%,
+      var(--navy-700) 100%
+    );
+}
+
+.hero::after{
+  content:"";
+
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+
+  height:160px;
+
+  background:linear-gradient(
+    to bottom,
+    transparent,
+    var(--bg)
+  );
+
+  pointer-events:none;
+}
+
+.hero-grid{
+  position:absolute;
+  inset:0;
+
+  opacity:.15;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.07) 1px,
+      transparent 1px
+    );
+
+  background-size:70px 70px;
+
+  mask-image:linear-gradient(
+    to bottom,
+    black,
+    transparent 75%
+  );
+}
+
+.hero-glow{
+  position:absolute;
+
+  width:650px;
+  height:650px;
+
+  right:-230px;
+  top:-170px;
+
+  border-radius:50%;
+
+  background:radial-gradient(
+    circle,
+    rgba(51,214,209,.25),
+    rgba(51,214,209,.05) 40%,
+    transparent 70%
+  );
+}
+
+.hero-content{
+  position:relative;
+  z-index:3;
+
+  min-height:720px;
+
+  display:grid;
+  grid-template-columns:1.03fr .97fr;
+
+  align-items:center;
+
+  gap:40px;
+
+  padding-top:70px;
+  padding-bottom:120px;
+}
+
+.hero-copy{
+  max-width:620px;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+
+  margin-bottom:20px;
+
+  color:var(--cyan-300);
+
+  font-size:12.5px;
+  font-weight:600;
+}
+
+.eyebrow-dot{
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:var(--cyan-400);
+
+  box-shadow:
+    0 0 0 5px rgba(51,214,209,.10);
+}
+
+.hero-wordmark{
+  margin-bottom:14px;
+
+  font-size:clamp(44px,6vw,70px);
+  line-height:1;
+
+  font-weight:700;
+  letter-spacing:.055em;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff 10%,
+      #bcecff 90%
+    );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+
+  color:transparent;
+}
+
+.hero-title{
+  max-width:700px;
+
+  font-size:clamp(27px,3.4vw,42px);
+  line-height:1.25;
+
+  font-weight:600;
+  letter-spacing:-.02em;
+}
+
+.hero-lede{
+  max-width:54ch;
+
+  margin-top:20px;
+
+  color:rgba(255,255,255,.68);
+
+  font-size:16px;
+  line-height:1.8;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:12px;
+
+  margin-top:32px;
+}
+
+.primary-btn,
+.secondary-btn{
+  min-height:50px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  padding:0 23px;
+
+  border-radius:27px;
+
+  font-size:14px;
+  font-weight:600;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+.primary-btn{
+  color:#062128;
+
+  background:
+    linear-gradient(
+      90deg,
+      #20c4c7,
+      #53ded7
+    );
+
+  box-shadow:
+    0 14px 32px rgba(51,214,209,.22);
+}
+
+.secondary-btn{
+  color:#fff;
+
+  border:1px solid rgba(255,255,255,.18);
+
+  background:rgba(255,255,255,.06);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+  transform:translateY(-2px);
+}
+
+.secondary-btn:hover{
+  background:rgba(255,255,255,.11);
+}
+
+
+/* =========================================================
+   HERO ART
+   ========================================================= */
+
+.hero-visual{
+  position:relative;
+  height:470px;
+}
+
+.hero-visual svg{
+  width:100%;
+  height:100%;
+}
+
+.visual-frame{
+  position:absolute;
+  inset:70px 35px 50px;
+
+  border:1px solid rgba(127,232,228,.11);
+  border-radius:32px;
+
+  transform:rotate(-2deg);
+}
+
+.visual-caption{
+  position:absolute;
+
+  right:15px;
+  bottom:38px;
+
+  padding:9px 13px;
+
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:12px;
+
+  background:rgba(255,255,255,.05);
+
+  color:rgba(255,255,255,.55);
+
+  font-size:10.5px;
+  letter-spacing:.04em;
+
+  backdrop-filter:blur(10px);
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+.focus-wrap{
+  position:relative;
+  z-index:8;
+
+  margin-top:-92px;
+}
+
+.focus-card{
+  padding:48px 50px 52px;
+
+  background:#fff;
+
+  border:1px solid rgba(10,25,50,.04);
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow-lg);
+}
+
+.section-kicker{
+  color:#159ba2;
+
+  font-size:12px;
+  font-weight:600;
+
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+
+.focus-heading{
+  margin-top:8px;
+
+  text-align:center;
+
+  font-size:27px;
+  font-weight:600;
+}
+
+.focus-intro{
+  max-width:590px;
+
+  margin:11px auto 38px;
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+.focus-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:1px;
+
+  overflow:hidden;
+
+  border:1px solid var(--line);
+  border-radius:18px;
+}
+
+.focus-item{
+  position:relative;
+
+  padding:32px 28px;
+
+  text-align:center;
+
+  background:#fff;
+
+  transition:background .2s ease;
+}
+
+.focus-item + .focus-item{
+  border-left:1px solid var(--line);
+}
+
+.focus-item:hover{
+  background:#fbfdfe;
+}
+
+.icon-circle{
+  width:62px;
+  height:62px;
+
+  margin:0 auto 18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  color:var(--cyan-300);
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--navy-800),
+      var(--navy-700)
+    );
+
+  box-shadow:
+    0 10px 24px rgba(10,25,50,.13);
+}
+
+.focus-item h3{
+  font-size:16px;
+  font-weight:600;
+}
+
+.focus-item p{
+  max-width:30ch;
+
+  margin:7px auto 0;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+
+/* =========================================================
+   GENERIC SECTION
+   ========================================================= */
+
+.section{
+  padding:110px 0;
+}
+
+.section-head{
+  max-width:690px;
+
+  margin:0 auto 55px;
+
+  text-align:center;
+}
+
+.section-head h2{
+  margin-top:9px;
+
+  font-size:clamp(26px,3.2vw,36px);
+  line-height:1.25;
+
+  font-weight:600;
+  letter-spacing:-.02em;
+}
+
+.section-head p:not(.section-kicker){
+  margin-top:14px;
+
+  color:var(--muted);
+
+  font-size:15px;
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-section{
+  padding-top:30px;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:28px;
+
+  align-items:stretch;
+}
+
+.about-card{
+  min-height:370px;
+
+  padding:48px;
+
+  border-radius:var(--radius);
+
+  background:#fff;
+
+  box-shadow:var(--shadow-md);
+}
+
+.about-card h2{
+  margin-top:8px;
+
+  font-size:30px;
+  line-height:1.25;
+
+  font-weight:600;
+}
+
+.about-card p{
+  max-width:56ch;
+
+  margin-top:19px;
+
+  color:var(--muted);
+
+  font-size:15px;
+  line-height:1.8;
+}
+
+.text-link{
+  display:inline-flex;
+  align-items:center;
+
+  gap:8px;
+
+  margin-top:25px;
+
+  color:#117e89;
+
+  font-size:13px;
+  font-weight:600;
+}
+
+.about-visual{
+  position:relative;
+
+  min-height:370px;
+
+  overflow:hidden;
+
+  border-radius:var(--radius);
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(51,214,209,.18),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #eaf6f7,
+      #e7f0f7
+    );
+}
+
+.about-visual::before,
+.about-visual::after{
+  content:"";
+
+  position:absolute;
+
+  border:1px solid rgba(21,70,118,.10);
+
+  border-radius:50%;
+}
+
+.about-visual::before{
+  width:310px;
+  height:310px;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%);
+}
+
+.about-visual::after{
+  width:210px;
+  height:210px;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%);
+}
+
+.about-network{
+  position:absolute;
+  inset:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.network-core{
+  position:relative;
+
+  width:82px;
+  height:82px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  color:var(--cyan-400);
+
+  background:var(--navy-800);
+
+  box-shadow:
+    0 20px 40px rgba(10,25,50,.20);
+}
+
+.network-node{
+  position:absolute;
+
+  width:13px;
+  height:13px;
+
+  border-radius:50%;
+
+  background:var(--cyan-400);
+
+  box-shadow:
+    0 0 0 7px rgba(51,214,209,.10);
+}
+
+.node-1{
+  transform:translate(-130px,-75px);
+}
+
+.node-2{
+  transform:translate(130px,-75px);
+}
+
+.node-3{
+  transform:translate(-140px,75px);
+}
+
+.node-4{
+  transform:translate(140px,75px);
+}
+
+.network-lines{
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+}
+
+
+/* =========================================================
+   BUILDING
+   ========================================================= */
+
+.build-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:20px;
+}
+
+.build-card{
+  position:relative;
+
+  min-height:260px;
+
+  padding:32px;
+
+  border:1px solid var(--line);
+  border-radius:20px;
+
+  background:#fff;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.build-card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:var(--shadow-md);
+}
+
+.card-number{
+  color:#b0bac8;
+
+  font-size:12px;
+  font-weight:600;
+
+  letter-spacing:.08em;
+}
+
+.build-card h3{
+  margin-top:40px;
+
+  font-size:19px;
+  font-weight:600;
+}
+
+.build-card p{
+  margin-top:10px;
+
+  color:var(--muted);
+
+  font-size:13.5px;
+  line-height:1.7;
+}
+
+.card-arrow{
+  position:absolute;
+
+  right:30px;
+  bottom:30px;
+
+  width:35px;
+  height:35px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  color:var(--navy-800);
+
+  background:#f1f6fa;
+}
+
+
+/* =========================================================
+   APPROACH
+   ========================================================= */
+
+.approach-section{
+  background:#fff;
+}
+
+.approach-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+
+  gap:80px;
+
+  align-items:center;
+}
+
+.approach-copy h2{
+  margin-top:9px;
+
+  font-size:32px;
+  line-height:1.25;
+}
+
+.approach-copy > p{
+  max-width:48ch;
+
+  margin-top:18px;
+
+  color:var(--muted);
+
+  font-size:15px;
+}
+
+.approach-list{
+  display:flex;
+  flex-direction:column;
+
+  gap:0;
+}
+
+.approach-item{
+  display:grid;
+  grid-template-columns:55px 1fr;
+
+  gap:20px;
+
+  padding:24px 0;
+
+  border-bottom:1px solid var(--line);
+}
+
+.approach-item:first-child{
+  padding-top:0;
+}
+
+.approach-number{
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  color:var(--navy-800);
+
+  background:#edf6f7;
+
+  font-family:'Poppins',sans-serif;
+
+  font-size:13px;
+  font-weight:600;
+}
+
+.approach-item h3{
+  font-size:16px;
+  font-weight:600;
+}
+
+.approach-item p{
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+
+/* =========================================================
+   EXPLORATION
+   ========================================================= */
+
+.explore-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  gap:14px;
+}
+
+.explore-card{
+  min-height:190px;
+
+  padding:25px;
+
+  border-radius:18px;
+
+  background:#fff;
+
+  border:1px solid var(--line);
+}
+
+.explore-icon{
+  width:40px;
+  height:40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:11px;
+
+  color:var(--navy-800);
+
+  background:#edf5f8;
+}
+
+.explore-card h3{
+  margin-top:25px;
+
+  font-size:15px;
+  font-weight:600;
+}
+
+.explore-card p{
+  margin-top:7px;
+
+  color:var(--muted);
+
+  font-size:12.5px;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.final-cta{
+  padding:100px 0;
+}
+
+.cta-panel{
+  position:relative;
+
+  overflow:hidden;
+
+  padding:70px 50px;
+
+  text-align:center;
+
+  border-radius:28px;
+
+  color:#fff;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(51,214,209,.17),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      var(--navy-950),
+      var(--navy-800)
+    );
+
+  box-shadow:var(--shadow-lg);
+}
+
+.cta-panel::before{
+  content:"";
+
+  position:absolute;
+
+  width:300px;
+  height:300px;
+
+  left:-120px;
+  bottom:-180px;
+
+  border:1px solid rgba(127,232,228,.10);
+
+  border-radius:50%;
+}
+
+.cta-panel h2{
+  position:relative;
+
+  font-size:clamp(27px,3.5vw,39px);
+
+  font-weight:600;
+}
+
+.cta-panel p{
+  position:relative;
+
+  max-width:620px;
+
+  margin:13px auto 0;
+
+  color:rgba(255,255,255,.66);
+
+  font-size:15px;
+}
+
+.cta-panel .primary-btn{
+  position:relative;
+
+  margin-top:28px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+  padding:48px 0 28px;
+
+  color:#fff;
+
+  background:var(--navy-950);
+}
+
+.footer-main{
+  display:grid;
+
+  grid-template-columns:1.4fr .6fr .6fr;
+
+  gap:60px;
+
+  padding-bottom:42px;
+
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+
+.footer-brand-copy{
+  max-width:350px;
+
+  margin-top:16px;
+
+  color:rgba(255,255,255,.48);
+
+  font-size:12.5px;
+  line-height:1.7;
+}
+
+.footer-col h4{
+  margin-bottom:15px;
+
+  color:#fff;
+
+  font-size:12px;
+  font-weight:600;
+
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.footer-col a{
+  display:block;
+
+  margin:9px 0;
+
+  color:rgba(255,255,255,.55);
+
+  font-size:12.5px;
+
+  transition:color .2s ease;
+}
+
+.footer-col a:hover{
+  color:#fff;
+}
+
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+  padding-top:23px;
+
+  color:rgba(255,255,255,.36);
+
+  font-size:11.5px;
+}
+
+
+/* =========================================================
+   MOBILE NAV
+   ========================================================= */
+
+.mobile-panel{
+  position:fixed;
+
+  inset:0;
+
+  z-index:90;
+
+  display:none;
+
+  overflow-y:auto;
+
+  padding:90px 28px 30px;
+
+  background:var(--navy-950);
+}
+
+.mobile-panel.active{
+  display:block;
+}
+
+.mobile-panel > a{
+  display:block;
+
+  padding:16px 0;
+
+  border-bottom:1px solid rgba(255,255,255,.08);
+
+  color:#fff;
+
+  font-family:'Poppins',sans-serif;
+
+  font-size:20px;
+}
+
+
+/* Mobile groups */
+
+.mobile-nav-group{
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.mobile-dropdown-btn{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:16px 0;
+
+  border:0;
+  background:none;
+
+  color:#fff;
+
+  font-family:'Poppins',sans-serif;
+
+  font-size:20px;
+
+  text-align:left;
+
+  cursor:pointer;
+}
+
+.mobile-dropdown-btn::after{
+  content:"+";
+
+  color:var(--cyan-400);
+
+  font-size:23px;
+  font-weight:400;
+}
+
+.mobile-nav-group.open .mobile-dropdown-btn::after{
+  content:"−";
+}
+
+.mobile-dropdown{
+  display:none;
+
+  padding:2px 0 10px 15px;
+}
+
+.mobile-nav-group.open .mobile-dropdown{
+  display:block;
+}
+
+.mobile-dropdown a{
+  display:block;
+
+  padding:10px 0;
+
+  border:0;
+
+  color:rgba(255,255,255,.68);
+
+  font-family:'Inter',sans-serif;
+
+  font-size:14px;
+}
+
+.mobile-dropdown a:hover{
+  color:var(--cyan-400);
+}
+
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+.reveal{
+  opacity:0;
+
+  transform:translateY(18px);
+
+  transition:
+    opacity .65s ease,
+    transform .65s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+
+  transform:none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1000px){
+
+  .nav-links{
+    gap:20px;
+  }
+
+  .nav-dropdown{
+    width:225px;
+  }
+
+  .hero-content{
+    grid-template-columns:1fr;
+
+    padding-top:130px;
+  }
+
+  .hero-copy{
+    max-width:700px;
+  }
+
+  .hero-visual{
+    display:none;
+  }
+
+  .hero{
+    min-height:650px;
+  }
+
+  .hero-content{
+    min-height:650px;
+  }
+
+  .focus-grid{
+    grid-template-columns:1fr;
+  }
+
+  .focus-item + .focus-item{
+    border-left:0;
+    border-top:1px solid var(--line);
+  }
+
+  .about-grid,
+  .approach-grid{
+    grid-template-columns:1fr;
+  }
+
+  .explore-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .build-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-main{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-main > :first-child{
+    grid-column:1 / -1;
+  }
+}
+
+
+@media(max-width:760px){
+
+  .wrap{
+    width:min(calc(100% - 34px),var(--max));
+  }
+
+  .site-header{
+    padding:18px 0;
+  }
+
+  .nav-links,
+  .header-actions{
+    display:none;
+  }
+
+  .mobile-menu-btn{
+    display:flex;
+  }
+
+  .hero-content{
+    padding-top:110px;
+    padding-bottom:100px;
+  }
+
+  .hero{
+    min-height:620px;
+  }
+
+  .hero-content{
+    min-height:620px;
+  }
+
+  .hero-wordmark{
+    font-size:43px;
+  }
+
+  .hero-title{
+    font-size:27px;
+  }
+
+  .hero-lede{
+    font-size:14.5px;
+  }
+
+  .focus-wrap{
+    margin-top:-70px;
+  }
+
+  .focus-card{
+    padding:35px 20px 30px;
+  }
+
+  .focus-heading{
+    font-size:23px;
+  }
+
+  .section{
+    padding:75px 0;
+  }
+
+  .about-card{
+    padding:32px 26px;
+  }
+
+  .about-card h2{
+    font-size:25px;
+  }
+
+  .about-visual{
+    min-height:300px;
+  }
+
+  .approach-grid{
+    gap:45px;
+  }
+
+  .approach-copy h2{
+    font-size:27px;
+  }
+
+  .explore-grid{
+    grid-template-columns:1fr;
+  }
+
+  .final-cta{
+    padding:65px 0;
+  }
+
+  .cta-panel{
+    padding:50px 25px;
+
+    border-radius:22px;
+  }
+
+  .footer-main{
+    grid-template-columns:1fr;
+
+    gap:30px;
+  }
+
+  .footer-main > :first-child{
+    grid-column:auto;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  .reveal{
+    opacity:1;
+
+    transform:none;
+
+    transition:none;
+  }
+
+  *,
+  *::before,
+  *::after{
+    transition:none !important;
+  }
+}
+
+/* KAIVYRA 36 BUILD BOXES START */
+
+.kaivyra-building-section{
+  overflow:hidden;
+}
+
+.build-category{
+  margin-top:58px;
+}
+
+.build-category:first-of-type{
+  margin-top:0;
+}
+
+.build-category-head{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  margin-bottom:22px;
+}
+
+.build-category-number{
+  flex:0 0 auto;
+
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(56,189,248,.55);
+  border-radius:14px;
+
+  color:#0284c7;
+  background:linear-gradient(
+    145deg,
+    #f0f9ff,
+    #ffffff
+  );
+
+  box-shadow:
+    0 0 0 4px rgba(56,189,248,.06),
+    0 10px 25px rgba(14,116,144,.08);
+
+  font-family:'Poppins',sans-serif;
+  font-size:12px;
+  font-weight:700;
+}
+
+.build-category-head h3{
+  font-size:22px;
+  line-height:1.25;
+  font-weight:600;
+  color:var(--ink);
+}
+
+.build-category-head p{
+  max-width:680px;
+  margin-top:5px;
+
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+}
+
+
+/* EXACT 10cm × 10cm CARDS */
+
+.build-ultra-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3, 10cm);
+
+  justify-content:center;
+
+  gap:18px;
+
+  padding:8px 4px 12px;
+
+  overflow-x:auto;
+  scrollbar-width:thin;
+}
+
+.build-ultra-card{
+  position:relative;
+
+  width:10cm;
+  height:10cm;
+
+  min-width:10cm;
+  min-height:10cm;
+
+  box-sizing:border-box;
+
+  padding:28px;
+
+  display:flex;
+  flex-direction:column;
+
+  border:2px solid #38bdf8;
+  border-radius:22px;
+
+  background:
+    radial-gradient(
+      circle at 88% 8%,
+      rgba(56,189,248,.13),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #f8fcff 100%
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(56,189,248,.08),
+    0 12px 32px rgba(14,116,144,.10),
+    inset 0 0 35px rgba(56,189,248,.025);
+
+  overflow:hidden;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.build-ultra-card::before{
+  content:"";
+
+  position:absolute;
+
+  inset:7px;
+
+  border:1px solid rgba(56,189,248,.13);
+  border-radius:16px;
+
+  pointer-events:none;
+}
+
+.build-ultra-card::after{
+  content:"";
+
+  position:absolute;
+
+  width:100px;
+  height:100px;
+
+  right:-48px;
+  top:-48px;
+
+  border-radius:50%;
+
+  background:rgba(56,189,248,.10);
+
+  pointer-events:none;
+}
+
+.build-ultra-card:hover{
+  transform:translateY(-7px);
+
+  border-color:#0ea5e9;
+
+  box-shadow:
+    0 0 0 3px rgba(56,189,248,.10),
+    0 22px 50px rgba(14,116,144,.17),
+    0 0 28px rgba(56,189,248,.12);
+}
+
+.build-card-number{
+  position:relative;
+  z-index:2;
+
+  color:#0284c7;
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+}
+
+.build-card-icon{
+  position:relative;
+  z-index:2;
+
+  width:50px;
+  height:50px;
+
+  margin-top:25px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(56,189,248,.38);
+  border-radius:15px;
+
+  color:#0284c7;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e0f2fe,
+      #f0f9ff
+    );
+
+  box-shadow:
+    0 8px 22px rgba(14,116,144,.10);
+
+  font-family:'Poppins',sans-serif;
+  font-size:14px;
+  font-weight:700;
+}
+
+.build-ultra-card h4{
+  position:relative;
+  z-index:2;
+
+  margin-top:21px;
+
+  color:var(--ink);
+
+  font-family:'Poppins',sans-serif;
+
+  font-size:17px;
+  line-height:1.3;
+  font-weight:600;
+}
+
+.build-ultra-card p{
+  position:relative;
+  z-index:2;
+
+  margin-top:9px;
+
+  color:var(--muted);
+
+  font-size:12.5px;
+  line-height:1.65;
+}
+
+
+/* Tablet */
+
+@media(max-width:1200px){
+
+  .build-ultra-grid{
+    grid-template-columns:repeat(2, 10cm);
+  }
+
+}
+
+
+/* Mobile keeps cards EXACTLY 10cm × 10cm */
+
+@media(max-width:760px){
+
+  .build-category{
+    margin-top:45px;
+  }
+
+  .build-category-head{
+    gap:13px;
+  }
+
+  .build-category-head h3{
+    font-size:19px;
+  }
+
+  .build-category-head p{
+    font-size:12.5px;
+  }
+
+  .build-ultra-grid{
+    justify-content:start;
+
+    grid-template-columns:10cm;
+
+    gap:14px;
+
+    padding-left:2px;
+    padding-right:2px;
+  }
+
+}
+
+/* KAIVYRA 36 BUILD BOXES END */
+</style>
+<!-- KAIVYRA BUILD CSS START -->
+
+<style id="kaivyra-build-system-css">
+
+.kaivyra-build-section{
+  position:relative;
+}
+
+.kaivyra-build-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:34px;
+}
+
+.kaivyra-category-card{
+  position:relative;
+  min-height:245px;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  color:var(--navy-800);
+  text-align:left;
+  cursor:pointer;
+  font:inherit;
+  appearance:none;
+  -webkit-appearance:none;
+  display:flex;
+  flex-direction:column;
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease,
+    border-color .28s ease,
+    background .28s ease;
+}
+
+.kaivyra-category-card:hover{
+  transform:translateY(-6px);
+  border-color:#cbd8e4;
+  box-shadow:var(--shadow-md);
+}
+
+.kaivyra-category-card:focus-visible{
+  outline:2px solid #33d6d1;
+  outline-offset:4px;
+}
+
+.kaivyra-category-number{
+  color:#9eabb9;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.12em;
+}
+
+.kaivyra-category-content{
+  display:flex;
+  flex-direction:column;
+  margin-top:48px;
+  padding-right:30px;
+}
+
+.kaivyra-category-title{
+  font-size:20px;
+  line-height:1.25;
+  font-weight:650;
+}
+
+.kaivyra-category-description{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:13.5px;
+  line-height:1.7;
+}
+
+.kaivyra-category-arrow{
+  position:absolute;
+  right:25px;
+  bottom:25px;
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#f1f6fa;
+  color:var(--navy-800);
+  font-size:18px;
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.kaivyra-category-card:hover .kaivyra-category-arrow{
+  transform:translate(3px,-3px);
+  background:#e7f6f6;
+}
+
+
+/* =========================================================
+   INTERNAL APP VIEW
+   ========================================================= */
+
+.kaivyra-build-view{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  display:none;
+  overflow:auto;
+  background:#f7fafc;
+  color:var(--navy-800);
+}
+
+.kaivyra-build-view.is-open{
+  display:block;
+}
+
+.kaivyra-build-shell{
+  min-height:100%;
+}
+
+.kaivyra-build-header{
+  position:sticky;
+  top:0;
+  z-index:5;
+  min-height:76px;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:20px;
+  padding:0 32px;
+  border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+
+.kaivyra-build-back,
+.kaivyra-build-close{
+  border:0;
+  background:transparent;
+  color:var(--navy-800);
+  cursor:pointer;
+  font:inherit;
+}
+
+.kaivyra-build-back{
+  justify-self:start;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:10px 0;
+  font-size:13px;
+  font-weight:600;
+}
+
+.kaivyra-back-icon{
+  font-size:19px;
+  line-height:1;
+}
+
+.kaivyra-build-close{
+  justify-self:end;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#f1f5f8;
+  font-size:25px;
+  line-height:1;
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.kaivyra-build-close:hover{
+  background:#e7eef3;
+  transform:rotate(4deg);
+}
+
+.kaivyra-build-header-brand{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  white-space:nowrap;
+}
+
+.kaivyra-build-header-label{
+  font-size:12px;
+  font-weight:750;
+  letter-spacing:.16em;
+}
+
+.kaivyra-build-header-divider{
+  width:1px;
+  height:15px;
+  background:#cfd8e1;
+}
+
+.kaivyra-build-header-category{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.kaivyra-build-main{
+  width:min(1280px,calc(100% - 48px));
+  margin:0 auto;
+  padding:72px 0 100px;
+}
+
+.kaivyra-build-intro{
+  display:grid;
+  grid-template-columns:90px minmax(0,760px);
+  gap:30px;
+  align-items:start;
+  margin-bottom:58px;
+}
+
+.kaivyra-build-detail-number{
+  padding-top:8px;
+  color:#9eabb9;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.14em;
+}
+
+.kaivyra-build-title{
+  margin:10px 0 0;
+  font-size:clamp(34px,5vw,64px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  font-weight:650;
+}
+
+.kaivyra-build-description{
+  max-width:700px;
+  margin-top:20px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.8;
+}
+
+
+/* EXACT 10cm × 10cm */
+
+.kaivyra-detail-grid{
+  display:grid;
+  grid-template-columns:repeat(3,10cm);
+  gap:16px;
+  justify-content:center;
+  align-items:start;
+}
+
+.kaivyra-detail-card{
+  width:10cm;
+  height:10cm;
+  min-width:10cm;
+  min-height:10cm;
+  max-width:10cm;
+  max-height:10cm;
+  box-sizing:border-box;
+
+  position:relative;
+  display:flex;
+  flex-direction:column;
+
+  padding:25px;
+  overflow:hidden;
+
+  border:1px solid #dbe4eb;
+  border-radius:20px;
+  background:#fff;
+
+  box-shadow:
+    0 10px 30px rgba(21,70,118,.055);
+
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease,
+    border-color .28s ease;
+}
+
+.kaivyra-detail-card:hover{
+  transform:translateY(-5px);
+  border-color:#c5d5e1;
+  box-shadow:
+    0 18px 40px rgba(21,70,118,.10);
+}
+
+.kaivyra-detail-card-number{
+  color:#9aa9b7;
+  font-size:10px;
+  font-weight:750;
+  letter-spacing:.12em;
+}
+
+.kaivyra-detail-card h3{
+  margin-top:30px;
+  max-width:230px;
+  font-size:19px;
+  line-height:1.25;
+  letter-spacing:-.015em;
+  font-weight:650;
+}
+
+.kaivyra-detail-card p{
+  margin-top:11px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+}
+
+.kaivyra-detail-card-mark{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  width:34px;
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#f0f6f8;
+  color:#16486f;
+  font-size:15px;
+}
+
+
+@media(max-width:1100px){
+
+  .kaivyra-detail-grid{
+    grid-template-columns:repeat(2,10cm);
+  }
+
+}
+
+
+@media(max-width:760px){
+
+  .kaivyra-build-grid{
+    grid-template-columns:1fr;
+  }
+
+  .kaivyra-build-header{
+    min-height:66px;
+    padding:0 18px;
+    grid-template-columns:auto 1fr auto;
+  }
+
+  .kaivyra-build-header-brand{
+    justify-self:center;
+  }
+
+  .kaivyra-build-header-category{
+    display:none;
+  }
+
+  .kaivyra-build-main{
+    width:calc(100% - 32px);
+    max-width:640px;
+    padding:48px 0 70px;
+  }
+
+  .kaivyra-build-intro{
+    grid-template-columns:1fr;
+    gap:8px;
+    margin-bottom:40px;
+  }
+
+  .kaivyra-build-title{
+    font-size:40px;
+  }
+
+  /*
+    10cm is intentionally NOT scaled.
+    On narrow phones the detail workspace can scroll
+    horizontally so the physical CSS dimension remains 10cm.
+  */
+
+  .kaivyra-detail-grid{
+    grid-template-columns:10cm;
+    justify-content:start;
+    width:max-content;
+  }
+
+}
+
+
+@media(max-width:430px){
+
+  .kaivyra-build-main{
+    overflow-x:auto;
+  }
+
+}
+
+</style>
+
+<!-- KAIVYRA BUILD CSS END -->
+<!-- KAIVYRA BUILD LOCK CSS START -->
+
+<style id="kaivyra-build-lock-css">
+
+html.kaivyra-build-active,
+body.kaivyra-build-active{
+  overflow:hidden !important;
+}
+
+</style>
+
+<!-- KAIVYRA BUILD LOCK CSS END -->
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     HEADER
+     ======================================================= -->
+
+<header class="site-header">
+
+  <div class="wrap">
+
+    <div class="nav-row">
+
+
+      <!-- BRAND -->
+
+      <a
+        href="#top"
+        class="brand"
+        aria-label="KAIVYRA home"
+      >
+
+        <svg
+          class="brand-mark"
+          viewBox="0 0 30 30"
+          fill="none"
+          aria-hidden="true"
+        >
+
+          <circle
+            cx="15"
+            cy="15"
+            r="14"
+            stroke="#33d6d1"
+            stroke-width="1.4"
+          />
+
+          <path
+            d="M10 6 Q15 15 10 24"
+            stroke="#33d6d1"
+            stroke-width="1.4"
+            fill="none"
+          />
+
+          <path
+            d="M20 6 Q15 15 20 24"
+            stroke="#7fe8e4"
+            stroke-width="1.4"
+            fill="none"
+          />
+
+          <circle
+            cx="10"
+            cy="6"
+            r="1.3"
+            fill="#33d6d1"
+          />
+
+          <circle
+            cx="20"
+            cy="24"
+            r="1.3"
+            fill="#33d6d1"
+          />
+
+          <circle
+            cx="10"
+            cy="24"
+            r="1.3"
+            fill="#7fe8e4"
+          />
+
+          <circle
+            cx="20"
+            cy="6"
+            r="1.3"
+            fill="#7fe8e4"
+          />
+
+        </svg>
+
+        <span class="brand-text">
+          KAIVYRA
+        </span>
+
+      </a>
+
+
+      <!-- =================================================
+           DESKTOP NAVIGATION
+           ================================================= -->
+
+      <nav
+        class="nav-links"
+        aria-label="Primary navigation"
+      >
+
+
+        <!-- ABOUT -->
+
+        <div class="nav-item">
+
+          <button
+            class="nav-dropdown-btn"
+            type="button"
+            aria-expanded="false"
+          >
+            About
+          </button>
+
+          <div class="nav-dropdown">
+
+            <a href="#about">
+              About KAIVYRA
+              <span>Our foundation and direction</span>
+            </a>
+
+            <a href="#about">
+              Vision
+              <span>What we aim to create</span>
+            </a>
+
+            <a href="#about">
+              Mission
+              <span>What drives our work</span>
+            </a>
+
+            <a href="#about">
+              Philosophy
+              <span>How we think and build</span>
+            </a>
+
+            <a href="#contact">
+              Connect
+              <span>Start a conversation</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- FOCUS -->
+
+        <div class="nav-item">
+
+          <button
+            class="nav-dropdown-btn"
+            type="button"
+            aria-expanded="false"
+          >
+            Focus
+          </button>
+
+          <div class="nav-dropdown">
+
+            <a href="#focus">
+              Healthcare
+              <span>Technology for healthcare</span>
+            </a>
+
+            <a href="#focus">
+              Technology &amp; AI
+              <span>Intelligent digital systems</span>
+            </a>
+
+            <a href="#focus">
+              Education
+              <span>Learning and knowledge systems</span>
+            </a>
+
+            <a href="#focus">
+              Research &amp; Innovation
+              <span>Exploring new possibilities</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- WHAT WE BUILD -->
+
+        <div class="nav-item">
+
+          <button
+            class="nav-dropdown-btn"
+            type="button"
+            aria-expanded="false"
+          >
+            What We Build
+          </button>
+
+          <div class="nav-dropdown">
+
+            <a href="#building">
+              Digital Products
+              <span>Useful digital experiences</span>
+            </a>
+
+            <a href="#building">
+              Intelligent Systems
+              <span>AI-assisted systems and tools</span>
+            </a>
+
+            <a href="#building">
+              Research Tools
+              <span>Technology for research and insight</span>
+            </a>
+
+            <a href="#building">
+              Healthcare Solutions
+              <span>Solutions around real healthcare needs</span>
+            </a>
+
+            <a href="#building">
+              Education Platforms
+              <span>Tools for learning and knowledge</span>
+            </a>
+
+            <a href="#building">
+              Experimental Projects
+              <span>Early ideas and exploration</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- APPROACH -->
+
+        <div class="nav-item">
+
+          <button
+            class="nav-dropdown-btn"
+            type="button"
+            aria-expanded="false"
+          >
+            Approach
+          </button>
+
+          <div class="nav-dropdown">
+
+            <a href="#approach">
+              Explore
+              <span>Understand the problem</span>
+            </a>
+
+            <a href="#approach">
+              Research
+              <span>Study evidence and possibilities</span>
+            </a>
+
+            <a href="#approach">
+              Build
+              <span>Create focused solutions</span>
+            </a>
+
+            <a href="#approach">
+              Validate
+              <span>Test assumptions and outcomes</span>
+            </a>
+
+            <a href="#approach">
+              Improve
+              <span>Learn and refine continuously</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <!-- HEADER ACTIONS -->
+
+      <div class="header-actions">
+
+        <a
+          href="#building"
+          class="header-icon"
+          aria-label="Explore KAIVYRA"
+        >
+
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+
+            <circle
+              cx="11"
+              cy="11"
+              r="7"
+            />
+
+            <line
+              x1="21"
+              y1="21"
+              x2="16.65"
+              y2="16.65"
+            />
+
+          </svg>
+
+        </a>
+
+
+        <span
+          class="header-icon lang"
+          aria-label="Language"
+        >
+          EN
+        </span>
+
+      </div>
+
+
+      <!-- MOBILE BUTTON -->
+
+      <button
+        class="mobile-menu-btn"
+        id="menuBtn"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        type="button"
+      >
+
+        <svg
+          width="19"
+          height="19"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+
+          <line
+            x1="4"
+            y1="7"
+            x2="20"
+            y2="7"
+          />
+
+          <line
+            x1="4"
+            y1="12"
+            x2="20"
+            y2="12"
+          />
+
+          <line
+            x1="4"
+            y1="17"
+            x2="20"
+            y2="17"
+          />
+
+        </svg>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =======================================================
+     MOBILE NAVIGATION
+     ======================================================= -->
+
+<div
+  class="mobile-panel"
+  id="mobilePanel"
+>
+
+
+  <!-- ABOUT -->
+
+  <div class="mobile-nav-group">
+
+    <button
+      class="mobile-dropdown-btn"
+      type="button"
+    >
+      About
+    </button>
+
+    <div class="mobile-dropdown">
+
+      <a href="#about">
+        About KAIVYRA
+      </a>
+
+      <a href="#about">
+        Vision
+      </a>
+
+      <a href="#about">
+        Mission
+      </a>
+
+      <a href="#about">
+        Philosophy
+      </a>
+
+      <a href="#contact">
+        Connect
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOCUS -->
+
+  <div class="mobile-nav-group">
+
+    <button
+      class="mobile-dropdown-btn"
+      type="button"
+    >
+      Focus
+    </button>
+
+    <div class="mobile-dropdown">
+
+      <a href="#focus">
+        Healthcare
+      </a>
+
+      <a href="#focus">
+        Technology &amp; AI
+      </a>
+
+      <a href="#focus">
+        Education
+      </a>
+
+      <a href="#focus">
+        Research &amp; Innovation
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- WHAT WE BUILD -->
+
+  <div class="mobile-nav-group">
+
+    <button
+      class="mobile-dropdown-btn"
+      type="button"
+    >
+      What We Build
+    </button>
+
+    <div class="mobile-dropdown">
+
+      <a href="#building">
+        Digital Products
+      </a>
+
+      <a href="#building">
+        Intelligent Systems
+      </a>
+
+      <a href="#building">
+        Research Tools
+      </a>
+
+      <a href="#building">
+        Healthcare Solutions
+      </a>
+
+      <a href="#building">
+        Education Platforms
+      </a>
+
+      <a href="#building">
+        Experimental Projects
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- APPROACH -->
+
+  <div class="mobile-nav-group">
+
+    <button
+      class="mobile-dropdown-btn"
+      type="button"
+    >
+      Approach
+    </button>
+
+    <div class="mobile-dropdown">
+
+      <a href="#approach">
+        Explore
+      </a>
+
+      <a href="#approach">
+        Research
+      </a>
+
+      <a href="#approach">
+        Build
+      </a>
+
+      <a href="#approach">
+        Validate
+      </a>
+
+      <a href="#approach">
+        Improve
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- CONTACT -->
+
+  <a href="#contact">
+    Contact
+  </a>
+
+</div>
+
+
+<!-- =======================================================
+     HERO
+     ======================================================= -->
+
+<main id="top">
+
+
+<section class="hero">
+
+  <div class="hero-grid"></div>
+
+  <div class="hero-glow"></div>
+
+
+  <div class="wrap">
+
+    <div class="hero-content">
+
+
+      <div class="hero-copy reveal">
+
+
+        <div class="eyebrow">
+
+          <span class="eyebrow-dot"></span>
+
+          An emerging technology venture
+
+        </div>
+
+
+        <div class="hero-wordmark">
+          KAIVYRA
+        </div>
+
+
+        <h1 class="hero-title">
+
+          Building at the intersection of
+          healthcare, technology &amp; education.
+
+        </h1>
+
+
+        <p class="hero-lede">
+
+          We explore meaningful problems, research them deeply,
+          and build practical technology that can make healthcare
+          and learning more accessible, intelligent, and useful.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+
+          <a
+            href="#focus"
+            class="primary-btn"
+          >
+
+            Explore KAIVYRA
+
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+            >
+
+              <line
+                x1="5"
+                y1="12"
+                x2="19"
+                y2="12"
+              />
+
+              <polyline
+                points="12 5 19 12 12 19"
+              />
+
+            </svg>
+
+          </a>
+
+
+          <a
+            href="#about"
+            class="secondary-btn"
+          >
+            About KAIVYRA
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- HERO VISUAL -->
+
+      <div
+        class="hero-visual"
+        aria-hidden="true"
+      >
+
+        <div class="visual-frame"></div>
+
+
+        <svg
+          viewBox="0 0 520 470"
+          fill="none"
+        >
+
+          <defs>
+
+            <linearGradient
+              id="curveA"
+              x1="120"
+              y1="40"
+              x2="400"
+              y2="430"
+              gradientUnits="userSpaceOnUse"
+            >
+
+              <stop
+                stop-color="#33d6d1"
+              />
+
+              <stop
+                offset="1"
+                stop-color="#7fe8e4"
+              />
+
+            </linearGradient>
+
+          </defs>
+
+
+          <g opacity=".86">
+
+            <path
+              d="M185 32
+                 C290 105 290 160 185 235
+                 C80 310 80 365 185 438"
+              stroke="url(#curveA)"
+              stroke-width="2"
+            />
+
+            <path
+              d="M335 32
+                 C230 105 230 160 335 235
+                 C440 310 440 365 335 438"
+              stroke="#7fe8e4"
+              stroke-width="2"
+            />
+
+
+            <g
+              stroke="#4d82a0"
+              stroke-width="1"
+              opacity=".65"
+            >
+
+              <line
+                x1="185"
+                y1="32"
+                x2="335"
+                y2="32"
+              />
+
+              <line
+                x1="215"
+                y1="82"
+                x2="305"
+                y2="82"
+              />
+
+              <line
+                x1="232"
+                y1="128"
+                x2="288"
+                y2="128"
+              />
+
+              <line
+                x1="185"
+                y1="235"
+                x2="335"
+                y2="235"
+              />
+
+              <line
+                x1="215"
+                y1="286"
+                x2="305"
+                y2="286"
+              />
+
+              <line
+                x1="232"
+                y1="332"
+                x2="288"
+                y2="332"
+              />
+
+              <line
+                x1="185"
+                y1="438"
+                x2="335"
+                y2="438"
+              />
+
+            </g>
+
+
+            <g fill="#33d6d1">
+
+              <circle
+                cx="185"
+                cy="32"
+                r="4.5"
+              />
+
+              <circle
+                cx="185"
+                cy="235"
+                r="4.5"
+              />
+
+              <circle
+                cx="185"
+                cy="438"
+                r="4.5"
+              />
+
+            </g>
+
+
+            <g fill="#7fe8e4">
+
+              <circle
+                cx="335"
+                cy="32"
+                r="4.5"
+              />
+
+              <circle
+                cx="335"
+                cy="235"
+                r="4.5"
+              />
+
+              <circle
+                cx="335"
+                cy="438"
+                r="4.5"
+              />
+
+            </g>
+
+          </g>
+
+
+          <g
+            stroke="#4d82a0"
+            stroke-width="1"
+            opacity=".5"
+          >
+
+            <line
+              x1="65"
+              y1="80"
+              x2="185"
+              y2="32"
+            />
+
+            <line
+              x1="455"
+              y1="120"
+              x2="335"
+              y2="235"
+            />
+
+            <line
+              x1="55"
+              y1="365"
+              x2="185"
+              y2="438"
+            />
+
+            <line
+              x1="460"
+              y1="385"
+              x2="335"
+              y2="438"
+            />
+
+          </g>
+
+
+          <g
+            fill="#7fe8e4"
+            opacity=".75"
+          >
+
+            <circle
+              cx="65"
+              cy="80"
+              r="3"
+            />
+
+            <circle
+              cx="455"
+              cy="120"
+              r="3"
+            />
+
+            <circle
+              cx="55"
+              cy="365"
+              r="3"
+            />
+
+            <circle
+              cx="460"
+              cy="385"
+              r="3"
+            />
+
+          </g>
+
+        </svg>
+
+
+        <div class="visual-caption">
+          RESEARCH • TECHNOLOGY • IMPACT
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     FOCUS
+     ======================================================= -->
+
+<section
+  id="focus"
+  class="focus-wrap"
+>
+
+  <div class="wrap">
+
+    <div class="focus-card reveal">
+
+
+      <div
+        class="section-kicker"
+        style="text-align:center;"
+      >
+        Where we focus
+      </div>
+
+
+      <h2 class="focus-heading">
+        Three areas. One direction.
+      </h2>
+
+
+      <p class="focus-intro">
+
+        KAIVYRA explores technology where better understanding,
+        better tools and better access can create meaningful value.
+
+      </p>
+
+
+      <div class="focus-grid">
+
+
+        <article class="focus-item">
+
+          <div class="icon-circle">
+
+            <svg
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+
+              <path
+                d="M5 3v6a4 4 0 0 0 8 0V3"
+              />
+
+              <path d="M9 3v2"/>
+
+              <path d="M13 3v2"/>
+
+              <path
+                d="M17 8v3a5 5 0 0 1-10 0"
+              />
+
+              <circle
+                cx="19"
+                cy="8"
+                r="2"
+              />
+
+            </svg>
+
+          </div>
+
+
+          <h3>
+            Healthcare
+          </h3>
+
+
+          <p>
+
+            Practical solutions shaped around real healthcare
+            problems and human needs.
+
+          </p>
+
+        </article>
+
+
+        <article class="focus-item">
+
+          <div class="icon-circle">
+
+            <svg
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+
+              <rect
+                x="4"
+                y="8"
+                width="16"
+                height="12"
+                rx="2"
+              />
+
+              <path
+                d="M12 8V4"
+              />
+
+              <circle
+                cx="12"
+                cy="3"
+                r="1"
+              />
+
+              <circle
+                cx="9"
+                cy="14"
+                r="1.2"
+              />
+
+              <circle
+                cx="15"
+                cy="14"
+                r="1.2"
+              />
+
+              <path
+                d="M9 18h6"
+              />
+
+            </svg>
+
+          </div>
+
+
+          <h3>
+            Technology &amp; AI
+          </h3>
+
+
+          <p>
+
+            Intelligent digital systems designed to make
+            complex problems easier to understand and use.
+
+          </p>
+
+        </article>
+
+
+        <article class="focus-item">
+
+          <div class="icon-circle">
+
+            <svg
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+
+              <path
+                d="M2 9l10-5 10 5-10 5-10-5z"
+              />
+
+              <path
+                d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"
+              />
+
+              <path
+                d="M22 9v6"
+              />
+
+            </svg>
+
+          </div>
+
+
+          <h3>
+            Education
+          </h3>
+
+
+          <p>
+
+            Better tools for medical, scientific and technical
+            learning from student to practitioner.
+
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     ABOUT
+     ======================================================= -->
+
+<section
+  id="about"
+  class="section about-section"
+>
+
+  <div class="wrap">
+
+    <div class="about-grid">
+
+
+      <article class="about-card reveal">
+
+        <div class="section-kicker">
+          About KAIVYRA
+        </div>
+
+
+        <h2>
+
+          Curious about difficult problems.
+          Serious about useful solutions.
+
+        </h2>
+
+
+        <p>
+
+          KAIVYRA is an emerging technology venture exploring
+          problems across healthcare, education, artificial
+          intelligence and digital systems.
+
+        </p>
+
+
+        <p>
+
+          The approach is deliberately simple: understand the
+          problem first, investigate what matters, build carefully,
+          and improve through real-world learning.
+
+        </p>
+
+
+        <a
+          href="#approach"
+          class="text-link"
+        >
+
+          See how we approach problems
+
+          <span>→</span>
+
+        </a>
+
+      </article>
+
+
+      <div
+        class="about-visual reveal"
+        aria-hidden="true"
+      >
+
+        <svg
+          class="network-lines"
+          viewBox="0 0 600 370"
+          preserveAspectRatio="none"
+        >
+
+          <line
+            x1="110"
+            y1="90"
+            x2="300"
+            y2="185"
+            stroke="#154676"
+            stroke-opacity=".16"
+          />
+
+          <line
+            x1="490"
+            y1="90"
+            x2="300"
+            y2="185"
+            stroke="#154676"
+            stroke-opacity=".16"
+          />
+
+          <line
+            x1="100"
+            y1="280"
+            x2="300"
+            y2="185"
+            stroke="#154676"
+            stroke-opacity=".16"
+          />
+
+          <line
+            x1="500"
+            y1="280"
+            x2="300"
+            y2="185"
+            stroke="#154676"
+            stroke-opacity=".16"
+          />
+
+        </svg>
+
+
+        <div class="about-network">
+
+          <span class="network-node node-1"></span>
+          <span class="network-node node-2"></span>
+          <span class="network-node node-3"></span>
+          <span class="network-node node-4"></span>
+
+
+          <div class="network-core">
+
+            <svg
+              width="38"
+              height="38"
+              viewBox="0 0 30 30"
+              fill="none"
+            >
+
+              <circle
+                cx="15"
+                cy="15"
+                r="12"
+                stroke="currentColor"
+                stroke-width="1.2"
+              />
+
+              <path
+                d="M10 7 Q15 15 10 23"
+                stroke="currentColor"
+                stroke-width="1.2"
+              />
+
+              <path
+                d="M20 7 Q15 15 20 23"
+                stroke="#7fe8e4"
+                stroke-width="1.2"
+              />
+
+            </svg>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     WHAT WE BUILD
+     ======================================================= -->
+
+<!-- =======================================================
+     WHAT WE BUILD
+     ======================================================= -->
+
+<!-- KAIVYRA BUILD HOME START -->
+
+<section
+  id="building"
+  class="section kaivyra-build-section"
+>
+
+  <div class="wrap">
+
+    <div class="section-head reveal">
+
+      <div class="section-kicker">
+        What we're building
+      </div>
+
+      <h2>
+        From ideas to things people can actually use.
+      </h2>
+
+      <p>
+        Explore the six areas shaping the KAIVYRA ecosystem.
+        Select a direction to enter its dedicated workspace.
+      </p>
+
+    </div>
+
+
+    <div class="kaivyra-build-grid">
+
+
+      <button
+        type="button"
+        class="kaivyra-category-card reveal"
+        data-build-category="digital-products"
+      >
+
+        <span class="kaivyra-category-number">
+          01
+        </span>
+
+        <span class="kaivyra-category-content">
+
+          <span class="kaivyra-category-title">
+            Digital Products
+          </span>
+
+          <span class="kaivyra-category-description">
+            Useful digital experiences for access, communication,
+            information and everyday healthcare workflows.
+          </span>
+
+        </span>
+
+        <span class="kaivyra-category-arrow">
+          ↗
+        </span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="kaivyra-category-card reveal"
+        data-build-category="intelligent-systems"
+      >
+
+        <span class="kaivyra-category-number">
+          02
+        </span>
+
+        <span class="kaivyra-category-content">
+
+          <span class="kaivyra-category-title">
+            Intelligent Systems
+          </span>
+
+          <span class="kaivyra-category-description">
+            AI-assisted systems for knowledge, workflows,
+            prediction and complex decision support.
+          </span>
+
+        </span>
+
+        <span class="kaivyra-category-arrow">
+          ↗
+        </span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="kaivyra-category-card reveal"
+        data-build-category="research-tools"
+      >
+
+        <span class="kaivyra-category-number">
+          03
+        </span>
+
+        <span class="kaivyra-category-content">
+
+          <span class="kaivyra-category-title">
+            Research Tools
+          </span>
+
+          <span class="kaivyra-category-description">
+            Technology for evidence discovery, health data,
+            research workflows and clearer insights.
+          </span>
+
+        </span>
+
+        <span class="kaivyra-category-arrow">
+          ↗
+        </span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="kaivyra-category-card reveal"
+        data-build-category="healthcare-solutions"
+      >
+
+        <span class="kaivyra-category-number">
+          04
+        </span>
+
+        <span class="kaivyra-category-content">
+
+          <span class="kaivyra-category-title">
+            Healthcare Solutions
+          </span>
+
+          <span class="kaivyra-category-description">
+            Practical healthcare systems focused on access,
+            continuity, diagnostics and connected care.
+          </span>
+
+        </span>
+
+        <span class="kaivyra-category-arrow">
+          ↗
+        </span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="kaivyra-category-card reveal"
+        data-build-category="education-platforms"
+      >
+
+        <span class="kaivyra-category-number">
+          05
+        </span>
+
+        <span class="kaivyra-category-content">
+
+          <span class="kaivyra-category-title">
+            Education Platforms
+          </span>
+
+          <span class="kaivyra-category-description">
+            Tools for medical learning, clinical skills,
+            assessment, knowledge and professional education.
+          </span>
+
+        </span>
+
+        <span class="kaivyra-category-arrow">
+          ↗
+        </span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="kaivyra-category-card reveal"
+        data-build-category="experimental-projects"
+      >
+
+        <span class="kaivyra-category-number">
+          06
+        </span>
+
+        <span class="kaivyra-category-content">
+
+          <span class="kaivyra-category-title">
+            Experimental Projects
+          </span>
+
+          <span class="kaivyra-category-description">
+            Early concepts exploring new interfaces,
+            MedTech ideas, human-AI interaction and future care.
+          </span>
+
+        </span>
+
+        <span class="kaivyra-category-arrow">
+          ↗
+        </span>
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- KAIVYRA BUILD HOME END -->
+
+<!-- =======================================================
+     APPROACH
+     ======================================================= -->
+
+<section
+  id="approach"
+  class="section approach-section"
+>
+
+  <div class="wrap">
+
+    <div class="approach-grid">
+
+
+      <div class="approach-copy reveal">
+
+        <div class="section-kicker">
+          Our approach
+        </div>
+
+
+        <h2>
+
+          Understand first.
+          Build with purpose.
+
+        </h2>
+
+
+        <p>
+
+          Good technology starts with a good understanding of
+          the problem. Our process is designed to reduce noise,
+          test assumptions and move deliberately from uncertainty
+          toward something useful.
+
+        </p>
+
+      </div>
+
+
+      <div class="approach-list reveal">
+
+
+        <article class="approach-item">
+
+          <div class="approach-number">
+            01
+          </div>
+
+          <div>
+
+            <h3>
+              Explore
+            </h3>
+
+            <p>
+
+              Identify real problems and understand the people,
+              systems and constraints around them.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="approach-item">
+
+          <div class="approach-number">
+            02
+          </div>
+
+          <div>
+
+            <h3>
+              Research
+            </h3>
+
+            <p>
+
+              Investigate evidence, existing solutions and
+              opportunities before deciding what to build.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="approach-item">
+
+          <div class="approach-number">
+            03
+          </div>
+
+          <div>
+
+            <h3>
+              Build
+            </h3>
+
+            <p>
+
+              Turn promising ideas into focused, testable
+              prototypes and digital systems.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="approach-item">
+
+          <div class="approach-number">
+            04
+          </div>
+
+          <div>
+
+            <h3>
+              Improve
+            </h3>
+
+            <p>
+
+              Learn from use, refine what matters and move
+              toward solutions that can create lasting value.
+
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     EXPLORATION
+     ======================================================= -->
+
+<section class="section">
+
+  <div class="wrap">
+
+
+    <div class="section-head reveal">
+
+      <div class="section-kicker">
+        Areas of exploration
+      </div>
+
+
+      <h2>
+        Where ideas meet technology.
+      </h2>
+
+
+      <p>
+
+        Our interests can evolve as we learn. These are the
+        directions that currently shape the KAIVYRA ecosystem.
+
+      </p>
+
+    </div>
+
+
+    <div class="explore-grid">
+
+
+      <article class="explore-card reveal">
+
+        <div class="explore-icon">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          >
+
+            <path d="M12 3v18"/>
+            <path d="M5 8h14"/>
+            <path d="M5 16h14"/>
+
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <h3>
+          Healthcare Technology
+        </h3>
+
+
+        <p>
+
+          Digital experiences and systems around healthcare
+          access, information and workflows.
+
+        </p>
+
+      </article>
+
+
+      <article class="explore-card reveal">
+
+        <div class="explore-icon">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          >
+
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+            />
+
+            <path d="M12 8v8"/>
+            <path d="M8 12h8"/>
+
+          </svg>
+
+        </div>
+
+
+        <h3>
+          Artificial Intelligence
+        </h3>
+
+
+        <p>
+
+          Intelligent interfaces, information systems and
+          practical applications of AI.
+
+        </p>
+
+      </article>
+
+
+      <article class="explore-card reveal">
+
+        <div class="explore-icon">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          >
+
+            <path d="M4 19V5"/>
+            <path d="M4 18h16"/>
+            <path d="M7 15l4-5 3 3 4-6"/>
+
+          </svg>
+
+        </div>
+
+
+        <h3>
+          Data &amp; Research
+        </h3>
+
+
+        <p>
+
+          Turning information and research into clearer
+          insights and better decisions.
+
+        </p>
+
+      </article>
+
+
+      <article class="explore-card reveal">
+
+        <div class="explore-icon">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          >
+
+            <path d="M4 5h16v14H4z"/>
+            <path d="M8 9h8"/>
+            <path d="M8 13h5"/>
+
+          </svg>
+
+        </div>
+
+
+        <h3>
+          Learning Systems
+        </h3>
+
+
+        <p>
+
+          Tools that help students and professionals access,
+          understand and use knowledge.
+
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     FINAL CTA
+     ======================================================= -->
+
+<section
+  id="contact"
+  class="final-cta"
+>
+
+  <div class="wrap">
+
+    <div class="cta-panel reveal">
+
+
+      <h2>
+        Have a problem worth exploring?
+      </h2>
+
+
+      <p>
+
+        KAIVYRA is interested in meaningful ideas, difficult
+        problems and technology that can make a practical difference.
+
+      </p>
+
+
+      <a
+        href="mailto:hello@kaivyra.in"
+        class="primary-btn"
+      >
+
+        Start a conversation
+
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.3"
+        >
+
+          <path d="M4 4h16v16H4z"/>
+
+          <path d="m4 5 8 7 8-7"/>
+
+        </svg>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
+
+<footer>
+
+  <div class="wrap">
+
+    <div class="footer-main">
+
+
+      <div>
+
+        <a
+          href="#top"
+          class="brand"
+        >
+
+          <svg
+            class="brand-mark"
+            viewBox="0 0 30 30"
+            fill="none"
+            aria-hidden="true"
+          >
+
+            <circle
+              cx="15"
+              cy="15"
+              r="14"
+              stroke="#33d6d1"
+              stroke-width="1.4"
+            />
+
+            <path
+              d="M10 6 Q15 15 10 24"
+              stroke="#33d6d1"
+              stroke-width="1.4"
+            />
+
+            <path
+              d="M20 6 Q15 15 20 24"
+              stroke="#7fe8e4"
+              stroke-width="1.4"
+            />
+
+          </svg>
+
+
+          <span class="brand-text">
+            KAIVYRA
+          </span>
+
+        </a>
+
+
+        <p class="footer-brand-copy">
+
+          Exploring the intersection of healthcare,
+          technology and education through research,
+          thoughtful design and practical innovation.
+
+        </p>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h4>
+          Explore
+        </h4>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#focus">
+          Focus
+        </a>
+
+        <a href="#building">
+          What We Build
+        </a>
+
+        <a href="#approach">
+          Approach
+        </a>
+
+      </div>
+
+
+      <div class="footer-col">
+
+        <h4>
+          Connect
+        </h4>
+
+        <a href="mailto:hello@kaivyra.in">
+          Email
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 KAIVYRA. All rights reserved.
+      </span>
+
+      <span>
+        kaivyra.in
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   DESKTOP NAV DROPDOWNS
+   ========================================================= */
+
+const navItems =
+  document.querySelectorAll(".nav-item");
+
+
+navItems.forEach(item => {
+
+  const button =
+    item.querySelector(".nav-dropdown-btn");
+
+  if(!button) return;
+
+
+  button.addEventListener("click", event => {
+
+    event.stopPropagation();
+
+
+    const wasOpen =
+      item.classList.contains("open");
+
+
+    navItems.forEach(otherItem => {
+
+      otherItem.classList.remove("open");
+
+
+      const otherButton =
+        otherItem.querySelector(".nav-dropdown-btn");
+
+
+      if(otherButton){
+
+        otherButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+
+    if(!wasOpen){
+
+      item.classList.add("open");
+
+
+      button.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+    }
+
+  });
+
+});
+
+
+/* =========================================================
+   CLOSE DESKTOP DROPDOWN — OUTSIDE CLICK
+   ========================================================= */
+
+document.addEventListener("click", event => {
+
+  if(!event.target.closest(".nav-item")){
+
+    navItems.forEach(item => {
+
+      item.classList.remove("open");
+
+
+      const button =
+        item.querySelector(".nav-dropdown-btn");
+
+
+      if(button){
+
+        button.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+  }
+
+});
+
+
+/* =========================================================
+   CLOSE DROPDOWN — ESCAPE
+   ========================================================= */
+
+document.addEventListener("keydown", event => {
+
+  if(event.key !== "Escape") return;
+
+
+  navItems.forEach(item => {
+
+    item.classList.remove("open");
+
+
+    const button =
+      item.querySelector(".nav-dropdown-btn");
+
+
+    if(button){
+
+      button.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    }
+
+  });
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+const menuBtn =
+  document.getElementById("menuBtn");
+
+const mobilePanel =
+  document.getElementById("mobilePanel");
+
+
+if(menuBtn && mobilePanel){
+
+  menuBtn.addEventListener("click", () => {
+
+    const isOpen =
+      mobilePanel.classList.toggle("active");
+
+
+    document.body.classList.toggle(
+      "menu-open",
+      isOpen
+    );
+
+
+    menuBtn.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+
+  });
+
+
+  mobilePanel
+    .querySelectorAll("a")
+    .forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        mobilePanel.classList.remove(
+          "active"
+        );
+
+        document.body.classList.remove(
+          "menu-open"
+        );
+
+        menuBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      });
+
+    });
+
+}
+
+
+/* =========================================================
+   MOBILE NAV DROPDOWNS
+   ========================================================= */
+
+const mobileGroups =
+  document.querySelectorAll(
+    ".mobile-nav-group"
+  );
+
+
+mobileGroups.forEach(group => {
+
+  const button =
+    group.querySelector(
+      ".mobile-dropdown-btn"
+    );
+
+
+  if(!button) return;
+
+
+  button.addEventListener(
+    "click",
+    () => {
+
+      const wasOpen =
+        group.classList.contains("open");
+
+
+      mobileGroups.forEach(
+        otherGroup => {
+
+          otherGroup.classList.remove(
+            "open"
+          );
+
+        }
+      );
+
+
+      if(!wasOpen){
+
+        group.classList.add(
+          "open"
+        );
+
+      }
+
+    }
+  );
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+const revealItems =
+  document.querySelectorAll(".reveal");
+
+
+if("IntersectionObserver" in window){
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold:.12,
+        rootMargin:
+          "0px 0px -35px 0px"
+      }
+    );
+
+
+  revealItems.forEach(
+    item => observer.observe(item)
+  );
+
+
+}else{
+
+  revealItems.forEach(item => {
+
+    item.classList.add(
+      "visible"
+    );
+
+  });
+
+}
+
+</script>
+
+
+
+
+<!-- KAIVYRA NAV LANGUAGE + SEARCH v1 START -->
+
+<style>
+/* =========================================================
+   KAIVYRA — NAV LANGUAGE + COMPACT SEARCH
+   ========================================================= */
+
+.header-actions{
+  position:relative;
+}
+
+.kaivyra-lang-wrap{
+  position:relative;
+}
+
+.kaivyra-lang-btn{
+  width:auto;
+  min-width:54px;
+  height:38px;
+  padding:0 12px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:20px;
+
+  background:rgba(255,255,255,.07);
+  color:#fff;
+
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+  font-weight:700;
+
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.kaivyra-lang-btn:hover,
+.kaivyra-lang-wrap.open .kaivyra-lang-btn{
+  background:rgba(255,255,255,.14);
+}
+
+.kaivyra-lang-chevron{
+  width:5px;
+  height:5px;
+
+  border-right:1px solid currentColor;
+  border-bottom:1px solid currentColor;
+
+  transform:rotate(45deg);
+  margin-top:-3px;
+
+  transition:transform .18s ease;
+}
+
+.kaivyra-lang-wrap.open .kaivyra-lang-chevron{
+  transform:rotate(225deg);
+  margin-top:3px;
+}
+
+.kaivyra-lang-menu{
+  position:absolute;
+  top:calc(100% + 10px);
+  right:0;
+
+  min-width:125px;
+  padding:6px;
+
+  border:1px solid #e5ebf2;
+  border-radius:12px;
+
+  background:#fff;
+  box-shadow:0 18px 45px rgba(5,15,31,.18);
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-5px);
+  pointer-events:none;
+
+  transition:
+    opacity .16s ease,
+    transform .16s ease,
+    visibility .16s ease;
+
+  z-index:300;
+}
+
+.kaivyra-lang-wrap.open .kaivyra-lang-menu{
+  opacity:1;
+  visibility:visible;
+  transform:none;
+  pointer-events:auto;
+}
+
+.kaivyra-lang-option{
+  width:100%;
+  display:flex;
+  align-items:center;
+
+  padding:9px 10px;
+
+  border:0;
+  border-radius:8px;
+
+  background:none;
+  color:#102039;
+
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+  font-weight:500;
+
+  text-align:left;
+  cursor:pointer;
+}
+
+.kaivyra-lang-option:hover,
+.kaivyra-lang-option.active{
+  background:#f0f8f9;
+  color:#087f88;
+}
+
+.kaivyra-search-wrap{
+  position:relative;
+}
+
+.kaivyra-search-btn{
+  width:34px;
+  height:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0;
+
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:50%;
+
+  background:rgba(255,255,255,.06);
+  color:#fff;
+
+  cursor:pointer;
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.kaivyra-search-btn:hover{
+  background:rgba(255,255,255,.14);
+  transform:translateY(-1px);
+}
+
+.kaivyra-search-btn svg{
+  width:14px;
+  height:14px;
+}
+
+.kaivyra-search-panel{
+  position:absolute;
+
+  top:calc(100% + 12px);
+  right:0;
+
+  width:290px;
+  padding:10px;
+
+  border:1px solid #e5ebf2;
+  border-radius:14px;
+
+  background:#fff;
+
+  box-shadow:0 22px 60px rgba(5,15,31,.20);
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-6px);
+  pointer-events:none;
+
+  transition:
+    opacity .16s ease,
+    transform .16s ease,
+    visibility .16s ease;
+
+  z-index:400;
+}
+
+.kaivyra-search-wrap.open .kaivyra-search-panel{
+  opacity:1;
+  visibility:visible;
+  transform:none;
+  pointer-events:auto;
+}
+
+.kaivyra-search-input-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  padding:2px;
+}
+
+.kaivyra-search-input{
+  width:100%;
+
+  height:38px;
+
+  padding:0 11px;
+
+  border:1px solid #dfe7ef;
+  border-radius:9px;
+
+  outline:none;
+
+  color:#102039;
+  background:#f8fafc;
+
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+}
+
+.kaivyra-search-input:focus{
+  border-color:#33c9c9;
+  background:#fff;
+  box-shadow:0 0 0 3px rgba(31,197,198,.10);
+}
+
+.kaivyra-search-results{
+  max-height:260px;
+  overflow-y:auto;
+
+  margin-top:7px;
+}
+
+.kaivyra-search-empty{
+  padding:12px 8px;
+
+  color:#718096;
+
+  font-size:11.5px;
+  text-align:center;
+}
+
+.kaivyra-search-result{
+  width:100%;
+
+  display:block;
+
+  padding:9px 10px;
+
+  border:0;
+  border-radius:9px;
+
+  background:none;
+
+  color:#102039;
+
+  text-align:left;
+  cursor:pointer;
+}
+
+.kaivyra-search-result:hover{
+  background:#f0f8f9;
+}
+
+.kaivyra-search-result-title{
+  display:block;
+
+  font-size:12px;
+  font-weight:600;
+}
+
+.kaivyra-search-result-text{
+  display:block;
+
+  margin-top:2px;
+
+  color:#718096;
+
+  font-size:10.5px;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.kaivyra-en-nav{
+  font-weight:700 !important;
+}
+
+@media(max-width:760px){
+  .kaivyra-search-wrap,
+  .kaivyra-lang-wrap{
+    display:none;
+  }
+}
+/* KAIVYRA 36 BUILD BOXES START */
+
+.kaivyra-building-section{
+  overflow:hidden;
+}
+
+.build-category{
+  margin-top:58px;
+}
+
+.build-category:first-of-type{
+  margin-top:0;
+}
+
+.build-category-head{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  margin-bottom:22px;
+}
+
+.build-category-number{
+  flex:0 0 auto;
+
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(56,189,248,.55);
+  border-radius:14px;
+
+  color:#0284c7;
+  background:linear-gradient(
+    145deg,
+    #f0f9ff,
+    #ffffff
+  );
+
+  box-shadow:
+    0 0 0 4px rgba(56,189,248,.06),
+    0 10px 25px rgba(14,116,144,.08);
+
+  font-family:'Poppins',sans-serif;
+  font-size:12px;
+  font-weight:700;
+}
+
+.build-category-head h3{
+  font-size:22px;
+  line-height:1.25;
+  font-weight:600;
+  color:var(--ink);
+}
+
+.build-category-head p{
+  max-width:680px;
+  margin-top:5px;
+
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+}
+
+
+/* EXACT 10cm × 10cm CARDS */
+
+.build-ultra-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3, 10cm);
+
+  justify-content:center;
+
+  gap:18px;
+
+  padding:8px 4px 12px;
+
+  overflow-x:auto;
+  scrollbar-width:thin;
+}
+
+.build-ultra-card{
+  position:relative;
+
+  width:10cm;
+  height:10cm;
+
+  min-width:10cm;
+  min-height:10cm;
+
+  box-sizing:border-box;
+
+  padding:28px;
+
+  display:flex;
+  flex-direction:column;
+
+  border:2px solid #38bdf8;
+  border-radius:22px;
+
+  background:
+    radial-gradient(
+      circle at 88% 8%,
+      rgba(56,189,248,.13),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #f8fcff 100%
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(56,189,248,.08),
+    0 12px 32px rgba(14,116,144,.10),
+    inset 0 0 35px rgba(56,189,248,.025);
+
+  overflow:hidden;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.build-ultra-card::before{
+  content:"";
+
+  position:absolute;
+
+  inset:7px;
+
+  border:1px solid rgba(56,189,248,.13);
+  border-radius:16px;
+
+  pointer-events:none;
+}
+
+.build-ultra-card::after{
+  content:"";
+
+  position:absolute;
+
+  width:100px;
+  height:100px;
+
+  right:-48px;
+  top:-48px;
+
+  border-radius:50%;
+
+  background:rgba(56,189,248,.10);
+
+  pointer-events:none;
+}
+
+.build-ultra-card:hover{
+  transform:translateY(-7px);
+
+  border-color:#0ea5e9;
+
+  box-shadow:
+    0 0 0 3px rgba(56,189,248,.10),
+    0 22px 50px rgba(14,116,144,.17),
+    0 0 28px rgba(56,189,248,.12);
+}
+
+.build-card-number{
+  position:relative;
+  z-index:2;
+
+  color:#0284c7;
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+}
+
+.build-card-icon{
+  position:relative;
+  z-index:2;
+
+  width:50px;
+  height:50px;
+
+  margin-top:25px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(56,189,248,.38);
+  border-radius:15px;
+
+  color:#0284c7;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e0f2fe,
+      #f0f9ff
+    );
+
+  box-shadow:
+    0 8px 22px rgba(14,116,144,.10);
+
+  font-family:'Poppins',sans-serif;
+  font-size:14px;
+  font-weight:700;
+}
+
+.build-ultra-card h4{
+  position:relative;
+  z-index:2;
+
+  margin-top:21px;
+
+  color:var(--ink);
+
+  font-family:'Poppins',sans-serif;
+
+  font-size:17px;
+  line-height:1.3;
+  font-weight:600;
+}
+
+.build-ultra-card p{
+  position:relative;
+  z-index:2;
+
+  margin-top:9px;
+
+  color:var(--muted);
+
+  font-size:12.5px;
+  line-height:1.65;
+}
+
+
+/* Tablet */
+
+@media(max-width:1200px){
+
+  .build-ultra-grid{
+    grid-template-columns:repeat(2, 10cm);
+  }
+
+}
+
+
+/* Mobile keeps cards EXACTLY 10cm × 10cm */
+
+@media(max-width:760px){
+
+  .build-category{
+    margin-top:45px;
+  }
+
+  .build-category-head{
+    gap:13px;
+  }
+
+  .build-category-head h3{
+    font-size:19px;
+  }
+
+  .build-category-head p{
+    font-size:12.5px;
+  }
+
+  .build-ultra-grid{
+    justify-content:start;
+
+    grid-template-columns:10cm;
+
+    gap:14px;
+
+    padding-left:2px;
+    padding-right:2px;
+  }
+
+}
+
+/* KAIVYRA 36 BUILD BOXES END */
+</style>
+
+<script>
+(function(){
+
+  function initKaivyraNavEnhancements(){
+
+    const headerActions =
+      document.querySelector(".header-actions");
+
+    if(!headerActions) return;
+
+
+    /* =====================================================
+       FIND EXISTING EN CONTROL
+       ===================================================== */
+
+    let oldLang =
+      headerActions.querySelector(".lang");
+
+    if(oldLang){
+
+      oldLang.classList.add("kaivyra-old-lang");
+
+      const langWrap =
+        document.createElement("div");
+
+      langWrap.className =
+        "kaivyra-lang-wrap";
+
+
+      const langBtn =
+        document.createElement("button");
+
+      langBtn.type = "button";
+      langBtn.className = "kaivyra-lang-btn";
+      langBtn.setAttribute(
+        "aria-label",
+        "Choose language"
+      );
+
+      langBtn.innerHTML =
+        '<span class="kaivyra-current-lang">EN</span>' +
+        '<span class="kaivyra-lang-chevron"></span>';
+
+
+      const langMenu =
+        document.createElement("div");
+
+      langMenu.className =
+        "kaivyra-lang-menu";
+
+      langMenu.innerHTML =
+
+        '<button type="button" class="kaivyra-lang-option active" data-lang="en">' +
+          'English' +
+        '</button>' +
+
+        '<button type="button" class="kaivyra-lang-option" data-lang="hi">' +
+          'हिन्दी' +
+        '</button>';
+
+
+      langWrap.appendChild(langBtn);
+      langWrap.appendChild(langMenu);
+
+      oldLang.replaceWith(langWrap);
+
+
+      langBtn.addEventListener("click", function(event){
+
+        event.stopPropagation();
+
+        const open =
+          langWrap.classList.toggle("open");
+
+        searchWrap &&
+          searchWrap.classList.remove("open");
+
+      });
+
+
+      langMenu
+        .querySelectorAll(".kaivyra-lang-option")
+        .forEach(option => {
+
+          option.addEventListener("click", function(){
+
+            const lang =
+              this.getAttribute("data-lang");
+
+            setLanguage(lang);
+
+            langWrap.classList.remove("open");
+
+          });
+
+        });
+
+    }
+
+
+    /* =====================================================
+       COMPACT SEARCH
+       ===================================================== */
+
+    let searchWrap =
+      headerActions.querySelector(".kaivyra-search-wrap");
+
+    if(!searchWrap){
+
+      searchWrap =
+        document.createElement("div");
+
+      searchWrap.className =
+        "kaivyra-search-wrap";
+
+
+      const searchBtn =
+        document.createElement("button");
+
+      searchBtn.type = "button";
+      searchBtn.className =
+        "kaivyra-search-btn";
+
+      searchBtn.setAttribute(
+        "aria-label",
+        "Search KAIVYRA"
+      );
+
+      searchBtn.innerHTML =
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+          '<circle cx="11" cy="11" r="6.5"></circle>' +
+          '<line x1="16" y1="16" x2="21" y2="21"></line>' +
+        '</svg>';
+
+
+      const panel =
+        document.createElement("div");
+
+      panel.className =
+        "kaivyra-search-panel";
+
+      panel.innerHTML =
+        '<div class="kaivyra-search-input-row">' +
+          '<input class="kaivyra-search-input" type="search" autocomplete="off" placeholder="Search KAIVYRA..." aria-label="Search website">' +
+        '</div>' +
+        '<div class="kaivyra-search-results"></div>';
+
+
+      searchWrap.appendChild(searchBtn);
+      searchWrap.appendChild(panel);
+
+
+      /*
+         Existing header icon is the old search/explore icon.
+         Replace it instead of creating a duplicate.
+      */
+
+      const existingIcon =
+        headerActions.querySelector(
+          '.header-icon:not(.lang)'
+        );
+
+      if(existingIcon){
+        existingIcon.replaceWith(searchWrap);
+      }else{
+        headerActions.insertBefore(
+          searchWrap,
+          headerActions.firstChild
+        );
+      }
+
+
+      const input =
+        panel.querySelector(
+          ".kaivyra-search-input"
+        );
+
+      const results =
+        panel.querySelector(
+          ".kaivyra-search-results"
+        );
+
+
+      searchBtn.addEventListener(
+        "click",
+        function(event){
+
+          event.stopPropagation();
+
+          const open =
+            searchWrap.classList.toggle("open");
+
+          document
+            .querySelectorAll(".kaivyra-lang-wrap")
+            .forEach(x =>
+              x.classList.remove("open")
+            );
+
+          if(open){
+
+            setTimeout(
+              () => input.focus(),
+              50
+            );
+
+            renderSearchResults("");
+
+          }
+
+        }
+      );
+
+
+      input.addEventListener(
+        "input",
+        function(){
+
+          renderSearchResults(
+            input.value.trim()
+          );
+
+        }
+      );
+
+
+      input.addEventListener(
+        "keydown",
+        function(event){
+
+          if(event.key === "Escape"){
+
+            searchWrap.classList.remove(
+              "open"
+            );
+
+            input.blur();
+
+          }
+
+        }
+      );
+
+
+      function renderSearchResults(query){
+
+        const sections =
+          Array.from(
+            document.querySelectorAll(
+              "main section, main [id]"
+            )
+          );
+
+        const unique = [];
+
+        sections.forEach(element => {
+
+          if(
+            unique.includes(element) ||
+            element.closest(".kaivyra-search-panel")
+          ) return;
+
+          if(!element.id) return;
+
+          const heading =
+            element.querySelector(
+              "h1,h2,h3"
+            );
+
+          const title =
+            heading
+              ? heading.textContent.trim()
+              : element.id;
+
+          const text =
+            element.textContent
+              .replace(/\s+/g," ")
+              .trim();
+
+          if(!text) return;
+
+          unique.push({
+            element,
+            title,
+            text
+          });
+
+        });
+
+
+        let matches = unique;
+
+
+        if(query){
+
+          const q =
+            query.toLowerCase();
+
+          matches =
+            unique.filter(item =>
+              (
+                item.title + " " + item.text
+              )
+              .toLowerCase()
+              .includes(q)
+            );
+
+        }
+
+
+        matches =
+          matches.slice(0,6);
+
+
+        if(!matches.length){
+
+          results.innerHTML =
+            '<div class="kaivyra-search-empty">' +
+              'No matching content found.' +
+            '</div>';
+
+          return;
+
+        }
+
+
+        results.innerHTML = "";
+
+
+        matches.forEach(item => {
+
+          const button =
+            document.createElement("button");
+
+          button.type = "button";
+          button.className =
+            "kaivyra-search-result";
+
+          const title =
+            document.createElement("span");
+
+          title.className =
+            "kaivyra-search-result-title";
+
+          title.textContent =
+            item.title;
+
+
+          const text =
+            document.createElement("span");
+
+          text.className =
+            "kaivyra-search-result-text";
+
+          text.textContent =
+            item.text;
+
+
+          button.appendChild(title);
+          button.appendChild(text);
+
+
+          button.addEventListener(
+            "click",
+            function(){
+
+              searchWrap.classList.remove(
+                "open"
+              );
+
+              item.element.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+              });
+
+            }
+          );
+
+
+          results.appendChild(button);
+
+        });
+
+      }
+
+    }
+
+
+    /* =====================================================
+       BOLD EN / CURRENT LANGUAGE
+       ===================================================== */
+
+    const enCandidate =
+      document.querySelector(
+        ".header-actions .kaivyra-lang-btn"
+      );
+
+    if(enCandidate){
+      enCandidate.classList.add(
+        "kaivyra-en-nav"
+      );
+    }
+
+
+    /* =====================================================
+       LANGUAGE SUPPORT
+       ===================================================== */
+
+    const translations = {
+
+      en: {
+        "About":"About",
+        "Focus":"Focus",
+        "What We Build":"What We Build",
+        "Approach":"Approach",
+        "Contact":"Contact"
+      },
+
+      hi: {
+        "About":"हमारे बारे में",
+        "Focus":"मुख्य क्षेत्र",
+        "What We Build":"हम क्या बनाते हैं",
+        "Approach":"हमारा दृष्टिकोण",
+        "Contact":"संपर्क"
+      }
+
+    };
+
+
+    function setLanguage(lang){
+
+      const dict =
+        translations[lang] ||
+        translations.en;
+
+
+      document.documentElement.lang =
+        lang === "hi" ? "hi" : "en";
+
+
+      document
+        .querySelectorAll(
+          ".nav-links .nav-dropdown-btn, .nav-links > a"
+        )
+        .forEach(el => {
+
+          const key =
+            el.dataset.kaivyraOriginal ||
+            el.textContent.trim();
+
+          if(!el.dataset.kaivyraOriginal){
+            el.dataset.kaivyraOriginal = key;
+          }
+
+          el.textContent =
+            dict[el.dataset.kaivyraOriginal] ||
+            el.dataset.kaivyraOriginal;
+
+        });
+
+
+      document
+        .querySelectorAll(
+          ".mobile-panel .mobile-dropdown-btn, .mobile-panel > a"
+        )
+        .forEach(el => {
+
+          const key =
+            el.dataset.kaivyraOriginal ||
+            el.textContent.trim();
+
+          if(!el.dataset.kaivyraOriginal){
+            el.dataset.kaivyraOriginal = key;
+          }
+
+          el.textContent =
+            dict[el.dataset.kaivyraOriginal] ||
+            el.dataset.kaivyraOriginal;
+
+        });
+
+
+      document
+        .querySelectorAll(
+          ".kaivyra-lang-option"
+        )
+        .forEach(option => {
+
+          option.classList.toggle(
+            "active",
+            option.dataset.lang === lang
+          );
+
+        });
+
+
+      const current =
+        document.querySelector(
+          ".kaivyra-current-lang"
+        );
+
+      if(current){
+        current.textContent =
+          lang === "hi" ? "HI" : "EN";
+      }
+
+
+      try{
+        localStorage.setItem(
+          "kaivyra-language",
+          lang
+        );
+      }catch(e){}
+
+    }
+
+
+    /* =====================================================
+       OUTSIDE CLICK
+       ===================================================== */
+
+    document.addEventListener(
+      "click",
+      function(event){
+
+        const search =
+          document.querySelector(
+            ".kaivyra-search-wrap"
+          );
+
+        const language =
+          document.querySelector(
+            ".kaivyra-lang-wrap"
+          );
+
+        if(
+          search &&
+          !search.contains(event.target)
+        ){
+          search.classList.remove("open");
+        }
+
+        if(
+          language &&
+          !language.contains(event.target)
+        ){
+          language.classList.remove("open");
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       RESTORE LANGUAGE
+       ===================================================== */
+
+    let savedLanguage = "en";
+
+    try{
+      savedLanguage =
+        localStorage.getItem(
+          "kaivyra-language"
+        ) || "en";
+    }catch(e){}
+
+    setLanguage(savedLanguage);
+
+  }
+
+
+  if(
+    document.readyState === "loading"
+  ){
+    document.addEventListener(
+      "DOMContentLoaded",
+      initKaivyraNavEnhancements
+    );
+  }else{
+    initKaivyraNavEnhancements();
+  }
+
+})();
+</script>
+
+<!-- KAIVYRA NAV LANGUAGE + SEARCH v1 END -->
+<!-- KAIVYRA ULTRA BOXES START -->
+<style>
+/* Individual content cards only — page sections untouched */
+main .card,
+main .feature-card,
+main .focus-card,
+main .build-card,
+main .approach-card,
+main .info-card,
+main .content-card,
+main .feature,
+main .focus-item,
+main .build-item,
+main .approach-item,
+main .contact-card,
+main .contact-item,
+main .explore-card,
+main .item-card {
+  border: 2px solid #87CEEB !important;
+  box-shadow:
+    0 0 0 1px rgba(135,206,235,.20),
+    0 8px 24px rgba(135,206,235,.16) !important;
+  border-radius: 16px !important;
+  box-sizing: border-box !important;
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease,
+    transform .2s ease !important;
+}
+
+main .card:hover,
+main .feature-card:hover,
+main .focus-card:hover,
+main .build-card:hover,
+main .approach-card:hover,
+main .info-card:hover,
+main .content-card:hover,
+main .feature:hover,
+main .focus-item:hover,
+main .build-item:hover,
+main .approach-item:hover,
+main .contact-card:hover,
+main .contact-item:hover,
+main .explore-card:hover,
+main .item-card:hover {
+  border-color: #4DB8E8 !important;
+  box-shadow:
+    0 0 0 2px rgba(135,206,235,.18),
+    0 12px 30px rgba(135,206,235,.24) !important;
+  transform: translateY(-2px);
+}
+/* KAIVYRA 36 BUILD BOXES START */
+
+.kaivyra-building-section{
+  overflow:hidden;
+}
+
+.build-category{
+  margin-top:58px;
+}
+
+.build-category:first-of-type{
+  margin-top:0;
+}
+
+.build-category-head{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  margin-bottom:22px;
+}
+
+.build-category-number{
+  flex:0 0 auto;
+
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(56,189,248,.55);
+  border-radius:14px;
+
+  color:#0284c7;
+  background:linear-gradient(
+    145deg,
+    #f0f9ff,
+    #ffffff
+  );
+
+  box-shadow:
+    0 0 0 4px rgba(56,189,248,.06),
+    0 10px 25px rgba(14,116,144,.08);
+
+  font-family:'Poppins',sans-serif;
+  font-size:12px;
+  font-weight:700;
+}
+
+.build-category-head h3{
+  font-size:22px;
+  line-height:1.25;
+  font-weight:600;
+  color:var(--ink);
+}
+
+.build-category-head p{
+  max-width:680px;
+  margin-top:5px;
+
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+}
+
+
+/* EXACT 10cm × 10cm CARDS */
+
+.build-ultra-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3, 10cm);
+
+  justify-content:center;
+
+  gap:18px;
+
+  padding:8px 4px 12px;
+
+  overflow-x:auto;
+  scrollbar-width:thin;
+}
+
+.build-ultra-card{
+  position:relative;
+
+  width:10cm;
+  height:10cm;
+
+  min-width:10cm;
+  min-height:10cm;
+
+  box-sizing:border-box;
+
+  padding:28px;
+
+  display:flex;
+  flex-direction:column;
+
+  border:2px solid #38bdf8;
+  border-radius:22px;
+
+  background:
+    radial-gradient(
+      circle at 88% 8%,
+      rgba(56,189,248,.13),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #f8fcff 100%
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(56,189,248,.08),
+    0 12px 32px rgba(14,116,144,.10),
+    inset 0 0 35px rgba(56,189,248,.025);
+
+  overflow:hidden;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.build-ultra-card::before{
+  content:"";
+
+  position:absolute;
+
+  inset:7px;
+
+  border:1px solid rgba(56,189,248,.13);
+  border-radius:16px;
+
+  pointer-events:none;
+}
+
+.build-ultra-card::after{
+  content:"";
+
+  position:absolute;
+
+  width:100px;
+  height:100px;
+
+  right:-48px;
+  top:-48px;
+
+  border-radius:50%;
+
+  background:rgba(56,189,248,.10);
+
+  pointer-events:none;
+}
+
+.build-ultra-card:hover{
+  transform:translateY(-7px);
+
+  border-color:#0ea5e9;
+
+  box-shadow:
+    0 0 0 3px rgba(56,189,248,.10),
+    0 22px 50px rgba(14,116,144,.17),
+    0 0 28px rgba(56,189,248,.12);
+}
+
+.build-card-number{
+  position:relative;
+  z-index:2;
+
+  color:#0284c7;
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+}
+
+.build-card-icon{
+  position:relative;
+  z-index:2;
+
+  width:50px;
+  height:50px;
+
+  margin-top:25px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(56,189,248,.38);
+  border-radius:15px;
+
+  color:#0284c7;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e0f2fe,
+      #f0f9ff
+    );
+
+  box-shadow:
+    0 8px 22px rgba(14,116,144,.10);
+
+  font-family:'Poppins',sans-serif;
+  font-size:14px;
+  font-weight:700;
+}
+
+.build-ultra-card h4{
+  position:relative;
+  z-index:2;
+
+  margin-top:21px;
+
+  color:var(--ink);
+
+  font-family:'Poppins',sans-serif;
+
+  font-size:17px;
+  line-height:1.3;
+  font-weight:600;
+}
+
+.build-ultra-card p{
+  position:relative;
+  z-index:2;
+
+  margin-top:9px;
+
+  color:var(--muted);
+
+  font-size:12.5px;
+  line-height:1.65;
+}
+
+
+/* Tablet */
+
+@media(max-width:1200px){
+
+  .build-ultra-grid{
+    grid-template-columns:repeat(2, 10cm);
+  }
+
+}
+
+
+/* Mobile keeps cards EXACTLY 10cm × 10cm */
+
+@media(max-width:760px){
+
+  .build-category{
+    margin-top:45px;
+  }
+
+  .build-category-head{
+    gap:13px;
+  }
+
+  .build-category-head h3{
+    font-size:19px;
+  }
+
+  .build-category-head p{
+    font-size:12.5px;
+  }
+
+  .build-ultra-grid{
+    justify-content:start;
+
+    grid-template-columns:10cm;
+
+    gap:14px;
+
+    padding-left:2px;
+    padding-right:2px;
+  }
+
+}
+
+/* KAIVYRA 36 BUILD BOXES END */
+</style>
+<!-- KAIVYRA ULTRA BOXES END -->
+<!-- KAIVYRA CONTACT LINKS START -->
+<style>
+.kaivyra-contact-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  gap:14px;
+  width:100%;
+  margin-top:28px;
+  padding-top:22px;
+  border-top:1px solid rgba(135,206,235,.35);
+}
+
+.kaivyra-contact-box{
+  display:inline-flex;
+  align-items:center;
+  gap:11px;
+  min-height:52px;
+  padding:0 18px;
+  border:2px solid #87CEEB;
+  border-radius:14px;
+  background:rgba(135,206,235,.07);
+  color:inherit;
+  text-decoration:none;
+  box-shadow:
+    0 0 0 1px rgba(135,206,235,.16),
+    0 8px 22px rgba(135,206,235,.12);
+  transition:all .2s ease;
+}
+
+.kaivyra-contact-box:hover{
+  border-color:#4DB8E8;
+  box-shadow:
+    0 0 0 2px rgba(135,206,235,.15),
+    0 10px 28px rgba(135,206,235,.22);
+  transform:translateY(-2px);
+}
+
+.kaivyra-contact-box svg{
+  width:22px;
+  height:22px;
+  flex:none;
+}
+
+.kaivyra-contact-box span{
+  font-weight:600;
+}
+
+@media(max-width:600px){
+  .kaivyra-contact-links{
+    flex-direction:column;
+  }
+
+  .kaivyra-contact-box{
+    width:100%;
+    box-sizing:border-box;
+  }
+}
+/* KAIVYRA 36 BUILD BOXES START */
+
+.kaivyra-building-section{
+  overflow:hidden;
+}
+
+.build-category{
+  margin-top:58px;
+}
+
+.build-category:first-of-type{
+  margin-top:0;
+}
+
+.build-category-head{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  margin-bottom:22px;
+}
+
+.build-category-number{
+  flex:0 0 auto;
+
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(56,189,248,.55);
+  border-radius:14px;
+
+  color:#0284c7;
+  background:linear-gradient(
+    145deg,
+    #f0f9ff,
+    #ffffff
+  );
+
+  box-shadow:
+    0 0 0 4px rgba(56,189,248,.06),
+    0 10px 25px rgba(14,116,144,.08);
+
+  font-family:'Poppins',sans-serif;
+  font-size:12px;
+  font-weight:700;
+}
+
+.build-category-head h3{
+  font-size:22px;
+  line-height:1.25;
+  font-weight:600;
+  color:var(--ink);
+}
+
+.build-category-head p{
+  max-width:680px;
+  margin-top:5px;
+
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+}
+
+
+/* EXACT 10cm × 10cm CARDS */
+
+.build-ultra-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3, 10cm);
+
+  justify-content:center;
+
+  gap:18px;
+
+  padding:8px 4px 12px;
+
+  overflow-x:auto;
+  scrollbar-width:thin;
+}
+
+.build-ultra-card{
+  position:relative;
+
+  width:10cm;
+  height:10cm;
+
+  min-width:10cm;
+  min-height:10cm;
+
+  box-sizing:border-box;
+
+  padding:28px;
+
+  display:flex;
+  flex-direction:column;
+
+  border:2px solid #38bdf8;
+  border-radius:22px;
+
+  background:
+    radial-gradient(
+      circle at 88% 8%,
+      rgba(56,189,248,.13),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #f8fcff 100%
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(56,189,248,.08),
+    0 12px 32px rgba(14,116,144,.10),
+    inset 0 0 35px rgba(56,189,248,.025);
+
+  overflow:hidden;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.build-ultra-card::before{
+  content:"";
+
+  position:absolute;
+
+  inset:7px;
+
+  border:1px solid rgba(56,189,248,.13);
+  border-radius:16px;
+
+  pointer-events:none;
+}
+
+.build-ultra-card::after{
+  content:"";
+
+  position:absolute;
+
+  width:100px;
+  height:100px;
+
+  right:-48px;
+  top:-48px;
+
+  border-radius:50%;
+
+  background:rgba(56,189,248,.10);
+
+  pointer-events:none;
+}
+
+.build-ultra-card:hover{
+  transform:translateY(-7px);
+
+  border-color:#0ea5e9;
+
+  box-shadow:
+    0 0 0 3px rgba(56,189,248,.10),
+    0 22px 50px rgba(14,116,144,.17),
+    0 0 28px rgba(56,189,248,.12);
+}
+
+.build-card-number{
+  position:relative;
+  z-index:2;
+
+  color:#0284c7;
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+}
+
+.build-card-icon{
+  position:relative;
+  z-index:2;
+
+  width:50px;
+  height:50px;
+
+  margin-top:25px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(56,189,248,.38);
+  border-radius:15px;
+
+  color:#0284c7;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e0f2fe,
+      #f0f9ff
+    );
+
+  box-shadow:
+    0 8px 22px rgba(14,116,144,.10);
+
+  font-family:'Poppins',sans-serif;
+  font-size:14px;
+  font-weight:700;
+}
+
+.build-ultra-card h4{
+  position:relative;
+  z-index:2;
+
+  margin-top:21px;
+
+  color:var(--ink);
+
+  font-family:'Poppins',sans-serif;
+
+  font-size:17px;
+  line-height:1.3;
+  font-weight:600;
+}
+
+.build-ultra-card p{
+  position:relative;
+  z-index:2;
+
+  margin-top:9px;
+
+  color:var(--muted);
+
+  font-size:12.5px;
+  line-height:1.65;
+}
+
+
+/* Tablet */
+
+@media(max-width:1200px){
+
+  .build-ultra-grid{
+    grid-template-columns:repeat(2, 10cm);
+  }
+
+}
+
+
+/* Mobile keeps cards EXACTLY 10cm × 10cm */
+
+@media(max-width:760px){
+
+  .build-category{
+    margin-top:45px;
+  }
+
+  .build-category-head{
+    gap:13px;
+  }
+
+  .build-category-head h3{
+    font-size:19px;
+  }
+
+  .build-category-head p{
+    font-size:12.5px;
+  }
+
+  .build-ultra-grid{
+    justify-content:start;
+
+    grid-template-columns:10cm;
+
+    gap:14px;
+
+    padding-left:2px;
+    padding-right:2px;
+  }
+
+}
+
+/* KAIVYRA 36 BUILD BOXES END */
+</style>
+
+<script>
+(function(){
+  function addContactBoxes(){
+    const contact = document.querySelector('#contact');
+    if(!contact || contact.querySelector('.kaivyra-contact-links')) return;
+
+    const wrap = document.createElement('div');
+    wrap.className = 'kaivyra-contact-links';
+
+    wrap.innerHTML = `
+      <a class="kaivyra-contact-box"
+         href="mailto:the.kaivyra@gmail.com"
+         aria-label="Email KAIVYRA">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+          <path d="m3 7 9 6 9-6"></path>
+        </svg>
+        <span>the.kaivyra@gmail.com</span>
+      </a>
+
+      <a class="kaivyra-contact-box"
+         href="https://www.linkedin.com/in/shivam-maurya-7294133b6/"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+          <path fill="white"
+                d="M8 10v6M8 7.5v.01M11 16v-6m0 3
+                   c0-1.8 1.1-3 2.7-3 1.6 0 2.3 1.1 2.3 3v3"></path>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+    `;
+
+    /* Contact section ke bilkul bottom mein */
+    contact.appendChild(wrap);
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', addContactBoxes);
+  }else{
+    addContactBoxes();
+  }
+})();
+</script>
+<!-- KAIVYRA CONTACT LINKS END -->
+<!-- KAIVYRA BUILD VIEW START -->
+
+<div
+  id="kaivyra-build-view"
+  class="kaivyra-build-view"
+  aria-hidden="true"
+>
+
+  <div class="kaivyra-build-shell">
+
+
+    <header class="kaivyra-build-header">
+
+      <button
+        type="button"
+        id="kaivyra-build-back"
+        class="kaivyra-build-back"
+        aria-label="Back to What We Build"
+      >
+
+        <span class="kaivyra-back-icon">
+          ←
+        </span>
+
+        <span>
+          Back
+        </span>
+
+      </button>
+
+
+      <div class="kaivyra-build-header-brand">
+
+        <span class="kaivyra-build-header-label">
+          KAIVYRA
+        </span>
+
+        <span class="kaivyra-build-header-divider"></span>
+
+        <span
+          id="kaivyra-build-header-category"
+          class="kaivyra-build-header-category"
+        ></span>
+
+      </div>
+
+
+      <button
+        type="button"
+        id="kaivyra-build-close"
+        class="kaivyra-build-close"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+    </header>
+
+
+    <main class="kaivyra-build-main">
+
+      <div class="kaivyra-build-intro">
+
+        <div
+          id="kaivyra-build-number"
+          class="kaivyra-build-detail-number"
+        ></div>
+
+
+        <div>
+
+          <div class="section-kicker">
+            KAIVYRA / EXPLORATION
+          </div>
+
+          <h1
+            id="kaivyra-build-title"
+            class="kaivyra-build-title"
+          ></h1>
+
+          <p
+            id="kaivyra-build-description"
+            class="kaivyra-build-description"
+          ></p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        id="kaivyra-detail-grid"
+        class="kaivyra-detail-grid"
+      ></div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<!-- KAIVYRA BUILD VIEW END -->
+<!-- KAIVYRA BUILD JS START -->
+
+<script id="kaivyra-build-system-js">
+
+(function(){
+
+  const view =
+    document.getElementById("kaivyra-build-view");
+
+  const detailGrid =
+    document.getElementById("kaivyra-detail-grid");
+
+  const title =
+    document.getElementById("kaivyra-build-title");
+
+  const description =
+    document.getElementById("kaivyra-build-description");
+
+  const number =
+    document.getElementById("kaivyra-build-number");
+
+  const headerCategory =
+    document.getElementById(
+      "kaivyra-build-header-category"
+    );
+
+  const backButton =
+    document.getElementById(
+      "kaivyra-build-back"
+    );
+
+  const closeButton =
+    document.getElementById(
+      "kaivyra-build-close"
+    );
+
+
+  if(
+    !view ||
+    !detailGrid ||
+    !title ||
+    !description ||
+    !number
+  ){
+
+    console.warn(
+      "KAIVYRA build system: required elements missing."
+    );
+
+    return;
+
+  }
+
+
+  const buildData = {
+
+    "digital-products":{
+      number:"01",
+      title:"Digital Products",
+      description:
+        "Digital experiences designed around access, communication, information and practical healthcare workflows.",
+      items:[
+        ["01","Patient Access & Self-Service","Clear digital pathways that help people find, understand and use healthcare services."],
+        ["02","Appointment & Care Navigation","Tools that make scheduling, navigation and next-step decisions easier."],
+        ["03","Records & Health Information","Patient-facing systems for structured access to relevant health information."],
+        ["04","Communication & Follow-up","Thoughtful digital communication for reminders, follow-up and continuity."],
+        ["05","Benefits, Billing & Affordability","Experiences that help people understand costs, coverage and available support."],
+        ["06","Accessible & Multilingual Experience","Inclusive interfaces designed for different abilities, languages and contexts."]
+      ]
+    },
+
+
+    "intelligent-systems":{
+      number:"02",
+      title:"Intelligent Systems",
+      description:
+        "AI-assisted systems designed to help people work with knowledge, information, decisions and complex processes.",
+      items:[
+        ["01","Clinical Intelligence","Decision-support concepts that organize relevant information around clinical workflows."],
+        ["02","Medical Knowledge AI","Knowledge systems that help users discover, understand and work with medical information."],
+        ["03","Workflow Automation","Intelligent automation for repetitive information-heavy healthcare processes."],
+        ["04","Document Intelligence","Systems that structure, extract and reason over complex healthcare documents."],
+        ["05","Predictive & Risk Intelligence","Analytical systems for identifying patterns, trends and potential areas of risk."],
+        ["06","Operational Decision Support","Tools that turn operational data into clearer choices and actionable insight."]
+      ]
+    },
+
+
+    "research-tools":{
+      number:"03",
+      title:"Research Tools",
+      description:
+        "Research-oriented systems for evidence discovery, health data, study workflows, visualization and better decisions.",
+      items:[
+        ["01","Evidence Discovery","Tools for finding, organizing and comparing relevant scientific and medical evidence."],
+        ["02","Health Data Analytics","Structured analysis of healthcare and population data for useful insights."],
+        ["03","Study & Survey Workspaces","Digital environments for designing, managing and reviewing research activities."],
+        ["04","Research Documentation","Systems that make research notes, methods, sources and findings easier to manage."],
+        ["05","Visualization & Insight","Clear visual interfaces for understanding complex datasets and relationships."],
+        ["06","Evidence-to-Decision","Tools that help translate research findings into structured decisions and action."]
+      ]
+    },
+
+
+    "healthcare-solutions":{
+      number:"04",
+      title:"Healthcare Solutions",
+      description:
+        "Practical healthcare concepts focused on access, continuity, diagnostics, coordination, affordability and connected care.",
+      items:[
+        ["01","Primary & Preventive Care","Digital approaches supporting prevention, early action and primary healthcare access."],
+        ["02","Chronic Care & Continuity","Systems designed to support long-term care journeys and continuity."],
+        ["03","Diagnostics & Screening","Technology concepts for clearer screening, diagnostic pathways and follow-up."],
+        ["04","Referral & Care Coordination","Tools that connect people, providers, information and next steps across care pathways."],
+        ["05","Remote & Connected Care","Digital systems exploring more accessible and connected models of care."],
+        ["06","Access, Affordability & Equity","Solutions focused on reducing practical barriers to meaningful healthcare access."]
+      ]
+    },
+
+
+    "education-platforms":{
+      number:"05",
+      title:"Education Platforms",
+      description:
+        "Learning systems for medical education, clinical skills, assessment, case-based learning and continuing development.",
+      items:[
+        ["01","Medical Learning","Structured digital environments for learning medical concepts and knowledge."],
+        ["02","Clinical Skills","Tools for practicing, organizing and reinforcing clinical reasoning and skills."],
+        ["03","Assessment & Exam Preparation","Focused systems for assessment, revision and evidence-based exam preparation."],
+        ["04","Case-based Learning","Interactive learning around realistic clinical cases and decision pathways."],
+        ["05","Medical Knowledge Library","Organized access to useful educational resources and reference material."],
+        ["06","Professional & Continuing Education","Learning systems supporting ongoing development beyond formal education."]
+      ]
+    },
+
+
+    "experimental-projects":{
+      number:"06",
+      title:"Experimental Projects",
+      description:
+        "Early concepts exploring new interfaces, human-AI interaction, MedTech ideas, data experiments and future care models.",
+      items:[
+        ["01","Digital Health Prototypes","Early-stage concepts exploring new digital approaches to health and care."],
+        ["02","Human-AI Interaction","Experiments around useful, transparent and human-centered AI interfaces."],
+        ["03","New Care Models","Exploration of alternative ways technology could support future healthcare delivery."],
+        ["04","MedTech Concepts","Early technology concepts at the intersection of medicine, engineering and product design."],
+        ["05","Health Data Experiments","Small-scale experiments around health information, structure, analysis and insight."],
+        ["06","Future Care Interfaces","Conceptual interfaces exploring how people may interact with healthcare systems in the future."]
+      ]
+    }
+
+  };
+
+
+  let previousScrollY = 0;
+
+
+  function getKeyFromHash(){
+
+    const hash =
+      window.location.hash || "";
+
+    if(
+      hash.indexOf("#build-") !== 0
+    ){
+      return null;
+    }
+
+    const key =
+      hash.substring(7);
+
+    return buildData[key]
+      ? key
+      : null;
+
+  }
+
+
+  function renderCategory(key){
+
+    const data =
+      buildData[key];
+
+    if(!data) return;
+
+
+    number.textContent =
+      data.number;
+
+    title.textContent =
+      data.title;
+
+    description.textContent =
+      data.description;
+
+
+    if(headerCategory){
+
+      headerCategory.textContent =
+        data.title;
+
+    }
+
+
+    detailGrid.innerHTML = "";
+
+
+    data.items.forEach(function(item){
+
+      const card =
+        document.createElement("article");
+
+      card.className =
+        "kaivyra-detail-card";
+
+
+      const n =
+        document.createElement("span");
+
+      n.className =
+        "kaivyra-detail-card-number";
+
+      n.textContent =
+        item[0];
+
+
+      const h =
+        document.createElement("h3");
+
+      h.textContent =
+        item[1];
+
+
+      const p =
+        document.createElement("p");
+
+      p.textContent =
+        item[2];
+
+
+      const mark =
+        document.createElement("span");
+
+      mark.className =
+        "kaivyra-detail-card-mark";
+
+      mark.textContent =
+        "↗";
+
+
+      card.appendChild(n);
+      card.appendChild(h);
+      card.appendChild(p);
+      card.appendChild(mark);
+
+
+      detailGrid.appendChild(card);
+
+    });
+
+  }
+
+
+  function openBuild(
+    key,
+    updateHistory
+  ){
+
+    if(!buildData[key]) return;
+
+
+    previousScrollY =
+      window.scrollY ||
+      window.pageYOffset ||
+      0;
+
+
+    renderCategory(key);
+
+
+    view.classList.add(
+      "is-open"
+    );
+
+    view.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    document.documentElement.classList.add(
+      "kaivyra-build-active"
+    );
+
+    document.body.classList.add(
+      "kaivyra-build-active"
+    );
+
+
+    view.scrollTop = 0;
+
+
+    if(updateHistory){
+
+      history.pushState(
+        {
+          kaivyraBuild:key
+        },
+        "",
+        "#build-" + key
+      );
+
+    }
+
+  }
+
+
+  function closeBuild(
+    updateHistory
+  ){
+
+    view.classList.remove(
+      "is-open"
+    );
+
+    view.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+
+    document.documentElement.classList.remove(
+      "kaivyra-build-active"
+    );
+
+    document.body.classList.remove(
+      "kaivyra-build-active"
+    );
+
+
+    if(updateHistory){
+
+      history.pushState(
+        {},
+        "",
+        window.location.pathname +
+        window.location.search
+      );
+
+    }
+
+
+    window.scrollTo(
+      0,
+      previousScrollY
+    );
+
+  }
+
+
+  document
+    .querySelectorAll(
+      "[data-build-category]"
+    )
+    .forEach(function(card){
+
+      card.addEventListener(
+        "click",
+        function(){
+
+          const key =
+            this.getAttribute(
+              "data-build-category"
+            );
+
+          openBuild(
+            key,
+            true
+          );
+
+        }
+      );
+
+    });
+
+
+  if(backButton){
+
+    backButton.addEventListener(
+      "click",
+      function(){
+
+        closeBuild(true);
+
+      }
+    );
+
+  }
+
+
+  if(closeButton){
+
+    closeButton.addEventListener(
+      "click",
+      function(){
+
+        closeBuild(true);
+
+      }
+    );
+
+  }
+
+
+  window.addEventListener(
+    "popstate",
+    function(){
+
+      const key =
+        getKeyFromHash();
+
+
+      if(key){
+
+        openBuild(
+          key,
+          false
+        );
+
+      }else if(
+        view.classList.contains(
+          "is-open"
+        )
+      ){
+
+        closeBuild(false);
+
+      }
+
+    }
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    function(event){
+
+      if(
+        event.key === "Escape" &&
+        view.classList.contains(
+          "is-open"
+        )
+      ){
+
+        closeBuild(true);
+
+      }
+
+    }
+  );
+
+
+  const initialKey =
+    getKeyFromHash();
+
+
+  if(initialKey){
+
+    openBuild(
+      initialKey,
+      false
+    );
+
+  }
+
+})();
+
+</script>
+
+<!-- KAIVYRA BUILD JS END -->
+</body>
+</html>
+
+
+
+
+
