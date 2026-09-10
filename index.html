@@ -15711,7 +15711,731 @@ body.kaivyra-research-50-active{
 </script>
 
 <!-- /KAIVYRA-PUBLIC-INSIGHTS-OWNER-SYSTEM-FINAL -->
-</body>
+<script>
+/*
+KAIVYRA_SAFE_REAL_INSIGHTS_BRIDGE_V3
+Only API wiring. Existing UI remains unchanged.
+*/
+(function () {
+    "use strict";
+
+    var API_BASE =
+        "https://kaivyra-content-api.onrender.com";
+
+    var ownerCSRF = "";
+    var pickedFiles = [];
+
+    function get(id) {
+        return document.getElementById(id);
+    }
+
+    function text(value) {
+        return String(value == null ? "" : value);
+    }
+
+    function cleanName(name) {
+        return text(name).replace(
+            /\.[^/.]+$/,
+            ""
+        );
+    }
+
+    function categoryFromFile(file) {
+
+        var name =
+            text(file && file.name).toLowerCase();
+
+        if (name.endsWith(".pdf")) {
+            return "pdf";
+        }
+
+        if (
+            name.endsWith(".png") ||
+            name.endsWith(".jpg") ||
+            name.endsWith(".jpeg") ||
+            name.endsWith(".webp") ||
+            name.endsWith(".gif") ||
+            name.endsWith(".svg")
+        ) {
+            return "images";
+        }
+
+        if (
+            name.endsWith(".doc") ||
+            name.endsWith(".docx")
+        ) {
+            return "word";
+        }
+
+        if (
+            name.endsWith(".md") ||
+            name.endsWith(".markdown")
+        ) {
+            return "markdown";
+        }
+
+        if (name.endsWith(".txt")) {
+            return "text";
+        }
+
+        if (name.endsWith(".tex")) {
+            return "formula";
+        }
+
+        if (
+            name.endsWith(".csv") ||
+            name.endsWith(".xls") ||
+            name.endsWith(".xlsx")
+        ) {
+            return "spreadsheet";
+        }
+
+        if (
+            name.endsWith(".ppt") ||
+            name.endsWith(".pptx")
+        ) {
+            return "presentation";
+        }
+
+        return null;
+    }
+
+    function ownerStatus(message) {
+
+        var status =
+            get("kaivyra-owner-publish-status");
+
+        var loginStatus =
+            get("kaivyra-owner-login-status");
+
+        if (status) {
+            status.textContent =
+                message || "";
+        }
+
+        if (loginStatus && !status) {
+            loginStatus.textContent =
+                message || "";
+        }
+    }
+
+    async function api(
+        path,
+        options
+    ) {
+
+        var config =
+            options || {};
+
+        config.credentials = "include";
+        config.headers =
+            config.headers || {};
+
+        if (ownerCSRF) {
+            config.headers["X-Owner-CSRF"] =
+                ownerCSRF;
+        }
+
+        var response =
+            await fetch(
+                API_BASE + path,
+                config
+            );
+
+        var raw =
+            await response.text();
+
+        var data = null;
+
+        if (raw) {
+            try {
+                data = JSON.parse(raw);
+            }
+            catch (e) {
+                data = {
+                    detail: raw
+                };
+            }
+        }
+
+        if (!response.ok) {
+            throw new Error(
+                data && data.detail
+                    ? data.detail
+                    : "HTTP " + response.status
+            );
+        }
+
+        return data;
+    }
+
+    async function login() {
+
+        var input =
+            get("kaivyra-owner-code");
+
+        if (!input) {
+            return;
+        }
+
+        var code =
+            text(input.value).trim();
+
+        if (!/^\d{10}$/.test(code)) {
+            var loginStatus =
+                get("kaivyra-owner-login-status");
+
+            if (loginStatus) {
+                loginStatus.textContent =
+                    "Enter exactly 10 digits.";
+            }
+
+            return;
+        }
+
+        var loginStatus2 =
+            get("kaivyra-owner-login-status");
+
+        if (loginStatus2) {
+            loginStatus2.textContent =
+                "Authenticating...";
+        }
+
+        try {
+
+            var result =
+                await fetch(
+                    API_BASE +
+                    "/api/owner/login",
+                    {
+                        method: "POST",
+                        credentials: "include",
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+                        body:
+                            JSON.stringify({
+                                code: code
+                            })
+                    }
+                );
+
+            var raw =
+                await result.text();
+
+            var data = null;
+
+            if (raw) {
+                try {
+                    data = JSON.parse(raw);
+                }
+                catch (e) {}
+            }
+
+            if (!result.ok) {
+                throw new Error(
+                    data && data.detail
+                        ? data.detail
+                        : "Authentication failed."
+                );
+            }
+
+            if (
+                !data ||
+                data.ok !== true ||
+                !data.csrf
+            ) {
+                throw new Error(
+                    "Invalid authentication response."
+                );
+            }
+
+            ownerCSRF =
+                data.csrf;
+
+            await api(
+                "/api/owner/content",
+                {
+                    method: "GET"
+                }
+            );
+
+            if (loginStatus2) {
+                loginStatus2.textContent =
+                    "Owner access verified.";
+            }
+
+            var loginView =
+                get("kaivyra-owner-login-view");
+
+            var publicView =
+                get("kaivyra-public-insights-view");
+
+            var manager =
+                get("kaivyra-owner-manager");
+
+            if (loginView) {
+                loginView.classList.remove(
+                    "is-visible"
+                );
+            }
+
+            if (publicView) {
+                publicView.style.display =
+                    "none";
+            }
+
+            if (manager) {
+                manager.classList.add(
+                    "is-visible"
+                );
+            }
+
+        }
+        catch (error) {
+
+            ownerCSRF = "";
+
+            if (loginStatus2) {
+                loginStatus2.textContent =
+                    error.message ||
+                    "Authentication failed.";
+            }
+        }
+    }
+
+    function rememberSelectedFiles(input) {
+
+        if (!input || !input.files) {
+            return;
+        }
+
+        for (
+            var i = 0;
+            i < input.files.length;
+            i++
+        ) {
+
+            var file =
+                input.files[i];
+
+            var category =
+                categoryFromFile(file);
+
+            if (!category) {
+                continue;
+            }
+
+            pickedFiles.push({
+                file: file,
+                category: category
+            });
+        }
+    }
+
+    async function publish() {
+
+        if (!pickedFiles.length) {
+            ownerStatus(
+                "Select a file first."
+            );
+            return;
+        }
+
+        if (!ownerCSRF) {
+            ownerStatus(
+                "Owner session is not authenticated."
+            );
+            return;
+        }
+
+        var button =
+            get("kaivyra-owner-publish");
+
+        if (button) {
+            button.disabled = true;
+        }
+
+        try {
+
+            for (
+                var i = 0;
+                i < pickedFiles.length;
+                i++
+            ) {
+
+                var item =
+                    pickedFiles[i];
+
+                ownerStatus(
+                    "Uploading " +
+                    (i + 1) +
+                    " of " +
+                    pickedFiles.length +
+                    "..."
+                );
+
+                var form =
+                    new FormData();
+
+                form.append(
+                    "category",
+                    item.category
+                );
+
+                form.append(
+                    "title",
+                    cleanName(
+                        item.file.name
+                    )
+                );
+
+                form.append(
+                    "file",
+                    item.file,
+                    item.file.name
+                );
+
+                var uploaded =
+                    await api(
+                        "/api/owner/upload",
+                        {
+                            method: "POST",
+                            body: form
+                        }
+                    );
+
+                if (
+                    !uploaded ||
+                    !uploaded.id
+                ) {
+                    throw new Error(
+                        "Upload response did not contain an ID."
+                    );
+                }
+
+                await api(
+                    "/api/owner/content/" +
+                    encodeURIComponent(
+                        uploaded.id
+                    ) +
+                    "/publish",
+                    {
+                        method: "POST"
+                    }
+                );
+            }
+
+            pickedFiles = [];
+
+            ownerStatus(
+                "Published successfully."
+            );
+
+            await refreshOwner();
+
+        }
+        catch (error) {
+
+            ownerStatus(
+                error.message ||
+                "Upload or publish failed."
+            );
+
+        }
+        finally {
+
+            if (button) {
+                button.disabled = false;
+            }
+        }
+    }
+
+    async function refreshOwner() {
+
+        if (!ownerCSRF) {
+            return;
+        }
+
+        try {
+            await api(
+                "/api/owner/content",
+                {
+                    method: "GET"
+                }
+            );
+        }
+        catch (e) {}
+    }
+
+    async function publicContent(
+        category,
+        title
+    ) {
+
+        var viewer =
+            get(
+                "kaivyra-public-content-viewer"
+            );
+
+        var list =
+            get(
+                "kaivyra-public-viewer-list"
+            );
+
+        var viewerTitle =
+            get(
+                "kaivyra-public-viewer-title"
+            );
+
+        var viewerCategory =
+            get(
+                "kaivyra-public-viewer-category"
+            );
+
+        if (!viewer || !list) {
+            return;
+        }
+
+        viewer.classList.add(
+            "is-visible"
+        );
+
+        viewer.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        if (viewerTitle) {
+            viewerTitle.textContent =
+                title ||
+                "Published Content";
+        }
+
+        if (viewerCategory) {
+            viewerCategory.textContent =
+                text(category).toUpperCase();
+        }
+
+        list.textContent =
+            "Loading...";
+
+        try {
+
+            var items =
+                await api(
+                    "/api/public/content?category=" +
+                    encodeURIComponent(category),
+                    {
+                        method: "GET"
+                    }
+                );
+
+            if (
+                !Array.isArray(items) ||
+                !items.length
+            ) {
+
+                list.textContent =
+                    "No published content is available in this category yet.";
+
+                return;
+            }
+
+            while (list.firstChild) {
+                list.removeChild(
+                    list.firstChild
+                );
+            }
+
+            items.forEach(
+                function (item) {
+
+                    var row =
+                        document.createElement(
+                            "div"
+                        );
+
+                    var name =
+                        document.createElement(
+                            "strong"
+                        );
+
+                    name.textContent =
+                        item.title ||
+                        item.filename ||
+                        "Published file";
+
+                    row.appendChild(name);
+
+                    var link =
+                        document.createElement(
+                            "a"
+                        );
+
+                    link.textContent =
+                        "Open file";
+
+                    link.href =
+                        item.url || "#";
+
+                    link.target =
+                        "_blank";
+
+                    link.rel =
+                        "noopener noreferrer";
+
+                    row.appendChild(link);
+
+                    list.appendChild(row);
+                }
+            );
+
+        }
+        catch (error) {
+
+            list.textContent =
+                error.message ||
+                "Unable to load published content.";
+        }
+    }
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            var target =
+                event.target;
+
+            if (!target) {
+                return;
+            }
+
+            var loginButton =
+                target.closest(
+                    "#kaivyra-owner-unlock"
+                );
+
+            if (loginButton) {
+
+                event.preventDefault();
+
+                if (
+                    event.stopImmediatePropagation
+                ) {
+                    event.stopImmediatePropagation();
+                }
+
+                login();
+
+                return;
+            }
+
+            var publishButton =
+                target.closest(
+                    "#kaivyra-owner-publish"
+                );
+
+            if (publishButton) {
+
+                event.preventDefault();
+
+                if (
+                    event.stopImmediatePropagation
+                ) {
+                    event.stopImmediatePropagation();
+                }
+
+                publish();
+
+                return;
+            }
+
+            /*
+             For category cards we intentionally do not
+             stop the existing handler. The existing
+             viewer/navigation behavior remains intact.
+             */
+
+            var card =
+                target.closest(
+                    ".kaivyra-public-content-card"
+                );
+
+            if (card) {
+
+                var category =
+                    card.getAttribute(
+                        "data-category"
+                    );
+
+                var heading =
+                    card.querySelector(
+                        "strong"
+                    );
+
+                setTimeout(
+                    function () {
+
+                        publicContent(
+                            category,
+                            heading
+                                ? heading.textContent
+                                : "Published Content"
+                        );
+
+                    },
+                    0
+                );
+            }
+
+        },
+        true
+    );
+
+    document.addEventListener(
+        "change",
+        function (event) {
+
+            var target =
+                event.target;
+
+            if (
+                !target ||
+                target.type !== "file"
+            ) {
+                return;
+            }
+
+            var manager =
+                get(
+                    "kaivyra-owner-manager"
+                );
+
+            if (
+                !manager ||
+                !manager.contains(target)
+            ) {
+                return;
+            }
+
+            /*
+             Do NOT block the existing change handler.
+             We only keep the real File objects needed
+             by the publish action.
+             */
+
+            rememberSelectedFiles(
+                target
+            );
+
+        },
+        true
+    );
+
+})();
+</script></body>
 </html>
 
 
