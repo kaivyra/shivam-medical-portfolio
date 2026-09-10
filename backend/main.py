@@ -1,3 +1,4 @@
+﻿import json
 import hashlib
 import hmac
 import os
@@ -5,9 +6,10 @@ import re
 import uuid
 from datetime import datetime, timedelta, timezone
 from typing import Optional
+from urllib.error import HTTPError, URLError
+from urllib.parse import quote
+from urllib.request import Request, urlopen
 
-import boto3
-from botocore.client import Config
 from fastapi import Cookie, FastAPI, File, Form, Header, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -88,22 +90,50 @@ class Content(Base):
 Base.metadata.create_all(engine)
 
 
-R2_ENDPOINT = os.environ.get("R2_ENDPOINT", "").rstrip("/")
-R2_ACCESS_KEY_ID = os.environ.get("R2_ACCESS_KEY_ID", "")
-R2_SECRET_ACCESS_KEY = os.environ.get("R2_SECRET_ACCESS_KEY", "")
-R2_BUCKET = os.environ.get("R2_BUCKET", "kaivyra-content")
+SUPABASE_URL = os.environ.get("SUPABASE_URL", "").rstrip("/")
+SUPABASE_SECRET_KEY = os.environ.get("SUPABASE_SECRET_KEY", "")
+SUPABASE_BUCKET = os.environ.get("SUPABASE_BUCKET", "kaivyra-content")
 
-if not all([R2_ENDPOINT, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET]):
-    raise RuntimeError("R2_ENDPOINT, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and R2_BUCKET are required")
+if not all([SUPABASE_URL, SUPABASE_SECRET_KEY, SUPABASE_BUCKET]):
+    raise RuntimeError("SUPABASE_URL, SUPABASE_SECRET_KEY and SUPABASE_BUCKET are required")
 
-s3 = boto3.client(
-    "s3",
-    endpoint_url=R2_ENDPOINT,
-    aws_access_key_id=R2_ACCESS_KEY_ID,
-    aws_secret_access_key=R2_SECRET_ACCESS_KEY,
-    region_name="auto",
-    config=Config(signature_version="s3v4"),
-)
+
+def _storage_request(
+    method: str,
+    path: str,
+    body: bytes = b"",
+    content_type: str = "application/json",
+) -> bytes:
+    encoded_path = quote(path, safe="/")
+    url = f"{SUPABASE_URL}/storage/v1/{encoded_path}"
+
+    headers = {
+        "apikey": SUPABASE_SECRET_KEY,
+        "Authorization": f"Bearer {SUPABASE_SECRET_KEY}",
+        "Content-Type": content_type,
+    }
+
+    request = Request(
+        url,
+        data=body if body else None,
+        headers=headers,
+        method=method,
+    )
+
+    try:
+        with urlopen(request, timeout=60) as response:
+            return response.read()
+
+    except HTTPError as exc:
+        raise RuntimeError(
+            f"SUPABASE_STORAGE_HTTP_{exc.code}"
+        ) from exc
+
+    except URLError as exc:
+        raise RuntimeError(
+            "SUPABASE_STORAGE_CONNECTION_FAILED"
+        ) from exc
+
 
 OWNER_ACCESS_CODE = os.environ.get("OWNER_ACCESS_CODE", "")
 SESSION_SECRET = os.environ.get("SESSION_SECRET", "")
@@ -170,13 +200,29 @@ def owner_auth(session_cookie: Optional[str], csrf: Optional[str]) -> None:
 
 
 def signed_download_url(object_key: str) -> str:
-    return s3.generate_presigned_url(
-        "get_object",
-        Params={"Bucket": R2_BUCKET, "Key": object_key},
-        ExpiresIn=900,
+    payload = b'{"expiresIn":900}'
+
+    response_bytes = _storage_request(
+        "POST",
+        f"object/sign/{SUPABASE_BUCKET}/{object_key}",
+        body=payload,
+        content_type="application/json",
     )
 
+    try:
+        response = json.loads(response_bytes.decode("utf-8"))
+    except Exception as exc:
+        raise RuntimeError("SUPABASE_SIGNED_URL_INVALID_RESPONSE") from exc
 
+    signed_path = response.get("signedURL")
+
+    if not signed_path:
+        raise RuntimeError("SUPABASE_SIGNED_URL_FAILED")
+
+    if signed_path.startswith("http://") or signed_path.startswith("https://"):
+        return signed_path
+
+    return SUPABASE_URL + "/storage/v1" + signed_path
 @app.get("/health")
 def health():
     return {"ok": True, "service": "kaivyra-content-api", "version": APP_VERSION, "status": "ready"}
@@ -257,11 +303,11 @@ async def owner_upload(
     content_type = file.content_type or "application/octet-stream"
 
     try:
-        s3.put_object(
-            Bucket=R2_BUCKET,
-            Key=object_key,
-            Body=data,
-            ContentType=content_type,
+        _storage_request(
+            "POST",
+            f"object/{SUPABASE_BUCKET}/{object_key}",
+            body=data,
+            content_type=content_type,
         )
     except Exception as exc:
         raise HTTPException(status_code=502, detail="STORAGE_UPLOAD_FAILED") from exc
@@ -339,7 +385,17 @@ def delete_content(
         db.commit()
 
     try:
-        s3.delete_object(Bucket=R2_BUCKET, Key=object_key)
+        delete_payload = json.dumps(
+            {"prefixes": [object_key]}
+        ).encode("utf-8")
+
+        _storage_request(
+            "DELETE",
+            f"object/{SUPABASE_BUCKET}",
+            body=delete_payload,
+            content_type="application/json",
+        )
+
     except Exception as exc:
         # The DB record is already removed. Return a controlled warning rather than lying.
         return JSONResponse(
@@ -371,3 +427,4 @@ def public_content(category: Optional[str] = None):
             }
             for row in rows
         ]
+
