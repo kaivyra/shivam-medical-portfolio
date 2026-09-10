@@ -8,7 +8,7 @@ from datetime import datetime, timedelta, timezone
 from typing import Optional
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote
-from urllib.request import Request, urlopen
+from urllib.request import Request as UrlRequest, urlopen
 
 from fastapi import Cookie, FastAPI, File, Form, Header, HTTPException, UploadFile, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -112,7 +112,7 @@ def _storage_request(
         "Content-Type": content_type,
     }
 
-    request = Request(
+    request = UrlRequest(
         url,
         data=body if body else None,
         headers=headers,
