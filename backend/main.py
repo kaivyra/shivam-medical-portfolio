@@ -109,7 +109,6 @@ def _storage_request(
 
     headers = {
         "apikey": SUPABASE_SECRET_KEY,
-        "Authorization": f"Bearer {SUPABASE_SECRET_KEY}",
         "Content-Type": content_type,
     }
 
