@@ -1559,7 +1559,7 @@ footer{
   }
 
   .hero-visual{
-    display:none;
+    display: block;
   }
 
   .hero{
@@ -4871,6 +4871,90 @@ img[src*="brother-photo.png"] {
   ]
 }
 </script>
+
+<style id="kaivyra-mobile-top-image-visibility-fix">
+/* KAIVYRA: mobile visibility safeguard for homepage images */
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;
+  }
+
+  .hero img,
+  .hero-image img,
+  .hero-image,
+  .home-hero img,
+  .homepage-hero img,
+  .home-image img,
+  .homepage-image img,
+  .banner-image img {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+</style>
+
+<style id="kaivyra-mobile-top-image-final-safe-fix">
+/* KAIVYRA mobile homepage image visibility safeguard */
+@media screen and (max-width: 768px) {
+  .kaivyra-mobile-top-image-fix {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .kaivyra-mobile-top-image-fix img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 100%;
+    height: auto;
+  }
+}
+</style>
+
+<style id="kaivyra-hero-svg-mobile-final-fix">
+/* KAIVYRA HERO VISUAL — MOBILE RESPONSIVE SAFEGUARD */
+.hero-visual {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.hero-visual svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-visual {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+  }
+
+  .hero-visual .visual-frame {
+    max-width: 100%;
+  }
+
+  .hero-visual svg {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+</style>
 </head>
 <!-- KAIVYRA HEADER NAV FINAL 1.5X COPPERPLATE -->
 <style id="kaivyra-header-nav-final">
@@ -6285,7 +6369,7 @@ img[src*="brother-photo.png"] {
                 data-kaivyra-medical-close
                 aria-label="Back to KAIVYRA"
             >
-                <span aria-hidden="true">â†</span>
+                <span aria-hidden="true">←</span>
                 <span>Back</span>
             </button>
 
@@ -9610,7 +9694,7 @@ if("IntersectionObserver" in window){
         '</button>' +
 
         '<button type="button" class="kaivyra-lang-option" data-lang="hi">' +
-          'à¤¹à¤¿à¤¨à¥à¤¦à¥€' +
+          'हिन्दी' +
         '</button>';
 
 
@@ -10894,7 +10978,7 @@ main .item-card:hover {
       >
 
         <span class="kaivyra-back-icon">
-          â†
+          ←
         </span>
 
         <span>
@@ -12421,7 +12505,7 @@ body.kaivyra-medical-explore-active{
     <header class="kaivyra-research-50-header">
 
       <button type="button" class="kaivyra-research-50-back" id="kaivyraResearch50Back">
-        <span aria-hidden="true">â†</span>
+        <span aria-hidden="true">←</span>
         <span>Back</span>
       </button>
 
