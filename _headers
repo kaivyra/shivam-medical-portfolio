@@ -1,18 +1,9 @@
-﻿/*
-  KAIVYRA production security headers
-  Managed in Git and served by Cloudflare Workers Static Assets.
-  CSP intentionally permits existing inline scripts/styles because
-  the current application architecture uses inline JS/CSS.
-*/
-
+# KAIVYRA production security headers
+# Managed in Git and applied by Cloudflare Workers Static Assets.
+/*
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://kaivyra-content-api.onrender.com; script-src 'self' 'unsafe-inline' https://www.linkedin.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://kaivyra.in https://www.linkedin.com https://kaivyra-content-api.onrender.com; frame-src 'self'; media-src 'self' blob:; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests
-
-/*
-  Keep custom error/document responses protected as well.
-*/
