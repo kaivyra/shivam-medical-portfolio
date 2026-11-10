@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research | KAIVYRA</title>
+<meta name="description" content="Search real scientific publications from PubMed, PubMed Central and Europe PMC with study-type labels and links to original sources.">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="/platform/platform.css">
+</head>
+<body class="kv-page" data-kv-section="research">
+<div id="kv-global-bar"></div>
+<main class="kv-wrap" id="kv-main">
+<p class="kv-eyebrow">Research <span class="kv-badge live">Live data: Europe PMC</span></p>
+<h1 class="kv-h1">Search the scientific literature</h1>
+<p class="kv-lead">Real publications from PubMed/MEDLINE, PubMed Central and, if you choose, preprints, retrieved through the Europe PMC API. Every record links to its original source. KAIVYRA does not host or reproduce full papers.</p>
+
+<form id="sf" class="kv-card" role="search" aria-label="Research search">
+  <div class="kv-row">
+    <div class="kv-field" style="flex:3 1 320px"><label for="q">Search</label><input class="kv-input" id="q" name="q" type="search" maxlength="300" placeholder="e.g. SGLT2 inhibitors heart failure" autocomplete="off"></div>
+    <div class="kv-field" style="flex:0 1 160px"><label for="field">Search in</label><select class="kv-select" id="field"><option value="all">All fields</option><option value="title">Title</option><option value="author">Author</option><option value="journal">Journal</option></select></div>
+    <button class="kv-btn" type="submit">Search</button>
+  </div>
+  <details style="margin-top:12px" id="adv"><summary style="cursor:pointer;color:var(--kv-cyan);font-size:13px">Filters</summary>
+    <div class="kv-grid c3" style="margin-top:12px">
+      <fieldset style="border:1px solid var(--kv-line);border-radius:10px;padding:8px 12px"><legend style="font-size:12px;color:var(--kv-mute)">Study type (source-listed publication type)</legend>
+        <label><input type="checkbox" name="design" value="sr"> Systematic review</label><br>
+        <label><input type="checkbox" name="design" value="meta"> Meta-analysis</label><br>
+        <label><input type="checkbox" name="design" value="rct"> Randomized controlled trial</label><br>
+        <label><input type="checkbox" name="design" value="ct"> Clinical trial</label><br>
+        <label><input type="checkbox" name="design" value="obs"> Observational study</label><br>
+        <label><input type="checkbox" name="design" value="guideline"> Practice guideline</label><br>
+        <label><input type="checkbox" name="design" value="review"> Review</label><br>
+        <label><input type="checkbox" name="design" value="cases"> Case reports</label></fieldset>
+      <div class="kv-grid" style="align-content:start">
+        <div class="kv-row"><div class="kv-field" style="flex:1"><label for="yf">Year from</label><input class="kv-input" id="yf" type="number" min="1800" max="2100" placeholder="2015"></div><div class="kv-field" style="flex:1"><label for="yt">Year to</label><input class="kv-input" id="yt" type="number" min="1800" max="2100" placeholder="2026"></div></div>
+        <div class="kv-field"><label for="src">Sources</label><select class="kv-select" id="src"><option value="med">PubMed / MEDLINE</option><option value="medpmc">PubMed + PubMed Central</option><option value="preprints">Also include preprints (not peer reviewed)</option></select></div>
+        <div class="kv-field"><label for="sort">Sort by</label><select class="kv-select" id="sort"><option value="relevance">Relevance</option><option value="date">Newest first</option><option value="cited">Most cited</option></select></div>
+      </div>
+      <div class="kv-grid" style="align-content:start">
+        <label><input type="checkbox" id="oa"> Open access only</label>
+        <label><input type="checkbox" id="abs"> Has abstract</label>
+        <label><input type="checkbox" id="hum"> Human studies (MeSH: Humans)</label>
+        <label><input type="checkbox" id="grp"> Group this page by study type</label>
+      </div>
+    </div>
+  </details>
+</form>
+
+<div id="status" class="kv-meta" aria-live="polite" style="margin:14px 0 0"></div>
+<div id="out" aria-busy="false">
+  <div class="kv-empty" style="margin-top:14px"><strong>Start with a topic, drug, disease or author.</strong><br>Try the <a class="kv-link" href="/knowledge/">Knowledge Hub</a> for ready-made topic searches, or open <a class="kv-link" href="/ai-lab/">AI Lab</a> to ask a research question.</div>
+</div>
+<div class="kv-pager" id="pager" hidden><button class="kv-btn ghost sm" id="prev" type="button">← Previous</button><span id="pn"></span><button class="kv-btn ghost sm" id="next" type="button">Next →</button></div>
+<p class="kv-note info" style="margin-top:18px">Study-type labels come from the publication type listed by the source. When a record has none, KAIVYRA may infer a type from wording and marks it “inferred”. Neither is an appraisal of study quality.</p>
+</main>
+<div id="kv-footer"></div>
+<script src="/platform/platform.js"></script>
+<script src="/platform/research-client.js"></script>
+<script src="/platform/workspace-store.js"></script>
+<script src="/platform/ui.js"></script>
+<script src="/research/app.js"></script>
+</body>
+</html>

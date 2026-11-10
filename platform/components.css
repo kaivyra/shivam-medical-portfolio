@@ -1,0 +1,73 @@
+/* KAIVYRA shared components (v5). Built on the tokens in platform.css. Nothing here changes existing selectors.
+ * Used by Research, AI Lab, Evidence Lab, Trials, Knowledge Hub, Workspace. */
+
+/* tabs */
+.kv-tabs{display:flex;gap:6px;overflow-x:auto;padding:4px;margin:0 0 16px;border:1px solid var(--kv-line);border-radius:14px;background:var(--kv-panel);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.kv-tabs::-webkit-scrollbar{display:none}
+.kv-tab{flex:0 0 auto;font:600 13px var(--kv-font);padding:9px 14px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--kv-mute);cursor:pointer;white-space:nowrap;transition:color .2s,background .2s,border-color .2s}
+.kv-tab:hover{color:var(--kv-text);background:color-mix(in srgb,var(--kv-cyan) 8%,transparent)}
+.kv-tab[aria-selected=true]{color:var(--kv-text);background:color-mix(in srgb,var(--kv-cyan) 14%,var(--kv-card));border-color:color-mix(in srgb,var(--kv-cyan) 45%,var(--kv-line))}
+.kv-tab .kv-badge{margin-left:6px}
+
+/* toolbar + segmented control */
+.kv-toolbar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;margin:12px 0}
+.kv-toolbar .kv-grow{flex:1 1 auto}
+.kv-seg{display:inline-flex;border:1px solid var(--kv-line);border-radius:10px;overflow:hidden}
+.kv-seg button{font:600 12px var(--kv-font);padding:7px 12px;border:0;background:transparent;color:var(--kv-mute);cursor:pointer}
+.kv-seg button+button{border-left:1px solid var(--kv-line)}
+.kv-seg button[aria-pressed=true]{background:color-mix(in srgb,var(--kv-cyan) 16%,var(--kv-card));color:var(--kv-text)}
+
+/* stat tiles */
+.kv-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.kv-kpi{border:1px solid var(--kv-line);border-radius:14px;padding:12px 14px;background:var(--kv-card)}
+.kv-kpi .n{font:700 24px var(--kv-font);letter-spacing:-.02em;line-height:1.1}
+.kv-kpi .l{font:500 12px var(--kv-font);color:var(--kv-mute);margin-top:3px}
+.kv-kpi.good .n{color:var(--kv-green)}.kv-kpi.warn .n{color:var(--kv-amber)}.kv-kpi.bad .n{color:var(--kv-rose)}
+
+/* horizontal bars (accessible: values are in text, colour is decoration) */
+.kv-bars{display:grid;gap:7px;margin:8px 0}
+.kv-barrow{display:grid;grid-template-columns:minmax(90px,170px) 1fr auto;gap:10px;align-items:center;font-size:12.5px}
+.kv-barrow .lab{color:var(--kv-mute);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kv-barrow .trk{height:9px;border-radius:99px;background:color-mix(in srgb,var(--kv-line) 60%,transparent);overflow:hidden}
+.kv-barrow .fil{display:block;height:100%;border-radius:99px;background:var(--kv-grad)}
+.kv-barrow .val{font:600 12px var(--kv-mono);color:var(--kv-text)}
+
+/* layout helpers */
+.kv-split{display:grid;grid-template-columns:260px minmax(0,1fr);gap:22px;align-items:start}
+.kv-split>aside{position:sticky;top:calc(var(--kv-bar-h) + 14px);max-height:calc(100vh - var(--kv-bar-h) - 28px);overflow:auto}
+@media (max-width:900px){.kv-split{grid-template-columns:1fr}.kv-split>aside{position:static;max-height:none}}
+.kv-grid.c4{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+.kv-stack{display:grid;gap:12px}
+.kv-sep{height:1px;background:var(--kv-line);margin:16px 0;border:0}
+.kv-fs{border:1px solid var(--kv-line);border-radius:12px;padding:8px 12px;margin:0}
+.kv-fs legend{font-size:12px;color:var(--kv-mute);padding:0 4px}
+.kv-fs label{display:flex;gap:8px;align-items:flex-start;font-size:13px;padding:3px 0}
+.kv-pre{font:500 12.5px/1.6 var(--kv-mono);background:var(--kv-bg);border:1px solid var(--kv-line);border-radius:10px;padding:10px 12px;white-space:pre-wrap;word-break:break-word;margin:6px 0}
+.kv-kbd{font:600 11px var(--kv-mono);border:1px solid var(--kv-line);border-bottom-width:2px;border-radius:6px;padding:1px 6px;color:var(--kv-mute);background:var(--kv-panel)}
+.kv-progress{height:8px;border-radius:99px;background:color-mix(in srgb,var(--kv-line) 60%,transparent);overflow:hidden}
+.kv-progress>span{display:block;height:100%;background:var(--kv-grad);border-radius:99px;transition:width .35s var(--kv-ease)}
+.kv-details{border:1px solid var(--kv-line);border-radius:12px;background:var(--kv-card);margin:8px 0}
+.kv-details>summary{cursor:pointer;padding:10px 14px;font:600 13.5px var(--kv-font);list-style:none;display:flex;gap:8px;align-items:center;justify-content:space-between}
+.kv-details>summary::-webkit-details-marker{display:none}
+.kv-details>summary::after{content:"+";font:600 16px var(--kv-mono);color:var(--kv-mute)}
+.kv-details[open]>summary::after{content:"−"}
+.kv-details>div{padding:0 14px 12px}
+.kv-crumbs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;color:var(--kv-mute);margin-bottom:6px}
+.kv-crumbs a{color:var(--kv-cyan);text-decoration:none}.kv-crumbs a:hover{text-decoration:underline}
+.kv-crumbs span[aria-hidden]{opacity:.5}
+
+/* toast */
+.kv-toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:400;background:var(--kv-panel);border:1px solid var(--kv-cyan-d);color:var(--kv-text);padding:10px 16px;border-radius:12px;font:500 13px var(--kv-font);box-shadow:var(--kv-shadow-2,0 12px 32px -12px #000);transition:opacity .2s,transform .25s var(--kv-ease,ease)}
+.kv-toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* SVG chart text */
+.kv-svg text{font-family:var(--kv-font);fill:var(--kv-mute);font-size:11px}
+.kv-svg .ax{stroke:var(--kv-line);stroke-width:1}
+.kv-svg .pt{fill:var(--kv-cyan)}
+.kv-svg .sq{fill:var(--kv-indigo)}
+.kv-svg .dia{fill:var(--kv-amber)}
+.kv-svg .ln{stroke:var(--kv-text);stroke-width:1.5;fill:none}
+.kv-svg .dash{stroke:var(--kv-mute);stroke-dasharray:4 3;stroke-width:1}
+
+/* print: calculators and briefs are often printed */
+@media print{.kv-tabs,.kv-toolbar,.kv-toast{display:none!important}.kv-details{break-inside:avoid}.kv-details>div{display:block!important}}

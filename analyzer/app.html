@@ -1,0 +1,850 @@
+<!DOCTYPE html><html lang="hi"><head><meta name="robots" content="noindex"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>KAIVYRA | Medical Report Analyzer</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1f5f9;--c:#fff;--t:#0b1f3a;--m:#5b6b80;--b:#dde4ec;--p:#0f766e;--n:#0b1f3a;--r:#dc2626;--g:#059669;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0a1322;--c:#121d31;--t:#e6eef9;--m:#93a4bb;--b:#26344d;--p:#2dd4bf}}
+:root[data-theme=dark]{--bg:#0a1322;--c:#121d31;--t:#e6eef9;--m:#93a4bb;--b:#26344d;--p:#2dd4bf}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--t);font:15px/1.6 'Noto Sans Devanagari',system-ui,sans-serif}
+.w{max-width:1040px;margin:auto;padding:0 14px}
+.hero{background:linear-gradient(135deg,#0b1f3a,#12345c 60%,#0f766e);color:#fff;padding:26px 0 70px}
+.br{font-weight:800;letter-spacing:.3px;opacity:.95}.br span{color:#5eead4}
+.hero h1{font-size:clamp(24px,4.5vw,38px);line-height:1.25;margin:14px 0 8px;font-weight:800}.hero p{max-width:720px;opacity:.88;margin:0 0 14px}
+.pills{display:flex;gap:8px;flex-wrap:wrap}.pills span{background:#ffffff1f;border:1px solid #ffffff33;border-radius:99px;padding:4px 12px;font-size:13px}
+.main{margin-top:-46px}
+.card{background:var(--c);border:1px solid var(--b);border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 6px 24px #0b1f3a14}
+h3{margin:0 0 8px;font-size:17px}.st{display:flex;gap:12px;align-items:center;margin-bottom:14px}.st i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--p);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:800}.st h3{margin:0}
+.g{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.mt{margin-top:12px}
+label{font-size:12px;color:var(--m);font-weight:700;display:block;margin-bottom:3px}
+input,select,textarea{width:100%;padding:10px 11px;border:1px solid var(--b);border-radius:10px;background:var(--bg);color:var(--t);font:inherit}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--p);border-color:transparent}
+button{padding:10px 16px;border:0;border-radius:10px;background:var(--p);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+button.s{background:var(--bg);color:var(--t);border:1px solid var(--b)}button.x{background:none;color:var(--r);padding:4px 8px}
+.go{width:100%;margin-top:16px;padding:14px;font-size:17px;background:linear-gradient(90deg,#0b1f3a,#0f766e)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.tc{background:var(--bg);color:var(--t);border:1px solid var(--b);border-radius:99px;padding:4px 12px;font-size:13px;font-weight:600}.tc.on{background:var(--p);color:#fff;border-color:var(--p)}
+.sw{position:relative}#sg{display:none;position:absolute;left:0;right:0;top:100%;z-index:5;background:var(--c);border:1px solid var(--b);border-radius:12px;box-shadow:0 14px 34px #0b1f3a40;max-height:330px;overflow:auto;margin-top:4px}
+#sg button{display:block;width:100%;text-align:left;background:none;color:var(--t);border-radius:0;font-weight:400;padding:10px 12px}#sg button:hover{background:var(--bg)}#sg .nw{color:var(--p);font-weight:700}
+.hd,.tr{display:grid;grid-template-columns:minmax(140px,2.2fr) 1fr .9fr .8fr .8fr 1.3fr 34px;gap:8px;align-items:center}
+.hd{font-size:11px;color:var(--m);font-weight:700;padding:12px 4px 4px}.tr{padding:8px 4px;border-bottom:1px solid var(--b)}.tr small{display:block;color:var(--m);font-size:11px}
+.ab{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.ab .m{flex:1}
+details{border:1px dashed var(--b);border-radius:12px;padding:10px 12px}summary{cursor:pointer;font-weight:700}
+.chip{display:inline-block;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:700}
+.N{background:#d1fae5;color:#065f46}.L,.H{background:#fef3c7;color:#92400e}.C{background:#fee2e2;color:#991b1b}.U{background:var(--b);color:var(--m)}
+.ban{padding:14px 16px;border-radius:14px;font-weight:700;margin:14px 0}.ban.c{background:#7f1d1d;color:#fff}.ban.w2{background:#fef3c7;color:#78350f}.ban.k{background:#d1fae5;color:#064e3b}
+.big{font-size:28px;font-weight:800}.m{color:var(--m);font-size:13px}.it{padding:10px;border:1px solid var(--b);border-radius:12px}
+.ring{width:96px;height:96px;border-radius:50%;background:conic-gradient(var(--p) calc(var(--v)*1%),var(--b) 0);display:grid;place-items:center}.ring b{width:74px;height:74px;border-radius:50%;background:var(--c);display:grid;place-items:center;font-size:26px}
+.bar{height:7px;border-radius:9px;background:var(--b);margin:6px 0;position:relative}.bar i{position:absolute;top:-2px;width:11px;height:11px;border-radius:50%;background:var(--p)}
+ul{margin:4px 0;padding-left:20px}a{color:var(--p)}td,th{padding:5px;border-bottom:1px solid var(--b);text-align:left}
+#ts{display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--n);color:#fff;padding:10px 16px;border-radius:12px;z-index:9;max-width:90%}
+@media(max-width:720px){.hd{display:none}.tr{grid-template-columns:1fr 1fr}.tr>:first-child{grid-column:1/-1}}
+@media print{.np,.hero,.ls{display:none!important}.main{margin-top:0}.card{box-shadow:none;break-inside:avoid}body{background:#fff}}
+.tr input,.tr select{min-width:0}.ban{line-height:1.5}
+
+.tc.on{background:var(--p);color:#fff}.mi{display:inline-block;margin:3px 4px 0 0;padding:2px 8px;border-radius:99px;background:rgba(220,38,38,.1);color:var(--r);font-size:12px}.lb{display:flex;gap:4px}.lb input{width:100%;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.ls{display:flex;gap:8px;align-items:center}.tg{background:#fff;color:#0b1f3a;border:0;border-radius:10px;padding:7px 12px;font-size:16px;line-height:1.2}.ls select{width:auto;padding:7px 10px;border-radius:10px;background:#fff;color:#0b1f3a;border:0;font-weight:600}
+body{font-family:'Noto Sans Devanagari','Noto Sans Bengali','Noto Sans Tamil','Noto Sans Telugu','Noto Sans Arabic','Noto Sans JP',system-ui,sans-serif}
+@media(max-width:700px){.tr{grid-template-columns:1fr 1fr 1fr}.hd{display:none}.tr>div:first-child{grid-column:1/-1}}
+.ocp{display:none;margin-top:12px}.ocp .pb{height:8px;border-radius:9px;background:var(--b);overflow:hidden}.ocp .pb i{display:block;height:100%;width:0;background:var(--p);transition:width .25s}
+.tl{text-align:center;border-width:2px}.tl.k{border-color:#10b981}.tl.w{border-color:#f59e0b}.tl.c{border-color:#dc2626}.tl .big{line-height:1.2}.hero .pills{margin-top:6px}.ft{text-align:center;padding:10px 0 28px}.fnd{list-style:none;padding:0;margin:8px 0 0}.fnd li{padding:10px 12px;border:1px solid var(--b);border-left-width:5px;border-radius:12px;margin:8px 0}.fnd li.k{border-left-color:#10b981}.fnd li.w{border-left-color:#f59e0b}.fnd li.c{border-left-color:#dc2626}.lg{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;margin:6px 0 2px}
+
+html{-webkit-text-size-adjust:100%}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;line-height:1.55}
+:root{--b:#c9d3df;--m:#475569}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--b:#34456a;--m:#a9b8cf}}:root[data-theme=dark]{--b:#34456a;--m:#a9b8cf}
+.card{border-width:1px;box-shadow:0 1px 2px #0b1f3a1a,0 8px 24px #0b1f3a12}
+h3{letter-spacing:.1px;font-weight:800}label{letter-spacing:.2px;text-transform:none}
+input,select,textarea{border-width:1.5px;min-height:40px}button{min-height:40px;letter-spacing:.1px}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:2px solid var(--p);outline-offset:1px}
+.tc{min-height:32px;padding:5px 13px;border-width:1.5px}.tc.mp{background:none;border-style:dashed;color:var(--p)}
+.chip{border:1px solid currentColor;font-weight:800}.tr{padding:10px 4px}table{border-collapse:collapse;width:100%}th{font-size:12px;color:var(--m);border-bottom:2px solid var(--b)}
+
+:root{--bg:#f5f4ef;--b:#d6d2c6;--p:#1f5f8b;--pb:#1f5f8b;--n:#14213d}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1522;--c:#151f30;--b:#2c3a54;--p:#7bb6e0;--pb:#2f6f9f}}:root[data-theme=dark]{--bg:#0e1522;--c:#151f30;--b:#2c3a54;--p:#7bb6e0;--pb:#2f6f9f}
+h1,h3,.big,.br{font-family:Georgia,'Noto Serif Devanagari','Times New Roman',serif}
+.hero{background:#14213d;padding:22px 0 62px;border-bottom:3px solid #c9a227}
+.hero h1{font-size:clamp(24px,4vw,33px);font-weight:700;letter-spacing:0;max-width:720px}.hero p{font-size:14px;opacity:.82;max-width:680px}
+.br{font-weight:700;font-size:15px;letter-spacing:.6px;text-transform:uppercase}.br span{color:#c9a227;text-transform:none;font-weight:400;letter-spacing:0}
+.pills{gap:0}.pills span{background:none;border:0;border-right:1px solid #ffffff40;border-radius:0;padding:0 14px;font-size:12.5px;opacity:.85}.pills span:first-child{padding-left:0}.pills span:last-child{border:0}
+.card{border-radius:6px;box-shadow:none;padding:20px}
+.st{border-bottom:1px solid var(--b);padding-bottom:10px}.st i{width:26px;height:26px;border-radius:3px;background:none;border:1.5px solid var(--p);color:var(--p);font-family:Georgia,serif;font-size:14px}
+input,select,textarea,.it,details{border-radius:5px}button{border-radius:5px;background:var(--pb);font-weight:600}.go{background:var(--pb);border-radius:5px;font-size:16px}
+.tc,.chip,.mi,.pills span{border-radius:4px}.tc{font-weight:500}.tc.on{background:var(--pb);border-color:var(--pb)}
+.ban{border-radius:4px;border-left:5px solid;font-weight:600}.ban.c{background:#fbecec;color:#7a1d1d;border-color:#b42318}.ban.w2{background:#fdf4dc;color:#6b4a00;border-color:#c9a227}.ban.k{background:#e8f3ec;color:#14532d;border-color:#2e7d4f}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .ban{filter:brightness(.92)}}
+.dt{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:baseline}.dt.gd{background:#2e7d4f}.dt.wd{background:#d99a00}.dt.rd{background:#c62828}
+.tl{border-radius:5px;border-width:0;border-top:4px solid;background:var(--bg)}.tl.k{border-color:#2e7d4f}.tl.w{border-color:#d99a00}.tl.c{border-color:#c62828}
+.tg,.ls select{border-radius:4px;font-size:13px;font-weight:600}
+.cats{display:flex;gap:2px;flex-wrap:wrap;border-bottom:1px solid var(--b);margin-bottom:2px}.ct{background:none;color:var(--m);border-radius:0;padding:7px 11px;font-size:13px;font-weight:600;border-bottom:2px solid transparent;min-height:34px}.ct.on{color:var(--p);background:none;border-bottom-color:var(--p)}#pn .chips{margin-top:10px}
+</style></head><body>
+<header class="hero"><div class="w"><div class="top"><div class="br">KAIVYRA <span>Medical Report Analyzer</span></div><div class="ls np"><button id="th" class="tg" onclick="toggleTheme()" aria-label="Theme" title="Light / Dark"></button><select id="lang" onchange="setLang(this.value)" aria-label="Language"></select></div></div><h1 data-i="t"></h1><p id="hp"></p><div class="pills"><span id="pl1"></span><span id="pl2"></span><span id="pl3"></span></div></div></header>
+<div class="w main">
+<section class="card np"><div class="st"><i>1</i><div><h3 data-i="p1"></h3></div></div>
+<div class="g"><div><label data-i="nm"></label><input id="nm"></div><div><label data-i="ag"></label><input id="age" type="number" min="0" max="120" inputmode="numeric" placeholder="—" required></div><div><label data-i="sx"></label><select id="sex" required><option value="">—</option><option value="m" data-i="m"></option><option value="f" data-i="f"></option></select></div><div><label data-i="ct"></label><input id="city" autocomplete="off"></div><div><label data-i="dt"></label><input id="rd" type="date"></div><div><label id="fsl"></label><select id="fs"></select></div><div><label id="htl"></label><input id="ht" type="number" min="30" max="250" inputmode="decimal"></div><div><label id="wtl"></label><input id="wt" type="number" min="1" max="300" inputmode="decimal"></div></div>
+<label class="mt" data-i="sy"></label><textarea id="sym" rows="2"></textarea>
+<label class="mt" data-i="hx"></label><textarea id="hx" rows="2"></textarea>
+<label class="mt" data-i="ot"></label><textarea id="img" rows="3"></textarea></section>
+<section class="card np"><div class="st"><i>2</i><div><h3 data-i="p2"></h3></div></div>
+<div class="m" data-i="pl"></div><div id="pn" class="chips"></div>
+<div class="sw mt"><input id="sr" data-ip="se" autocomplete="off" oninput="srch(this.value)" onkeydown="if(event.key=='Enter'){const f=$('sg').querySelector('button');if(f)f.click()}"><div id="sg"></div></div>
+<div class="hd" id="hdr"><span data-i="ts"></span><span data-i="va"></span><span data-i="un"></span><span data-i="rg"></span><span data-i="lr"></span><span data-i="stt"></span><span></span></div><div id="ent"></div>
+<div class="ab"><button class="s" onclick="addC('')" data-i="ar"></button><button class="s" onclick="RW=[];buildPn();draw()" data-i="cl"></button></div>
+<details class="mt" open><summary data-i="ps"></summary><div id="hint" class="m"></div><textarea id="raw" rows="6" class="mt" placeholder="Hemoglobin: 9.8 g/dL&#10;HbA1c: 7.9 %&#10;Creatinine: 1.5 mg/dL"></textarea>
+<div class="ab"><button onclick="doParse()" data-i="rd"></button><button class="s" onclick="sample()" data-i="ex"></button><button class="s" id="b-cam" onclick="$('cam').click()"></button><button class="s" id="b-fil" onclick="$('fl').click()"></button><input type="file" id="cam" accept="image/*" capture="environment" hidden onchange="fileIn(this)"><input type="file" id="fl" accept="image/*,application/pdf,.pdf,.txt,.csv" multiple hidden onchange="fileIn(this)"></div><div class="ocp" id="ocp"><div class="pb"><i id="ocb"></i></div><div class="m" id="oct"></div></div></details>
+<button class="go" onclick="analyze()" data-i="an"></button></section>
+<div id="out"></div><p class="m np" data-i="ds"></p><div class="ft m np">© 2026 KAIVYRA · <a href="https://kaivyra.in/" target="_blank" rel="noopener">kaivyra.in</a></div></div>
+<script>
+const RAW=`hb|Hemoglobin|g/dL|13.5/12|17.5/15.5|7|20|blood|cbc|g/L:0.1|(?<!glycosylated )(?<!corpuscular )(?<!cell )hemoglobin(?! concentration),(?<!corpuscular )(?<!cell )haemoglobin,hb,hgb|खून की कमी (एनीमिया): थकान, चक्कर, सांस फूलना|खून गाढ़ा / डिहाइड्रेशन / धूम्रपान का असर|Low: anaemia (tiredness, dizziness, breathlessness)|High: dehydration, smoking or too many red cells
+tlc|WBC (TLC)|/cumm|4000|11000|2000|30000|infection|cbc|10^3/µL:1000,10^9/L:1000|tlc,wbc,leucocyte count,leukocyte count|WBC कम: वायरल या कमजोर इम्युनिटी|WBC अधिक: बैक्टीरियल इन्फेक्शन / सूजन|Low: viral illness or weak immunity|High: bacterial infection or inflammation
+plt|Platelets|lakh/cumm|1.5|4.5|0.5|10|blood|cbc|/cumm:0.00001,10^3/µL:0.01,10^9/L:0.01|platelet count,(?<!mean )(?<!large )platelets,(?<!mean )(?<!large )platelet(?! volume)(?! distribution)(?! crit),plt|प्लेटलेट कम: डेंगू/वायरल/B12 कमी; ब्लीडिंग का खतरा|प्लेटलेट अधिक: सूजन या आयरन कमी में|Low: dengue, viral, B12 deficiency; bleeding risk|High: inflammation or iron deficiency
+rbc|RBC|million/uL|4.5/4.0|5.9/5.2|2.5|7|blood|cbc||(?<!urine )rbc count,(?<!urine )rbc|||Low: anaemia|High: dehydration or polycythaemia
+mcv|MCV|fL|80|100|60|125|blood|cbc||mcv|MCV कम: आयरन कमी / थैलेसीमिया ट्रेट|MCV अधिक: B12 / फोलेट की कमी|Low: iron deficiency or thalassaemia trait|High: B12 / folate deficiency
+esr|ESR|mm/hr|0|15/20|0|100|immune|fever||esr||पुरानी सूजन / इन्फेक्शन / गठिया का संकेत|-|High ESR: chronic inflammation or infection
+ferritin|Ferritin|ng/mL|30/15|300/150|0|1e9|blood|iron|ug/L:1|ferritin|आयरन भंडार खाली: बाल झड़ना, थकान|सूजन / लिवर तनाव / आयरन ओवरलोड|Low: empty iron stores; hair fall, tiredness|High: inflammation, liver stress or iron overload
+iron|Serum Iron|mcg/dL|65/50|175/170|0|1e9|blood|iron|µmol/L:5.587|(?<!total )(?<!unsaturated )serum iron,(?<!binding )(?<!total )iron(?! binding)(?! sat)||||
+fbs|Fasting Sugar|mg/dL|70|99|54|300|sugar|sugar|mmol/L:18.016|fasting blood sugar,fasting glucose,fasting sugar,fbs,fbg|शुगर कम: तुरंत मीठा लें|100-125 प्री-डायबिटीज, 126+ डायबिटीज श्रेणी (दोबारा जांच से पुष्टि)|Low: take sugar immediately|100-125 prediabetes, 126+ diabetes range (confirm by repeat test)
+ppbs|PP Sugar|mg/dL|70|140|54|400|sugar|sugar|mmol/L:18.016|post prandial,postprandial,ppbs,pp sugar||खाने के बाद शुगर अधिक: इंसुलिन का असर कमजोर||
+rbs|Random Sugar|mg/dL|70|140|54|400|sugar|sugar*|mmol/L:18.016|random blood sugar,random glucose,rbs||||
+hba1c|HbA1c|%|4|5.6|3.5|10|sugar|sugar|mmol/mol:0.09148:2.15|hba1c,a1c,glycosylated hemoglobin||5.7-6.4 प्री-डायबिटीज, 6.5+ डायबिटीज; पिछले ~3 महीने की औसत शुगर|Low: unusual; check lab|5.7-6.4 prediabetes, 6.5+ diabetes; reflects ~3 months average
+insulin|Fasting Insulin|uIU/mL|2|15|1|50|sugar|sugar*||fasting insulin,insulin||इंसुलिन रेजिस्टेंस का संकेत||
+bmi|BMI|kg/m2|18.5|22.9|15|40|sugar|sugar*||bmi|वजन कम|अधिक वजन: शुगर, बीपी, फैटी लिवर का रिस्क||
+chol|Total Cholesterol|mg/dL|0|200|0|300|heart|lipid|mmol/L:38.67|total cholesterol(?! ?/),(?<!hdl )(?<!ldl )(?<!vldl )(?<!non-hdl )(?<!non hdl )cholesterol(?! ?/),cholesterol total||कोलेस्ट्रॉल अधिक: धमनियों में प्लाक का रिस्क|-|High cholesterol: artery-blockage risk
+tg|Triglycerides|mg/dL|0|150|0|500|heart|lipid|mmol/L:88.57|triglycerides,tg||चीनी/मैदा/शराब से बढ़ता है; फैटी लिवर व हार्ट रिस्क|-|High triglycerides: fatty liver, diabetes, heart risk
+hdl|HDL|mg/dL|40/50|1e9|0|1e9|heart|lipid|mmol/L:38.67|(?<!non-)(?<!non )hdl|अच्छा कोलेस्ट्रॉल कम: हार्ट सुरक्षा घटी||Low HDL: higher heart risk|-
+ldl|LDL|mg/dL|0|100|0|190|heart|lipid|mmol/L:38.67|ldl||खराब कोलेस्ट्रॉल अधिक: हार्ट/स्ट्रोक रिस्क|-|High LDL: main target for heart-risk reduction
+hscrp|hs-CRP|mg/L|0|1|0|1e9|heart|heart||hs-crp,hscrp,high sensitivity crp||नसों में सूजन / हार्ट रिस्क||
+homocys|Homocysteine|umol/L|5|15|0|1e9|heart|misc||homocysteine||B12/फोलेट कमी; हार्ट-स्ट्रोक रिस्क||
+trop|Troponin|ng/mL|0|0.04|0|0.1|heart|heart||troponin||हृदय की मांसपेशी पर चोट का संकेत: इमरजेंसी|-|Raised troponin: possible heart muscle injury; emergency
+ntprobnp|NT-proBNP|pg/mL|0|125|0|900|heart|heart||nt-probnp,nt probnp,ntprobnp||हार्ट पर दबाव / फ्लूइड||
+bps|BP Systolic|mmHg|90|125|80|180|heart|heart||systolic|बीपी कम|ऊपरी बीपी अधिक: हाइपरटेंशन||
+bpd|BP Diastolic|mmHg|60|82|50|115|heart|heart||diastolic||||
+hr|Heart Rate|bpm|60|100|45|135|heart|heart||heart rate,pulse|धड़कन धीमी|धड़कन तेज: बुखार/एनीमिया/थायरॉइड/डिहाइड्रेशन||
+lvef|Echo LVEF|%|55|70|35|90|heart|heart*||lvef,ejection fraction|हार्ट की पंपिंग क्षमता कम|||
+bili|Total Bilirubin|mg/dL|0.2|1.2|0|5|liver|lft|µmol/L:0.05848|total bilirubin,bilirubin total,s. bilirubin||पीलिया का संकेत: लिवर / पित्त नली|-|High bilirubin: jaundice, liver or bile-duct problem
+dbili|Direct Bilirubin|mg/dL|0|0.3|0|2|liver|lft|µmol/L:0.05848|direct bilirubin,bilirubin direct,conjugated bilirubin||||
+sgot|SGOT (AST)|U/L|8|40/35|0|300|liver|lft||sgot,ast,aspartate||लिवर कोशिकाओं में सूजन (फैटी लिवर, वायरल, शराब, दवा)|-|High AST: liver or muscle injury
+sgpt|SGPT (ALT)|U/L|7|45/35|0|300|liver|lft||sgpt,alt,alanine||लिवर में सूजन: फैटी लिवर / हेपेटाइटिस|-|High ALT: liver cell injury, fatty liver, hepatitis
+alp|ALP|U/L|40/35|129/104|0|400|liver|lft||alkaline phosphatase,alp||पित्त नली / हड्डी में बदलाव||
+ggt|GGT|U/L|10/7|55/38|0|300|liver|lft||ggt||फैटी लिवर / शराब / दवा का असर||
+albumin|Albumin|g/dL|3.5|5.2|2.2|7|liver|lft|g/L:0.1|(?<!urine )(?<!serum globulin )albumin(?! ?/)|प्रोटीन की कमी / लिवर-किडनी समस्या; सूजन आ सकती है|||
+tprot|Total Protein|g/dL|6|8.3|4|10|liver|lft|g/L:0.1|total protein||||
+fibro|FibroScan|kPa|2.5|7|0|1e9|liver|coag||fibroscan,liver stiffness||लिवर कड़ापन (फाइब्रोसिस) संभव||
+creat|Creatinine|mg/dL|0.7/0.6|1.3/1.1|0|4|kidney|kft|µmol/L:0.01131|(?<!urine )(?<!urinary )(?<!bun/)creatinine(?! clearance)(?! kinase)||किडनी फिल्टर पर दबाव या डिहाइड्रेशन|Low: low muscle mass|High: reduced kidney function; check eGFR
+urea|Blood Urea|mg/dL|15|40|0|120|kidney|kft|mmol/L:6.006|blood urea(?! nitrogen),(?<!blood )urea(?! nitrogen)||किडनी / डिहाइड्रेशन / अधिक प्रोटीन||
+bun|BUN|mg/dL|7|20|0|60|kidney|kft||bun,urea nitrogen||||
+egfr|eGFR|mL/min|90|1e9|15|1e9|kidney|kft||egfr,gfr|किडनी फिल्टर क्षमता घटी (60 से कम पर CKD की जांच)|||
+uric|Uric Acid|mg/dL|3.5/2.6|7.2/6|0|1e9|kidney|kft|µmol/L:0.01681|uric acid||यूरिक एसिड अधिक: गाउट और पथरी का रिस्क|-|High uric acid: gout and kidney-stone risk
+acr|Urine ACR|mg/g|0|30|0|1e9|kidney|urine||acr,microalbumin||पेशाब में प्रोटीन लीक: किडनी पर शुरुआती असर||
+na|Sodium|mEq/L|135|145|122|158|kidney|kft||(?<!urine )(?<!csf )sodium|सोडियम कम: कमजोरी, चक्कर, भ्रम|सोडियम अधिक: पानी की कमी|Low sodium: weakness, confusion|High sodium: dehydration
+k|Potassium|mEq/L|3.5|5.1|2.8|6|kidney|kft||(?<!urine )(?<!csf )potassium|पोटैशियम कम: ऐंठन, कमजोरी, धड़कन गड़बड़|पोटैशियम अधिक: हृदय ताल के लिए खतरनाक|Low potassium: weakness, cramps|High potassium: heart-rhythm risk; urgent review
+chl|Chloride|mEq/L|98|107|80|120|kidney|kft||chloride||||
+ca|Calcium|mg/dL|8.5|10.5|7|12.5|vit|kft|mmol/L:4.008|(?<!ionized )(?<!ionised )(?<!urine )(?<!corrected )(?<!24 hr urine )(?<!24h urine )calcium|कैल्शियम कम: ऐंठन, हड्डी दर्द|कैल्शियम अधिक: PTH जांच जरूरी||
+phos|Phosphorus|mg/dL|2.5|4.5|1.5|7|kidney|kft|mmol/L:3.097|phosphorus,phosphate||किडनी रोग में बढ़ता है||
+mg|Magnesium|mg/dL|1.7|2.2|1|4|kidney|kft*|mmol/L:2.431|magnesium||||
+tsh|TSH|mIU/L|0.4|4.5|0.05|20|endo|thyroid|uIU/mL:1|tsh|TSH कम: हाइपरथायरॉइड (धड़कन, वजन घटना)|TSH अधिक: हाइपोथायरॉइड (सुस्ती, वजन बढ़ना, बाल झड़ना)|Low: overactive thyroid|High: underactive thyroid (hypothyroidism)
+ft3|Free T3|pg/mL|2|4.4|1|10|endo|thyroid|pmol/L:0.651|ft3,free t3||||
+ft4|Free T4|ng/dL|0.8|1.8|0.3|4|endo|thyroid|pmol/L:0.0777|ft4,free t4||||
+tpo|Anti-TPO|IU/mL|0|34|0|1e9|endo|thyroid*||anti-tpo,anti tpo,tpo||ऑटोइम्यून थायरॉइड (हाशिमोटो) संभव||
+pth|PTH|pg/mL|15|65|0|1e9|endo|vit*||pth||||
+tes|Testosterone|ng/dL|300/15|1000/70|0|1e9|endo|horm||(?<!free )testosterone||||
+prl|Prolactin|ng/mL|4/4.8|15.2/23.3|0|1e9|endo|horm||prolactin||||
+cort|Cortisol|mcg/dL|6|23|2|50|endo|horm||cortisol||||
+vitd|Vitamin D|ng/mL|30|100|0|1e9|vit|vit|nmol/L:0.4006|vitamin d,25 oh,25-oh|विटामिन D कमी: कमर/जोड़ दर्द, थकान|विटामिन D अधिक: सप्लीमेंट डॉक्टर से पूछकर|Low: Vitamin D deficiency; bone pain, weakness|Very high: usually from over-supplementation
+b12|Vitamin B12|pg/mL|250|900|0|1e9|vit|vit|pmol/L:1.355|vitamin b12,b12,cobalamin|B12 कमी: झुनझुनी, याददाश्त, कमजोरी; खून/प्लेटलेट पर असर||Low: B12 deficiency; tingling, anaemia|-
+folate|Folate|ng/mL|4|20|0|1e9|vit|vit||folate,folic acid||||
+crp|CRP|mg/L|0|6|0|100|infection|fever||(?<!hs-)(?<!hs )(?<!hs)crp,(?<!sensitivity )c-reactive protein,(?<!sensitivity )c reactive protein||सक्रिय इन्फेक्शन / सूजन|-|High CRP: infection or inflammation
+pct|Procalcitonin|ng/mL|0|0.1|0|2|infection|fever||procalcitonin||गंभीर बैक्टीरियल इन्फेक्शन / सेप्सिस का संकेत||
+ns1|Dengue NS1|index|0|0.9|0|50|infection|fever||ns1||डेंगू NS1 पॉजिटिव: प्लेटलेट्स व हेमेटोक्रिट की निगरानी||
+neut|Neutrophils|%|40|75|0|95|infection|cbc||(?<!absolute )(?<!abs )(?<!abs. )neutrophils,(?<!absolute )(?<!abs )(?<!abs. )neutrophil||||
+lymph|Lymphocytes|%|20|45|0|80|infection|cbc||(?<!absolute )(?<!abs )(?<!abs. )lymphocytes,(?<!absolute )(?<!abs )(?<!abs. )lymphocyte||||
+pus|Urine Pus Cells|/hpf|0|5|0|50|urine|urine||pus cells||पेशाब में इन्फेक्शन (UTI) संभव: urine culture कराएं||
+urbc|Urine RBC|/hpf|0|2|0|30|urine|urine||urine rbc||पेशाब में खून: पथरी / UTI / किडनी जांच||
+ddimer|D-Dimer|ng/mL|0|500|0|2500|blood|coag||d-dimer,d dimer||थक्का / सूजन का संकेत||
+inr|INR|ratio|0.8|1.2|0|4|blood|coag||inr||खून पतला / लिवर संश्लेषण कम||
+aptt|aPTT|sec|25|35|0|100|blood|coag||aptt||||
+lac|Lactate|mmol/L|0.5|2|0|4|infection|gas||lactate(?! dehydrogenase)||ऊतकों में ऑक्सीजन की कमी / सेप्सिस||
+ph|Blood pH|pH|7.35|7.45|7.2|7.55|lung|gas||(?<!urine )(?<!urinary )(?<!salivary )(?<!semen )ph|एसिडोसिस: ICU मूल्यांकन|अल्कलोसिस||
+pco2|pCO2|mmHg|35|45|20|70|lung|gas||pco2||||
+hco3|HCO3|mEq/L|22|28|10|40|lung|gas||hco3,bicarbonate||||
+spo2|SpO2|%|95|100|90|101|lung|gas||(?<!lowest )(?<!nadir )spo2,oxygen saturation|ऑक्सीजन कम: 90 से नीचे इमरजेंसी|||
+fev1|FEV1/FVC|%|70|100|0|101|lung|gas||fev1/fvc,fev1 fvc ratio,fev1 / fvc|फेफड़ों में रुकावट (अस्थमा/COPD) संभव|||
+amy|Amylase|U/L|28|100|0|300|pancreas|panc||amylase||पैंक्रियाज में सूजन संभव||
+lip|Lipase|U/L|0|160|0|600|pancreas|panc||lipase||पैंक्रियाज में सूजन संभव||
+psa|PSA|ng/mL|0|4/0.5|0|1e9|tumor|tumor||(?<!free )psa||प्रोस्टेट जांच (BPH/इन्फेक्शन/गांठ): यूरोलॉजिस्ट से मिलें|-|High PSA: prostate enlargement, infection or cancer; see urologist
+afp|AFP|ng/mL|0|10|0|1e9|tumor|tumor||afp||||
+cea|CEA|ng/mL|0|3|0|1e9|tumor|tumor||cea||||
+ca125|CA-125|U/mL|0|35|0|1e9|tumor|tumor||ca 125,ca-125,ca125||||
+ca199|CA 19-9|U/mL|0|37|0|1e9|tumor|tumor||ca 19-9,ca19-9||||
+ra|RA Factor|IU/mL|0|14|0|1e9|immune|immune||ra factor,rheumatoid factor||गठिया (RA) का संकेत||
+ccp|Anti-CCP|U/mL|0|20|0|1e9|immune|immune||anti-ccp,anti ccp||RA की पुष्टि में सहायक||
+ige|IgE|IU/mL|0|100|0|1e9|immune|immune||(?<!specific )ige||एलर्जी / परजीवी||
+pcv|PCV / Hematocrit (HCT)|%|40/36|52/46|20|60|blood|cbc|L/L:100|pcv,hct,hematocrit,packed cell volume|PCV कम: खून की कमी|PCV अधिक: खून गाढ़ा / डिहाइड्रेशन|Low: anaemia or low blood volume|High: dehydration or too many red cells
+mch|MCH|pg|27|33|15|45|blood|cbc||mch|MCH कम: आयरन की कमी का पैटर्न|MCH अधिक: B12 / फोलेट की कमी का पैटर्न|Low: iron-deficiency pattern|High: B12 / folate deficiency pattern
+mchc|MCHC|g/dL|32|36|25|40|blood|cbc|g/L:0.1|mchc|MCHC कम: आयरन कमी (हल्की रंग की कोशिकाएं)|MCHC अधिक: कोशिका आकार की समस्या या लैब त्रुटि|Low: pale red cells, often iron deficiency|High: spherocytes or lab artefact
+rdw|RDW|%|11.5|14.5|0|30|blood|cbc||rdw-cv,rdw cv,rdw(?!-? ?sd)|आमतौर पर चिंताजनक नहीं|RDW अधिक: कोशिकाओं के आकार में अंतर, आयरन/B12 की कमी|Usually not significant|High: mixed cell sizes; iron or B12 deficiency
+mono|Monocytes|%|2|10|0|30|blood|cbc||(?<!absolute )(?<!abs )(?<!abs. )monocytes,(?<!absolute )(?<!abs )(?<!abs. )monocyte,(?<!absolute )(?<!abs )(?<!abs. )mono|आमतौर पर चिंताजनक नहीं|मोनोसाइट अधिक: पुराना संक्रमण / सूजन / रिकवरी|Usually not significant|High: chronic infection, inflammation or recovery phase
+eos|Eosinophils|%|1|6|0|50|blood|cbc||(?<!absolute )(?<!abs )(?<!abs. )eosinophils,(?<!absolute )(?<!abs )(?<!abs. )eosinophil,(?<!absolute )(?<!abs )(?<!abs. )eos|आमतौर पर चिंताजनक नहीं|इओसिनोफिल अधिक: एलर्जी, दमा, परजीवी / कृमि|Usually not significant|High: allergy, asthma, parasitic infection
+baso|Basophils|%|0|2|0|20|blood|cbc||(?<!absolute )(?<!abs )(?<!abs. )basophils,(?<!absolute )(?<!abs )(?<!abs. )basophil,(?<!absolute )(?<!abs )(?<!abs. )baso|आमतौर पर चिंताजनक नहीं|बेसोफिल अधिक: एलर्जी / कुछ रक्त रोग|Usually not significant|High: allergy or some blood disorders
+mpv|MPV|fL|7.5|11.5|0|20|blood|cbc||mpv,mean platelet volume|MPV कम: प्लेटलेट छोटी, कम बनना|MPV अधिक: प्लेटलेट नई/बड़ी, तेज़ टूटना|Low: small platelets, reduced production|High: large young platelets, fast turnover
+pdw|PDW|%|9|17|0|30|blood|cbc||pdw,platelet distribution width|आमतौर पर चिंताजनक नहीं|PDW अधिक: प्लेटलेट आकार में असमानता|Usually not significant|High: uneven platelet sizes
+vldl|VLDL|mg/dL|2|30|0|1e9|heart|lipid|mmol/L:38.67|vldl|आमतौर पर चिंताजनक नहीं|VLDL अधिक: ट्राइग्लिसराइड ज़्यादा|Usually not significant|High: raised triglycerides
+nonhdl|Non-HDL Cholesterol|mg/dL|0|130|0|1e9|heart|lipid|mmol/L:38.67|non-hdl,non hdl,nonhdl|आमतौर पर चिंताजनक नहीं|Non-HDL अधिक: हृदय रोग का जोखिम|Usually not significant|High: higher heart-disease risk
+ibili|Indirect Bilirubin|mg/dL|0.2|0.8|0|1e9|liver|lft|µmol/L:0.05848|indirect bilirubin,bilirubin indirect|आमतौर पर चिंताजनक नहीं|इनडायरेक्ट बिलीरुबिन अधिक: RBC टूटना या गिल्बर्ट सिंड्रोम|Usually not significant|High: red cell breakdown or Gilbert syndrome
+glob|Globulin|g/dL|2|3.5|0|1e9|liver|lft|g/L:0.1|(?<!/)globulin|ग्लोब्युलिन कम: इम्युनिटी प्रोटीन कम|ग्लोब्युलिन अधिक: पुराना संक्रमण / सूजन|Low: low immune proteins|High: chronic infection or inflammation
+agr|A/G Ratio|ratio|1|2.2|0|1e9|liver|lft||a/g ratio,agr,albumin/globulin ratio,albumin globulin ratio|अनुपात कम: ग्लोब्युलिन ज़्यादा या एल्ब्यूमिन कम|अनुपात अधिक: आमतौर पर महत्वहीन|Low: high globulin or low albumin|Usually not significant
+tibc|TIBC|mcg/dL|250|450|0|1e9|blood|iron|µmol/L:5.587|tibc,total iron binding capacity|TIBC कम: सूजन / कुपोषण|TIBC अधिक: आयरन की कमी|Low: inflammation or malnutrition|High: iron deficiency
+tsat|Transferrin Saturation|%|20|50|0|1e9|blood|iron||transferrin saturation,tsat,iron saturation|TSAT कम: आयरन की कमी|TSAT अधिक: आयरन ओवरलोड|Low: iron deficiency|High: iron overload
+pta_r|Hearing PTA Right Ear|dB HL|0|25|0|1e9|ent|ent||pta right,pta r,right ear pta|-|सुनने में कमी (दाहिना कान): ENT से मिलें|-|Hearing loss in right ear; see an ENT specialist
+pta_l|Hearing PTA Left Ear|dB HL|0|25|0|1e9|ent|ent||pta left,pta l,left ear pta|-|सुनने में कमी (बायां कान): ENT से मिलें|-|Hearing loss in left ear; see an ENT specialist
+sds_r|Speech Discrimination Right|%|90|100|0|1e9|ent|ent||sds right,speech discrimination right,sds r|शब्द पहचान कम (दाहिना): श्रवण जांच ज़रूरी|-|Poor word recognition (right); needs audiology review|-
+sds_l|Speech Discrimination Left|%|90|100|0|1e9|ent|ent||sds left,speech discrimination left,sds l|शब्द पहचान कम (बायां): श्रवण जांच ज़रूरी|-|Poor word recognition (left); needs audiology review|-
+tymp|Tympanometry Compliance|mL|0.3|1.7|0|1e9|ent|ent||tympanometry,tymp,compliance|कम: कान के पीछे द्रव / पर्दा कड़ा|अधिक: कान के पर्दे की ढीलापन|Low: fluid behind eardrum or stiff drum|High: floppy eardrum
+vaR|Visual Acuity (decimal 6/6=1.0) Right|decimal|0.8|1e9|0.1|1e9|eye|eye||va decimal right,va decimal r,visual acuity decimal right,visual acuity decimal r||||
+vaL|Visual Acuity (decimal 6/6=1.0) Left|decimal|0.8|1e9|0.1|1e9|eye|eye||va decimal left,va decimal l,visual acuity decimal left,visual acuity decimal l||||
+iopR|IOP Right|mmHg|10|21|0|30|eye|eye||iop right,iop r||||
+iopL|IOP Left|mmHg|10|21|0|30|eye|eye||iop left,iop l||||
+sch|Schirmer Test (5 min)|mm|10|35|0|1e9|eye|eye||schirmer||||
+cdrR|Cup-Disc Ratio Right|ratio|0|0.5|0|1e9|eye|eye||cup disc ratio right,cup disc ratio r,cdr right,cdr r||||
+cdrL|Cup-Disc Ratio Left|ratio|0|0.5|0|1e9|eye|eye||cup disc ratio left,cup disc ratio l,cdr left,cdr l||||
+ish|Ishihara Plates Correct|of 14|12|14|0|1e9|eye|eye*||ishihara||||
+sphR|Spherical Power Right|D|-0.5|0.5|0|1e9|eye|eyerf||sphere right,sphere r,sph right,sph r||||
+sphL|Spherical Power Left|D|-0.5|0.5|0|1e9|eye|eyerf||sphere left,sphere l,sph left,sph l||||
+cylR|Cylinder Power Right|D|-0.5|0.5|0|1e9|eye|eyerf||cylinder right,cylinder r,cyl right,cyl r||||
+cylL|Cylinder Power Left|D|-0.5|0.5|0|1e9|eye|eyerf||cylinder left,cylinder l,cyl left,cyl l||||
+cctR|Central Corneal Thickness Right|µm|500|570|0|1e9|eye|eyerf||cct right,cct r,central corneal thickness right,central corneal thickness r||||
+cctL|Central Corneal Thickness Left|µm|500|570|0|1e9|eye|eyerf||cct left,cct l,central corneal thickness left,central corneal thickness l||||
+rnflR|RNFL Thickness Right|µm|80|1e9|0|1e9|eye|eyerf||rnfl right,rnfl r||||
+rnflL|RNFL Thickness Left|µm|80|1e9|0|1e9|eye|eyerf||rnfl left,rnfl l||||
+cmtR|Central Macular Thickness Right|µm|220|320|0|1e9|eye|eyerf||cmt right,cmt r,central macular thickness right,central macular thickness r||||
+cmtL|Central Macular Thickness Left|µm|220|320|0|1e9|eye|eyerf||cmt left,cmt l,central macular thickness left,central macular thickness l||||
+axlR|Axial Length Right|mm|22|24.5|0|1e9|eye|eyerf*||axial length right,axial length r,axl right,axl r||||
+axlL|Axial Length Left|mm|22|24.5|0|1e9|eye|eyerf*||axial length left,axial length l,axl left,axl l||||
+pdep|Periodontal Pocket Depth|mm|0|3|0|1e9|dental|dental||periodontal pocket,pocket depth||||
+bop|Bleeding on Probing|%|0|10|0|1e9|dental|dental||bleeding on probing,bop||||
+plq|Plaque Index|score|0|1|0|1e9|dental|dental||plaque index||||
+dmft|DMFT Index|score|0|0|0|1e9|dental|dental||dmft||||
+sfr|Salivary Flow Rate|mL/min|0.25|1e9|0|1e9|dental|dental||salivary flow||||
+sph2|Salivary pH|pH|6.2|7.6|0|1e9|dental|dental||salivary ph||||
+mop|Mouth Opening|mm|35|55|0|1e9|dental|dental||mouth opening||||
+tss|DEXA T-score Spine|T-score|-1|1e9|0|1e9|bone|bone||t-score spine,t score spine||||
+tsch|DEXA T-score Hip|T-score|-1|1e9|0|1e9|bone|bone||t-score hip,t score hip||||
+zsc|DEXA Z-score|Z-score|-2|1e9|0|1e9|bone|bone||z-score,z score||||
+p1np|P1NP|ng/mL|20/16.8|76/70.1|0|1e9|bone|bone*||p1np||||
+osteo|Osteocalcin|ng/mL|14|42|0|1e9|bone|bone*||osteocalcin||||
+lh|LH|mIU/mL|1.7/2.4|8.6/12.6|0|1e9|women|pcos||lh,luteinizing hormone||||
+fsh|FSH|mIU/mL|1.5/3.5|12.4/12.5|0|1e9|women|pcos||fsh||||
+e2|Estradiol (E2)|pg/mL|10/30|40/400|0|1e9|women|pcos||estradiol,e2||||
+amh|AMH|ng/mL|0.7/1|19/4|0|1e9|women|pcos||amh,anti-mullerian hormone||||
+dheas|DHEA-S|µg/dL|80/35|560/430|0|1e9|women|pcos||dhea-s,dheas,dhea sulfate||||
+shbg|SHBG|nmol/L|18|54/144|0|1e9|women|pcos||shbg||||
+hcg|Beta-hCG (non-pregnant)|mIU/mL|0|5|0|1e9|women|preg||beta-hcg,b-hcg,bhcg,hcg||||
+gct|GCT 50g (1 hr)|mg/dL|0|140|0|1e9|women|preg||gct,glucose challenge||||
+ogt0|OGTT Fasting (pregnancy)|mg/dL|0|92|0|1e9|women|preg||ogtt fasting||||
+ogt1|OGTT 1 hr (pregnancy)|mg/dL|0|180|0|1e9|women|preg||ogtt 1 hr,ogtt 1h||||
+ogt2|OGTT 2 hr (pregnancy)|mg/dL|0|153|0|1e9|women|preg||ogtt 2 hr,ogtt 2h||||
+afi|Amniotic Fluid Index|cm|5|25|2|1e9|women|preg||afi,amniotic fluid index||||
+fhr|Fetal Heart Rate|bpm|110|160|90|180|women|preg||fetal heart rate,fhr||||
+sv|Semen Volume|mL|1.4|1e9|0|1e9|male|semen||semen volume||||
+sc|Sperm Concentration|million/mL|16|1e9|0|1e9|male|semen||sperm concentration,sperm count||||
+stm|Sperm Total Motility|%|42|100|0|1e9|male|semen||total motility||||
+spm|Sperm Progressive Motility|%|30|100|0|1e9|male|semen||progressive motility||||
+smo|Sperm Normal Morphology|%|4|100|0|1e9|male|semen||normal morphology,sperm morphology||||
+svit|Sperm Vitality|%|54|100|0|1e9|male|semen||sperm vitality||||
+sph3|Semen pH|pH|7.2|8|0|1e9|male|semen||semen ph||||
+fev1p|FEV1 (% predicted)|%|80|1e9|0|1e9|lung|pft||fev1 % pred,fev1 pred||||
+fvcp|FVC (% predicted)|%|80|1e9|0|1e9|lung|pft||fvc % pred,fvc pred||||
+pefp|PEFR (% predicted)|%|80|1e9|0|1e9|lung|pft||pefr % pred,pefr pred||||
+dlco|DLCO (% predicted)|%|75|1e9|0|1e9|lung|pft||dlco||||
+pr|PR Interval|ms|120|200|0|1e9|heart|ecg||pr interval||||
+qrs|QRS Duration|ms|80|120|0|1e9|heart|ecg||qrs duration,qrs||||
+qtc|QTc|ms|350|440/460|0|500|heart|ecg||qtc||||
+lvedd|LVEDD|cm|4.2/3.8|5.9/5.2|0|1e9|heart|echo||lvedd||||
+lvesd|LVESD|cm|2.0|4.0|0|1e9|heart|echo||lvesd||||
+ivs|IVS Thickness (diastole)|cm|0.6|1.0/0.9|0|1e9|heart|echo||ivs,ivsd||||
+lvpw|LV Posterior Wall|cm|0.6|1.0/0.9|0|1e9|heart|echo||posterior wall,lvpw||||
+la|Left Atrium Diameter|cm|1.9|4.0/3.8|0|1e9|heart|echo||left atrium,la diameter||||
+pasp|PASP|mmHg|0|35|0|1e9|heart|echo||pasp||||
+tapse|TAPSE|mm|17|1e9|0|1e9|heart|echo*||tapse||||
+ckmb|CK-MB|U/L|0|25|0|1e9|heart|cardiac||ck-mb,ckmb,ck mb||||
+cpk|CPK (CK total)|U/L|30/20|200/180|0|1e9|heart|cardiac||cpk(?!-? ?mb),creatine kinase||||
+ldh|LDH|U/L|140|280|0|1e9|heart|cardiac||ldh,lactate dehydrogenase||||
+myo|Myoglobin|ng/mL|0|72/58|0|1e9|heart|cardiac||myoglobin||||
+bnp|BNP|pg/mL|0|100|0|1e9|heart|cardiac||bnp||||
+calpro|Fecal Calprotectin|µg/g|0|50|0|1e9|liver|gi||calprotectin||||
+felas|Fecal Elastase|µg/g|200|1e9|0|1e9|pancreas|gi||fecal elastase,faecal elastase||||
+ttg|Anti-tTG IgA|U/mL|0|10|0|1e9|liver|gi||anti-ttg,anti ttg,ttg iga||||
+gastrin|Gastrin|pg/mL|0|100|0|1e9|liver|gi||gastrin||||
+uph|Urine pH|pH|4.6|8|0|1e9|urine|urine2||urine ph,urinary ph||||
+usgr|Urine Specific Gravity|ratio|1.005|1.03|0|1e9|urine|urine2||specific gravity||||
+prot24|24-hr Urine Protein|mg/24h|0|150|0|1e9|urine|urine2||24 hr urine protein,24h urine protein||||
+cal24|24-hr Urine Calcium|mg/24h|100|300|0|1e9|urine|urine2||24 hr urine calcium,24h urine calcium||||
+crcl|Creatinine Clearance|mL/min|97/88|137/128|0|1e9|kidney|urine2||creatinine clearance,crcl||||
+zinc|Zinc|µg/dL|70|120|0|1e9|vit|trace||zinc||||
+copper|Copper|µg/dL|70|140|0|1e9|vit|trace||copper||||
+cp|Ceruloplasmin|mg/dL|20|60|0|1e9|liver|trace||ceruloplasmin||||
+lead|Blood Lead|µg/dL|0|3.5|0|1e9|other|trace||blood lead,lead level||||
+se|Selenium|µg/L|70|150|0|1e9|vit|trace||selenium||||
+ionca|Ionized Calcium|mmol/L|1.12|1.32|0|1e9|vit|trace||ionized calcium,ionised calcium||||
+ahbs|Anti-HBs Titre|mIU/mL|10|1e9|0|1e9|infection|viral||anti-hbs,anti hbs||||
+hbvdna|HBV DNA|IU/mL|0|20|0|1e9|infection|viral||hbv dna||||
+hcvrna|HCV RNA|IU/mL|0|15|0|1e9|infection|viral||hcv rna||||
+hivvl|HIV Viral Load|copies/mL|0|20|0|1e9|infection|viral||hiv viral load,hiv rna||||
+cd4|CD4 Count|/µL|500|1500|0|1e9|immune|viral||cd4||||
+vita|Vitamin A|µg/dL|30|80|0|1e9|vit|vit2||vitamin a||||
+vite|Vitamin E|mg/L|5.5|17|0|1e9|vit|vit2||vitamin e||||
+vitc|Vitamin C|mg/dL|0.4|2|0|1e9|vit|vit2||vitamin c||||
+b6|Vitamin B6|ng/mL|5|50|0|1e9|vit|vit2||vitamin b6||||
+aec|Absolute Eosinophil Count|/µL|0|500|0|1e9|immune|allergy||absolute eosinophil,aec||||
+sige|Specific IgE|kU/L|0|0.35|0|1e9|immune|allergy||specific ige||||
+tryp|Tryptase|µg/L|0|11.4|0|1e9|immune|allergy||tryptase||||
+igg|IgG|mg/dL|700|1600|0|1e9|immune|ig||igg||||
+iga|IgA|mg/dL|70|400|0|1e9|immune|ig||iga||||
+igm|IgM|mg/dL|40|230|0|1e9|immune|ig||igm||||
+c3|Complement C3|mg/dL|90|180|0|1e9|immune|ig||complement c3,c3||||
+c4|Complement C4|mg/dL|10|40|0|1e9|immune|ig||complement c4,c4||||
+aso|ASO Titre|IU/mL|0|200|0|1e9|immune|ig||aso,anti-streptolysin||||
+ana|ANA Index|index|0|1|0|1e9|immune|ig||ana index,ana||||
+dsdna|Anti-dsDNA|IU/mL|0|30|0|1e9|immune|ig||anti-dsdna,dsdna||||
+acth|ACTH|pg/mL|7|63|0|1e9|endo|adren||acth||||
+aldo|Aldosterone|ng/dL|3|16|0|1e9|endo|adren||aldosterone||||
+renin|Renin Activity|ng/mL/h|0.5|4|0|1e9|endo|adren||renin||||
+gh|Growth Hormone|ng/mL|0|5|0|1e9|endo|adren||growth hormone||||
+cpep|C-Peptide|ng/mL|0.8|3.1|0|1e9|sugar|diab2||c-peptide,c peptide||||
+fruct|Fructosamine|µmol/L|200|285|0|1e9|sugar|diab2||fructosamine||||
+gad|Anti-GAD|IU/mL|0|5|0|1e9|sugar|diab2||anti-gad,gad antibod||||
+bhb|Beta-Hydroxybutyrate|mmol/L|0|0.6|0|1e9|sugar|diab2||beta-hydroxybutyrate,bhb||||
+lpa|Lipoprotein(a)|mg/dL|0|30|0|1e9|heart|lipid2||lipoprotein ?\(a\),lp ?\(a\)||||
+apoa1|Apo A1|mg/dL|110/120|205|0|1e9|heart|lipid2||apo a1,apoa1,apolipoprotein a1||||
+apob|Apo B|mg/dL|0|130|0|1e9|heart|lipid2||apo b,apob,apolipoprotein b||||
+apoab|ApoB/ApoA1 Ratio|ratio|0|0.9/0.8|0|1e9|heart|lipid2||apob/apoa1,apo b/a1 ratio||||
+amm|Ammonia|µg/dL|15|45|0|1e9|liver|liver2||ammonia||||
+bacid|Fasting Bile Acids|µmol/L|0|10|0|1e9|liver|liver2||bile acids||||
+cysc|Cystatin C|mg/L|0.53|0.95|0|1e9|kidney|kft2||cystatin c||||
+b2m|Beta-2 Microglobulin|mg/L|0.8|2.2|0|1e9|kidney|kft2||beta-2 microglobulin,b2 microglobulin||||
+bcr|BUN/Creatinine Ratio|ratio|10|20|0|1e9|kidney|kft2||bun/creatinine||||
+ag|Anion Gap|mEq/L|8|16|0|1e9|kidney|kft2||anion gap||||
+sosm|Serum Osmolality|mOsm/kg|275|295|0|1e9|kidney|kft2||serum osmolality||||
+ret|Reticulocytes|%|0.5|2.5|0|1e9|blood|haem2||reticulocyte||||
+hba2|HbA2|%|2|3.5|0|1e9|blood|haem2||hba2||||
+hbf|HbF|%|0|2|0|1e9|blood|haem2||hbf,fetal hemoglobin||||
+g6pd|G6PD|U/g Hb|4.6|13.5|0|1e9|blood|haem2||g6pd||||
+hapto|Haptoglobin|mg/dL|30|200|0|1e9|blood|haem2||haptoglobin||||
+transf|Transferrin|mg/dL|200|360|0|1e9|blood|haem2||transferrin(?! sat)||||
+ca153|CA 15-3|U/mL|0|30|0|1e9|tumor|tumor2||ca 15-3,ca15-3||||
+calci|Calcitonin|pg/mL|0|10/5|0|1e9|tumor|tumor2||calcitonin||||
+fpsa|Free PSA %|%|25|1e9|0|1e9|tumor|tumor2||free psa %,free/total psa||||
+chga|Chromogranin A|ng/mL|0|100|0|1e9|tumor|tumor2||chromogranin||||
+nse|NSE|ng/mL|0|16.3|0|1e9|tumor|tumor2||nse,neuron specific enolase||||
+qmax|Uroflow Qmax|mL/s|15|1e9|0|1e9|kidney|uro||qmax||||
+pvr|Post-void Residual|mL|0|50|0|1e9|kidney|uro||post void residual,pvr||||
+pvol|Prostate Volume|mL|0|25|0|1e9|tumor|uro||prostate volume||||
+livsp|Liver Span|cm|0|15.5|0|1e9|liver|usg||liver span||||
+spl|Spleen Length|cm|0|12|0|1e9|liver|usg||spleen length,spleen size||||
+rkl|Right Kidney Length|cm|9|12|0|1e9|kidney|usg||right kidney length,rk length||||
+lkl|Left Kidney Length|cm|9|12|0|1e9|kidney|usg||left kidney length,lk length||||
+cbd|CBD Diameter|mm|0|6|0|1e9|liver|usg||cbd||||
+pv|Portal Vein Diameter|mm|0|13|0|1e9|liver|usg||portal vein||||
+gbw|Gallbladder Wall|mm|0|3|0|1e9|liver|usg||gallbladder wall,gb wall||||
+aor|Abdominal Aorta Diameter|cm|0|3|0|1e9|heart|usg||aorta diameter,aortic diameter||||
+cimt|Carotid IMT|mm|0|0.9|0|1e9|heart|usg||carotid imt,cimt||||
+thyv|Thyroid Volume|mL|4|25/18|0|1e9|endo|usg||thyroid volume||||
+rr|Respiratory Rate|/min|12|20|0|1e9|lung|vitals||respiratory rate,resp rate||||
+map|Mean Arterial Pressure|mmHg|70|100|0|1e9|heart|vitals||mean arterial pressure||||
+waist|Waist Circumference|cm|0|90/80|0|1e9|sugar|vitals||waist circumference,waist(?![ -]?hip)||||
+whr|Waist-Hip Ratio|ratio|0|0.90/0.85|0|1e9|sugar|vitals||waist-hip ratio,waist hip ratio,whr||||
+bf|Body Fat|%|10/18|25/32|0|1e9|sugar|vitals||body fat||||
+csfp|CSF Protein|mg/dL|15|45|0|1e9|neuro|csf||csf protein||||
+csfg|CSF Glucose|mg/dL|40|70|0|1e9|neuro|csf||csf glucose||||
+csfc|CSF Cell Count|/µL|0|5|0|1e9|neuro|csf||csf cell,csf wbc||||
+csfop|CSF Opening Pressure|mmH2O|70|200|0|1e9|neuro|csf||opening pressure||||
+ahi|AHI (Apnea-Hypopnea Index)|/hr|0|5|0|1e9|lung|sleep||ahi,apnea hypopnea||||
+odi|Oxygen Desaturation Index|/hr|0|5|0|1e9|lung|sleep||odi||||
+ess|Epworth Sleepiness Score|score|0|10|0|1e9|lung|sleep||epworth||||
+spmin|Lowest SpO2 (sleep)|%|90|100|0|1e9|lung|sleep||lowest spo2,nadir spo2||||
+t3|Total T3|ng/dL|80|200|0|1e9|endo|thyroid*||(?<!free )t3 total,total t3,(?<!free )t3||||
+t4|Total T4|µg/dL|5.1|14.1|0|1e9|endo|thyroid*||(?<!free )t4 total,total t4,(?<!free )t4,thyroxine||||
+atg|Anti-Thyroglobulin|IU/mL|0|115|0|1e9|endo|thyroid*||anti-tg,anti tg,anti-thyroglobulin||||
+pt|Prothrombin Time (PT)|sec|11|13.5|0|1e9|blood|coag||prothrombin time,pt||||
+fibr|Fibrinogen|mg/dL|200|400|0|1e9|blood|coag||fibrinogen||||
+bcr_|Bone Conduction PTA Right|dB HL|0|25|0|1e9|ent|ent*||bone conduction right||||
+bcl_|Bone Conduction PTA Left|dB HL|0|25|0|1e9|ent|ent*||bone conduction left||||
+temp|Body Temperature|°F|97|99.5|95|104|infection|vitals|°C:1.8:32|temperature,temp||||
+nbtsh|Newborn TSH|mIU/L|0|10|0|1e9|endo|newborn||newborn tsh||||
+apgar|APGAR Score (5 min)|score|7|10|0|1e9|other|newborn||apgar||||
+bwt|Birth Weight|kg|2.5|4|0|1e9|other|newborn||birth weight||||
+nbglu|Newborn Glucose|mg/dL|45|120|0|1e9|sugar|newborn||newborn glucose||||
+ascw|Ascitic Fluid WBC|/µL|0|250|0|1e9|liver|fluid||ascitic wbc,ascitic fluid wbc||||
+pleurp|Pleural Protein Ratio (fluid/serum)|ratio|0|0.5|0|1e9|lung|fluid||pleural protein ratio||||
+pleurl|Pleural LDH Ratio (fluid/serum)|ratio|0|0.6|0|1e9|lung|fluid||pleural ldh ratio||||
+synw|Synovial Fluid WBC|/µL|0|200|0|1e9|immune|fluid||synovial wbc,synovial fluid wbc||||
+ncvm|Median Motor NCV|m/s|50|1e9|0|1e9|neuro|nerve||median motor ncv,median motor||||
+ncvu|Ulnar Motor NCV|m/s|50|1e9|0|1e9|neuro|nerve||ulnar motor ncv,ulnar motor||||
+ncvp|Peroneal Motor NCV|m/s|40|1e9|0|1e9|neuro|nerve||peroneal motor ncv,peroneal motor||||
+ncvt|Tibial Motor NCV|m/s|40|1e9|0|1e9|neuro|nerve||tibial motor ncv,tibial motor||||
+ncvs|Median Sensory NCV|m/s|50|1e9|0|1e9|neuro|nerve||median sensory ncv,median sensory||||
+phq9|PHQ-9 Score|score|0|4|0|1e9|neuro|mental||phq-9,phq9||||
+gad7|GAD-7 Score|score|0|4|0|1e9|neuro|mental||gad-7,gad7||||
+mmse|MMSE Score|/30|24|30|0|1e9|neuro|mental||mmse||||
+moca|MoCA Score|/30|26|30|0|1e9|neuro|mental||moca||||
+audit|AUDIT Score|score|0|7|0|1e9|neuro|mental*||audit score||||
+grip|Grip Strength|kg|27/16|1e9|0|1e9|bone|fitness||grip strength||||
+sixmw|6-Minute Walk Distance|m|400|1e9|0|1e9|heart|fitness||6mwt,6 minute walk,six minute walk||||
+gait|Gait Speed|m/s|0.8|1e9|0|1e9|bone|fitness||gait speed||||
+tug|Timed Up and Go|sec|0|12|0|1e9|bone|fitness||timed up and go,tug||||
+sts|5x Sit-to-Stand Time|sec|0|15|0|1e9|bone|fitness||sit to stand,sit-to-stand||||
+prealb|Prealbumin|mg/dL|15|36|0|1e9|liver|nutri||prealbumin,transthyretin||||
+uiod|Urinary Iodine|µg/L|100|199|0|1e9|endo|nutri||urinary iodine,urine iodine||||
+o3|Omega-3 Index|%|8|1e9|0|1e9|heart|nutri||omega-3 index,omega 3 index||||
+cit24|24-hr Urine Citrate|mg/24h|320|1e9|0|1e9|kidney|stone||urine citrate,24 hr citrate||||
+ox24|24-hr Urine Oxalate|mg/24h|0|45|0|1e9|kidney|stone||urine oxalate,24 hr oxalate||||
+ua24|24-hr Urine Uric Acid|mg/24h|250|750|0|1e9|kidney|stone||24 hr urine uric acid,24h urine uric acid||||
+ucr24|24-hr Urine Creatinine|mg/24h|1000/800|2000/1800|0|1e9|kidney|stone||24 hr urine creatinine,24h urine creatinine||||
+prog21|Day-21 Progesterone|ng/mL|10|1e9|0|1e9|women|fert||day 21 progesterone,day-21 progesterone,luteal progesterone||||
+afc|Antral Follicle Count|count|6|1e9|0|1e9|women|fert||antral follicle,afc||||
+ovvol|Ovarian Volume|mL|0|10|0|1e9|women|fert||ovarian volume||||
+endo|Endometrial Thickness (mid-cycle)|mm|7|14|0|1e9|women|fert||endometrial thickness||||
+abiR|Ankle-Brachial Index Right|ratio|0.9|1.4|0|1e9|heart|vasc||abi right,ankle brachial index right||||
+abiL|Ankle-Brachial Index Left|ratio|0.9|1.4|0|1e9|heart|vasc||abi left,ankle brachial index left||||
+tbi|Toe-Brachial Index|ratio|0.7|1e9|0|1e9|heart|vasc*||toe brachial index,tbi||||
+ads|ABPM Day Systolic|mmHg|0|135|0|1e9|heart|abpm||abpm day systolic||||
+add|ABPM Day Diastolic|mmHg|0|85|0|1e9|heart|abpm||abpm day diastolic||||
+ans|ABPM Night Systolic|mmHg|0|120|0|1e9|heart|abpm||abpm night systolic||||
+and|ABPM Night Diastolic|mmHg|0|70|0|1e9|heart|abpm||abpm night diastolic||||
+og0|OGTT 75g Fasting|mg/dL|70|99|0|1e9|sugar|ogtt||ogtt 75g fasting,ogtt fasting 75||||
+og2|OGTT 75g 2-hr|mg/dL|70|140|0|1e9|sugar|ogtt||ogtt 75g 2 hr,ogtt 75g 2h,ogtt 2 hr 75||||
+tir|CGM Time in Range (70-180)|%|70|100|0|1e9|sugar|cgm||time in range,tir||||
+tbr|CGM Time Below Range (<70)|%|0|4|0|1e9|sugar|cgm||time below range,tbr||||
+tar|CGM Time Above Range (>180)|%|0|25|0|1e9|sugar|cgm||time above range,tar||||
+gmi|Glucose Management Indicator|%|0|7|0|1e9|sugar|cgm||gmi||||
+gcv|Glycaemic Variability (CV)|%|0|36|0|1e9|sugar|cgm||glucose cv,glycaemic variability||||
+fviii|Factor VIII|%|50|150|0|1e9|blood|coag2||factor viii,factor 8||||
+vwf|von Willebrand Factor|%|50|150|0|1e9|blood|coag2||von willebrand,vwf||||
+at3|Antithrombin III|%|80|120|0|1e9|blood|coag2||antithrombin||||
+protc|Protein C|%|70|140|0|1e9|blood|coag2||protein c||||
+prots|Protein S|%|65|140|0|1e9|blood|coag2||protein s||||
+bt|Bleeding Time|min|2|7|0|1e9|blood|coag2||bleeding time||||
+po2|pO2 (arterial)|mmHg|80|100|0|1e9|lung|abg2||pao2,po2||||
+be|Base Excess|mmol/L|-2|2|0|1e9|lung|abg2||base excess||||
+pf|PaO2/FiO2 Ratio|ratio|400|1e9|0|1e9|lung|abg2||pao2/fio2,p/f ratio||||
+igra|IGRA / QuantiFERON (IFN-γ)|IU/mL|0|0.35|0|1e9|infection|tb||quantiferon,igra||||
+mantoux|Mantoux Induration|mm|0|10|0|1e9|infection|tb||mantoux,tuberculin||||
+ada|ADA (Adenosine Deaminase)|U/L|0|40|0|1e9|infection|tb||adenosine deaminase,ada||||
+prog|Progesterone|ng/mL|0|27|0|1e9|women|pcos*||progesterone|||||
+hbsag|HBsAg|neg/pos|0|0|0|1e9|infection|sero||hbsag,hepatitis b surface antigen||पॉज़िटिव / असामान्य: HBsAg — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: HBsAg — confirm with a repeat or confirmatory test and consult a doctor|q
+antihcv|Anti-HCV|neg/pos|0|0|0|1e9|infection|sero||anti-hcv,anti hcv,hcv antibod,hcv ab||पॉज़िटिव / असामान्य: Anti-HCV — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Anti-HCV — confirm with a repeat or confirmatory test and consult a doctor|q
+hiv|HIV 1 & 2|neg/pos|0|0|0|1e9|infection|sero||hiv(?! viral)(?! rna),hiv 1 & 2,hiv 1&2||पॉज़िटिव / असामान्य: HIV 1 & 2 — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: HIV 1 & 2 — confirm with a repeat or confirmatory test and consult a doctor|q
+vdrl|VDRL / RPR|neg/pos|0|0|0|1e9|infection|sero||vdrl,rpr,syphilis||पॉज़िटिव / असामान्य: VDRL / RPR — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: VDRL / RPR — confirm with a repeat or confirmatory test and consult a doctor|q
+hbeag|HBeAg|neg/pos|0|0|0|1e9|infection|sero||hbeag||पॉज़िटिव / असामान्य: HBeAg — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: HBeAg — confirm with a repeat or confirmatory test and consult a doctor|q
+ahbc|Anti-HBc Total|neg/pos|0|0|0|1e9|infection|sero||anti-hbc,anti hbc||पॉज़िटिव / असामान्य: Anti-HBc Total — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Anti-HBc Total — confirm with a repeat or confirmatory test and consult a doctor|q
+ahav|Anti-HAV IgM|neg/pos|0|0|0|1e9|infection|sero||anti-hav igm,hav igm||पॉज़िटिव / असामान्य: Anti-HAV IgM — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Anti-HAV IgM — confirm with a repeat or confirmatory test and consult a doctor|q
+ahev|Anti-HEV IgM|neg/pos|0|0|0|1e9|infection|sero||anti-hev igm,hev igm||पॉज़िटिव / असामान्य: Anti-HEV IgM — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Anti-HEV IgM — confirm with a repeat or confirmatory test and consult a doctor|q
+dengm|Dengue IgM|neg/pos|0|0|0|1e9|infection|tropical||dengue igm||पॉज़िटिव / असामान्य: Dengue IgM — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Dengue IgM — confirm with a repeat or confirmatory test and consult a doctor|q
+dengg|Dengue IgG|neg/pos|0|0|0|1e9|infection|tropical||dengue igg||पॉज़िटिव / असामान्य: Dengue IgG — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Dengue IgG — confirm with a repeat or confirmatory test and consult a doctor|q
+mal|Malaria Antigen (card test)|neg/pos|0|0|0|1e9|infection|tropical||malaria antigen,mp card,malaria card||पॉज़िटिव / असामान्य: Malaria Antigen (card test) — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Malaria Antigen (card test) — confirm with a repeat or confirmatory test and consult a doctor|q
+mps|Malaria Parasite (smear)|neg/pos|0|0|0|1e9|infection|tropical||malaria parasite,mp smear||पॉज़िटिव / असामान्य: Malaria Parasite (smear) — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Malaria Parasite (smear) — confirm with a repeat or confirmatory test and consult a doctor|q
+typh|Typhidot IgM|neg/pos|0|0|0|1e9|infection|tropical||typhidot||पॉज़िटिव / असामान्य: Typhidot IgM — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Typhidot IgM — confirm with a repeat or confirmatory test and consult a doctor|q
+chik|Chikungunya IgM|neg/pos|0|0|0|1e9|infection|tropical||chikungunya||पॉज़िटिव / असामान्य: Chikungunya IgM — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Chikungunya IgM — confirm with a repeat or confirmatory test and consult a doctor|q
+scrub|Scrub Typhus IgM|neg/pos|0|0|0|1e9|infection|tropical||scrub typhus||पॉज़िटिव / असामान्य: Scrub Typhus IgM — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Scrub Typhus IgM — confirm with a repeat or confirmatory test and consult a doctor|q
+lepto|Leptospira IgM|neg/pos|0|0|0|1e9|infection|tropical||leptospira||पॉज़िटिव / असामान्य: Leptospira IgM — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Leptospira IgM — confirm with a repeat or confirmatory test and consult a doctor|q
+covid|COVID-19 (Antigen / RT-PCR)|neg/pos|0|0|0|1e9|infection|tropical||covid,sars-cov-2||पॉज़िटिव / असामान्य: COVID-19 (Antigen / RT-PCR) — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: COVID-19 (Antigen / RT-PCR) — confirm with a repeat or confirmatory test and consult a doctor|q
+sob|Stool Occult Blood|neg/pos|0|0|0|1e9|liver|stool||occult blood,fobt||पॉज़िटिव / असामान्य: Stool Occult Blood — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Stool Occult Blood — confirm with a repeat or confirmatory test and consult a doctor|q
+sova|Stool Ova / Cyst|neg/pos|0|0|0|1e9|liver|stool||stool ova,ova cyst,ova/cyst||पॉज़िटिव / असामान्य: Stool Ova / Cyst — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Stool Ova / Cyst — confirm with a repeat or confirmatory test and consult a doctor|q
+shpy|H. pylori Stool Antigen|neg/pos|0|0|0|1e9|liver|stool||h\.? ?pylori||पॉज़िटिव / असामान्य: H. pylori Stool Antigen — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: H. pylori Stool Antigen — confirm with a repeat or confirmatory test and consult a doctor|q
+sgia|Stool Giardia Antigen|neg/pos|0|0|0|1e9|liver|stool||giardia||पॉज़िटिव / असामान्य: Stool Giardia Antigen — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Stool Giardia Antigen — confirm with a repeat or confirmatory test and consult a doctor|q
+upt|Urine Pregnancy Test|neg/pos|0|0|0|1e9|women|qmisc||upt,urine pregnancy||पॉज़िटिव / असामान्य: Urine Pregnancy Test — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Urine Pregnancy Test — confirm with a repeat or confirmatory test and consult a doctor|q
+coomb|Direct Coombs Test|neg/pos|0|0|0|1e9|blood|qmisc||direct coombs,dct||पॉज़िटिव / असामान्य: Direct Coombs Test — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Direct Coombs Test — confirm with a repeat or confirmatory test and consult a doctor|q
+sick|Sickling Test|neg/pos|0|0|0|1e9|blood|qmisc||sickling||पॉज़िटिव / असामान्य: Sickling Test — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Sickling Test — confirm with a repeat or confirmatory test and consult a doctor|q
+hlab27|HLA-B27|neg/pos|0|0|0|1e9|immune|qmisc||hla-b27,hla b27||पॉज़िटिव / असामान्य: HLA-B27 — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: HLA-B27 — confirm with a repeat or confirmatory test and consult a doctor|q
+bcul|Blood Culture (growth)|neg/pos|0|0|0|1e9|infection|qmisc||blood culture||पॉज़िटिव / असामान्य: Blood Culture (growth) — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Blood Culture (growth) — confirm with a repeat or confirmatory test and consult a doctor|q
+tropq|Troponin (rapid card)|neg/pos|0|0|0|1e9|heart|qmisc||troponin rapid,troponin card,troponin qualitative||पॉज़िटिव / असामान्य: Troponin (rapid card) — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Troponin (rapid card) — confirm with a repeat or confirmatory test and consult a doctor|q
+anca|ANCA|neg/pos|0|0|0|1e9|immune|qmisc||anca||पॉज़िटिव / असामान्य: ANCA — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: ANCA — confirm with a repeat or confirmatory test and consult a doctor|q
+ralx|RA Factor (latex)|neg/pos|0|0|0|1e9|immune|qmisc||ra latex,rf latex||पॉज़िटिव / असामान्य: RA Factor (latex) — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: RA Factor (latex) — confirm with a repeat or confirmatory test and consult a doctor|q
+ug|Urine Glucose|grade|0|0|0|1e9|urine|urinedip||urine glucose,urine sugar||पॉज़िटिव / असामान्य: Urine Glucose — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Urine Glucose — confirm with a repeat or confirmatory test and consult a doctor|q
+up|Urine Protein (dipstick)|grade|0|1|0|1e9|urine|urinedip||(?<!24 hr )(?<!24h )urine protein,urine albumin||पॉज़िटिव / असामान्य: Urine Protein (dipstick) — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Urine Protein (dipstick) — confirm with a repeat or confirmatory test and consult a doctor|q
+uk|Urine Ketones|grade|0|0|0|1e9|urine|urinedip||urine ketone||पॉज़िटिव / असामान्य: Urine Ketones — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Urine Ketones — confirm with a repeat or confirmatory test and consult a doctor|q
+ub|Urine Blood|grade|0|0|0|1e9|urine|urinedip||urine blood||पॉज़िटिव / असामान्य: Urine Blood — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Urine Blood — confirm with a repeat or confirmatory test and consult a doctor|q
+ubil|Urine Bilirubin|neg/pos|0|0|0|1e9|urine|urinedip||urine bilirubin||पॉज़िटिव / असामान्य: Urine Bilirubin — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Urine Bilirubin — confirm with a repeat or confirmatory test and consult a doctor|q
+uuro|Urine Urobilinogen|grade|0|1|0|1e9|urine|urinedip||urobilinogen||पॉज़िटिव / असामान्य: Urine Urobilinogen — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Urine Urobilinogen — confirm with a repeat or confirmatory test and consult a doctor|q
+unit|Urine Nitrite|neg/pos|0|0|0|1e9|urine|urinedip||nitrite||पॉज़िटिव / असामान्य: Urine Nitrite — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Urine Nitrite — confirm with a repeat or confirmatory test and consult a doctor|q
+ule|Urine Leukocyte Esterase|grade|0|0|0|1e9|urine|urinedip||leukocyte esterase,leucocyte esterase||पॉज़िटिव / असामान्य: Urine Leukocyte Esterase — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Urine Leukocyte Esterase — confirm with a repeat or confirmatory test and consult a doctor|q
+ucul|Urine Culture (significant growth)|neg/pos|0|0|0|1e9|urine|urinedip||urine culture||पॉज़िटिव / असामान्य: Urine Culture (significant growth) — पुष्टि जाँच व डॉक्टर से सलाह लें||Positive / abnormal: Urine Culture (significant growth) — confirm with a repeat or confirmatory test and consult a doctor|q`;
+const PANELS=[["cbc", "CBC / पूरा ब्लड काउंट"], ["sugar", "Diabetes / शुगर"], ["lipid", "Lipid / कोलेस्ट्रॉल"], ["lft", "LFT / लिवर"], ["kft", "KFT / किडनी"], ["thyroid", "Thyroid / थायरॉइड"], ["iron", "Iron / आयरन"], ["vit", "Vitamins / विटामिन"], ["heart", "Heart & BP / हृदय"], ["fever", "Fever / बुखार"], ["urine", "Urine / पेशाब"], ["horm", "Hormones"], ["coag", "Coagulation / क्लॉटिंग"], ["gas", "Blood gas & lung"], ["panc", "Pancreas"], ["tumor", "Tumour markers"], ["immune", "Autoimmune / allergy"], ["ent", "ENT / कान"],["eye", "Eye / आँख"],["eyerf", "Eye – refraction & OCT / आँख"],["dental", "Dental / दाँत"],["bone", "Bone / DEXA / हड्डी"],["pcos", "Women: PCOS & fertility"],["preg", "Pregnancy / गर्भावस्था"],["semen", "Semen analysis / पुरुष"],["pft", "Lung function (PFT)"],["ecg", "ECG / ईसीजी"],["echo", "Echo / इको"],["cardiac", "Cardiac enzymes"],["gi", "Gut / Celiac / पाचन"],["urine2", "Urine 24-hr & chemistry"],["trace", "Trace elements / minerals"],["viral", "Viral load & immunity"],["vit2", "Vitamins A, E, C, B6"],["allergy", "Allergy / एलर्जी"],["ig", "Immunoglobulins & complement"],["adren", "Adrenal & pituitary"],["diab2", "Diabetes advanced"],["lipid2", "Advanced lipids (Lp(a), Apo)"],["liver2", "Liver advanced"],["kft2", "Kidney advanced"],["haem2", "Haematology advanced"],["tumor2", "Tumour markers 2"],["uro", "Urology / यूरोलॉजी"],["usg", "Ultrasound measurements"],["vitals", "Vitals & body / वाइटल्स"],["csf", "CSF / Neuro"],["newborn", "Newborn / नवजात"],["fluid", "Body fluids (ascitic, pleural, joint)"],["nerve", "Nerve conduction (NCV)"],["mental", "Mental health & cognition"],["fitness", "Fitness & frailty"],["nutri", "Nutrition"],["stone", "Kidney stone risk"],["fert", "Fertility (female)"],["vasc", "Vascular (ABI)"],["abpm", "24-hr BP monitoring"],["ogtt", "OGTT 75g"],["cgm", "CGM / Glucose monitor"],["coag2", "Bleeding disorders"],["abg2", "Blood gas advanced"],["tb", "TB / Tuberculosis"],["sero", "Serology / Hepatitis, HIV, VDRL"],["tropical", "Tropical fevers (dengue, malaria, typhoid)"],["stool", "Stool exam / मल जाँच"],["qmisc", "Other rapid & special tests"],["urinedip", "Urine dipstick / यूरिन रूटीन"],["misc", "Others / अन्य"],["sleep", "Sleep study / नींद"]];
+const ORG=["blood", "sugar", "heart", "liver", "kidney", "endo", "vit", "infection", "tumor", "immune", "lung", "pancreas", "urine", "ent", "other"];
+const OI={"blood": {"d": "Hematologist / हेमेटोलॉजिस्ट", "hi": {"av": "भोजन के साथ चाय-कॉफी, बिना जांच के आयरन/दवा", "ea": "पालक, चुकंदर, अनार, गुड़-चना, दालें, नींबू/आंवला (विटामिन C)", "f": "CBC दोबारा, पेरिफेरल स्मीयर, फेरिटिन/B12/फोलेट"}, "en": {"av": "Avoid self-medicating iron or blood thinners; avoid heavy NSAID use", "ea": "Iron-rich food (greens, dates, jaggery, pulses), vitamin C, B12 foods", "f": "CBC repeat, peripheral smear, iron profile, B12/folate"}}, "sugar": {"d": "Endocrinologist / एंडोक्रिनोलॉजिस्ट", "hi": {"av": "चीनी, मैदा, मीठे पेय, मिठाई, सफेद चावल/आलू की अधिकता", "ea": "दालें, हरी सब्जियां, मोटा अनाज, सलाद, मेवे, पर्याप्त प्रोटीन", "f": "HbA1c, लिपिड प्रोफाइल, urine ACR, आंख व पैरों की जांच"}, "en": {"av": "Sweets, sugary drinks, refined flour, late heavy dinners", "ea": "Whole grains, vegetables, protein, daily walking, regular sleep", "f": "HbA1c, lipid profile, urine ACR, eye and foot check"}}, "heart": {"d": "Cardiologist / हृदय रोग विशेषज्ञ", "hi": {"av": "तला-भुना, वनस्पति घी, अधिक नमक/अचार/पापड़, तंबाकू", "ea": "ओट्स, अलसी, अखरोट, फल-सब्जियां, लहसुन, कम नमक", "f": "ECG, 2D Echo, TMT, लिपिड प्रोफाइल, घर पर BP रिकॉर्ड"}, "en": {"av": "Salt, fried food, tobacco, excess alcohol", "ea": "Fruits, vegetables, oats, nuts, walking, stress control", "f": "ECG, 2D Echo, TMT, lipid profile, home BP log"}}, "liver": {"d": "Gastroenterologist / हेपेटोलॉजिस्ट", "hi": {"av": "शराब, तला-भुना, चीनी, बिना सलाह की दवाएं/सप्लीमेंट", "ea": "ताज़ा सब्जियां, दालें, फल, कम तेल, पर्याप्त पानी", "f": "USG/FibroScan, हेपेटाइटिस B/C, LFT दोबारा"}, "en": {"av": "Alcohol, fried and processed food, unprescribed painkillers or herbal products", "ea": "Home-cooked food, vegetables, fruit, exercise, weight loss", "f": "USG / FibroScan, hepatitis B/C, repeat LFT"}}, "kidney": {"d": "Nephrologist / नेफ्रोलॉजिस्ट", "hi": {"av": "दर्द की गोलियां (NSAIDs), अधिक नमक, अचार-पापड़, बिना सलाह की दवाएं", "ea": "हल्की ताज़ा सब्जियां (लौकी, तोरई), सीमित नमक; पानी/प्रोटीन की मात्रा डॉक्टर बताएं", "f": "urine routine/ACR, USG KUB, eGFR दोबारा"}, "en": {"av": "NSAID painkillers, high salt, unregulated supplements", "ea": "Adequate water unless restricted, low-salt diet, BP and sugar control", "f": "Urine routine / ACR, USG KUB, repeat eGFR"}}, "endo": {"d": "Endocrinologist / एंडोक्रिनोलॉजिस्ट", "hi": {"av": "दवा के साथ चाय/कैल्शियम/आयरन (45-60 मिनट का अंतर रखें), अधिक सोया", "ea": "संतुलित प्रोटीन, मेवे, मौसमी फल-सब्जियां", "f": "TSH/FT4 6-8 हफ्ते बाद, Anti-TPO, गले का USG"}, "en": {"av": "Self-adjusting doses; taking thyroid pills with calcium or iron", "ea": "Iodised salt in moderation, regular exercise and sleep", "f": "TSH / FT4 after 6-8 weeks, anti-TPO, neck USG"}}, "vit": {"d": "General Physician / जनरल फिज़िशियन", "hi": {"av": "कोल्ड ड्रिंक्स, धूप से पूरी तरह बचना", "ea": "दूध-दही, पनीर, रागी, तिल, सुबह की धूप, अंडा/मछली (यदि खाते हैं)", "f": "Vit D, B12, कैल्शियम, PTH"}, "en": {"av": "Over-the-counter high-dose supplements without advice", "ea": "Sun exposure, milk products, eggs, fish, fortified foods, nuts", "f": "Vit D, B12, calcium, PTH"}}, "infection": {"d": "Physician / इन्फेक्शन विशेषज्ञ", "hi": {"av": "बाहर का खुला खाना, बिना सलाह दर्द/एंटीबायोटिक दवाएं", "ea": "खूब तरल (ORS, दाल का पानी), खिचड़ी, सूप, पूरा आराम", "f": "CBC हर 24-48 घंटे (डॉक्टर कहें तो), कल्चर, अन्य संबंधित टेस्ट"}, "en": {"av": "Self-started antibiotics; crowded places while unwell", "ea": "Plenty of fluids (ORS, coconut water), rest, light food", "f": "Repeat CBC/CRP, culture, dengue/malaria tests as advised"}}, "tumor": {"d": "Oncologist / ऑन्कोलॉजिस्ट", "hi": {"av": "तंबाकू, शराब", "ea": "ताज़ा फल-सब्जियां, फाइबर", "f": "इमेजिंग व विशेषज्ञ की पुष्टि जांच (मार्कर बढ़ना अपने-आप कैंसर नहीं होता)"}, "en": {"av": "Delaying evaluation; tobacco and alcohol", "ea": "Balanced diet and follow-up as advised by specialist", "f": "Imaging, biopsy or repeat marker as advised"}}, "immune": {"d": "Rheumatologist / रूमेटोलॉजिस्ट", "hi": {"av": "अधिक चीनी, तला-भुना, धूम्रपान", "ea": "अलसी, अखरोट, हल्दी वाला भोजन, ताज़ा फल-सब्जियां", "f": "ANA, anti-CCP, ESR/CRP"}, "en": {"av": "Self-medication with steroids or painkillers", "ea": "Anti-inflammatory diet, gentle exercise, adequate rest", "f": "RA factor, anti-CCP, ESR/CRP, joint imaging"}}, "lung": {"d": "Pulmonologist / पल्मोनोलॉजिस्ट", "hi": {"av": "धूम्रपान, धुआं-धूल", "ea": "गुनगुना पानी, संतुलित भोजन", "f": "चेस्ट X-ray, स्पाइरोमेट्री, ABG"}, "en": {"av": "Smoking, dust and smoke exposure", "ea": "Breathing exercises, vaccination as advised, clean air", "f": "Chest X-ray, spirometry, repeat oxygen / blood gas"}}, "pancreas": {"d": "Gastroenterologist / गैस्ट्रो विशेषज्ञ", "hi": {"av": "शराब, तला-भुना, भारी भोजन", "ea": "हल्का, कम वसा वाला भोजन", "f": "USG/CT पेट, लिपिड, कैल्शियम"}, "en": {"av": "Alcohol, heavy fatty meals", "ea": "Small low-fat meals, plenty of fluids", "f": "Repeat amylase/lipase, USG / CT abdomen"}}, "urine": {"d": "Urologist / यूरोलॉजिस्ट", "hi": {"av": "पेशाब रोकना, अधिक मसाले", "ea": "पर्याप्त पानी (यदि डॉक्टर ने रोका न हो)", "f": "urine culture, USG KUB"}, "en": {"av": "Holding urine, too little water, self-medication", "ea": "Adequate water, hygiene, treat constipation", "f": "Urine routine and culture, USG KUB"}}, "ent": {"d": "ENT Specialist / ईएनटी विशेषज्ञ", "hi": {"av": "आत्म-दवा (खुद से दवा) से बचें; ज़ोर से आवाज़ और ईयरफोन की तेज़ आवाज़ से बचें", "ea": "कान की सुरक्षा, सर्दी-एलर्जी का समय पर इलाज", "f": "ऑडियोग्राम, टिम्पैनोमेट्री, ENT जांच"}, "en": {"av": "Cotton buds in the ear, loud sounds and earphones at high volume, self-used ear drops", "ea": "Ear protection, early treatment of colds and allergies, regular hearing checks", "f": "Audiogram, tympanometry, ENT endoscopy, otoacoustic emissions"}}, "other": {"d": "General Physician / जनरल फिज़िशियन", "hi": {"av": "प्रोसेस्ड और तला-भुना भोजन", "ea": "ताज़ा घर का भोजन, पर्याप्त पानी", "f": "डॉक्टर के अनुसार दोबारा जांच"}, "en": {"av": "Self-medication", "ea": "Balanced diet, sleep, exercise", "f": "Repeat tests and review with your doctor"}}};
+const ORX={'eye': ('आँख', 'Eye'), 'dental': ('दाँत', 'Dental'), 'bone': ('हड्डी', 'Bone'), 'women': ('महिला स्वास्थ्य', "Women's health"), 'male': ('पुरुष प्रजनन', 'Male fertility'), 'neuro': ('न्यूरो', 'Neuro')};OI['eye']={d:'Ophthalmologist / नेत्र रोग विशेषज्ञ',hi:{av:'स्क्रीन-ब्रेक (20-20-20), धूप का चश्मा, आँख मलना',ea:'गाजर, पपीता, हरी सब्जियाँ, ओमेगा-3',f:'पूरी आँख जाँच, फंडस/OCT, IOP दोबारा'},en:{av:'Avoid eye rubbing, long screen time, steroid drops without advice',ea:'Carrots, leafy greens, omega-3, vitamin A foods',f:'Dilated fundus exam, OCT, repeat IOP / visual field'}};OI['dental']={d:'Dentist / दंत चिकित्सक',hi:{av:'मीठा-चिपचिपा खाना, तंबाकू, गुटखा',ea:'कैल्शियम-युक्त भोजन, कच्चे फल-सब्जियाँ',f:'स्केलिंग, X-ray (OPG), गम जाँच'},en:{av:'Avoid sugary sticky food, tobacco, gutka',ea:'Calcium-rich food, crunchy fruit/veg, fluoride toothpaste',f:'Scaling, OPG X-ray, gum review every 6 months'}};OI['bone']={d:'Orthopaedic / Endocrinologist',hi:{av:'धूम्रपान, शराब, ज़्यादा कोला',ea:'दूध-दही, रागी, तिल, धूप, प्रोटीन',f:'विटामिन D, कैल्शियम, PTH, DEXA दोबारा'},en:{av:'Avoid smoking, alcohol, excess cola',ea:'Dairy, ragi, sesame, sunlight, adequate protein',f:'Vitamin D, calcium, PTH, repeat DEXA'}};OI['women']={d:'Gynaecologist / स्त्री रोग विशेषज्ञ',hi:{av:'प्रोसेस्ड भोजन, देर रात जागना',ea:'फाइबर, प्रोटीन, मेवे, नियमित व्यायाम',f:'पेल्विक USG, थायरॉइड, प्रोलैक्टिन, शुगर'},en:{av:'Avoid processed food and irregular sleep',ea:'Fibre, protein, nuts, regular exercise',f:'Pelvic USG, thyroid, prolactin, glucose'}};OI['male']={d:'Urologist / Andrologist',hi:{av:'धूम्रपान, शराब, गर्म स्नान, तंग कपड़े',ea:'जिंक/सेलेनियम वाला भोजन, मेवे, फल',f:'वीर्य जाँच 3 महीने बाद दोबारा, हार्मोन'},en:{av:'Avoid smoking, alcohol, heat exposure, tight clothing',ea:'Zinc/selenium foods, nuts, fruit, exercise',f:'Repeat semen analysis after 3 months, hormones'}};OI['neuro']={d:'Neurologist / न्यूरोलॉजिस्ट',hi:{av:'बिना सलाह के दवा, नशा',ea:'संतुलित भोजन, B12 युक्त आहार',f:'MRI, CSF दोबारा, न्यूरोलॉजिस्ट मूल्यांकन'},en:{av:'Avoid self-medication and alcohol',ea:'Balanced diet, B12 foods',f:'MRI, repeat CSF, neurology review'}};
+const IM=[[/fatty liver|steatosis/i,"फैटी लिवर: वजन, चीनी व शराब पर नियंत्रण; लिवर विशेषज्ञ से सलाह","Fatty liver: related to weight, sugar, cholesterol; lifestyle change helps"],[/calcul|stone|lithiasis/i,"पथरी: यूरोलॉजिस्ट से मिलें","Stone: hydration and urology review"],[/nodule|mass|lesion|tumou?r/i,"गांठ/घाव: विशेषज्ञ से पुष्टि जांच कराएं (सभी गांठें कैंसर नहीं होतीं)","Nodule / mass: needs further evaluation (specialist review required)"],[/hepatomegaly|splenomegaly|enlarg/i,"अंग का आकार बढ़ा: कारण की जांच","Enlarged organ: needs a cause check"],[/effusion|free fluid|ascites/i,"शरीर में तरल: जल्द डॉक्टर को दिखाएं","Fluid collection: needs evaluation"],[/consolidation|pneumonia|infiltrate/i,"फेफड़ों में इन्फेक्शन/निमोनिया: जल्द इलाज","Possible lung infection / consolidation: see a doctor"],[/lvh|hypertroph/i,"हृदय की दीवार मोटी: BP नियंत्रण जरूरी","Heart muscle thickening: BP control important"],[/bph|prostat/i,"प्रोस्टेट बदलाव: यूरोलॉजिस्ट","Prostate enlargement: urology review"],[/cyst/i,"सिस्ट: फॉलो-अप स्कैन","Cyst: usually benign, correct follow-up advised"]];
+const INST=[["AIIMS (दिल्ली व अन्य शहर)", "लगभग सभी विशेषज्ञताएं, जटिल/दुर्लभ रोग"], ["PGIMER, चंडीगढ़", "किडनी, लिवर, हार्ट, एंडोक्राइन"], ["SGPGIMS, लखनऊ", "किडनी, एंडोक्राइन, गैस्ट्रो, हार्ट"], ["IMS-BHU, वाराणसी", "मेडिसिन, किडनी, हार्ट, गैस्ट्रो"], ["CMC वेल्लोर", "सभी विशेषज्ञताएं, हेमेटोलॉजी"], ["ILBS, नई दिल्ली", "लिवर, पित्त, पैंक्रियाज"], ["टाटा मेमोरियल, मुंबई", "कैंसर"], ["NIMHANS, बेंगलुरु", "न्यूरोलॉजी, मानसिक रोग"]];
+// 65 fields per language, '|' separated. Order = KEYS (50 UI) + 15 organs
+const LANGS=[['hi','हिंदी'],['en','English'],['bn','বাংলা'],['mr','मराठी'],['te','తెలుగు'],['ta','தமிழ்'],['gu','ગુજરાતી'],['ur','اردو'],['kn','ಕನ್ನಡ'],['ml','മലയാളം'],['or','ଓଡ଼ିଆ'],['pa','ਪੰਜਾਬੀ'],['sa','संस्कृतम्'],['de','Deutsch'],['ja','日本語'],['es','Español']];
+const KEYS='t p1 nm ag sx m f ct dt sy hx ot p2 pl se ar cl an ts va un rg lr stt lo hi nr cr nd sm ab cv ms og dc av ea fu em ds ok cs ps rd sv pr dv lg nt ex'.split(' ');
+const L={};
+L.hi="अपनी मेडिकल रिपोर्ट आसान भाषा में समझें|मरीज़ की जानकारी|नाम|उम्र (वर्ष)|लिंग|पुरुष|महिला|शहर|रिपोर्ट की तारीख|लक्षण (अपनी भाषा में लिखें)|इतिहास, दवाएं, एलर्जी|अन्य निष्कर्ष (USG, X-Ray, ECG, बायोप्सी…)|रिपोर्ट के मान भरें|जांच पैनल चुनें (तालिका खुलेगी)|कोई भी जांच खोजें…|+ अपनी जांच जोड़ें|सब साफ़ करें|मेरी रिपोर्ट समझाएँ|जांच|मान|यूनिट|सामान्य रेंज|आपकी लैब की रेंज (वैकल्पिक)|स्थिति|कम|अधिक|सामान्य|क्रिटिकल|डेटा नहीं दिया गया|सारांश|असामान्य नतीजे|रिपोर्ट की पूर्णता|नहीं दिया|अंग-वार|किस विशेषज्ञ से मिलें|परहेज|लाभकारी|आगे की जांचें|आपातकालीन चेतावनी|यह सेवा केवल सामान्य जानकारी और शिक्षा के उद्देश्य से है। यह चिकित्सकीय निदान, इलाज या दवा की सलाह नहीं है। आपकी लैब रिपोर्ट पर छपी सामान्य सीमा को ही अंतिम मानें। कोई भी निर्णय लेने से पहले अपने डॉक्टर से परामर्श करें। आपातकाल में तुरंत 112 पर कॉल करें।|दर्ज सभी मान सामान्य हैं|कृपया डॉक्टर से मिलें|रिपोर्ट का टेक्स्ट पेस्ट करें|मान पढ़ें|रिपोर्ट सेव करें|प्रिंट|गणना किए गए मान|भाषा|जाँच के नाम अंतरराष्ट्रीय लैब शब्दों में दिखते हैं ताकि आपकी रिपोर्ट से आसानी से मिलान हो सके।|उदाहरण भरें|खून|शुगर / मेटाबॉलिज्म|हृदय / BP|लिवर / पाचन|किडनी / इलेक्ट्रोलाइट|थायरॉइड / हार्मोन|विटामिन / हड्डी|इन्फेक्शन|ट्यूमर मार्कर|ऑटोइम्यून / जोड़|फेफड़े / ऑक्सीजन|पैंक्रियाज|पेशाब / मूत्र मार्ग|कान-नाक-गला / सुनना|अन्य";
+L.en="Understand your medical report in plain language|Patient details|Name|Age (years)|Sex|Male|Female|City|Report date|Symptoms (write in your own language)|History, medicines, allergies|Other findings (USG, X-ray, ECG, biopsy…)|Enter report values|Choose a test panel (a table opens)|Search any test…|+ Add custom test|Clear all|Explain my report|Test|Value|Unit|Normal range|Your lab's range (optional)|Status|Low|High|Normal|Critical|Data not provided|Summary|Abnormal results|Report completeness|Not provided|By organ system|Specialist to consult|Avoid|Beneficial|Follow-up tests|Emergency warning|This service provides general information for educational purposes only. It is not a medical diagnosis, treatment or prescription. The reference range printed on your lab report always takes precedence. Please consult your doctor before making any health decision. In an emergency, call your local emergency number (112 in India).|All entered values are within the normal range|Please consult a doctor|Paste report text|Read values|Save report|Print|Calculated values|Language|Test names use standard international lab terms. Detailed explanations are in Hindi and English; other languages show translated labels, organ names and status.|Fill sample|Blood|Sugar / metabolism|Heart / BP|Liver / digestion|Kidney / electrolytes|Thyroid / hormones|Vitamins / bones|Infection|Tumour markers|Autoimmune / joints|Lungs / oxygen|Pancreas|Urine / urinary tract|ENT / hearing|Other";
+L.bn="আপনার মেডিকেল রিপোর্ট বুঝুন|রোগীর তথ্য|নাম|বয়স (বছর)|লিঙ্গ|পুরুষ|মহিলা|শহর|রিপোর্টের তারিখ|উপসর্গ (নিজের ভাষায় লিখুন)|ইতিহাস, ওষুধ, অ্যালার্জি|অন্যান্য ফলাফল (USG, X-Ray, ECG, বায়োপসি…)|রিপোর্টের মান লিখুন|পরীক্ষার প্যানেল বাছুন (টেবিল খুলবে)|যেকোনো পরীক্ষা খুঁজুন…|+ নিজের পরীক্ষা যোগ করুন|সব মুছুন|রিপোর্ট বিশ্লেষণ করুন|পরীক্ষা|মান|একক|স্বাভাবিক সীমা|আপনার ল্যাবের সীমা (ঐচ্ছিক)|অবস্থা|কম|বেশি|স্বাভাবিক|গুরুতর|তথ্য দেওয়া হয়নি|সারসংক্ষেপ|অস্বাভাবিক ফলাফল|রিপোর্টের পূর্ণতা|দেওয়া হয়নি|অঙ্গ অনুযায়ী|কোন বিশেষজ্ঞকে দেখাবেন|এড়িয়ে চলুন|উপকারী|পরবর্তী পরীক্ষা|জরুরি সতর্কতা|শুধুমাত্র শিক্ষামূলক তথ্য, রোগনির্ণয় নয়। আপনার ল্যাবের ছাপা সীমাই প্রধান। সিদ্ধান্ত ডাক্তারের। জরুরি অবস্থায় 112 নম্বরে ফোন করুন।|সব মান স্বাভাবিক সীমার মধ্যে|অনুগ্রহ করে ডাক্তার দেখান|রিপোর্টের টেক্সট পেস্ট করুন|মান পড়ুন|রিপোর্ট সংরক্ষণ|প্রিন্ট|গণনা করা মান|ভাষা|পরীক্ষার নাম আন্তর্জাতিক ল্যাব পরিভাষায়। বিস্তারিত ব্যাখ্যা হিন্দি ও ইংরেজিতে; অন্য ভাষায় লেবেল, অঙ্গের নাম ও অবস্থা অনুবাদিত।|নমুনা ভরুন|রক্ত|সুগার / বিপাক|হৃদয় / রক্তচাপ|লিভার / হজম|কিডনি / ইলেক্ট্রোলাইট|থাইরয়েড / হরমোন|ভিটামিন / হাড়|সংক্রমণ|টিউমার মার্কার|অটোইমিউন / জয়েন্ট|ফুসফুস / অক্সিজেন|অগ্ন্যাশয়|মূত্র / মূত্রনালী|নাক-কান-গলা / শ্রবণ|অন্যান্য";
+L.mr="तुमचा वैद्यकीय अहवाल समजून घ्या|रुग्णाची माहिती|नाव|वय (वर्षे)|लिंग|पुरुष|स्त्री|शहर|अहवालाची तारीख|लक्षणे (तुमच्या भाषेत लिहा)|इतिहास, औषधे, ॲलर्जी|इतर निष्कर्ष (USG, X-Ray, ECG, बायोप्सी…)|अहवालातील मूल्ये भरा|चाचणी पॅनेल निवडा (तक्ता उघडेल)|कोणतीही चाचणी शोधा…|+ स्वतःची चाचणी जोडा|सर्व पुसा|अहवालाचे विश्लेषण करा|चाचणी|मूल्य|एकक|सामान्य मर्यादा|तुमच्या लॅबची मर्यादा (ऐच्छिक)|स्थिती|कमी|जास्त|सामान्य|गंभीर|माहिती दिलेली नाही|सारांश|असामान्य निष्कर्ष|अहवालाची पूर्णता|दिलेले नाही|अवयवानुसार|कोणत्या तज्ज्ञांना भेटावे|टाळा|फायदेशीर|पुढील चाचण्या|आणीबाणीचा इशारा|केवळ शैक्षणिक माहिती, निदान नाही. तुमच्या लॅबची छापलेली मर्यादा प्राधान्याची. निर्णय डॉक्टरांचा. आणीबाणीत 112 वर कॉल करा.|सर्व भरलेली मूल्ये सामान्य आहेत|कृपया डॉक्टरांना भेटा|अहवालाचा मजकूर पेस्ट करा|मूल्ये वाचा|अहवाल जतन करा|प्रिंट|गणना केलेली मूल्ये|भाषा|चाचण्यांची नावे आंतरराष्ट्रीय लॅब संज्ञांत. सविस्तर स्पष्टीकरण हिंदी व इंग्रजीत; इतर भाषांत लेबल, अवयवांची नावे व स्थिती भाषांतरित.|नमुना भरा|रक्त|साखर / चयापचय|हृदय / रक्तदाब|यकृत / पचन|मूत्रपिंड / इलेक्ट्रोलाइट|थायरॉईड / संप्रेरके|जीवनसत्त्वे / हाडे|संसर्ग|ट्यूमर मार्कर|स्वयंप्रतिकार / सांधे|फुफ्फुसे / ऑक्सिजन|स्वादुपिंड|लघवी / मूत्रमार्ग|कान-नाक-घसा / श्रवण|इतर";
+L.te="మీ వైద్య నివేదికను అర్థం చేసుకోండి|రోగి వివరాలు|పేరు|వయస్సు (సంవత్సరాలు)|లింగం|పురుషుడు|స్త్రీ|నగరం|నివేదిక తేదీ|లక్షణాలు (మీ భాషలో రాయండి)|చరిత్ర, మందులు, అలర్జీలు|ఇతర ఫలితాలు (USG, X-Ray, ECG, బయాప్సీ…)|నివేదిక విలువలు నమోదు చేయండి|పరీక్ష ప్యానెల్ ఎంచుకోండి (పట్టిక తెరుచుకుంటుంది)|ఏదైనా పరీక్షను వెతకండి…|+ మీ స్వంత పరీక్ష జోడించండి|అన్నీ తొలగించండి|నివేదికను విశ్లేషించండి|పరీక్ష|విలువ|యూనిట్|సాధారణ పరిధి|మీ ల్యాబ్ పరిధి (ఐచ్ఛికం)|స్థితి|తక్కువ|ఎక్కువ|సాధారణం|తీవ్రం|సమాచారం ఇవ్వలేదు|సారాంశం|అసాధారణ ఫలితాలు|నివేదిక సంపూర్ణత|ఇవ్వలేదు|అవయవాల వారీగా|ఏ నిపుణుడిని కలవాలి|నివారించండి|ప్రయోజనకరం|తదుపరి పరీక్షలు|అత్యవసర హెచ్చరిక|కేవలం విద్యా సమాచారం, నిర్ధారణ కాదు. మీ ల్యాబ్ ముద్రించిన పరిధికే ప్రాధాన్యం. నిర్ణయం డాక్టర్‌దే. అత్యవసరంలో 112కు కాల్ చేయండి.|నమోదు చేసిన అన్ని విలువలు సాధారణం|దయచేసి డాక్టర్‌ను కలవండి|నివేదిక టెక్స్ట్ అతికించండి|విలువలు చదవండి|నివేదిక సేవ్ చేయండి|ప్రింట్|లెక్కించిన విలువలు|భాష|పరీక్షల పేర్లు అంతర్జాతీయ ల్యాబ్ పదాల్లో. వివరణలు హిందీ, ఆంగ్లంలో; ఇతర భాషల్లో లేబుళ్లు, అవయవాల పేర్లు, స్థితి అనువదించబడ్డాయి.|నమూనా నింపండి|రక్తం|చక్కెర / జీవక్రియ|గుండె / రక్తపోటు|కాలేయం / జీర్ణం|మూత్రపిండాలు / ఎలక్ట్రోలైట్లు|థైరాయిడ్ / హార్మోన్లు|విటమిన్లు / ఎముకలు|ఇన్ఫెక్షన్|ట్యూమర్ మార్కర్లు|ఆటోఇమ్యూన్ / కీళ్లు|ఊపిరితిత్తులు / ఆక్సిజన్|క్లోమం|మూత్రం / మూత్ర మార్గం|చెవి-ముక్కు-గొంతు / వినికిడి|ఇతర";
+L.ta="உங்கள் மருத்துவ அறிக்கையைப் புரிந்துகொள்ளுங்கள்|நோயாளி விவரங்கள்|பெயர்|வயது (ஆண்டுகள்)|பாலினம்|ஆண்|பெண்|நகரம்|அறிக்கை தேதி|அறிகுறிகள் (உங்கள் மொழியில் எழுதுங்கள்)|வரலாறு, மருந்துகள், ஒவ்வாமை|பிற முடிவுகள் (USG, X-Ray, ECG, பயாப்சி…)|அறிக்கை மதிப்புகளை உள்ளிடுங்கள்|பரிசோதனை பேனலைத் தேர்ந்தெடுக்கவும் (அட்டவணை திறக்கும்)|எந்த பரிசோதனையையும் தேடுங்கள்…|+ உங்கள் பரிசோதனையைச் சேர்|அனைத்தையும் அழி|அறிக்கையை பகுப்பாய்வு செய்|பரிசோதனை|மதிப்பு|அலகு|இயல்பு வரம்பு|உங்கள் ஆய்வகத்தின் வரம்பு (விருப்பம்)|நிலை|குறைவு|அதிகம்|இயல்பு|ஆபத்தான|தரவு வழங்கப்படவில்லை|சுருக்கம்|இயல்பற்ற முடிவுகள்|அறிக்கை முழுமை|வழங்கப்படவில்லை|உறுப்பு வாரியாக|எந்த நிபுணரைப் பார்க்க வேண்டும்|தவிர்க்கவும்|நன்மை தருபவை|தொடர் பரிசோதனைகள்|அவசர எச்சரிக்கை|கல்வி தகவல் மட்டுமே, நோய் கண்டறிதல் அல்ல. உங்கள் ஆய்வகத்தின் அச்சிடப்பட்ட வரம்பே முதன்மை. முடிவு மருத்துவருடையது. அவசரத்தில் 112 அழைக்கவும்.|உள்ளிட்ட அனைத்து மதிப்புகளும் இயல்பு|தயவுசெய்து மருத்துவரைப் பார்க்கவும்|அறிக்கை உரையை ஒட்டவும்|மதிப்புகளைப் படி|அறிக்கையைச் சேமி|அச்சிடு|கணக்கிடப்பட்ட மதிப்புகள்|மொழி|பரிசோதனைப் பெயர்கள் சர்வதேச ஆய்வக சொற்களில். விரிவான விளக்கம் இந்தி, ஆங்கிலத்தில்; பிற மொழிகளில் லேபிள்கள், உறுப்புப் பெயர்கள், நிலை மொழிபெயர்க்கப்பட்டுள்ளன.|மாதிரி நிரப்பு|இரத்தம்|சர்க்கரை / வளர்சிதை மாற்றம்|இதயம் / இரத்த அழுத்தம்|கல்லீரல் / செரிமானம்|சிறுநீரகம் / எலக்ட்ரோலைட்|தைராய்டு / ஹார்மோன்|வைட்டமின் / எலும்பு|தொற்று|கட்டி குறிப்பான்கள்|தன்னுடல் தாக்கம் / மூட்டு|நுரையீரல் / ஆக்சிஜன்|கணையம்|சிறுநீர் / சிறுநீர்ப்பாதை|காது-மூக்கு-தொண்டை / செவிப்புலன்|பிற";
+L.gu="તમારો મેડિકલ રિપોર્ટ સમજો|દર્દીની માહિતી|નામ|ઉંમર (વર્ષ)|લિંગ|પુરુષ|સ્ત્રી|શહેર|રિપોર્ટની તારીખ|લક્ષણો (તમારી ભાષામાં લખો)|ઇતિહાસ, દવાઓ, એલર્જી|અન્ય તારણો (USG, X-Ray, ECG, બાયોપ્સી…)|રિપોર્ટના મૂલ્યો ભરો|ટેસ્ટ પેનલ પસંદ કરો (કોષ્ટક ખુલશે)|કોઈપણ ટેસ્ટ શોધો…|+ પોતાનો ટેસ્ટ ઉમેરો|બધું સાફ કરો|રિપોર્ટનું વિશ્લેષણ કરો|ટેસ્ટ|મૂલ્ય|એકમ|સામાન્ય મર્યાદા|તમારી લેબની મર્યાદા (વૈકલ્પિક)|સ્થિતિ|ઓછું|વધુ|સામાન્ય|ગંભીર|માહિતી આપી નથી|સારાંશ|અસામાન્ય પરિણામો|રિપોર્ટની સંપૂર્ણતા|આપ્યું નથી|અંગ મુજબ|કયા નિષ્ણાતને મળવું|ટાળો|ફાયદાકારક|આગળના ટેસ્ટ|કટોકટી ચેતવણી|ફક્ત શૈક્ષણિક માહિતી, નિદાન નથી. તમારી લેબની છાપેલી મર્યાદા પ્રાથમિક છે. નિર્ણય ડૉક્ટરનો. કટોકટીમાં 112 પર કૉલ કરો.|દાખલ કરેલા બધા મૂલ્યો સામાન્ય છે|કૃપા કરીને ડૉક્ટરને મળો|રિપોર્ટનો ટેક્સ્ટ પેસ્ટ કરો|મૂલ્યો વાંચો|રિપોર્ટ સાચવો|પ્રિન્ટ|ગણતરી કરેલા મૂલ્યો|ભાષા|ટેસ્ટના નામ આંતરરાષ્ટ્રીય લેબ શબ્દોમાં. વિગતવાર સમજૂતી હિન્દી અને અંગ્રેજીમાં; અન્ય ભાષાઓમાં લેબલ, અંગોના નામ અને સ્થિતિ અનુવાદિત.|નમૂનો ભરો|લોહી|ખાંડ / ચયાપચય|હૃદય / બ્લડ પ્રેશર|લિવર / પાચન|કિડની / ઇલેક્ટ્રોલાઇટ|થાઇરોઇડ / હોર્મોન|વિટામિન / હાડકાં|ચેપ|ટ્યુમર માર્કર|ઓટોઇમ્યુન / સાંધા|ફેફસાં / ઓક્સિજન|સ્વાદુપિંડ|પેશાબ / મૂત્રમાર્ગ|કાન-નાક-ગળું / સાંભળવું|અન્ય";
+L.ur="اپنی میڈیکل رپورٹ سمجھیں|مریض کی معلومات|نام|عمر (سال)|جنس|مرد|عورت|شہر|رپورٹ کی تاریخ|علامات (اپنی زبان میں لکھیں)|ہسٹری، ادویات، الرجی|دیگر نتائج (USG، X-Ray، ECG، بایوپسی…)|رپورٹ کی قدریں درج کریں|ٹیسٹ پینل منتخب کریں (جدول کھلے گا)|کوئی بھی ٹیسٹ تلاش کریں…|+ اپنا ٹیسٹ شامل کریں|سب صاف کریں|رپورٹ کا تجزیہ کریں|ٹیسٹ|قدر|اکائی|معمول کی حد|آپ کی لیب کی حد (اختیاری)|حالت|کم|زیادہ|معمول|نازک|ڈیٹا فراہم نہیں کیا گیا|خلاصہ|غیر معمولی نتائج|رپورٹ کی تکمیل|فراہم نہیں|عضو کے لحاظ سے|کس ماہر سے ملیں|پرہیز کریں|مفید|مزید ٹیسٹ|ہنگامی انتباہ|صرف تعلیمی معلومات، تشخیص نہیں۔ آپ کی لیب کی چھپی ہوئی حد مقدم ہے۔ فیصلہ ڈاکٹر کا ہے۔ ہنگامی صورت میں 112 پر کال کریں۔|درج کی گئی تمام قدریں معمول کے مطابق ہیں|براہِ کرم ڈاکٹر سے ملیں|رپورٹ کا متن پیسٹ کریں|قدریں پڑھیں|رپورٹ محفوظ کریں|پرنٹ|حساب شدہ قدریں|زبان|ٹیسٹ کے نام بین الاقوامی لیب اصطلاحات میں ہیں۔ تفصیلی وضاحت ہندی اور انگریزی میں؛ دیگر زبانوں میں لیبل، عضو کے نام اور حالت کا ترجمہ ہے۔|نمونہ بھریں|خون|شوگر / میٹابولزم|دل / بلڈ پریشر|جگر / ہاضمہ|گردہ / الیکٹرولائٹ|تھائیرائیڈ / ہارمون|وٹامن / ہڈیاں|انفیکشن|ٹیومر مارکر|آٹو امیون / جوڑ|پھیپھڑے / آکسیجن|لبلبہ|پیشاب / پیشاب کی نالی|کان-ناک-گلا / سماعت|دیگر";
+
+L.kn="ನಿಮ್ಮ ವೈದ್ಯಕೀಯ ವರದಿಯನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ|ರೋಗಿಯ ವಿವರಗಳು|ಹೆಸರು|ವಯಸ್ಸು (ವರ್ಷ)|ಲಿಂಗ|ಪುರುಷ|ಮಹಿಳೆ|ನಗರ|ವರದಿಯ ದಿನಾಂಕ|ಲಕ್ಷಣಗಳು (ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ ಬರೆಯಿರಿ)|ಇತಿಹಾಸ, ಔಷಧಿಗಳು, ಅಲರ್ಜಿ|ಇತರ ಫಲಿತಾಂಶಗಳು (USG, X-Ray, ECG, ಬಯಾಪ್ಸಿ…)|ವರದಿಯ ಮೌಲ್ಯಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ|ಪರೀಕ್ಷಾ ಪ್ಯಾನೆಲ್ ಆಯ್ಕೆಮಾಡಿ (ಕೋಷ್ಟಕ ತೆರೆಯುತ್ತದೆ)|ಯಾವುದೇ ಪರೀಕ್ಷೆ ಹುಡುಕಿ…|+ ನಿಮ್ಮ ಪರೀಕ್ಷೆ ಸೇರಿಸಿ|ಎಲ್ಲವನ್ನೂ ಅಳಿಸಿ|ವರದಿಯನ್ನು ವಿಶ್ಲೇಷಿಸಿ|ಪರೀಕ್ಷೆ|ಮೌಲ್ಯ|ಘಟಕ|ಸಾಮಾನ್ಯ ಮಿತಿ|ನಿಮ್ಮ ಲ್ಯಾಬ್‌ನ ಮಿತಿ (ಐಚ್ಛಿಕ)|ಸ್ಥಿತಿ|ಕಡಿಮೆ|ಹೆಚ್ಚು|ಸಾಮಾನ್ಯ|ಗಂಭೀರ|ಮಾಹಿತಿ ನೀಡಿಲ್ಲ|ಸಾರಾಂಶ|ಅಸಾಮಾನ್ಯ ಫಲಿತಾಂಶಗಳು|ವರದಿಯ ಪೂರ್ಣತೆ|ನೀಡಿಲ್ಲ|ಅಂಗವಾರು|ಯಾವ ತಜ್ಞರನ್ನು ಭೇಟಿಯಾಗಬೇಕು|ತಪ್ಪಿಸಿ|ಪ್ರಯೋಜನಕಾರಿ|ಮುಂದಿನ ಪರೀಕ್ಷೆಗಳು|ತುರ್ತು ಎಚ್ಚರಿಕೆ|ಇದು ಶೈಕ್ಷಣಿಕ ಮಾಹಿತಿ ಮಾತ್ರ, ರೋಗನಿರ್ಣಯವಲ್ಲ. ನಿಮ್ಮ ಲ್ಯಾಬ್‌ನ ಮುದ್ರಿತ ಮಿತಿಗೇ ಆದ್ಯತೆ. ನಿರ್ಧಾರ ವೈದ್ಯರದು. ತುರ್ತು ಸ್ಥಿತಿಯಲ್ಲಿ 112 ಕರೆ ಮಾಡಿ.|ನಮೂದಿಸಿದ ಎಲ್ಲಾ ಮೌಲ್ಯಗಳು ಸಾಮಾನ್ಯ|ದಯವಿಟ್ಟು ವೈದ್ಯರನ್ನು ಭೇಟಿಯಾಗಿ|ವರದಿಯ ಪಠ್ಯ ಅಂಟಿಸಿ|ಮೌಲ್ಯಗಳನ್ನು ಓದಿ|ವರದಿ ಉಳಿಸಿ|ಮುದ್ರಿಸಿ|ಲೆಕ್ಕಹಾಕಿದ ಮೌಲ್ಯಗಳು|ಭಾಷೆ|ಪರೀಕ್ಷೆಗಳ ಹೆಸರುಗಳು ಅಂತಾರಾಷ್ಟ್ರೀಯ ಲ್ಯಾಬ್ ಪದಗಳಲ್ಲಿ. ವಿವರವಾದ ವಿವರಣೆ ಹಿಂದಿ ಮತ್ತು ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ; ಇತರ ಭಾಷೆಗಳಲ್ಲಿ ಲೇಬಲ್, ಅಂಗದ ಹೆಸರು, ಸ್ಥಿತಿ ಅನುವಾದಿಸಲಾಗಿದೆ.|ಮಾದರಿ ತುಂಬಿ|ರಕ್ತ|ಸಕ್ಕರೆ / ಚಯಾಪಚಯ|ಹೃದಯ / ರಕ್ತದೊತ್ತಡ|ಯಕೃತ್ತು / ಜೀರ್ಣ|ಮೂತ್ರಪಿಂಡ / ಎಲೆಕ್ಟ್ರೋಲೈಟ್|ಥೈರಾಯ್ಡ್ / ಹಾರ್ಮೋನ್|ಜೀವಸತ್ವ / ಮೂಳೆ|ಸೋಂಕು|ಗೆಡ್ಡೆ ಸೂಚಕಗಳು|ಸ್ವಯಂ ರೋಗನಿರೋಧಕ / ಕೀಲು|ಶ್ವಾಸಕೋಶ / ಆಮ್ಲಜನಕ|ಮೇದೋಜೀರಕ|ಮೂತ್ರ / ಮೂತ್ರಮಾರ್ಗ|ಕಿವಿ-ಮೂಗು-ಗಂಟಲು / ಶ್ರವಣ|ಇತರೆ";
+L.ml="നിങ്ങളുടെ മെഡിക്കൽ റിപ്പോർട്ട് മനസ്സിലാക്കുക|രോഗിയുടെ വിവരങ്ങൾ|പേര്|പ്രായം (വർഷം)|ലിംഗം|പുരുഷൻ|സ്ത്രീ|നഗരം|റിപ്പോർട്ട് തീയതി|ലക്ഷണങ്ങൾ (നിങ്ങളുടെ ഭാഷയിൽ എഴുതുക)|ചരിത്രം, മരുന്നുകൾ, അലർജി|മറ്റ് കണ്ടെത്തലുകൾ (USG, X-Ray, ECG, ബയോപ്സി…)|റിപ്പോർട്ട് മൂല്യങ്ങൾ നൽകുക|ടെസ്റ്റ് പാനൽ തിരഞ്ഞെടുക്കുക (പട്ടിക തുറക്കും)|ഏതെങ്കിലും ടെസ്റ്റ് തിരയുക…|+ സ്വന്തം ടെസ്റ്റ് ചേർക്കുക|എല്ലാം മായ്ക്കുക|റിപ്പോർട്ട് വിശകലനം ചെയ്യുക|ടെസ്റ്റ്|മൂല്യം|യൂണിറ്റ്|സാധാരണ പരിധി|നിങ്ങളുടെ ലാബിന്റെ പരിധി (ഓപ്ഷണൽ)|നില|കുറവ്|കൂടുതൽ|സാധാരണം|ഗുരുതരം|വിവരം നൽകിയിട്ടില്ല|സംഗ്രഹം|അസാധാരണ ഫലങ്ങൾ|റിപ്പോർട്ടിന്റെ പൂർണ്ണത|നൽകിയിട്ടില്ല|അവയവം തിരിച്ച്|ഏത് വിദഗ്ധനെ കാണണം|ഒഴിവാക്കുക|ഗുണകരം|തുടർ പരിശോധനകൾ|അടിയന്തര മുന്നറിയിപ്പ്|വിദ്യാഭ്യാസ വിവരം മാത്രം, രോഗനിർണയമല്ല. നിങ്ങളുടെ ലാബിന്റെ അച്ചടിച്ച പരിധിക്കാണ് മുൻഗണന. തീരുമാനം ഡോക്ടറുടേതാണ്. അടിയന്തരമെങ്കിൽ 112 വിളിക്കുക.|നൽകിയ എല്ലാ മൂല്യങ്ങളും സാധാരണം|ദയവായി ഡോക്ടറെ കാണുക|റിപ്പോർട്ട് ടെക്സ്റ്റ് പേസ്റ്റ് ചെയ്യുക|മൂല്യങ്ങൾ വായിക്കുക|റിപ്പോർട്ട് സേവ് ചെയ്യുക|പ്രിന്റ്|കണക്കാക്കിയ മൂല്യങ്ങൾ|ഭാഷ|ടെസ്റ്റ് പേരുകൾ അന്താരാഷ്ട്ര ലാബ് പദങ്ങളിൽ. വിശദീകരണം ഹിന്ദിയിലും ഇംഗ്ലീഷിലും; മറ്റ് ഭാഷകളിൽ ലേബലുകൾ, അവയവ പേരുകൾ, നില വിവർത്തനം ചെയ്തിരിക്കുന്നു.|സാമ്പിൾ നിറയ്ക്കുക|രക്തം|പഞ്ചസാര / മെറ്റബോളിസം|ഹൃദയം / രക്തസമ്മർദ്ദം|കരൾ / ദഹനം|വൃക്ക / ഇലക്ട്രോലൈറ്റ്|തൈറോയ്ഡ് / ഹോർമോൺ|വിറ്റാമിൻ / എല്ല്|അണുബാധ|ട്യൂമർ മാർക്കർ|ഓട്ടോഇമ്യൂൺ / സന്ധി|ശ്വാസകോശം / ഓക്സിജൻ|പാൻക്രിയാസ്|മൂത്രം / മൂത്രനാളി|ചെവി-മൂക്ക്-തൊണ്ട / കേൾവി|മറ്റുള്ളവ";
+L.or="ଆପଣଙ୍କ ମେଡିକାଲ ରିପୋର୍ଟ ବୁଝନ୍ତୁ|ରୋଗୀଙ୍କ ସୂଚନା|ନାମ|ବୟସ (ବର୍ଷ)|ଲିଙ୍ଗ|ପୁରୁଷ|ମହିଳା|ସହର|ରିପୋର୍ଟ ତାରିଖ|ଲକ୍ଷଣ (ନିଜ ଭାଷାରେ ଲେଖନ୍ତୁ)|ଇତିହାସ, ଔଷଧ, ଆଲର୍ଜି|ଅନ୍ୟ ଫଳାଫଳ (USG, X-Ray, ECG, ବାୟୋପ୍ସି…)|ରିପୋର୍ଟର ମୂଲ୍ୟ ଭରନ୍ତୁ|ପରୀକ୍ଷା ପ୍ୟାନେଲ ବାଛନ୍ତୁ (ସାରଣୀ ଖୋଲିବ)|ଯେକୌଣସି ପରୀକ୍ଷା ଖୋଜନ୍ତୁ…|+ ନିଜ ପରୀକ୍ଷା ଯୋଡ଼ନ୍ତୁ|ସବୁ ସଫା କରନ୍ତୁ|ରିପୋର୍ଟ ବିଶ୍ଳେଷଣ କରନ୍ତୁ|ପରୀକ୍ଷା|ମୂଲ୍ୟ|ଏକକ|ସାଧାରଣ ସୀମା|ଆପଣଙ୍କ ଲ୍ୟାବ୍‌ର ସୀମା (ଇଚ୍ଛାଧୀନ)|ସ୍ଥିତି|କମ୍|ଅଧିକ|ସାଧାରଣ|ଗୁରୁତର|ସୂଚନା ଦିଆଯାଇନାହିଁ|ସାରାଂଶ|ଅସ୍ୱାଭାବିକ ଫଳାଫଳ|ରିପୋର୍ଟର ସମ୍ପୂର୍ଣ୍ଣତା|ଦିଆଯାଇନାହିଁ|ଅଙ୍ଗ ଅନୁସାରେ|କେଉଁ ବିଶେଷଜ୍ଞଙ୍କୁ ଦେଖାଇବେ|ଏଡ଼ାନ୍ତୁ|ଲାଭଦାୟକ|ପରବର୍ତ୍ତୀ ପରୀକ୍ଷା|ଜରୁରୀକାଳୀନ ଚେତାବନୀ|କେବଳ ଶିକ୍ଷାମୂଳକ ସୂଚନା, ନିଦାନ ନୁହେଁ। ଆପଣଙ୍କ ଲ୍ୟାବ୍‌ର ଛପା ସୀମା ପ୍ରାଥମିକ। ନିଷ୍ପତ୍ତି ଡାକ୍ତରଙ୍କର। ଜରୁରୀକାଳୀନ ସ୍ଥିତିରେ 112 ଡାକନ୍ତୁ।|ଦିଆଯାଇଥିବା ସମସ୍ତ ମୂଲ୍ୟ ସାଧାରଣ|ଦୟାକରି ଡାକ୍ତରଙ୍କୁ ଦେଖାନ୍ତୁ|ରିପୋର୍ଟ ଟେକ୍ସଟ୍ ପେଷ୍ଟ କରନ୍ତୁ|ମୂଲ୍ୟ ପଢ଼ନ୍ତୁ|ରିପୋର୍ଟ ସେଭ୍ କରନ୍ତୁ|ପ୍ରିଣ୍ଟ|ଗଣନା କରାଯାଇଥିବା ମୂଲ୍ୟ|ଭାଷା|ପରୀକ୍ଷା ନାମ ଆନ୍ତର୍ଜାତୀୟ ଲ୍ୟାବ୍ ଶବ୍ଦରେ। ବିସ୍ତୃତ ବ୍ୟାଖ୍ୟା ହିନ୍ଦୀ ଓ ଇଂରାଜୀରେ; ଅନ୍ୟ ଭାଷାରେ ଲେବଲ୍, ଅଙ୍ଗ ନାମ ଓ ସ୍ଥିତି ଅନୁବାଦିତ।|ନମୁନା ଭରନ୍ତୁ|ରକ୍ତ|ଶର୍କରା / ବିପାକ|ହୃଦୟ / ରକ୍ତଚାପ|ଯକୃତ / ହଜମ|ବୃକ୍କ / ଇଲେକ୍ଟ୍ରୋଲାଇଟ୍|ଥାଇରଏଡ୍ / ହରମୋନ୍|ଭିଟାମିନ୍ / ହାଡ଼|ସଂକ୍ରମଣ|ଟ୍ୟୁମର ମାର୍କର|ଅଟୋଇମ୍ୟୁନ୍ / ଗଣ୍ଠି|ଫୁସଫୁସ / ଅମ୍ଳଜାନ|ଅଗ୍ନାଶୟ|ମୂତ୍ର / ମୂତ୍ରପଥ|କାନ-ନାକ-ଗଳା / ଶ୍ରବଣ|ଅନ୍ୟାନ୍ୟ";
+L.pa="ਆਪਣੀ ਮੈਡੀਕਲ ਰਿਪੋਰਟ ਸਮਝੋ|ਮਰੀਜ਼ ਦੀ ਜਾਣਕਾਰੀ|ਨਾਮ|ਉਮਰ (ਸਾਲ)|ਲਿੰਗ|ਮਰਦ|ਔਰਤ|ਸ਼ਹਿਰ|ਰਿਪੋਰਟ ਦੀ ਤਾਰੀਖ਼|ਲੱਛਣ (ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਲਿਖੋ)|ਇਤਿਹਾਸ, ਦਵਾਈਆਂ, ਐਲਰਜੀ|ਹੋਰ ਨਤੀਜੇ (USG, X-Ray, ECG, ਬਾਇਓਪਸੀ…)|ਰਿਪੋਰਟ ਦੇ ਮੁੱਲ ਭਰੋ|ਟੈਸਟ ਪੈਨਲ ਚੁਣੋ (ਸਾਰਣੀ ਖੁੱਲ੍ਹੇਗੀ)|ਕੋਈ ਵੀ ਟੈਸਟ ਲੱਭੋ…|+ ਆਪਣਾ ਟੈਸਟ ਜੋੜੋ|ਸਭ ਸਾਫ਼ ਕਰੋ|ਰਿਪੋਰਟ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ|ਟੈਸਟ|ਮੁੱਲ|ਇਕਾਈ|ਆਮ ਹੱਦ|ਤੁਹਾਡੀ ਲੈਬ ਦੀ ਹੱਦ (ਵਿਕਲਪਿਕ)|ਸਥਿਤੀ|ਘੱਟ|ਵੱਧ|ਆਮ|ਗੰਭੀਰ|ਜਾਣਕਾਰੀ ਨਹੀਂ ਦਿੱਤੀ|ਸਾਰ|ਗੈਰ-ਆਮ ਨਤੀਜੇ|ਰਿਪੋਰਟ ਦੀ ਸੰਪੂਰਨਤਾ|ਨਹੀਂ ਦਿੱਤਾ|ਅੰਗ ਅਨੁਸਾਰ|ਕਿਸ ਮਾਹਰ ਨੂੰ ਮਿਲੋ|ਪਰਹੇਜ਼ ਕਰੋ|ਲਾਭਦਾਇਕ|ਅਗਲੇ ਟੈਸਟ|ਐਮਰਜੈਂਸੀ ਚੇਤਾਵਨੀ|ਸਿਰਫ਼ ਵਿਦਿਅਕ ਜਾਣਕਾਰੀ, ਤਸ਼ਖ਼ੀਸ ਨਹੀਂ। ਤੁਹਾਡੀ ਲੈਬ ਦੀ ਛਪੀ ਹੱਦ ਪਹਿਲ ਹੈ। ਫ਼ੈਸਲਾ ਡਾਕਟਰ ਦਾ ਹੈ। ਐਮਰਜੈਂਸੀ ਵਿੱਚ 112 'ਤੇ ਕਾਲ ਕਰੋ।|ਦਰਜ ਕੀਤੇ ਸਾਰੇ ਮੁੱਲ ਆਮ ਹਨ|ਕਿਰਪਾ ਕਰਕੇ ਡਾਕਟਰ ਨੂੰ ਮਿਲੋ|ਰਿਪੋਰਟ ਦਾ ਟੈਕਸਟ ਪੇਸਟ ਕਰੋ|ਮੁੱਲ ਪੜ੍ਹੋ|ਰਿਪੋਰਟ ਸੇਵ ਕਰੋ|ਪ੍ਰਿੰਟ|ਗਿਣੇ ਹੋਏ ਮੁੱਲ|ਭਾਸ਼ਾ|ਟੈਸਟ ਦੇ ਨਾਮ ਅੰਤਰਰਾਸ਼ਟਰੀ ਲੈਬ ਸ਼ਬਦਾਂ ਵਿੱਚ। ਵਿਸਥਾਰ ਹਿੰਦੀ ਤੇ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ; ਹੋਰ ਭਾਸ਼ਾਵਾਂ ਵਿੱਚ ਲੇਬਲ, ਅੰਗਾਂ ਦੇ ਨਾਮ ਤੇ ਸਥਿਤੀ ਅਨੁਵਾਦਿਤ।|ਨਮੂਨਾ ਭਰੋ|ਖੂਨ|ਸ਼ੂਗਰ / ਮੈਟਾਬੋਲਿਜ਼ਮ|ਦਿਲ / ਬਲੱਡ ਪ੍ਰੈਸ਼ਰ|ਜਿਗਰ / ਹਾਜ਼ਮਾ|ਗੁਰਦਾ / ਇਲੈਕਟ੍ਰੋਲਾਈਟ|ਥਾਇਰਾਇਡ / ਹਾਰਮੋਨ|ਵਿਟਾਮਿਨ / ਹੱਡੀਆਂ|ਇਨਫੈਕਸ਼ਨ|ਟਿਊਮਰ ਮਾਰਕਰ|ਆਟੋਇਮਿਊਨ / ਜੋੜ|ਫੇਫੜੇ / ਆਕਸੀਜਨ|ਪੈਂਕ੍ਰੀਆਸ|ਪਿਸ਼ਾਬ / ਪਿਸ਼ਾਬ ਨਾਲੀ|ਕੰਨ-ਨੱਕ-ਗਲਾ / ਸੁਣਨ|ਹੋਰ";
+L.sa="स्वस्य चिकित्सा-प्रतिवेदनं जानन्तु|रोगिणः विवरणम्|नाम|वयः (वर्षाणि)|लिङ्गम्|पुरुषः|स्त्री|नगरम्|प्रतिवेदनस्य दिनाङ्कः|लक्षणानि (स्वभाषायां लिखन्तु)|इतिहासः, औषधानि, अलर्जी|अन्ये निष्कर्षाः (USG, X-Ray, ECG, बायोप्सी…)|प्रतिवेदन-मानानि लिखन्तु|परीक्षा-समूहं चिनुत (सारणी उद्घाटिता भविष्यति)|काञ्चन परीक्षां अन्विष्यन्तु…|+ स्वपरीक्षां योजयन्तु|सर्वं मार्जयन्तु|प्रतिवेदनं विश्लेषयन्तु|परीक्षा|मानम्|मात्रकम्|सामान्य-सीमा|भवतः प्रयोगशालायाः सीमा (ऐच्छिकम्)|स्थितिः|न्यूनम्|अधिकम्|सामान्यम्|गम्भीरम्|विवरणं न दत्तम्|सारांशः|असामान्य-फलानि|प्रतिवेदनस्य पूर्णता|न दत्तम्|अङ्गानुसारम्|कं विशेषज्ञं पश्येत्|वर्जयन्तु|हितकरम्|अग्रिम-परीक्षाः|आपत्कालीन-सूचना|केवलं शैक्षिक-सूचना, निदानं न। भवतः प्रयोगशालायाः मुद्रिता सीमा प्रमुखा। निर्णयः चिकित्सकस्य। आपत्काले 112 आह्वयन्तु।|दत्तानि सर्वाणि मानानि सामान्यानि|कृपया चिकित्सकं पश्यन्तु|प्रतिवेदन-पाठं निक्षिपन्तु|मानानि पठन्तु|प्रतिवेदनं रक्षन्तु|मुद्रणम्|गणितानि मानानि|भाषा|परीक्षा-नामानि अन्तर्राष्ट्रिय-शब्दैः। विस्तृत-व्याख्या हिन्दी-आङ्ग्लयोः; अन्यासु भाषासु लेबल्, अङ्ग-नामानि स्थितिः च अनूदिताः।|उदाहरणं पूरयन्तु|रक्तम्|शर्करा / चयापचयः|हृदयम् / रक्तचापः|यकृत् / पाचनम्|वृक्कौ / विद्युत्-अपघट्यानि|गलग्रन्थिः / हार्मोन्|जीवनसत्त्वानि / अस्थीनि|संक्रमणम्|अर्बुद-सूचकाः|स्वप्रतिरक्षा / सन्धयः|फुफ्फुसौ / प्राणवायुः|अग्न्याशयः|मूत्रम् / मूत्रमार्गः|कर्ण-नासा-कण्ठः / श्रवणम्|अन्यत्";
+L.de="Verstehen Sie Ihren Laborbefund|Patientendaten|Name|Alter (Jahre)|Geschlecht|Männlich|Weiblich|Stadt|Befunddatum|Symptome (in Ihrer Sprache schreiben)|Vorgeschichte, Medikamente, Allergien|Weitere Befunde (Ultraschall, Röntgen, EKG, Biopsie…)|Befundwerte eingeben|Testpanel wählen (Tabelle öffnet sich)|Test suchen…|+ Eigenen Test hinzufügen|Alles löschen|Befund analysieren|Test|Wert|Einheit|Normbereich|Referenzbereich Ihres Labors (optional)|Status|Niedrig|Hoch|Normal|Kritisch|Keine Daten angegeben|Zusammenfassung|Auffällige Werte|Vollständigkeit des Befunds|Nicht angegeben|Nach Organsystem|Zu konsultierender Facharzt|Vermeiden|Hilfreich|Weitere Untersuchungen|Notfallwarnung|Nur Bildungsinformation, keine Diagnose. Der im Laborbericht gedruckte Referenzbereich hat Vorrang. Die Entscheidung liegt bei Ihrem Arzt. Im Notfall 112 anrufen.|Alle eingegebenen Werte liegen im Normbereich|Bitte suchen Sie einen Arzt auf|Befundtext einfügen|Werte lesen|Befund speichern|Drucken|Berechnete Werte|Sprache|Testnamen folgen internationalen Labor-Standards. Ausführliche Erklärungen auf Hindi und Englisch; in anderen Sprachen sind Beschriftungen, Organnamen und Status übersetzt.|Beispiel einfügen|Blut|Zucker / Stoffwechsel|Herz / Blutdruck|Leber / Verdauung|Niere / Elektrolyte|Schilddrüse / Hormone|Vitamine / Knochen|Infektion|Tumormarker|Autoimmun / Gelenke|Lunge / Sauerstoff|Bauchspeicheldrüse|Urin / Harnwege|HNO / Gehör|Sonstiges";
+L.ja="検査結果を理解しましょう|患者情報|氏名|年齢（歳）|性別|男性|女性|都市|検査日|症状（ご自身の言語で入力）|既往歴・服用中の薬・アレルギー|その他の所見（エコー、X線、心電図、生検など）|検査値を入力|検査パネルを選択（表が開きます）|検査項目を検索…|＋ 項目を追加|すべて消去|結果を分析|検査項目|値|単位|基準範囲|お使いの検査機関の基準範囲（任意）|判定|低値|高値|正常|危険値|データ未入力|まとめ|異常値|結果の網羅率|未入力|臓器別|受診すべき専門医|避けるもの|おすすめ|追加検査|緊急警告|教育目的の情報であり診断ではありません。検査機関が印刷した基準範囲を優先してください。判断は医師が行います。緊急時は現地の緊急番号（インドは112）へ連絡してください。|入力した値はすべて正常範囲です|医師にご相談ください|検査結果のテキストを貼り付け|値を読み取る|結果を保存|印刷|計算値|言語|項目名は国際標準の検査用語です。詳しい説明はヒンディー語と英語で、他の言語ではラベル・臓器名・判定を翻訳しています。|サンプル入力|血液|血糖 / 代謝|心臓 / 血圧|肝臓 / 消化|腎臓 / 電解質|甲状腺 / ホルモン|ビタミン / 骨|感染症|腫瘍マーカー|自己免疫 / 関節|肺 / 酸素|膵臓|尿 / 尿路|耳鼻咽喉 / 聴力|その他";
+L.es="Entienda su informe médico|Datos del paciente|Nombre|Edad (años)|Sexo|Hombre|Mujer|Ciudad|Fecha del informe|Síntomas (escriba en su idioma)|Antecedentes, medicamentos, alergias|Otros hallazgos (ecografía, radiografía, ECG, biopsia…)|Ingrese los valores del informe|Elija un panel de pruebas (se abre una tabla)|Buscar cualquier prueba…|+ Añadir prueba propia|Borrar todo|Analizar informe|Prueba|Valor|Unidad|Rango normal|Rango de su laboratorio (opcional)|Estado|Bajo|Alto|Normal|Crítico|Dato no proporcionado|Resumen|Resultados anormales|Integridad del informe|No proporcionado|Por sistema de órganos|Especialista a consultar|Evitar|Beneficioso|Pruebas de seguimiento|Alerta de emergencia|Solo información educativa, no es un diagnóstico. Prevalece el rango impreso por su laboratorio. La decisión corresponde a su médico. En una emergencia llame al número local de emergencias (112 en España e India).|Todos los valores ingresados están en rango normal|Consulte a un médico|Pegar texto del informe|Leer valores|Guardar informe|Imprimir|Valores calculados|Idioma|Los nombres de las pruebas usan términos internacionales de laboratorio. Las explicaciones detalladas están en hindi e inglés; en otros idiomas se traducen etiquetas, órganos y estado.|Rellenar ejemplo|Sangre|Azúcar / metabolismo|Corazón / presión arterial|Hígado / digestión|Riñón / electrolitos|Tiroides / hormonas|Vitaminas / huesos|Infección|Marcadores tumorales|Autoinmune / articulaciones|Pulmones / oxígeno|Páncreas|Orina / vías urinarias|Otorrino / audición|Otros";
+
+// ---------- pure core (no DOM) ----------
+const S=s=>s.includes('/')?s.split('/').map(Number):[+s,+s];
+const AL=a=>a?a.split(',').map(x=>{const p=x.split(':');return{u:p[0],f:+p[1],o:+(p[2]||0)}}):[];
+const T=RAW.trim().split('\n').map(r=>{const p=r.split('|');return{id:p[0],q:p[15]=='q',n:p[1],u:p[2],neg:['D','T-score','Z-score'].includes(p[2])||p[0]=='be',lo:S(p[3]),hi:S(p[4]),cl:+p[5],ch:+p[6],o:p[7],p:p[8].replace('*',''),opt:p[8].endsWith('*'),alt:AL(p[9]),al:p[10],lh:p[11],hh:p[12],le:p[13],he:p[14]}});
+
+let AGE=40,FS='',HT=0,WT=0;
+const AA={hb:[[12,11.5,15.5],[18,12,16]],tlc:[[12,5000,14500],[18,4500,13000]],creat:[[12,0.3,0.7],[18,0.5,1.0]],alp:[[12,100,400],[18,50,400]],phos:[[12,3.5,6.5],[18,2.7,5.5]],hr:[[12,70,120],[18,60,100]],bps:[[12,90,115],[18,100,130]],bpd:[[12,55,75],[18,60,80]],rr:[[12,18,30],[18,12,20]],pcv:[[12,34,45],[18,36,48]],tsh:[[12,0.7,6],[18,0.5,5]],chol:[[18,0,170]],ldl:[[18,0,110]],mcv:[[12,75,90],[18,78,96]]};
+const PA={hb:[[11,14],[10.5,14],[11,14]],tsh:[[0.1,4],[0.2,4],[0.3,4]],creat:[[0.4,0.8],[0.4,0.8],[0.4,0.8]],tlc:[[6000,13000],[6000,15000],[6000,16000]],fbs:[[70,92],[70,92],[70,92]],fibr:[[200,400],[250,500],[300,600]]};
+const CP={lh:[[2.4,12.6],[14,95.6],[1,11.4],[7.7,58.5]],fsh:[[3.5,12.5],[4.7,21.5],[1.7,7.7],[25.8,134.8]],e2:[[12.5,166],[85.8,498],[43.8,211],[0,55]],prog:[[0.2,1.5],[0.8,3],[1.7,27],[0.1,0.8]]};
+function rg(t,sx){const id=t.id;
+ if(sx==1&&FS){const i=FS[0]=='t'?+FS[1]-1:'folp'.indexOf(FS),m=FS[0]=='t'?PA[id]:CP[id];if(m&&m[i])return m[i]}
+ const a=AA[id];if(a&&AGE<18){const z=a.find(x=>AGE<x[0]);if(z)return[z[1],z[2]]}
+ return[t.lo[sx],t.hi[sx]]}
+const CRIT={iopR:[0,40],iopL:[0,40],cd4:[200,1e9],bhb:[0,3],lead:[0,45],ionca:[0.8,1.6],sosm:[250,320],ag:[0,20],afi:[2,1e9],fhr:[90,180],po2:[60,1e9],pf:[200,1e9],be:[-10,10],pasp:[0,60],bnp:[0,900],ckmb:[0,100],myo:[0,500],amm:[0,200],map:[60,130],phq9:[0,20],gad7:[0,15],ahi:[0,30],spmin:[80,1e9],csfp:[0,200],csfg:[20,1e9],pvr:[0,300],qmax:[10,1e9],abiR:[0.4,1e9],abiL:[0.4,1e9],apgar:[4,1e9],nbglu:[30,1e9],fibr:[100,1e9],pt:[0,30],at3:[50,1e9],prealb:[10,1e9],bwt:[1.5,1e9],hbvdna:[0,1e7],hivvl:[0,1e5],cpk:[0,1000],ldh:[0,1000],csfc:[0,100],tbr:[0,10],mmse:[10,1e9]};
+const ALTX={zinc:'µmol/L:6.54',copper:'µmol/L:6.355',cpep:'nmol/L:3.02',vitc:'µmol/L:0.01761',vita:'µmol/L:28.65',vite:'µmol/L:0.4305',acth:'pmol/L:4.541',aldo:'pmol/L:0.0361',amh:'pmol/L:0.14',e2:'pmol/L:0.2724',dheas:'µmol/L:36.9',prog:'nmol/L:0.3145',amm:'µmol/L:1.703',ldh:'µkat/L:60',cpk:'µkat/L:60',igg:'g/L:100',iga:'g/L:100',igm:'g/L:100',c3:'g/L:100',c4:'g/L:100',apoa1:'g/L:100',apob:'g/L:100',ionca:'mg/dL:0.2495',pth:'pmol/L:9.43',tes:'nmol/L:28.84',prl:'mIU/L:0.04717',cort:'nmol/L:0.03625',folate:'nmol/L:0.4413',insulin:'pmol/L:0.1394',crp:'mg/dL:10',hscrp:'mg/dL:10',trop:'ng/L:0.001',ntprobnp:'ng/L:1',lh:'IU/L:1',fsh:'IU/L:1'};
+T.forEach(t=>{const c=CRIT[t.id];if(c){t.cl=c[0];t.ch=c[1]}if(ALTX[t.id])t.alt=t.alt.concat(AL(ALTX[t.id]))});
+const QL=(t,v)=>{v=Math.round(+v);const h=ML()=='hi';return t.u=='grade'?['Nil','Trace','+','++','+++'][v]||('+'.repeat(v)):(h?['नेगेटिव','पॉज़िटिव']:['Negative','Positive'])[v>0?1:0]};
+const vs=r=>r.t&&r.t.q?e(QL(r.t,r.c)):r.v+' '+e(r.u);
+const TM={};T.forEach(t=>TM[t.id]=t);
+const RQ={};T.forEach(t=>{if(t.q)RQ[t.id]=new RegExp('\\b(?:'+t.al.split(',').join('|')+')\\b[^\\n]{0,40}?(non[- ]?reactive|not detected|negative|nil|absent|normal|positive|reactive|detected|present|trace|\\+{1,4})','i')});
+const RE={};T.forEach(t=>RE[t.id]=new RegExp('\\b(?:'+t.al.split(',').join('|')+')\\b[^0-9\\n]{0,25}?(-?\\d[\\d,]*\\.?\\d*)','i'));
+const UN=t=>[{u:t.u,f:1,o:0}].concat(t.alt);
+const unitOf=(t,u)=>UN(t).find(x=>x.u==u)||UN(t)[0];
+const rd=x=>isNaN(x)?NaN:+(+x).toPrecision(4);
+
+function mkItem(a){
+ const lo=a.lo,hi=a.hi;
+ const st=(isNaN(lo)&&isNaN(hi))?'U':(!isNaN(lo)&&a.c<lo)?'L':(!isNaN(hi)&&a.c>hi)?'H':'N';
+ const crit=(st=='L'&&a.cl>0&&a.c<=a.cl)||(st=='H'&&a.c>=a.ch);
+ const dev=st=='L'?(lo-a.c)/(Math.abs(lo)||1)*100:st=='H'?(a.c-hi)/(Math.abs(hi)||1)*100:0;
+ const uo=a.uo||{f:1,o:0};
+ return{id:a.id,n:a.n,v:a.v,u:a.u,c:a.c,st,crit,dev,o:a.o,own:a.own,src:a.src,t:a.t,
+  dl:isNaN(lo)?NaN:rd((lo-uo.o)/uo.f),dh:isNaN(hi)?NaN:rd((hi-uo.o)/uo.f)}}
+
+const PF=x=>parseFloat(String(x==null?'':x).replace(/,/g,''));
+function rowEval(r,sx){
+ const v=PF(r.v);if(isNaN(v)||(v<0&&!(r.id&&TM[r.id].neg)))return null;
+ const a=PF(r.lo),b=PF(r.hi);
+ if(r.id){const t=TM[r.id],uo=unitOf(t,r.u),c=v*uo.f+uo.o;let[lo,hi]=rg(t,sx),own=false;
+  if(!isNaN(a)||!isNaN(b)){lo=isNaN(a)?NaN:a*uo.f+uo.o;hi=isNaN(b)?NaN:b*uo.f+uo.o;own=true}
+  return mkItem({id:t.id,n:t.n,v,u:uo.u,c,lo,hi,uo,own,src:'entered',cl:t.cl,ch:t.ch,o:t.o,t})}
+ if(!r.n)return null;
+ return mkItem({id:null,n:r.n,v,u:r.u||'',c:v,lo:a,hi:b,own:true,src:'custom',cl:0,ch:1e9,o:'other'})}
+
+function derive(V,sx,age){
+ const A=[],C=[],g=k=>V[k];
+ if(g('rbc')>0){if(g('pcv')>0&&g('mcv')==null)A.push(['mcv',g('pcv')*10/g('rbc')]);if(g('hb')>0&&g('mch')==null)A.push(['mch',g('hb')*10/g('rbc')])}
+ if(g('hb')>0&&g('pcv')>0&&g('mchc')==null)A.push(['mchc',g('hb')*100/g('pcv')]);
+ if(g('creat')>0&&g('egfr')==null&&age>=18){const f=sx==1,k=f?.7:.9,a=f?-.241:-.302,x=g('creat')/k;
+  const e=142*Math.pow(Math.min(x,1),a)*Math.pow(Math.max(x,1),-1.2)*Math.pow(.9938,age)*(f?1.012:1);
+  A.push(['egfr',Math.round(e)]);C.push(['eGFR (CKD-EPI 2021)',Math.round(e)+' mL/min/1.73m²','creatinine, age, sex'])}
+ if(g('tg')>0&&g('tg')<400){if(g('vldl')==null)A.push(['vldl',g('tg')/5]);
+  if(g('ldl')==null&&g('chol')>0&&g('hdl')>0){A.push(['ldl',g('chol')-g('hdl')-g('tg')/5]);C.push(['LDL (Friedewald)',Math.round(g('chol')-g('hdl')-g('tg')/5)+' mg/dL','TC − HDL − TG/5'])}}
+ if(g('chol')>0&&g('hdl')>0){if(g('nonhdl')==null)A.push(['nonhdl',g('chol')-g('hdl')]);C.push(['Chol / HDL',(g('chol')/g('hdl')).toFixed(2),'<5 desirable'])}
+ if(g('tg')>0&&g('hdl')>0)C.push(['TG / HDL',(g('tg')/g('hdl')).toFixed(2),'insulin-resistance helper; no universal cut-off']);
+ if(g('bili')>0&&g('dbili')>=0&&g('ibili')==null)A.push(['ibili',g('bili')-g('dbili')]);
+ if(g('tprot')>0&&g('albumin')>0&&g('tprot')>g('albumin')){const gl=g('tprot')-g('albumin');
+  if(g('glob')==null)A.push(['glob',gl]);if(g('agr')==null)A.push(['agr',g('albumin')/gl])}
+ if(g('sgot')>0&&g('sgpt')>0&&g('plt')>0&&age>0)C.push(['FIB-4',(age*g('sgot')/(g('plt')*100*Math.sqrt(g('sgpt')))).toFixed(2),'<1.3 low fibrosis likelihood; >2.67 high (best for age 35-65)']);
+ if(g('fbs')>0&&g('insulin')>0)C.push(['HOMA-IR',(g('fbs')*g('insulin')/405).toFixed(2),'often >2.5 suggests insulin resistance']);
+ if(g('iron')>0&&g('tibc')>0&&g('tsat')==null)A.push(['tsat',g('iron')/g('tibc')*100]);
+ if(HT>0&&WT>0&&AGE>=18&&g('bmi')==null)A.push(['bmi',WT/Math.pow(HT/100,2)]);
+ if(g('bps')>0&&g('bpd')>0&&g('map')==null)A.push(['map',(g('bps')+2*g('bpd'))/3]);
+ if(g('na')>0&&g('chl')>0&&g('hco3')>0&&g('ag')==null)A.push(['ag',g('na')-g('chl')-g('hco3')]);
+ if(g('bun')>0&&g('creat')>0&&g('bcr')==null)A.push(['bcr',g('bun')/g('creat')]);
+ if(g('mcv')>0&&g('rbc')>0)C.push(['Mentzer index',(g('mcv')/g('rbc')).toFixed(1),'<13 favours thalassaemia trait, >13 favours iron deficiency (screening only)']);
+ if(g('neut')>0&&g('lymph')>0)C.push(['NLR (neutrophil/lymphocyte)',(g('neut')/g('lymph')).toFixed(2),'about 1-3 usual; higher with infection or stress']);
+ if(g('sgot')>0&&g('sgpt')>0)C.push(['AST/ALT ratio (De Ritis)',(g('sgot')/g('sgpt')).toFixed(2),'>2 suggests alcohol-related injury; <1 fatty liver or viral']);
+ if(g('ca')>0&&g('albumin')>0)C.push(['Albumin-corrected calcium',(g('ca')+0.8*(4-g('albumin'))).toFixed(1)+' mg/dL','Ca + 0.8 x (4 - albumin)']);
+ if(g('hba1c')>0)C.push(['Estimated average glucose (eAG)',Math.round(28.7*g('hba1c')-46.7)+' mg/dL','calculated from HbA1c']);
+ if(g('tg')>0&&g('hdl')>0)C.push(['AIP log(TG/HDL)',Math.log10(g('tg')/g('hdl')).toFixed(2),'<0.11 low, 0.11-0.21 medium, >0.21 high cardiovascular risk']);
+ if(g('lh')>0&&g('fsh')>0)C.push(['LH:FSH ratio',(g('lh')/g('fsh')).toFixed(2),'>2 with symptoms supports PCOS; not diagnostic on its own']);
+ return{A,C}}
+
+function evaluate(RW,sx,age){AGE=age;
+ const V={},items=[];
+ RW.forEach(r=>{const it=rowEval(r,sx);if(!it)return;items.push(it);if(it.id)V[it.id]=it.c});
+ const d=derive(V,sx,age);
+ d.A.forEach(([id,c])=>{const t=TM[id];if(!isFinite(c))return;
+  items.push(mkItem({id,n:t.n,v:rd(c),u:t.u,c,lo:rg(t,sx)[0],hi:rg(t,sx)[1],own:false,src:'derived',cl:t.cl,ch:t.ch,o:t.o,t}))});
+ return{items,cards:d.C}}
+
+function coverage(RW,items){
+ const have=new Set(items.filter(i=>i.id).map(i=>i.id)),P=new Set();
+ RW.forEach(r=>{if(r.id)P.add(TM[r.id].p)});
+ const out=[];
+ PANELS.forEach(([p,name])=>{if(!P.has(p))return;
+  const all=T.filter(t=>t.p==p);let core=all.filter(t=>!t.opt);if(!core.length)core=all;
+  const miss=core.filter(t=>!have.has(t.id));
+  out.push({p,name,total:core.length,done:core.length-miss.length,pct:Math.round((core.length-miss.length)/core.length*100),miss})});
+ return out}
+
+function fmtRange(it){if(it.t&&it.t.q)return ML()=='hi'?(it.t.u=='grade'&&it.dh>=1?'Nil / Trace':'नेगेटिव'):(it.t.u=='grade'&&it.dh>=1?'Nil / Trace':'Negative');
+ const lo=it.dl,hi=it.dh;
+ if(isNaN(lo)&&isNaN(hi))return '–';
+ if(isNaN(lo))return '≤ '+hi; if(isNaN(hi))return '≥ '+lo;
+ if(lo<=0&&hi>0&&!(it.t&&it.t.lo[0]<0))return '≤ '+hi; if(hi>=5e6)return '≥ '+lo;
+ return lo+' – '+hi}
+
+function hints(V,sx){const H=[],g=k=>V[k],f=(a,b)=>H.push([a,b]),hbl=rg(TM.hb,sx)[0];
+ if(g('hb')<hbl){const m=g('mcv'),fe=g('ferritin');
+  if(m<80){if(g('rbc')>0&&m/g('rbc')<13&&!(fe<30))f('Hb और MCV कम, RBC अपेक्षाकृत अधिक (Mentzer<13), फेरिटिन सामान्य: थैलेसीमिया ट्रेट का पैटर्न; HbA2 जाँच से पुष्टि','Low Hb and MCV with relatively high RBC (Mentzer <13) and normal ferritin: thalassaemia-trait pattern; confirm with HbA2');
+   else f('Hb व MCV कम'+(fe<30?' और फेरिटिन भी कम':'')+': आयरन की कमी का पैटर्न','Low Hb and MCV'+(fe<30?' with low ferritin':'')+': iron-deficiency pattern')}
+  else if(m>100)f('Hb कम व MCV अधिक: B12 / फोलेट की कमी का पैटर्न','Low Hb with high MCV: B12 / folate deficiency pattern');
+  else if(m>=80)f('Hb कम पर MCV सामान्य: पुरानी बीमारी, किडनी रोग या खून बहना संभव; रेटिकुलोसाइट जाँच','Low Hb with normal MCV: chronic disease, kidney disease or blood loss possible; consider reticulocyte count')}
+ const th=g('tsh'),ft=g('ft4');
+ if(th>4.5)f(ft<0.8?'TSH अधिक व FT4 कम: प्राथमिक हाइपोथायरॉइडिज़्म का पैटर्न':'TSH अधिक पर FT4 सामान्य: सब-क्लिनिकल हाइपोथायरॉइड का पैटर्न; 6-8 सप्ताह में दोबारा जाँच',ft<0.8?'High TSH with low FT4: primary hypothyroid pattern':'High TSH with normal FT4: subclinical hypothyroid pattern; repeat in 6-8 weeks');
+ else if(th<0.4)f(ft>1.8?'TSH कम व FT4 अधिक: हाइपरथायरॉइड का पैटर्न':'TSH कम पर FT4 सामान्य: सब-क्लिनिकल हाइपरथायरॉइड का पैटर्न',ft>1.8?'Low TSH with high FT4: hyperthyroid pattern':'Low TSH with normal FT4: subclinical hyperthyroid pattern');
+ const a=g('sgot'),b=g('sgpt');
+ if(a>0&&b>0){if(a/b>2&&a>40)f('AST/ALT > 2: शराब से जुड़े लिवर नुकसान का पैटर्न','AST/ALT >2: alcohol-related liver injury pattern');else if(b>a&&b>45)f('ALT, AST से अधिक: फैटी लिवर या वायरल हेपेटाइटिस का पैटर्न','ALT higher than AST: fatty liver or viral hepatitis pattern')}
+ const A1=g('hba1c'),F=g('fbs');
+ if(A1>=6.5||F>=126)f('शुगर डायबिटीज़ की श्रेणी में; दोबारा जाँच से पुष्टि व डॉक्टर से सलाह','Glucose is in the diabetes range; confirm with a repeat test and see a doctor');
+ else if(A1>=5.7||F>=100)f('शुगर प्री-डायबिटीज़ की श्रेणी में; खान-पान व व्यायाम से नियंत्रण संभव','Glucose is in the prediabetes range; lifestyle change can help');
+ const e=g('egfr');if(e<60)f('eGFR '+Math.round(e)+' (चरण '+(e>=45?'G3a':e>=30?'G3b':e>=15?'G4':'G5')+'): किडनी रोग तभी माना जाता है जब 3 महीने बाद भी ऐसा रहे','eGFR '+Math.round(e)+' (stage '+(e>=45?'G3a':e>=30?'G3b':e>=15?'G4':'G5')+'): kidney disease is confirmed only if this persists for 3 months');
+ const mets=[[g('waist'),g('waist')>=(sx?80:90)],[g('tg'),g('tg')>=150],[g('hdl'),g('hdl')<(sx?50:40)],[g('bps')||g('bpd'),g('bps')>=130||g('bpd')>=85],[g('fbs'),g('fbs')>=100]].filter(x=>x[0]>0),n=mets.filter(x=>x[1]).length;
+ if(n>=3)f('मेटाबॉलिक सिंड्रोम के '+n+' मापदंड पूरे ('+mets.length+' में से जाँचे गए)','Metabolic-syndrome criteria met: '+n+' of '+mets.length+' checked');
+ if(g('tlc')>11000&&g('neut')>75)f('WBC व न्यूट्रोफिल अधिक: बैक्टीरियल संक्रमण का पैटर्न','High WBC with high neutrophils: bacterial infection pattern');
+ return H}
+function spark(P,i,uo){const v=[...P].reverse().map(x=>x.v[i.id]).filter(x=>typeof x=='number').map(c=>(c-uo.o)/uo.f).concat(i.v);if(v.length<2)return'';
+ const lo=Math.min(...v),hi=Math.max(...v),r=(hi-lo)||1,pts=v.map((y,k)=>(k*60/(v.length-1)+3).toFixed(1)+','+(18-(y-lo)/r*15).toFixed(1)).join(' ');
+ return`<svg width="66" height="22" viewBox="0 0 66 22" aria-hidden="true"><polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>`}
+// ---------- UI ----------
+const $=i=>document.getElementById(i);
+const e=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let lang='hi',RW=[],LAST=false;
+const LP={},KI={};KEYS.forEach((k,i)=>KI[k]=i);
+const lp=l=>LP[l]||(LP[l]=(L[l]||'').split('|'));
+const _=k=>lp(lang)[KI[k]]||lp('en')[KI[k]]||'';
+const orgN=o=>ORX[o]?ORX[o][ML()=='hi'?0:1]:lp(lang)[50+ORG.indexOf(o)]||lp('en')[50+ORG.indexOf(o)]||o;
+const ML=()=>['hi','mr','sa'].includes(lang)?'hi':'en';
+const sxI=()=>$('sex').value=='f'?1:0;
+function toast(m){let t=$('ts');if(!t){t=document.createElement('div');t.id='ts';document.body.appendChild(t)}t.textContent=m;t.style.display='block';clearTimeout(window._t);window._t=setTimeout(()=>t.style.display='none',3500)}
+
+function setLang(l){lang=l;try{localStorage.setItem('omni_lang',l)}catch(x){}applyLang()}
+function applyLang(){const h=document.documentElement;h.lang=lang;h.dir=lang=='ur'?'rtl':'ltr';
+ document.querySelectorAll('[data-i]').forEach(n=>n.textContent=_(n.dataset.i));
+ document.querySelectorAll('[data-ip]').forEach(n=>n.placeholder=_(n.dataset.ip));
+ $('hp').textContent=ML()=='hi'?'अपनी लैब रिपोर्ट के मान भरें या रिपोर्ट की फोटो/PDF डालें। हम हर जाँच को सरल भाषा में समझाएँगे: क्या सामान्य है, क्या सामान्य सीमा से बाहर है, किस विशेषज्ञ से मिलना चाहिए और अगला कदम क्या हो।':'Enter your lab values or upload a photo/PDF of your report. We explain every test in simple language: what is normal, what is outside the normal range, which specialist to see, and what to do next.';
+ $('pl1').textContent=ML()=='hi'?'आपका डेटा आपके डिवाइस पर ही रहता है':'Your data stays on your device';$('pl2').textContent=ML()=='hi'?'16 भाषाएँ':'16 languages';$('pl3').textContent=ML()=='hi'?'डॉक्टर की सलाह का विकल्प नहीं':'Not a substitute for a doctor';
+ $('hint').textContent=ML()=='hi'?'सबसे आसान: नीचे “फोटो खींचें” या “फोटो / PDF चुनें” दबाएँ — रिपोर्ट अपने-आप पढ़ी जाएगी (OCR)। या टेक्स्ट यहाँ पेस्ट करें। OCR गलती कर सकता है, इसलिए ऊपर तालिका में मान ज़रूर मिला लें। फोटो/PDF आपके फोन-कंप्यूटर पर ही पढ़ा जाता है, कहीं अपलोड नहीं होता।':'Easiest: tap “Take photo” or “Photo / PDF” below — the report is read automatically (OCR). Or paste the text here. OCR can make mistakes, so always verify the values in the table. Photos/PDFs are read on your own device and never uploaded.';
+  ctxUi();ocrUi();buildPn();draw();if(LAST)analyze()}
+
+function syncCtx(){AGE=+$('age').value||40;FS=$('sex').value=='f'?$('fs').value:'';HT=+$('ht').value;WT=+$('wt').value}
+function ctxUi(){const h=ML()=='hi',v=$('fs').value;$('fsl').textContent=h?'गर्भावस्था / मासिक चक्र (महिलाओं के लिए, वैकल्पिक)':'Pregnancy / cycle phase (women, optional)';$('htl').textContent=h?'ऊँचाई (सेमी)':'Height (cm)';$('wtl').textContent=h?'वज़न (किलो)':'Weight (kg)';
+ const o=h?[['','—'],['t1','गर्भावस्था: पहली तिमाही'],['t2','गर्भावस्था: दूसरी तिमाही'],['t3','गर्भावस्था: तीसरी तिमाही'],['f','मासिक चक्र: फॉलिक्युलर'],['o','मासिक चक्र: ओव्यूलेशन'],['l','मासिक चक्र: ल्यूटियल'],['p','रजोनिवृत्ति के बाद']]:[['','—'],['t1','Pregnant: 1st trimester'],['t2','Pregnant: 2nd trimester'],['t3','Pregnant: 3rd trimester'],['f','Cycle: follicular'],['o','Cycle: ovulation'],['l','Cycle: luteal'],['p','Post-menopause']];
+ $('fs').innerHTML=o.map(x=>`<option value="${x[0]}">${x[1]}</option>`).join('');$('fs').value=v}
+function panelOn(p){const ts=T.filter(t=>t.p==p);return ts.length&&ts.every(t=>RW.some(r=>r.id==t.id))}
+const CATS=[['Common / आम',['cbc','sugar','lipid','lft','kft','thyroid','iron','vit','urine','fever','heart']],['Blood / खून',['haem2','coag','coag2','iron','fluid']],['Heart / हृदय',['heart','ecg','echo','cardiac','lipid2','vasc','abpm']],['Sugar / शुगर',['sugar','diab2','ogtt','cgm']],['Liver & Gut / लिवर-पाचन',['lft','liver2','gi','panc','stool']],['Kidney & Urine / किडनी',['kft','kft2','urine','urine2','urinedip','stone','uro']],['Hormones / हार्मोन',['thyroid','horm','adren','pcos','fert','semen']],['Women & Baby / महिला-शिशु',['pcos','preg','fert','newborn']],['Eye, ENT, Dental',['eye','eyerf','ent','dental']],['Lungs & Sleep / फेफड़े',['gas','abg2','pft','sleep','tb']],['Infection & Immunity',['fever','sero','tropical','viral','immune','ig','allergy','qmisc']],['Cancer / ट्यूमर',['tumor','tumor2']],['Nerve & Mind / तंत्रिका',['csf','nerve','mental']],['Body & Nutrition',['bone','fitness','vitals','nutri','trace','vit2','usg','misc']]];
+let CAT=0;function setCat(i){CAT=i;buildPn()}
+function buildPn(){const ids=CATS[CAT][1],pm=Object.fromEntries(PANELS),chip=p=>`<button class="tc ${panelOn(p)?'on':''}" onclick="addPanel('${p}')">${pm[p]}</button>`;
+ $('pn').innerHTML=`<div class="cats">${CATS.map((c,i)=>`<button class="ct ${i==CAT?'on':''}" onclick="setCat(${i})">${c[0]}</button>`).join('')}</div><div class="chips">${ids.filter(p=>pm[p]).map(chip).join('')}</div>`}
+const newRow=t=>({id:t.id,u:t.u,v:'',lo:'',hi:''});
+function addPanel(p){T.filter(t=>t.p==p).forEach(t=>{if(!RW.some(r=>r.id==t.id))RW.push(newRow(t))});buildPn();draw()}
+function addT(id){if(!RW.some(r=>r.id==id))RW.push(newRow(TM[id]));clr();buildPn();draw()}
+function addC(n){RW.push({id:null,n:n||'',u:'',v:'',lo:'',hi:''});clr();draw()}
+function clr(){$('sr').value='';$('sg').style.display='none'}
+function del(i){RW.splice(i,1);buildPn();draw()}
+
+function chip(it){if(!it)return'';if(it.t&&it.t.q&&it.st=='H')return`<span class="chip H">${e(QL(it.t,it.c))}</span>`;
+ if(it.st=='N')return`<span class="chip N">✔ ${_('nr')}</span>`;
+ if(it.st=='U')return'<span class="chip U">–</span>';
+ return`<span class="chip ${it.crit?'C':it.st}">${it.crit?'⚠ '+_('cr')+' ':''}${it.st=='L'?'⬇ '+_('lo'):'⬆ '+_('hi')}</span>`}
+function rngOf(t,r,sx){const uo=unitOf(t,r.u);const q=rg(t,sx);return fmtRange({dl:rd((q[0]-uo.o)/uo.f),dh:rd((q[1]-uo.o)/uo.f),t})}
+function vin(t,r,i){if(!t.q)return`<input type="text" inputmode="decimal" placeholder="${e(_('va'))}" aria-label="${e(t.n)}" value="${e(r.v)}" oninput="rv(${i},'v',this.value)">`;
+ const o=t.u=='grade'?['Nil','Trace','+','++','+++']:ML()=='hi'?['नेगेटिव','पॉज़िटिव']:['Negative','Positive'];
+ return`<select aria-label="${e(t.n)}" onchange="rv(${i},'v',this.value)"><option value="">—</option>${o.map((x,k)=>`<option value="${k}" ${String(r.v)==String(k)?'selected':''}>${e(x)}</option>`).join('')}</select>`}
+function draw(){syncCtx();const sx=sxI();let h='';
+ RW.forEach((r,i)=>{
+  if(r.id){const t=TM[r.id];
+   h+=`<div class="tr"><div><b>${e(t.n)}</b><small>${e(orgN(t.o))}</small></div>${vin(t,r,i)}<select onchange="ru(${i},this.value)">${UN(t).map(x=>`<option ${x.u==r.u?'selected':''}>${e(x.u)}</option>`).join('')}</select><span class="m" id="rg${i}">${rngOf(t,r,sx)}</span><span class="lb"><input type="text" inputmode="decimal" title="${e(_('lr'))}" placeholder="min" value="${e(r.lo)}" oninput="rv(${i},'lo',this.value)"><input type="text" inputmode="decimal" title="${e(_('lr'))}" placeholder="max" value="${e(r.hi)}" oninput="rv(${i},'hi',this.value)"></span><span id="st${i}"></span><button class="x" aria-label="remove" onclick="del(${i})">✕</button></div>`}
+  else h+=`<div class="tr"><input placeholder="${e(_('ts'))}" value="${e(r.n)}" oninput="RW[${i}].n=this.value" onchange="custName(${i},this.value)"><input type="text" inputmode="decimal" placeholder="${e(_('va'))}" value="${e(r.v)}" oninput="rv(${i},'v',this.value)"><input placeholder="${e(_('un'))}" value="${e(r.u)}" oninput="RW[${i}].u=this.value"><span></span><span class="lb"><input type="text" inputmode="decimal" title="${e(_('lr'))}" placeholder="min" value="${e(r.lo)}" oninput="rv(${i},'lo',this.value)"><input type="text" inputmode="decimal" title="${e(_('lr'))}" placeholder="max" value="${e(r.hi)}" oninput="rv(${i},'hi',this.value)"></span><span id="st${i}"></span><button class="x" aria-label="remove" onclick="del(${i})">✕</button></div>`});
+ $('ent').innerHTML=h;$('hdr').style.display=h?'':'none';RW.forEach((r,i)=>updRow(i))}
+function updRow(i){const el=$('st'+i);if(el)el.innerHTML=chip(rowEval(RW[i],sxI()))}
+function rv(i,k,v){RW[i][k]=String(v).replace(/,/g,'');updRow(i)}
+function ru(i,u){const r=RW[i],t=TM[r.id],o=unitOf(t,r.u),n=unitOf(t,u);
+ const cv=x=>{const v=PF(x);return isNaN(v)?x:String(rd((v*o.f+o.o-n.o)/n.f))};
+ r.v=cv(r.v);r.lo=cv(r.lo);r.hi=cv(r.hi);r.u=u;draw()}
+function custName(i,v){const q=v.trim().toLowerCase(),t=T.find(x=>x.n.toLowerCase()==q||x.id==q);
+ if(t&&!RW.some(r=>r.id==t.id)){const c=RW[i];RW[i]={id:t.id,u:t.u,v:c.v,lo:'',hi:''};buildPn();draw()}}
+function srch(q){const b=$('sg'),Q=q.trim(),l=Q.toLowerCase();if(!Q){b.style.display='none';return}
+ const m=T.filter(t=>(t.n+' '+t.id+' '+t.al.replace(/\(\?<?[!=:][^)]*\)/g,'')).toLowerCase().includes(l)).slice(0,8);
+ b.innerHTML=m.map(t=>`<button onclick="addT('${t.id}')"><b>${e(t.n)}</b> <small class="m">${e(orgN(t.o))} · ${e(t.u)}</small></button>`).join('')+`<button class="nw" data-q="${e(Q)}" onclick="addC(this.dataset.q)">+ "${e(Q)}"</button>`;b.style.display='block'}
+document.addEventListener('click',z=>{if(!z.target.closest('.sw')){const g=$('sg');if(g)g.style.display='none'}});
+
+// ---- paste / file parse ----
+function setRow(id,v,u){let r=RW.find(x=>x.id==id);if(!r){r=newRow(TM[id]);RW.push(r)}r.v=String(v);if(u)r.u=u}
+function doParse(){const txt=$('raw').value;if(!txt.trim()){toast('–');return}let n=0;
+ const bp=txt.match(/\bbp\b[^0-9\n]{0,12}(\d{2,3})\s*\/\s*(\d{2,3})/i);
+ if(bp){setRow('bps',bp[1]);setRow('bpd',bp[2]);n+=2}
+ T.forEach(t=>{if(t.q){const q=txt.match(RQ[t.id]);if(!q)return;const w=q[1].toLowerCase(),p=/^\+/.test(w)?w.length:/^(neg|non|not|nil|abs|normal)/.test(w)?0:/^trace/.test(w)?1:t.u=='grade'?2:1;setRow(t.id,p);n++;return}
+  const m=txt.match(RE[t.id]);if(!m)return;let v=parseFloat(m[1].replace(/,/g,''));if(isNaN(v))return;if(v<0&&!t.neg)v=-v;
+  const tail=txt.slice(m.index+m[0].length,m.index+m[0].length+16).trim().toLowerCase();
+  const hit=UN(t).find(x=>tail.startsWith(x.u.toLowerCase()));let u=hit?hit.u:t.u;
+  if(!hit){if(t.id=='plt')u=v>1000?'/cumm':v>=20?'10^3/µL':t.u;if(t.id=='tlc'&&v<100)u='10^9/L'}
+  setRow(t.id,v,u);n++;
+   const ln=txt.slice(m.index+m[0].length).split('\n')[0].slice(0,70),g2=ln.match(/(\d+\.?\d*)\s*(?:-|–|to)\s*(\d+\.?\d*)/);
+   if(g2){const a=+g2[1],b=+g2[2];if(b>a&&(a==0||b<=a*40)){const rr=RW.find(x=>x.id==t.id);rr.lo=g2[1];rr.hi=g2[2]}}});
+  txt.split('\n').forEach(l=>{if(!/visual acuity|\bva\b|vision|snellen/i.test(l))return;const m=l.match(/(\d{1,2})\s*\/\s*(\d{1,3})/);if(!m||+m[2]==0)return;const v=+(m[1]/m[2]).toFixed(2);if(/\b(od|right|re)\b/i.test(l)){setRow('vaR',v);n++}else if(/\b(os|left|le)\b/i.test(l)){setRow('vaL',v);n++}});
+  const im=[];
+ txt.split('\n').forEach(l=>{if(/usg|ultrasound|x-?ray|echo|mri|\bct\b|impression|biopsy|audiogram|endoscopy/i.test(l)){im.push(l.trim());return}
+  if(T.some(t=>RE[t.id].test(l))||/\bbp\b/i.test(l))return;
+  const m=l.match(/^\s*([A-Za-z][A-Za-z0-9 ()\-.]{2,40}?)\s*[:=]\s*(\d+\.?\d*)\s*([^\s\d(]*)\s*(?:\(?\s*(?:ref|range|normal)?[^0-9\n]*?(\d+\.?\d*)\s*[-–]\s*(\d+\.?\d*)\s*\)?)?/i);
+  if(m&&!/patient|name|\bage\b|date|\bsex\b|gender|sample|collected|reported|registered|referr|phone|mobile|contact|\blab\b|barcode|page|\bid\b|\bno\b|\bref/i.test(m[1])){RW=RW.filter(x=>x.id||x.n!=m[1].trim());RW.push({id:null,n:m[1].trim(),v:m[2],u:m[3]||'',lo:m[4]||'',hi:m[5]||''});n++}});
+ if(im.length)$('img').value=im.join(' | ');
+ buildPn();draw();const hi_=ML()=='hi';toast(n?n+' ✔ '+(hi_?'जांचें मिलीं — ऊपर तालिका में मान मिलाकर देख लें':'tests found — please verify the values in the table'):(hi_?'कोई जांच नहीं मिली — “Hemoglobin: 9.8” जैसे लिखें':'No tests found — write like “Hemoglobin: 9.8”'));if(n)$('ent').scrollIntoView({behavior:'smooth',block:'start'})}
+// ---- OCR: photo / scanned PDF / text-PDF (runs fully in the browser) ----
+const TJS='https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js',
+ PJS='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',PWK='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+const OT=()=>ML()=='hi'?{cam:'फोटो खींचें',fil:'फोटो / PDF चुनें',ld:'OCR इंजन लोड हो रहा है (पहली बार कुछ सेकंड)…',rd:'पढ़ रहा हूँ',pg:'पेज',none:'फोटो/PDF से कोई टेक्स्ट नहीं मिला — साफ़, सीधी, रोशनी वाली फोटो लें या टेक्स्ट पेस्ट करें',err:'OCR नहीं चल पाया — इंटरनेट जाँचें, या टेक्स्ट पेस्ट करें',pw:'यह PDF पासवर्ड से बंद है — पहले खोलकर सेव करें',more:'PDF के पहले 12 पेज ही पढ़े गए'}
+ :{cam:'Take photo',fil:'Photo / PDF',ld:'Loading OCR engine (a few seconds the first time)…',rd:'Reading',pg:'page',none:'No text found in the photo/PDF — use a clear, straight, well-lit photo, or paste the text',err:'OCR failed — check your internet connection, or paste the text',pw:'This PDF is password-protected — open and re-save it without a password first',more:'Only the first 12 PDF pages were read'};
+function ocrUi(){const o=OT();$('b-cam').textContent=o.cam;$('b-fil').textContent=o.fil}
+function setP(t,f){$('ocp').style.display='block';$('oct').textContent=t;if(f!=null)$('ocb').style.width=Math.round(Math.max(0,Math.min(1,f))*100)+'%'}
+const loaded={};function loadJs(u){return loaded[u]||(loaded[u]=new Promise((ok,no)=>{const s=document.createElement('script');s.src=u;s.onload=ok;s.onerror=()=>{delete loaded[u];no(new Error('load '+u))};document.head.appendChild(s)}))}
+let _w=null,PG={i:0,n:1,l:''};
+async function getW(){if(_w)return _w;setP(OT().ld,.02);await loadJs(TJS);
+ const w=await Tesseract.createWorker('eng',1,{logger:m=>{if(m.status=='recognizing text')setP(PG.l,(PG.i+m.progress)/PG.n)}});
+ try{await w.setParameters({preserve_interword_spaces:'1'})}catch(x){}return _w=w}
+function prep(c){const x=c.getContext('2d'),d=x.getImageData(0,0,c.width,c.height),a=d.data,g=new Uint8Array(a.length/4);let lo=255,hi=0;
+ for(let i=0,j=0;i<a.length;i+=4,j++){const v=(a[i]*.299+a[i+1]*.587+a[i+2]*.114)|0;g[j]=v;if(v<lo)lo=v;if(v>hi)hi=v}
+ const r=Math.max(1,hi-lo);for(let i=0,j=0;i<a.length;i+=4,j++){const v=(g[j]-lo)*255/r;a[i]=a[i+1]=a[i+2]=v}x.putImageData(d,0,0)}
+async function imgCanvas(f){let b;try{b=await createImageBitmap(f)}catch(x){b=await new Promise((ok,no)=>{const im=new Image();im.onload=()=>ok(im);im.onerror=no;im.src=URL.createObjectURL(f)})}
+ const w=b.width||b.naturalWidth,h=b.height||b.naturalHeight,m=Math.max(w,h),k=m>2600?2600/m:(m<1500?1500/m:1);
+ const c=document.createElement('canvas');c.width=Math.round(w*k);c.height=Math.round(h*k);const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(b,0,0,c.width,c.height);prep(c);return c}
+async function ocrCanvas(c,i,n,lab){const w=await getW();PG={i,n,l:lab};setP(lab,i/n);const r=await w.recognize(c);return r.data.text||''}
+async function pdfLines(pg){const tc=await pg.getTextContent(),rows=[];
+ tc.items.forEach(it=>{if(!it.str||!it.str.trim())return;const y=it.transform[5],x=it.transform[4];let r=rows.find(q=>Math.abs(q.y-y)<3);if(!r){r={y,a:[]};rows.push(r)}r.a.push([x,it.str])});
+ return rows.sort((a,b)=>b.y-a.y).map(r=>r.a.sort((a,b)=>a[0]-b[0]).map(z=>z[1]).join('  ')).join('\n')}
+async function readPdf(f,tag){setP(OT().ld,.02);await loadJs(PJS);pdfjsLib.GlobalWorkerOptions.workerSrc=PWK;
+ const doc=await pdfjsLib.getDocument({data:await f.arrayBuffer()}).promise,n=Math.min(doc.numPages,12),out=[];
+ if(doc.numPages>12)toast(OT().more);
+ for(let p=1;p<=n;p++){const lab=OT().rd+': PDF'+tag+' · '+OT().pg+' '+p+'/'+n;setP(lab,(p-1)/n);
+  const pg=await doc.getPage(p);let t=await pdfLines(pg);
+  if(t.replace(/\s/g,'').length<40){const vp=pg.getViewport({scale:2.4}),c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;
+   const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);await pg.render({canvasContext:x,viewport:vp}).promise;prep(c);t=await ocrCanvas(c,p-1,n,lab)}
+  out.push(t)}
+ return out.join('\n')}
+async function fileIn(inp){const fs=[...inp.files];inp.value='';if(!fs.length)return;const all=[];
+ try{for(let i=0;i<fs.length;i++){const f=fs[i],nm=(f.name||'').toLowerCase(),tag=fs.length>1?' ('+(i+1)+'/'+fs.length+')':'';
+   if(f.type=='application/pdf'||nm.endsWith('.pdf'))all.push(await readPdf(f,tag));
+   else if(f.type.startsWith('image/')||/\.(jpe?g|png|webp|bmp|gif|heic|heif)$/.test(nm)){const lab=OT().rd+': '+(f.name||'photo')+tag;setP(lab,i/fs.length);
+    all.push(await ocrCanvas(await imgCanvas(f),0,1,lab))}
+   else all.push(await f.text())}}
+ catch(x){console.error(x);$('ocp').style.display='none';toast(x&&x.name=='PasswordException'?OT().pw:OT().err);return}
+ setP('✔',1);setTimeout(()=>{$('ocp').style.display='none'},900);
+ const txt=all.join('\n').trim();if(!txt){toast(OT().none);return}
+ $('raw').value=txt;doParse()}
+function sample(){$('raw').value=`Hemoglobin: 9.8 g/dL
+Total WBC Count: 12,400 /cumm
+Platelet Count: 135 10^3/µL
+MCV: 74 fL
+Fasting Glucose: 8.6 mmol/L
+HbA1c: 63 mmol/mol
+Creatinine: 134 µmol/L
+Uric Acid: 7.6 mg/dL
+Total Cholesterol: 235
+Triglycerides: 240
+HDL: 36
+SGOT (AST): 64 U/L
+SGPT (ALT): 82 U/L
+TSH: 8.4 mIU/L
+Vitamin D: 13.2 ng/mL
+Vitamin B12: 165 pg/mL
+BP: 148/94
+USG Abdomen: Grade 2 fatty liver with mild hepatomegaly.`;doParse()}
+
+// ---- emergency ----
+function emgBan(){const s=$('sym').value+' '+$('img').value+' '+$('hx').value,m=[];
+ [/chest pain|सीने में (तेज )?दर्द|सीने में दबाव|বুকে ব্যথা|छातीत दुखणे|ఛాతీ నొప్పి|நெஞ்சு வலி|છાતીમાં દુખાવો|سینے میں درد|ಎದೆ ನೋವು|നെഞ്ചുവേദന|ଛାତି ଯନ୍ତ୍ରଣା|ਛਾਤੀ ਵਿੱਚ ਦਰਦ|Brustschmerz|胸痛|胸が痛|dolor (de|en el) pecho/i,
+  /difficulty breathing|can.?t breathe|सांस लेने में|साँस लेने में|শ্বাস নিতে কষ্ট|श्वास घेण्यास|ఊపిరి ఆడ|மூச்சு விட முடிய|શ્વાસ લેવામાં|سانس لینے میں|Atemnot|呼吸困難|息ができない|falta de aire|no puedo respirar/i,
+  /unconscious|faint|बेहोश|অজ্ঞান|बेशुद्ध|స్పృహ తప్ప|மயக்கம்|બેભાન|بے ہوش|Bewusstlos|意識(が)?ない|desmay|inconsciente/i,
+  /face droop|slurred|paralysis|चेहरा टेढ़ा|बोलने में दिक्कत|लकवा|Lähmung|麻痺|parálisis/i,
+  /vomiting blood|heavy bleeding|खून की उल्टी|खूनी उल्टी|काला मल|Blut erbrechen|吐血|vómito con sangre/i,
+  /seizure|दौरा|Krampfanfall|けいれん|convulsi/i,
+  /suicid|आत्महत्या|জীবন শেষ|Suizid|自殺|suicidio/i].forEach(r=>{const x=s.match(r);if(x)m.push(x[0])});
+ return m.length?`<div class="ban c">${e(_('em'))}: “${m.map(e).join('”, “')}” — 112 / 108 · Tele-MANAS 14416</div>`:''}
+
+// ---- history (browser only) ----
+function hist(){try{return JSON.parse(localStorage.getItem('omni_h')||'[]')}catch(x){return[]}}
+const pk=()=>($('nm').value||'').trim().toLowerCase();
+function saveRep(){const d=$('rd').value||new Date().toISOString().slice(0,10);const R=evaluate(RW,sxI(),+$('age').value||40);
+ const v={};R.items.forEach(i=>{if(i.id&&i.src=='entered')v[i.id]=i.c});
+ let H=hist().filter(x=>!(x.d==d&&(x.n||'')==pk()));H.push({d,v,n:pk()});try{localStorage.setItem('omni_h',JSON.stringify(H));toast(d+' ✔')}catch(x){toast('storage unavailable')}}
+function trend(items,d){const P=hist().filter(x=>(x.n||'')==pk()&&x.d<d).sort((a,b)=>a.d<b.d?1:-1);if(!P.length)return'';
+ const rows=[];items.forEach(i=>{if(!i.id||i.src!='entered')return;const p=P.find(x=>typeof x.v[i.id]=='number');if(!p)return;
+  const uo=unitOf(TM[i.id],i.u),b=rd((p.v[i.id]-uo.o)/uo.f);rows.push(`<tr><td>${e(i.n)}</td><td>${b} (${p.d})</td><td><b>${i.v}</b> (${d})</td><td>${i.v>b?'⬆':i.v<b?'⬇':'='} ${rd(i.v-b)}</td><td>${spark(P,i,uo)}</td></tr>`)});
+ return rows.length?`<div class="card"><h3>Trend</h3><div style="overflow-x:auto"><table>${rows.join('')}</table></div></div>`:''}
+
+// ---- analysis ----
+const EX={iopR:['','आँख का दबाव अधिक: ग्लूकोमा का जोखिम; नेत्र रोग विशेषज्ञ से जल्द मिलें','','High eye pressure: glaucoma risk; see an ophthalmologist soon'],qtc:['','QTc लंबा: हार्ट रिदम का जोखिम; कुछ दवाएँ वजह हो सकती हैं','','Prolonged QTc: heart-rhythm risk; some medicines can cause this'],tss:['हड्डी का घनत्व कम (-1 से नीचे): -2.5 या कम पर ऑस्टियोपोरोसिस','','Low bone density (below -1); -2.5 or lower means osteoporosis',''],abiR:['पैर में रक्त प्रवाह कम: परिधीय धमनी रोग का संकेत','','Reduced leg blood flow: possible peripheral artery disease',''],cd4:['CD4 कम: प्रतिरोधक क्षमता कमज़ोर; संक्रमण का जोखिम','','Low CD4: weakened immunity; higher infection risk',''],bhb:['','कीटोन अधिक: डायबिटिक कीटोएसिडोसिस का खतरा; तुरंत डॉक्टर','','High ketones: risk of diabetic ketoacidosis; see a doctor urgently'],lead:['','खून में सीसा (लेड) अधिक: स्रोत ढूँढें; बच्चों में खास खतरा','','Raised blood lead: find the source; especially harmful in children'],ahi:['','नींद में साँस रुकना (स्लीप एपनिया): AHI 5-15 हल्का, 15-30 मध्यम, 30+ गंभीर','','Sleep apnoea: AHI 5-15 mild, 15-30 moderate, 30+ severe'],phq9:['','PHQ-9 अधिक: अवसाद के लक्षण; मानसिक स्वास्थ्य विशेषज्ञ से बात करें','','High PHQ-9: depressive symptoms; speak to a mental-health professional'],gad7:['','GAD-7 अधिक: चिंता के लक्षण; विशेषज्ञ से सलाह लें','','High GAD-7: anxiety symptoms; seek professional advice'],mmse:['MMSE कम: याददाश्त/सोच में कमी संभव; न्यूरोलॉजिस्ट से जाँच','','Low MMSE: possible memory or thinking decline; neurology review',''],moca:['MoCA कम: हल्की संज्ञानात्मक कमी संभव; विशेषज्ञ से जाँच','','Low MoCA: possible mild cognitive impairment; specialist review',''],lpa:['','Lp(a) अधिक: जन्मजात हार्ट रिस्क; जीवन में एक बार जाँच काफी, LDL सख्ती से नियंत्रित करें','','High Lp(a): inherited heart risk; keep LDL tightly controlled'],apob:['','ApoB अधिक: हानिकारक कोलेस्ट्रॉल कणों की संख्या अधिक','','High ApoB: more harmful cholesterol particles'],cysc:['','सिस्टैटिन C अधिक: किडनी फ़िल्टर क्षमता घटी हो सकती है','','High cystatin C: kidney filtration may be reduced'],calpro:['','कैल्प्रोटेक्टिन अधिक: आँत में सूजन (IBD) का संकेत; गैस्ट्रो विशेषज्ञ','','High calprotectin: bowel inflammation (IBD) possible; see a gastroenterologist'],ttg:['','Anti-tTG अधिक: सीलिएक रोग (ग्लूटेन) का संकेत; एंडोस्कोपी से पुष्टि','','High anti-tTG: suggests coeliac disease; confirm with endoscopy'],aec:['','इओसिनोफिल अधिक: एलर्जी, अस्थमा या परजीवी संक्रमण','','High eosinophils: allergy, asthma or parasitic infection'],hbvdna:['','HBV DNA पता चला: वायरस सक्रिय; लिवर विशेषज्ञ से इलाज की सलाह','','HBV DNA detected: active virus; hepatology review for treatment'],bnp:['','BNP अधिक: हार्ट पर दबाव / हार्ट फेल्योर का संकेत','','High BNP: heart strain or heart failure'],ckmb:['','CK-MB अधिक: हृदय की मांसपेशी में चोट संभव; इमरजेंसी','','High CK-MB: possible heart-muscle injury; emergency'],amm:['','अमोनिया अधिक: लिवर की गंभीर समस्या में भ्रम/बेहोशी का खतरा','','High ammonia: severe liver problem; risk of confusion'],pt:['','PT लंबा: खून जमने में देरी (लिवर, वारफेरिन, विटामिन K कमी)','','Prolonged PT: slow clotting (liver, warfarin, vitamin K deficiency)'],at3:['एंटीथ्रोम्बिन कम: खून के थक्के जमने का जोखिम','','Low antithrombin: higher clotting risk',''],hapto:['हैप्टोग्लोबिन कम: लाल कोशिकाओं के टूटने (हीमोलिसिस) का संकेत','','Low haptoglobin: suggests red-cell breakdown (haemolysis)',''],afc:['AFC कम: अंडाशय का भंडार कम','','Low AFC: reduced ovarian reserve',''],amh:['AMH कम: अंडाशय का भंडार कम','AMH अधिक: PCOS में देखा जाता है','Low AMH: reduced ovarian reserve','High AMH: often seen in PCOS'],afi:['एम्नियोटिक द्रव कम: गर्भ रोग विशेषज्ञ से जल्द मिलें','एम्नियोटिक द्रव अधिक: कारण की जाँच','Low amniotic fluid: see an obstetrician soon','High amniotic fluid: needs a cause check'],sc:['शुक्राणु संख्या कम: दोबारा जाँच व यूरोलॉजिस्ट','','Low sperm count: repeat test and see a urologist',''],tir:['ग्लूकोज़ टारगेट रेंज में कम समय: दवा/आहार की समीक्षा','','Less time in target glucose range: review treatment and diet',''],tbr:['','कम शुगर का समय अधिक: हाइपोग्लाइसीमिया का जोखिम','','Too much time with low glucose: hypoglycaemia risk']};
+EX.iopL=EX.iopR;EX.tsch=EX.tss;EX.abiL=EX.abiR;
+function dn(it){const m=ML(),t=it.t,k=it.st=='L'?0:1;
+ if(t){const x=m=='hi'?(k?t.hh:t.lh):(k?t.he:t.le);if(x)return x;const z=EX[t.id];if(z&&z[(m=='hi'?0:2)+k])return z[(m=='hi'?0:2)+k];
+  const o=OI[t.o];if(o&&o.d)return m=='hi'?'सामान्य सीमा से बाहर। सुझाया गया विशेषज्ञ: '+o.d+'। आगे की जाँच: '+o.hi.f:'Outside the normal range. Suggested specialist: '+o.d+'. Follow-up: '+o.en.f}
+ return m=='hi'?'सामान्य सीमा से बाहर; डॉक्टर से चर्चा करें':'Outside the normal range; discuss with your doctor'}
+function need(){let ok=true;const hi=ML()=='hi';
+ [['age',!(+$('age').value>=0&&$('age').value!==''&&+$('age').value<=120)],['sex',!$('sex').value]].forEach(([id,bad])=>{const el=$(id);el.style.outline=bad?'2px solid var(--r)':'';if(bad&&ok){ok=false;el.focus()}});
+ if(!ok){toast(hi?'कृपया उम्र और लिंग भरें — सामान्य रेंज इन्हीं पर निर्भर है':'Please enter age and sex — normal ranges depend on them');window.scrollTo({top:0,behavior:'smooth'})}return ok}
+const sv=r=>{const hi=ML()=='hi',d=r.dev;return r.t&&r.t.q?QL(r.t,r.c):r.crit?(hi?'गंभीर':'Severe'):d<10?(hi?'हल्का':'Mild'):d<30?(hi?'मध्यम':'Moderate'):(hi?'काफ़ी ज़्यादा':'Marked')};
+function analyze(){if(!need())return;LAST=true;syncCtx();
+ const age=+$('age').value||40,sx=sxI(),city=$('city').value.trim(),m=ML(),X=(a,b)=>m=='hi'?a:b,EB=emgBan();
+ const ev=evaluate(RW,sx,age),R=ev.items;
+ if(!R.length){$('out').innerHTML=EB+`<div class="card">${e(_('nd'))}</div>`;return}
+ const ab=R.filter(r=>r.st=='L'||r.st=='H'),cr=R.filter(r=>r.crit),no=R.filter(r=>r.st=='N').length,att=ab.length-cr.length;
+ const cov=coverage(RW,R),tot=cov.reduce((a,c)=>a+c.total,0),dn_=cov.reduce((a,c)=>a+c.done,0),pct=tot?Math.round(dn_/tot*100):100;
+ const PL=['hb','rbc','mcv','mch','mchc','pcv','na','k','chl','ca','albumin','tprot','ph','spo2','hr','bps','bpd'];
+ const sus=R.filter(r=>{if(r.src!='entered'||r.own||!PL.includes(r.id))return false;const t=TM[r.id],[lo,hi]=rg(t,sx);return r.c>hi*2.5||r.c<lo/2.5||(r.id=='spo2'&&r.c>100)});
+ const extra=(age<18?`<div class="ban w2">${X('18 वर्ष से कम उम्र: Hb, WBC, क्रिएटिनिन, ALP, फॉस्फोरस, हार्ट रेट, BP, कोलेस्ट्रॉल जैसी मुख्य जाँचों में बच्चों की सीमाएँ लगाई गई हैं; बाकी की सीमाएँ वयस्कों की हैं। नतीजे बाल रोग विशेषज्ञ से समझें।','Under 18: child ranges are applied for key tests (Hb, WBC, creatinine, ALP, phosphate, heart rate, BP, cholesterol); other tests use adult ranges. Please review the results with a paediatrician.')}</div>`:'')+(sus.length?`<div class="ban w2">${X('ये मान सामान्य से बहुत अलग हैं। कृपया यूनिट या दशमलव (जैसे 9.8 और 98) दोबारा जाँचें: ','These values look unusually far from normal. Please re-check the unit or decimal point (for example 9.8 vs 98): ')}${sus.map(r=>e(r.n)+' '+r.v+' '+e(r.u)).join(' · ')}</div>`:'');
+ const org={};ab.forEach(r=>{(org[r.o]=org[r.o]||[]).push(r)});
+ const ok=Object.keys(org).sort((a,b)=>org[b].filter(x=>x.crit).length-org[a].filter(x=>x.crit).length||org[b].length-org[a].length);
+ const cls=r=>r.crit?'c':r.st=='N'?'k':r.st=='U'?'':'w';
+ const top=[...ab].sort((a,b)=>b.crit-a.crit||b.dev-a.dev);
+ let h=EB+extra;
+ h+=cr.length?`<div class="ban c"><span class="dt rd"></span>${X('कुछ नतीजे गंभीर स्तर पर हैं ('+cr.map(r=>e(r.n)).join(', ')+')। कृपया जल्द से जल्द डॉक्टर से मिलें।','Some results are at a serious level ('+cr.map(r=>e(r.n)).join(', ')+'). Please see a doctor as soon as possible.')}</div>`
+  :ab.length?`<div class="ban w2"><span class="dt wd"></span>${X('कुछ नतीजे सामान्य सीमा से बाहर हैं। कृपया इस रिपोर्ट के साथ डॉक्टर से सलाह लें।','Some results are outside the normal range. Please discuss this report with your doctor.')}</div>`
+  :`<div class="ban k"><span class="dt gd"></span>${X('आपके सभी दर्ज किए गए नतीजे सामान्य सीमा में हैं।','All the values you entered are within the normal range.')}</div>`;
+ const who=[$('nm').value?e($('nm').value):'',age+' '+X('वर्ष','yrs'),e($('sex').selectedOptions[0].textContent),e($('rd').value)].filter(Boolean).join(' · ');
+ h+=`<div class="card"><h3>${X('आपकी रिपोर्ट का सार','Your report at a glance')}</h3><p class="m" style="margin:0 0 10px">${who}</p>
+ <p style="font-weight:600;margin:0 0 12px">${X(`कुल ${R.length} जाँचें देखी गईं।`,`${R.length} tests were reviewed.`)}</p>
+ <div class="g"><div class="it tl k"><div class="big">${no}</div><div><span class="dt gd"></span>${X('सामान्य','Normal')}</div></div><div class="it tl w"><div class="big">${att}</div><div><span class="dt wd"></span>${X('ध्यान देने योग्य','Needs attention')}</div></div><div class="it tl c"><div class="big">${cr.length}</div><div><span class="dt rd"></span>${X('जल्द डॉक्टर को दिखाएँ','See a doctor soon')}</div></div></div>
+ ${$('hx').value?`<p class="m mt">${e(_('hx'))}: ${e($('hx').value)}</p>`:''}${$('sym').value?`<p class="m">${e(_('sy'))}: ${e($('sym').value)}</p>`:''}</div>`;
+ if(top.length){h+=`<div class="card"><h3>${X('इन नतीजों पर ध्यान दें','Results that need your attention')}</h3><ul class="fnd">${top.map(r=>`<li class="${cls(r)}"><b>${e(r.n)}</b>: ${vs(r)} &nbsp;${chip(r)} <span class="chip ${r.crit?'C':r.st}">${e(sv(r))}</span><br><span class="m">${X('सामान्य सीमा','Normal range')}: ${e(fmtRange(r))} ${e(r.u)}${r.own?' *':''}</span><br>${e(dn(r))}</li>`).join('')}</ul></div>`}
+ {const HN=hints(Object.fromEntries(R.filter(i=>i.id).map(i=>[i.id,i.c])),sx);if(HN.length)h+=`<div class="card"><h3>${X('आपके नतीजों में दिखते पैटर्न','Patterns seen in your results')}</h3><ul>${HN.map(z=>'<li>'+e(m=='hi'?z[0]:z[1])+'</li>').join('')}</ul><p class="m">${X('ये केवल संकेत हैं, निदान नहीं। पुष्टि डॉक्टर करेंगे।','These are hints, not a diagnosis. A doctor must confirm.')}</p></div>`}
+ const keys=ok.length?ok:['other'],q=encodeURIComponent;
+ const docs=(ok.length?ok.slice(0,3).map(k=>OI[k].d):[OI.other.d]);
+ h+=`<div class="card"><h3>${X('अब आगे क्या करें','What to do next')}</h3><ul>${ab.length?`<li>${X('यह रिपोर्ट अपने डॉक्टर को दिखाएँ और नीचे दिए सुझाव उनसे साझा करें।','Show this report to your doctor and discuss the suggestions below.')}</li><li>${X('सुझाया गया विशेषज्ञ: ','Suggested specialist: ')}<b>${docs.map(e).join(' · ')}</b></li>`:`<li>${X('कोई असामान्य नतीजा नहीं मिला। नियमित जाँच जारी रखें और स्वस्थ दिनचर्या अपनाएँ।','No abnormal result was found. Continue routine check-ups and a healthy lifestyle.')}</li>`}<li>${X('डॉक्टर की सलाह के बिना कोई दवा शुरू या बंद न करें।','Do not start or stop any medicine without your doctor\'s advice.')}</li></ul></div>`;
+ if(ok.length)h+=`<div class="card"><h3>${e(_('og'))}</h3><div class="g">${ok.map(k=>`<div class="it"><b>${e(orgN(k))}</b> ${org[k].some(x=>x.crit)?`<span class="chip C">${e(_('cr'))}</span>`:''}<ul>${org[k].map(r=>`<li><b>${e(r.n)}</b>: ${vs(r)} ${r.st=='L'?'⬇ '+e(_('lo')):'⬆ '+e(_('hi'))} <span class="m">(${e(fmtRange(r))})</span><br><span class="m">${e(dn(r))}</span></li>`).join('')}</ul></div>`).join('')}</div></div>`;
+ const im=$('img').value;if(im.trim()){const nn=IM.filter(x=>x[0].test(im)).map(x=>m=='hi'?x[1]:x[2]);h+=`<div class="card"><h3>${e(_('ot'))}</h3><p class="m">${e(im)}</p>${nn.length?'<ul>'+nn.map(x=>'<li>'+e(x)+'</li>').join('')+'</ul>':''}</div>`}
+ h+=`<div class="card"><h3>${X('खान-पान, परहेज़ और आगे की जाँचें','Diet, things to avoid and follow-up tests')}</h3><div class="g">${keys.map(k=>{const o=OI[k],x=o[m];return`<div class="it"><b>${e(orgN(k))}</b><br>${e(o.d)}<br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${q(o.d.split(' / ')[0]+' hospital '+(city?'near '+city:'near me'))}">${X('पास में डॉक्टर खोजें','Find doctors nearby')}</a><ul><li><b>${e(_('av'))}:</b> ${e(x.av)}</li><li><b>${e(_('ea'))}:</b> ${e(x.ea)}</li><li><b>${e(_('fu'))}:</b> ${e(x.f)}</li></ul></div>`}).join('')}</div></div>`;
+ h+=`<div class="card"><h3>${X('सभी जाँचों की पूरी सूची','Complete list of all tests')}</h3><div class="lg"><span><span class="dt gd"></span>${X('सामान्य','Normal')}</span><span><span class="dt wd"></span>${X('सीमा से थोड़ा बाहर','Slightly outside range')}</span><span><span class="dt rd"></span>${X('सीमा से काफ़ी बाहर','Far outside range')}</span></div><div style="overflow-x:auto"><table><tr><th>${X('जाँच','Test')}</th><th>${e(_('va'))}</th><th>${e(_('un'))}</th><th>${e(_('rg'))}</th><th>${e(_('stt'))}</th></tr>${[...R].sort((a,b)=>b.crit-a.crit||b.dev-a.dev).map(r=>`<tr><td style="border-left:4px solid ${r.crit||r.st=='H'&&r.dev>=30||r.st=='L'&&r.dev>=30?'var(--r)':r.st=='N'?'var(--g)':r.st=='U'?'var(--b)':'#d97706'}">${e(r.n)}${r.src=='derived'?' ⚙':''}</td><td>${r.t&&r.t.q?e(QL(r.t,r.c)):r.v}</td><td>${r.t&&r.t.q?'':e(r.u)}</td><td>${e(fmtRange(r))}${r.own?' *':''}</td><td>${chip(r)}</td></tr>`).join('')}</table></div><p class="m">${R.some(r=>r.src=='derived')?'⚙ '+X('रिपोर्ट के अन्य मानों से गणना किया गया। ','Calculated from your other values. '):''}${R.some(r=>r.own)?'* '+X('आपकी लैब की सीमा के अनुसार।','Based on your lab\'s own range.'):''}</p></div>`;
+ h+=trend(R,$('rd').value||new Date().toISOString().slice(0,10));
+ if(ev.cards.length||cov.length)h+=`<div class="card"><details><summary>${X('उन्नत जानकारी (वैकल्पिक)','Advanced details (optional)')}</summary>${ev.cards.length?`<h3 class="mt">${e(_('dv'))}</h3>`+ev.cards.map(c=>`<div class="it" style="margin:6px 0"><b>${e(c[0])}: ${e(c[1])}</b><br><span class="m">${e(c[2])}</span></div>`).join(''):''}${cov.length?`<h3 class="mt">${X('रिपोर्ट में कितनी जाँचें भरी गईं','How complete is the entered data')}: ${pct}%</h3><p class="m">${X('जिन पैनल को आपने चुना, उनकी मुख्य जाँचों में से कितनी भरी गईं। छूटी जाँचें जोड़ने पर तस्वीर अधिक पूरी होगी।','Out of the main tests in the panels you selected, how many were filled in. Adding the missing tests gives a fuller picture.')}</p>`+cov.map(c=>`<div class="mt"><b>${e(c.name)}</b> <span class="m">${c.done}/${c.total}</span><div class="bar"><i style="width:${c.pct}%"></i></div>${c.miss.length?`<span class="m">${e(_('nd'))}:</span> ${c.miss.map(t=>`<span class="mi">${e(t.n)}</span>`).join('')}`:''}</div>`).join(''):''}<p class="m mt">${INST.map(i=>e(i[0])+' – '+e(i[1])).join(' · ')}</p></details></div>`;
+ h+=`<div class="np ab"><button onclick="window.print()">${e(_('pr'))} / PDF</button><button class="s" onclick="cp()">${X('सार कॉपी करें','Copy summary')}</button><button class="s" onclick="saveRep()">${e(_('sv'))}</button></div>`;
+ window.SUM=`KAIVYRA Medical Report Analyzer – ${$('nm').value||''} ${age}\n${ab.map(r=>r.n+' '+r.v+' '+r.u).join(', ')||'—'}\n${ok.slice(0,2).map(k=>OI[k].d).join(', ')}`;
+ h+=`<div class="card"><h3>${X('महत्वपूर्ण सूचना','Important notice')}</h3><p class="m">${e(_('ds'))}</p><p class="m">${X('यह विश्लेषण निर्धारित नियमों और सामान्य वयस्क संदर्भ सीमाओं पर आधारित है और किसी डॉक्टर द्वारा व्यक्तिगत रूप से समीक्षित नहीं है।','This analysis is based on predefined rules and common adult reference ranges and has not been individually reviewed by a doctor.')}</p></div>`;
+ $('out').innerHTML=h;$('out').scrollIntoView({behavior:'smooth'})}
+function cp(){try{navigator.clipboard.writeText(window.SUM).then(()=>toast('✔'))}catch(x){toast(window.SUM)}}
+
+// ---- theme ----
+function curTheme(){const t=document.documentElement.dataset.theme;return t||((window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light')}
+function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('kv_theme',t)}catch(x){}$('th').textContent=t=='dark'?'Light':'Dark'}
+function toggleTheme(){setTheme(curTheme()=='dark'?'light':'dark')}
+// ---- init ----
+(function(){
+ let th='';try{th=localStorage.getItem('kv_theme')||''}catch(x){}
+ if(th)document.documentElement.dataset.theme=th;$('th').textContent=curTheme()=='dark'?'Light':'Dark';
+ $('lang').innerHTML=LANGS.map(l=>`<option value="${l[0]}">${l[1]}</option>`).join('');
+ let l='hi';try{l=localStorage.getItem('omni_lang')||''}catch(x){}
+ if(!L[l]){const n=(navigator.language||'hi').slice(0,2);l=L[n]?n:'hi'}
+ lang=l;$('lang').value=l;$('rd').value=new Date().toISOString().slice(0,10);
+ $('sex').onchange=()=>{draw()};['age','fs'].forEach(i=>{$(i).addEventListener('input',()=>draw());$(i).addEventListener('change',()=>draw())});
+ RW=[];T.filter(t=>t.p=='cbc').forEach(t=>RW.push(newRow(t)));
+ applyLang()})();
+
+</script></body></html>

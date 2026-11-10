@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidence Lab | KAIVYRA</title>
+<meta name="description" content="Compare studies side by side, use an appraisal checklist and learn what each study design can show. No confidence scores, no automated verdicts.">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="/platform/platform.css">
+</head>
+<body class="kv-page" data-kv-section="evidence-lab">
+<div id="kv-global-bar"></div>
+<main class="kv-wrap" id="kv-main">
+<p class="kv-eyebrow">Evidence Lab <span class="kv-badge live">Rule-based tools</span> <span class="kv-badge soon">No expert review</span></p>
+<h1 class="kv-h1">Understand and compare the evidence</h1>
+<p class="kv-lead">Compare studies side by side, work through an appraisal checklist, and learn what each study design can and cannot show. Nothing here is a systematic review, a meta-analysis or a clinical recommendation, and no confidence score is calculated.</p>
+<div class="kv-tags" role="tablist" aria-label="Evidence Lab tools" style="margin-bottom:14px">
+  <button class="kv-btn sm" role="tab" aria-selected="true" aria-controls="p-cmp" id="t-cmp" type="button">Compare studies</button>
+  <button class="kv-btn ghost sm" role="tab" aria-selected="false" aria-controls="p-chk" id="t-chk" type="button">Appraisal checklist</button>
+  <button class="kv-btn ghost sm" role="tab" aria-selected="false" aria-controls="p-gd" id="t-gd" type="button">Study design guide</button>
+</div>
+
+<section id="p-cmp" role="tabpanel" aria-labelledby="t-cmp">
+  <div class="kv-card"><p class="kv-meta" style="margin-top:0">Pick 2 to 4 papers from your <a class="kv-link" href="/workspace/">saved papers</a>. Find papers in <a class="kv-link" href="/research/">Research</a> and press “Save to workspace”.</p>
+  <fieldset style="border:0;padding:0;margin:0"><legend class="kv-sr">Choose papers to compare</legend><div id="pick" class="kv-grid"></div></fieldset>
+  <div class="kv-row" style="margin-top:10px"><button class="kv-btn" id="go" type="button">Compare selected</button><button class="kv-btn ghost" id="csv" type="button" hidden>Download CSV</button><span id="cm" class="kv-meta" role="status"></span></div></div>
+  <div id="cmp" style="margin-top:16px" aria-live="polite"></div>
+</section>
+
+<section id="p-chk" role="tabpanel" aria-labelledby="t-chk" hidden>
+  <div class="kv-card"><p class="kv-meta" style="margin-top:0">Answer for a paper you are reading. The tool lists the questions you answered “No” or “Unclear” as points to examine. It gives <strong>no score</strong>: the answers are your judgement, not a validated risk-of-bias tool. For formal appraisal use established instruments (for example Cochrane RoB 2, ROBINS-I, AMSTAR 2) with a trained reviewer.</p>
+  <div class="kv-field" style="max-width:340px"><label for="cd">Study design</label><select class="kv-select" id="cd"><option value="rct">Randomized controlled trial</option><option value="obs">Observational study</option><option value="sr">Systematic review / meta-analysis</option></select></div>
+  <div id="cq" style="margin-top:12px"></div><div id="co" style="margin-top:12px" aria-live="polite"></div></div>
+</section>
+
+<section id="p-gd" role="tabpanel" aria-labelledby="t-gd" hidden>
+  <p class="kv-meta">Study designs are often ordered from systematic reviews and randomized trials down to case reports and laboratory studies. That ordering is a teaching convention. A well-run observational study can be more useful than a poorly run trial, and design alone never settles quality.</p>
+  <div id="guide" class="kv-grid c2"></div>
+</section>
+
+<h2 class="kv-h2">Conflicting evidence</h2>
+<div class="kv-note">KAIVYRA does not automatically decide whether studies agree. When results seem to conflict, compare the studies above. The notes under the comparison table flag structural reasons (design, population, timing, size) that often explain different findings.</div>
+</main>
+<div id="kv-footer"></div>
+<script src="/platform/platform.js"></script>
+<script src="/platform/research-client.js"></script>
+<script src="/platform/workspace-store.js"></script>
+<script src="/platform/ui.js"></script>
+<script src="/platform/evidence-guide.js"></script>
+<script src="/evidence-lab/app.js"></script>
+</body>
+</html>

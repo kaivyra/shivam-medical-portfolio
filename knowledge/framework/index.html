@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medical Inquiry Framework | KAIVYRA</title>
+<meta name="description" content="Work through any disease, field or population across 15 lenses and 450 dimensions. Track coverage and open a literature search for every dimension.">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="/platform/platform.css">
+<link rel="stylesheet" href="/knowledge/knowledge.css">
+</head>
+<body class="kv-page" data-kv-section="knowledge">
+<div id="kv-global-bar"></div>
+<main class="kv-wrap" id="kv-main">
+<nav class="kv-crumbs" aria-label="Breadcrumb"><a href="/knowledge/">Knowledge Hub</a><span aria-hidden="true">›</span><span>Medical Inquiry Framework</span></nav>
+<p class="kv-eyebrow" id="f-eye">Medical Inquiry Framework</p>
+<h1 class="kv-h1" id="f-t"></h1>
+<p class="kv-lead" id="f-lead"></p>
+<div class="kv-card" style="margin:14px 0">
+<div class="kn-subject"><div class="kv-field"><label for="subj">Subject of inquiry (a disease, medical field, patient population or healthcare challenge)</label><input class="kv-input" id="subj" list="atl-dl" autocomplete="off" maxlength="120" placeholder="e.g. heart failure"><datalist id="atl-dl"></datalist></div>
+<button type="button" class="kv-btn" id="fgo">Start inquiry</button></div>
+<div class="kv-tags" id="fex" style="margin-top:10px"></div>
+<div id="fsaved" class="kn-saved" aria-live="polite"></div></div>
+<div class="kn-cover" aria-live="polite"><strong id="fcov">0 / 450 dimensions covered</strong><div class="kv-progress" aria-hidden="true"><span id="fbar" style="width:0%"></span></div></div>
+<div class="kv-toolbar"><div><button type="button" class="kv-btn ghost sm" id="fexp">Expand all lenses</button> <button type="button" class="kv-btn ghost sm" id="fcol">Collapse all</button></div>
+<div><button type="button" class="kv-btn sm" id="fmd">Export plan (.md)</button> <button type="button" class="kv-btn ghost sm" id="fcsv">Export CSV</button> <button type="button" class="kv-btn ghost sm" id="fcp">Copy plan</button> <button type="button" class="kv-btn ghost sm" id="frs">Reset coverage</button> <button type="button" class="kv-btn ghost sm" id="fdel">Delete saved inquiry</button></div></div>
+<p class="kv-note info" id="fhint" style="margin:8px 0">Enter a subject to switch on the search links. The framework supplies structured prompts for planning literature searches. The queries are keyword combinations, not validated search strategies; read and edit them in Research before relying on the results.</p>
+<div class="kn-spine" id="spine"></div>
+</main>
+<div id="kv-footer"></div>
+<script src="/platform/platform.js"></script>
+<script src="/platform/workspace-store.js"></script>
+<script src="/platform/util.js"></script>
+<script src="/platform/atlas-data.js"></script>
+<script src="/platform/atlas-lib.js"></script>
+<script src="/knowledge/framework/app.js"></script>
+</body>
+</html>

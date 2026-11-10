@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinical Trials | KAIVYRA</title>
+<meta name="description" content="Search ClinicalTrials.gov for registered clinical studies by condition, intervention, location and recruitment status.">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="/platform/platform.css">
+</head>
+<body class="kv-page" data-kv-section="trials">
+<div id="kv-global-bar"></div>
+<main class="kv-wrap" id="kv-main">
+<p class="kv-eyebrow">Clinical Trials <span class="kv-badge live">Live data: ClinicalTrials.gov</span></p>
+<h1 class="kv-h1">Find clinical trials</h1>
+<p class="kv-lead">Search registered studies from the U.S. National Library of Medicine’s ClinicalTrials.gov registry. Registry entries are submitted by sponsors and are not verified or endorsed by KAIVYRA. Talk to a clinician before considering any trial.</p>
+<form id="tf" class="kv-card" role="search" aria-label="Clinical trial search">
+  <div class="kv-row">
+    <div class="kv-field" style="flex:2 1 220px"><label for="cond">Condition or disease</label><input class="kv-input" id="cond" maxlength="200" placeholder="e.g. heart failure"></div>
+    <div class="kv-field" style="flex:2 1 220px"><label for="intr">Intervention or drug</label><input class="kv-input" id="intr" maxlength="200" placeholder="e.g. dapagliflozin"></div>
+    <div class="kv-field" style="flex:1 1 180px"><label for="locn">Location</label><input class="kv-input" id="locn" maxlength="120" placeholder="e.g. India, Lucknow"></div>
+  </div>
+  <div class="kv-row" style="margin-top:10px">
+    <div class="kv-field" style="flex:2 1 260px"><label for="term">Other terms</label><input class="kv-input" id="term" maxlength="300" placeholder="Any other keyword or NCT number"></div>
+    <fieldset style="border:1px solid var(--kv-line);border-radius:10px;padding:6px 12px;flex:3 1 320px"><legend style="font-size:12px;color:var(--kv-mute)">Recruitment status</legend>
+      <label><input type="checkbox" name="st" value="RECRUITING"> Recruiting</label> &nbsp;
+      <label><input type="checkbox" name="st" value="NOT_YET_RECRUITING"> Not yet recruiting</label> &nbsp;
+      <label><input type="checkbox" name="st" value="ACTIVE_NOT_RECRUITING"> Active, not recruiting</label> &nbsp;
+      <label><input type="checkbox" name="st" value="COMPLETED"> Completed</label></fieldset>
+    <button class="kv-btn" type="submit">Search trials</button>
+  </div>
+</form>
+<div id="status" class="kv-meta" aria-live="polite" style="margin-top:14px"></div>
+<div id="out" aria-busy="false"><div class="kv-empty" style="margin-top:14px"><strong>Search by condition, drug, place or keyword.</strong><br>Results show phase, status, sponsor and enrollment exactly as registered.</div></div>
+<div class="kv-pager" id="pager" hidden><button class="kv-btn ghost sm" id="prev" type="button">← Previous</button><span id="pn"></span><button class="kv-btn ghost sm" id="next" type="button">Next →</button></div>
+<h2 class="kv-h2">Research pipeline (educational)</h2>
+<div class="kv-card"><p>Drug trials are commonly described by phase: <strong>Phase 1</strong> mainly studies safety and dosing in small groups; <strong>Phase 2</strong> looks for early signs of effect and further safety; <strong>Phase 3</strong> compares the intervention with standard care in larger groups; <strong>Phase 4</strong> follows an approved product in wider use. Not every study fits a phase, and a registered trial is not evidence that an intervention works.</p></div>
+</main>
+<div id="kv-footer"></div>
+<script src="/platform/platform.js"></script>
+<script src="/platform/research-client.js"></script>
+<script src="/platform/workspace-store.js"></script>
+<script src="/platform/ui.js"></script>
+<script src="/trials/app.js"></script>
+</body>
+</html>

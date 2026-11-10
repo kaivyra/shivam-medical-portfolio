@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Lab | KAIVYRA</title>
+<meta name="description" content="A source-grounded research assistant that retrieves real publications, labels study types and shows verbatim abstract excerpts with citations.">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="/platform/platform.css">
+</head>
+<body class="kv-page" data-kv-section="ai-lab">
+<div id="kv-global-bar"></div>
+<main class="kv-wrap" id="kv-main">
+<p class="kv-eyebrow">AI Lab <span class="kv-badge live">Retrieval assistant: live</span> <span class="kv-badge soon">Generative answers: not enabled</span></p>
+<h1 class="kv-h1">Source-grounded research assistant</h1>
+<p class="kv-lead">Ask a research question. KAIVYRA retrieves real publications, labels their study types, and shows verbatim excerpts from their abstracts with numbered citations. It does not write new medical claims.</p>
+<div class="kv-note info"><strong>How this works today.</strong> This tool uses keyword retrieval and rule-based extraction, not a language model. It cannot judge whether a claim is true, and it does not detect agreement or conflict between sources automatically. You read the excerpts and decide. Not medical advice.</div>
+
+<form id="qf" class="kv-card" style="margin-top:14px" aria-label="Research question">
+  <div class="kv-field"><label for="qq">Research question</label><textarea class="kv-textarea" id="qq" maxlength="400" placeholder="e.g. Do SGLT2 inhibitors reduce hospitalization in heart failure with preserved ejection fraction?"></textarea></div>
+  <div class="kv-row" style="margin-top:10px"><label><input type="checkbox" id="hum" checked> Human studies</label><label><input type="checkbox" id="absn" checked> Require an abstract</label>
+  <div class="kv-field" style="min-width:150px"><label for="yf">Published from year</label><input class="kv-input" id="yf" type="number" min="1900" max="2100" placeholder="any"></div>
+  <button class="kv-btn" type="submit">Retrieve evidence</button></div>
+</form>
+<div id="emer"></div>
+<div id="res" aria-live="polite" aria-busy="false"></div>
+
+<h2 class="kv-h2">Extractive summarizer <span class="kv-badge live">Live</span></h2>
+<div class="kv-card"><p class="kv-meta">Paste an abstract or passage. The tool selects the sentences that best represent it and returns them <strong>unchanged</strong>. It does not rewrite, interpret or add information.</p>
+<div class="kv-field"><label for="st">Text to summarize (stays in your browser)</label><textarea class="kv-textarea" id="st" maxlength="9000" style="min-height:120px"></textarea></div>
+<div class="kv-row" style="margin-top:8px"><button class="kv-btn sm" id="sb" type="button">Select key sentences</button></div><div id="so" style="margin-top:10px"></div></div>
+
+<h2 class="kv-h2">Other AI Lab modules</h2>
+<div class="kv-grid c3">
+<div class="kv-card"><h3>Research comparison</h3><p>Available now as a structured table in <a class="kv-link" href="/evidence-lab/">Evidence Lab</a>.</p> <span class="kv-badge live">Live (rule-based)</span></div>
+<div class="kv-card"><h3>Question answering, scientific explainer, paper Q&amp;A</h3><p>Require a generative language model. None is enabled: KAIVYRA will not add a paid API without your approval. A local open-source model (for example via Ollama) is the planned route.</p> <span class="kv-badge soon">Not built</span></div>
+<div class="kv-card"><h3>Semantic search</h3><p>Needs an embedding model and a vector index (pgvector). Planned after the paper database exists.</p> <span class="kv-badge soon">Not built</span></div>
+</div>
+</main>
+<div id="kv-footer"></div>
+<script src="/platform/platform.js"></script>
+<script src="/platform/research-client.js"></script>
+<script src="/platform/workspace-store.js"></script>
+<script src="/platform/ui.js"></script>
+<script src="/ai-lab/app.js"></script>
+</body>
+</html>
