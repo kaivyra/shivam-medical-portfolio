@@ -1,8 +1,9 @@
-@import url("nav.css?v=4");
+@import url("nav.css?v=6");
 @import url("components.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap");
 /* KAIVYRA platform design system. Shared by every platform page and the Clinical suite. */
 :root{
-  --kv-bar-h:76px;
+  --kv-bar-h:78px;
   --kv-bg:#040811; --kv-panel:#0a1120; --kv-card:#0f192d; --kv-line:#1c2d4a;
   --kv-text:#f1f5f9; --kv-mute:#94a3b8; --kv-cyan:#22d3ee; --kv-cyan-d:#06b6d4;
   --kv-green:#34d399; --kv-amber:#fbbf24; --kv-rose:#fb7185; --kv-indigo:#818cf8;
@@ -197,3 +198,6 @@ html.light .kv-btn:not(.ghost){color:#fff}
 @media (prefers-contrast:more){:root{--kv-line:#475569;--kv-mute:#cbd5e1}html.light{--kv-line:#475569;--kv-mute:#1e293b}}
 @media (forced-colors:active){.kv-btn,.kv-card,.kv-result{border:1px solid CanvasText}.kv-h1{-webkit-text-fill-color:CanvasText;background:none}}
 /* Print: clean evidence handouts */
+/* inner pages carry the slim bar only */
+html.kv-inner{--kv-bar-h:64px}
+html.kv-nobar{--kv-bar-h:0px}

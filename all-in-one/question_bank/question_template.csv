@@ -1,0 +1,2 @@
+level,subject,chapter,question,A,B,C,D,answer,explanation,source,reviewed
+MD/MS,GMED,"Chapter title (optional, blank = whole subject)",Question text?,Option A,Option B,Option C,Option D (optional),B,Why B is correct,Book/guideline + page,1

@@ -15,7 +15,7 @@ D.dataset.theme=t;D.classList.toggle('light',t==='light');D.style.colorScheme=t}
 <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon.png">
 <link rel="apple-touch-icon" sizes="192x192" href="./assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="./platform/nav.css?v=5">
+<link rel="stylesheet" href="./platform/nav.css?v=6">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 <meta property="og:type" content="website"><meta property="og:title" content="KAIVYRA | Medical research, made navigable"><meta property="og:description" content="Search real publications, examine the evidence behind a claim, and use interactive clinical tools."><meta property="og:url" content="https://kaivyra.in/"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@KAIVYRAHQ">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KAIVYRA","url":"https://kaivyra.in/","email":"the.kaivyra@gmail.com","description":"Medical research intelligence, clinical tools and evidence education.","sameAs":["https://x.com/KAIVYRAHQ","https://www.linkedin.com/company/144122048/"]}</script>
@@ -279,21 +279,371 @@ html[data-theme=dark] #kv-global-bar .kv-theme .moon{transform:rotate(90deg) sca
 @media (prefers-reduced-motion:reduce){#desk .kvd-card,#desk .kvd-live::before{animation:none}}
 </style>
 <style id="kvn-css">#desk .kvd-cap{font-size:12.5px;color:#8ea6cc;margin:-2px 0 6px}#desk .kvd-src{margin-top:16px;font-size:13px;color:var(--mu);display:flex;flex-wrap:wrap;gap:8px;align-items:center}#desk .kvd-src span{font-weight:600;color:var(--ink)}#desk .kvd-src a{color:var(--ink);text-decoration:none;padding:5px 12px;border-radius:99px;border:1px solid var(--ln);background:var(--w);font-weight:500;transition:border-color .2s}#desk .kvd-src a:hover{border-color:var(--pr)}#desk .kvd-src em{font-style:normal}#desk .kvd-note a{color:var(--pr)}</style>
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<div id="kv-global-bar"><nav class="kvb" aria-label="KAIVYRA"><a class="kvb-brand" href="./"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21.5" fill="none" stroke="#2dd4bf" stroke-width="3"/><path d="M17 11Q24 24 17 37M31 11Q24 24 31 37" fill="none" stroke="#2dd4bf" stroke-width="2.6" stroke-linecap="round"/><g fill="#2dd4bf"><circle cx="17" cy="11" r="2.4"/><circle cx="17" cy="37" r="2.4"/><circle cx="31" cy="11" r="2.4"/><circle cx="31" cy="37" r="2.4"/></g></svg><span>KAIVYRA</span></a><ul class="kvb-nav"><li><a class="kvb-link" href="./research/">Discover</a></li><li><a class="kvb-link" href="./ai-lab/">Evidence</a></li><li><a class="kvb-link" href="./clinical/">Clinical</a></li><li><a class="kvb-link" href="./arena/">Medical Arena</a></li><li><a class="kvb-link" href="./workspace/">Workspace</a></li><li><a class="kvb-link" href="#about">About</a></li></ul></nav></div>
-<main id="main">
-<div class="hero"><canvas id="fx" aria-hidden="true"></canvas><div class="wrap hi"><div>
-<span class="pill"><b></b>Live literature from Europe PMC and ClinicalTrials.gov</span>
-<h1>Medical research,<br><span class="g">made navigable.</span></h1>
-<p class="sub">Search real publications, examine the evidence behind a claim, and use interactive clinical tools. Every result links back to its original source.</p>
-<form class="sf" action="/research/" method="get" role="search" aria-label="Search medical research"><label for="q" style="position:absolute;left:-9999px">Search medical research</label><input id="q" name="q" type="search" maxlength="200" placeholder="Try: SGLT2 inhibitors heart failure" autocomplete="off"><button type="submit">Search</button></form>
-<div class="chips"><i>Popular:</i><a href="/research/?q=sepsis+fluid+resuscitation">Sepsis fluids</a><a href="/research/?q=atrial+fibrillation+anticoagulation">AF anticoagulation</a><a href="/trials/?cond=asthma">Asthma trials</a><a href="/clinical/">Clinical calculators</a></div>
-<div class="hs"><div><b>9</b><span>Integrated modules</span></div><div><b>519</b><span>Atlas topics</span></div><div><b>13</b><span>Clinical tools</span></div><div><b>0</b><span>Paid keys needed</span></div></div>
-</div><div class="art" aria-hidden="true"><svg viewBox="0 0 400 400" aria-hidden="true"><defs><linearGradient id="ag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs><circle cx="200" cy="200" r="176" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.2)"/><circle cx="200" cy="200" r="128" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.2)" stroke-dasharray="4 8"/><path d="M200 300S106 242 106 172a54 54 0 0 1 94-36 54 54 0 0 1 94 36c0 70-94 128-94 128z" fill="url(#ag)" opacity=".95"/><path d="M40 210h96l22-62 36 112 28-80 14 30h124" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><g fill="#fff"><circle cx="64" cy="96" r="5" opacity=".8"/><circle cx="336" cy="110" r="4" opacity=".6"/><circle cx="318" cy="316" r="6" opacity=".7"/><circle cx="84" cy="312" r="4" opacity=".6"/></g></svg><div class="fc a"><em>&#10003;</em><div>Linked to source<small>DOI, PMID or NCT</small></div></div><div class="fc b"><em>Q</em><div>Exact query shown<small>Reproducible results</small></div></div><div class="fc c"><em>!</em><div>Limits stated<small>On every answer</small></div></div></div></div></div>
+<style id="kvh-css">
+/* ===== KAIVYRA home dashboard (v9) ===== */
+.kvh-main{--c-bg:#eef3fa;--c-card:#fff;--c-ink:#0b1b33;--c-mu:#566883;--c-ln:#dbe4f1;--c-sh:0 14px 34px -22px rgba(11,27,51,.45);--c-tag-bg:#e0ecff;--c-tag-ink:#1d4fb8;
+ position:relative;background:var(--c-bg);color:var(--c-ink);padding:92px 24px 34px;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+html[data-theme=dark] .kvh-main{--c-bg:#071022;--c-card:#0e1a33;--c-ink:#e9eefb;--c-mu:#9bacc9;--c-ln:#1e2c49;--c-sh:0 14px 34px -22px #000;--c-tag-bg:#163058;--c-tag-ink:#9cc2ff}
+.kvh-main *{box-sizing:border-box}
+.kvh-main a{-webkit-tap-highlight-color:transparent}
+.kvh-main :focus-visible,.kvh-side :focus-visible{outline:2px solid #22d3ee;outline-offset:2px}
 
-<div class="qt"><div class="wrap"><div class="qg" aria-label="Quick tools"><a href="/research/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><b>Research</b><small>Search real publications</small></a><a href="/trials/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 13l2 2 4-4"/></svg><b>Clinical Trials</b><small>Registered studies, live</small></a><a href="/clinical/#calculators"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7.5h7M9 12h.01M12 12h.01M15 12h.01M9 16h.01M12 16h.01M15 16h.01"/></svg><b>Calculators</b><small>ABG, eGFR, QTc</small></a><a href="/clinical/#symptom-checker"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17.2v.01"/></svg><b>Symptom Triage</b><small>Warning signs, not a diagnosis</small></a><a href="/clinical/#rx-formulary"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 5.5l8 8a3.5 3.5 0 0 1-5 5l-8-8a3.5 3.5 0 0 1 5-5zM8 11l5 5"/></svg><b>Drug Formulary</b><small>Education only</small></a><a href="/analyzer/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg><b>Report Analyzer</b><small>Plain-language lab reports</small></a></div></div></div>
+/* ---- sidebar (desktop only) ---- */
+.kvh-side{position:fixed;inset:0 auto 0 0;width:240px;z-index:150;flex-direction:column;gap:14px;padding:22px 16px 16px;color:#cfdcf5;overflow-y:auto;scrollbar-width:thin;
+ background:linear-gradient(180deg,#050c1f 0%,#08132b 55%,#071a38 100%);border-right:1px solid rgba(34,211,238,.12);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.kvh-side *{box-sizing:border-box}
+.kvh-brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;padding:2px 4px 8px}
+.kvh-brand svg{width:42px;height:42px;flex:none;filter:drop-shadow(0 0 10px rgba(45,212,191,.35))}
+.kvh-brand b{display:block;font:800 22px/1 Sora,Inter,sans-serif;letter-spacing:.05em}
+.kvh-brand small{display:block;margin-top:4px;font:500 11px/1 Inter,sans-serif;color:#8fb4ff;letter-spacing:.02em}
+.kvh-side ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+.kvh-side li a{display:flex;align-items:center;gap:13px;padding:11px 14px;border-radius:14px;color:#c4d3ee;text-decoration:none;font:500 14.5px/1.2 Inter,sans-serif;transition:background .18s,color .18s}
+.kvh-side li a svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+.kvh-side li a:hover{background:rgba(255,255,255,.07);color:#fff}
+.kvh-side li a[aria-current]{background:linear-gradient(90deg,#1f7aff,#0b4fcf);color:#fff;box-shadow:0 10px 24px -12px rgba(31,122,255,.9)}
+.kvh-promo{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;padding:12px 14px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.04)}
+.kvh-promo p{margin:0;font:500 13px/1.3 Inter,sans-serif;color:#e6eefc}
+.kvh-promo p b{display:block;color:#38bdf8;font:700 14px/1.3 Inter,sans-serif}
+.kvh-promo svg{width:78px;height:34px;flex:none;fill:none;stroke:#38bdf8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.kvh-map{width:100%;height:auto;border-radius:12px;opacity:.92;display:block}
+.kvh-theme{display:flex;gap:2px;margin:auto auto 0;padding:4px;border-radius:99px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
+.kvh-theme button{width:50px;height:34px;border:0;border-radius:99px;background:none;color:#9fb3d9;display:grid;place-items:center;cursor:pointer;transition:background .18s,color .18s}
+.kvh-theme button svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.kvh-theme button[aria-pressed=true]{background:rgba(255,255,255,.16);color:#fff}
+.kvh-user{display:flex;align-items:center;gap:11px;margin-top:2px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);color:#fff;text-decoration:none}
+.kvh-user>svg:first-child{width:38px;height:38px;flex:none;fill:none;stroke:#9fb3d9;stroke-width:1.4;border-radius:50%;background:rgba(255,255,255,.06);padding:6px}
+.kvh-user span{flex:1;min-width:0;font:600 14px/1.2 Inter,sans-serif}
+.kvh-user small{display:block;margin-top:3px;font:400 11.5px/1.2 Inter,sans-serif;color:#8fa4cc}
+.kvh-user>svg:last-child{width:16px;height:16px;fill:none;stroke:#8fa4cc;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-height:860px){.kvh-map{display:none}}
+@media (max-height:720px){.kvh-promo{display:none}}
+
+/* ---- hero ---- */
+.kvh-hero{position:relative;overflow:hidden;isolation:isolate;border-radius:24px;min-height:372px;display:flex;align-items:center;padding:40px 46px;color:#fff;
+ background:radial-gradient(720px 380px at 78% 30%,rgba(30,110,255,.42),transparent 65%),linear-gradient(120deg,#040b1d 0%,#07163a 50%,#0a2a63 100%);box-shadow:0 34px 60px -34px rgba(3,10,30,.8)}
+.kvh-hero>img{position:absolute;right:0;top:0;height:100%;width:min(54%,660px);object-fit:cover;object-position:62% 8%;z-index:-1;
+ -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40%);mask-image:linear-gradient(90deg,transparent 0,#000 40%)}
+.kvh-hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(0deg,rgba(4,11,29,.75),transparent 38%)}
+.kvh-hero-in{max-width:640px;position:relative}
+.kvh-hero h1{margin:0;font:800 clamp(50px,6.2vw,86px)/1 Sora,Inter,sans-serif;letter-spacing:.01em;color:#fff}
+.kvh-hero h1 span{background:linear-gradient(90deg,#27d3e8,#4aa8ff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.kvh-hero h2{margin:12px 0 8px;font:600 clamp(21px,2.3vw,30px)/1.2 Sora,Inter,sans-serif;color:#fff}
+.kvh-hero-in p{margin:0;max-width:540px;color:#c6d6f4;font:400 15px/1.6 Inter,sans-serif}
+.kvh-sf{display:flex;align-items:center;gap:10px;max-width:640px;margin:20px 0 14px;padding:6px 6px 6px 18px;background:#fff;border-radius:99px;box-shadow:0 0 0 4px rgba(56,150,255,.28),0 22px 40px -20px #000}
+.kvh-sf svg{width:19px;height:19px;flex:none;fill:none;stroke:#5a6b86;stroke-width:2;stroke-linecap:round}
+.kvh-sf input{flex:1;min-width:0;border:0;background:none;outline:0;color:#0b1b33;font:500 15px Inter,sans-serif;padding:11px 0}
+.kvh-sf input::placeholder{color:#7a8aa3}
+.kvh-sf button{flex:none;display:inline-flex;align-items:center;gap:8px;border:0;border-radius:99px;padding:13px 22px;color:#fff;cursor:pointer;font:700 14.5px Inter,sans-serif;background:linear-gradient(180deg,#2b83ff,#0b57d6);box-shadow:0 10px 22px -10px rgba(11,87,214,.9)}
+.kvh-chips{display:flex;flex-wrap:wrap;gap:10px}
+.kvh-chips a{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:99px;color:#e8f0ff;text-decoration:none;font:600 13px/1 Inter,sans-serif;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px);transition:background .18s,border-color .18s}
+.kvh-chips a:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.4)}
+.kvh-hero .kvh-tag{position:absolute;right:56px;top:84px;margin:0;text-align:left;font:italic 500 clamp(24px,2.8vw,40px)/1.2 "Playfair Display",Georgia,"Times New Roman",serif;color:#eaf2ff;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+.kvh-hero .kvh-tag::after{content:"";display:block;width:112px;height:2px;margin-top:14px;background:linear-gradient(90deg,#27d3e8,transparent)}
+
+/* ---- intelligence strip ---- */
+.kvh-strip{padding:0;display:flex;margin-top:16px;background:var(--c-card);border:1px solid var(--c-ln);border-radius:18px;box-shadow:var(--c-sh);overflow:hidden}
+.kvh-intel{flex:0 0 232px;display:flex;align-items:center;gap:12px;padding:18px;color:#fff;background:linear-gradient(135deg,#0a2a6e,#1456d2)}
+.kvh-intel>i{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.16)}
+.kvh-intel svg{width:22px;height:22px;fill:#fff}
+.kvh-intel b{display:block;font:700 15px/1.25 Inter,sans-serif}
+.kvh-intel small{display:block;margin-top:4px;font:400 12px/1.35 Inter,sans-serif;color:#cfe0ff}
+.kvh-items{flex:1;min-width:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.kvh-it{position:relative;display:flex;align-items:center;gap:12px;min-width:0;padding:14px 38px 14px 16px;color:var(--c-ink);text-decoration:none;transition:background .18s}
+.kvh-it+.kvh-it{border-left:1px solid var(--c-ln)}
+.kvh-it:hover{background:color-mix(in srgb,var(--c-ink) 4%,transparent)}
+.kvh-it img{width:62px;height:66px;flex:none;border-radius:12px;object-fit:cover}
+.kvh-it>div{min-width:0;flex:1}
+.kvh-it .t{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font:600 13.5px/1.35 Inter,sans-serif}
+.kvh-it .m{display:block;margin-top:5px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font:400 12px/1.2 Inter,sans-serif;color:var(--c-mu)}
+.kvh-it::after{content:"\203A";position:absolute;right:12px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font:600 17px/1 Inter,sans-serif;color:var(--c-mu);border:1px solid var(--c-ln)}
+
+/* ---- grid ---- */
+.kvh-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:18px;margin-top:22px;align-items:start}
+.kvh-h{display:flex;align-items:center;gap:10px;margin:0 0 12px;font:700 20px/1.2 Sora,Inter,sans-serif;color:var(--c-ink)}
+.kvh-h::before{content:"";width:4px;height:22px;border-radius:2px;background:#1d6cf0;flex:none}
+.kvh-h a{margin-left:auto;font:600 13px/1 Inter,sans-serif;color:var(--c-ink);text-decoration:none;white-space:nowrap}
+.kvh-h a:hover{text-decoration:underline}
+.kvh-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.kvh-card{position:relative;display:flex;align-items:flex-end;aspect-ratio:1/1.08;border-radius:14px;overflow:hidden;color:#fff;text-decoration:none;background:#0b1d44;box-shadow:var(--c-sh)}
+.kvh-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.kvh-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,10,30,.94) 0%,rgba(3,10,30,.4) 42%,transparent 70%)}
+.kvh-card span{position:relative;z-index:1;padding:12px}
+.kvh-card b{display:block;font:700 15px/1.2 Sora,Inter,sans-serif}
+.kvh-card small{display:block;margin-top:3px;font:400 12px/1.25 Inter,sans-serif;color:#cbd9f5}
+.kvh-card:hover img{transform:scale(1.07)}
+.kvh-feat{display:grid;grid-template-columns:200px minmax(0,1fr) auto;gap:18px;align-items:center;margin-top:24px;padding:14px;background:var(--c-card);border:1px solid var(--c-ln);border-radius:16px;box-shadow:var(--c-sh)}
+.kvh-feat img{width:200px;height:112px;object-fit:cover;border-radius:12px;display:block}
+.kvh-tagp{display:inline-block;padding:4px 10px;border-radius:99px;background:var(--c-tag-bg);color:var(--c-tag-ink);font:700 11.5px/1.2 Inter,sans-serif}
+.kvh-feat h4{margin:8px 0 4px;font:700 17px/1.3 Sora,Inter,sans-serif;color:var(--c-ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.kvh-feat .meta{margin:0;color:var(--c-mu);font:400 13px/1.4 Inter,sans-serif}
+.kvh-feat .desc{margin:6px 0 0;color:var(--c-mu);font:400 13px/1.5 Inter,sans-serif;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.kvh-btn{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;padding:12px 20px;border-radius:99px;border:1px solid var(--c-ln);background:var(--c-card);color:var(--c-ink);text-decoration:none;font:700 13.5px/1 Inter,sans-serif;box-shadow:var(--c-sh);transition:border-color .18s,transform .18s}
+.kvh-btn:hover{border-color:#1d6cf0;transform:translateY(-2px)}
+.kvh-note{margin:8px 2px 0;color:var(--c-mu);font:400 12px/1.4 Inter,sans-serif}
+
+.kvh-anat{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:8px 14px;padding:16px;border-radius:18px;color:#fff;background:linear-gradient(160deg,#06102a,#0b2050);box-shadow:var(--c-sh)}
+.kvh-anat header{grid-column:1/-1;display:flex;align-items:center;gap:10px}
+.kvh-anat header>svg{width:22px;height:22px;flex:none;fill:none;stroke:#38bdf8;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.kvh-anat h3{margin:0;font:700 17px/1.2 Sora,Inter,sans-serif}
+.kvh-anat header a{margin-left:auto;padding:8px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;font:600 12.5px/1 Inter,sans-serif;white-space:nowrap}
+.kvh-anat header a:hover{background:rgba(255,255,255,.12)}
+.kvh-anat img{width:100%;height:auto;border-radius:12px;display:block;align-self:center}
+.kvh-anat ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;justify-content:center;gap:12px;font:500 13.5px/1.35 Inter,sans-serif;color:#e4eeff}
+.kvh-anat li{display:flex;gap:9px;align-items:flex-start}
+.kvh-anat li::before{content:"";flex:none;width:8px;height:8px;margin-top:5px;border-radius:50%;background:#22d3ee;box-shadow:0 0 10px #22d3ee}
+.kvh-focus{display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;align-items:center;padding:14px;border-radius:16px;color:#fff;background:linear-gradient(160deg,#07122b,#0b1f4a);box-shadow:var(--c-sh)}
+.kvh-focus img{width:112px;height:70px;object-fit:cover;border-radius:10px;display:block}
+.kvh-focus h4{margin:0;font:700 15px/1.25 Sora,Inter,sans-serif}
+.kvh-focus p{margin:5px 0 10px;font:400 12.5px/1.5 Inter,sans-serif;color:#c3d3f2}
+.kvh-focus a{display:inline-block;padding:8px 14px;border-radius:99px;background:linear-gradient(180deg,#2b83ff,#0b57d6);color:#fff;text-decoration:none;font:700 12.5px/1 Inter,sans-serif}
+.kvh-right{display:flex;flex-direction:column;gap:18px}
+.kvh-sec{padding:0;background:none}
+
+@media (max-width:1180px){.kvh-main{padding:90px 18px 28px}}
+.kvh-main{padding-top:108px}@media (max-width:1180px){.kvh-main{padding-top:100px}}
+@media (max-width:1120px){.kvh-grid{grid-template-columns:1fr}.kvh-right{display:grid;grid-template-columns:1fr 1fr;align-items:start}}
+@media (max-width:1000px){
+ .kvh-hero .kvh-tag{display:none}
+ .kvh-hero>img{width:74%;opacity:.55}
+ .kvh-items{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .kvh-it:nth-child(3){border-left:0}.kvh-it:nth-child(n+3){border-top:1px solid var(--c-ln)}
+}
+@media (max-width:820px){
+ .kvh-strip{flex-direction:column}.kvh-intel{flex:none}
+ .kvh-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .kvh-feat{grid-template-columns:150px minmax(0,1fr)}.kvh-feat img{width:150px;height:96px}.kvh-feat .kvh-btn{grid-column:1/-1;justify-self:start}
+ .kvh-right{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+ .kvh-main{padding:84px 12px 24px}
+ .kvh-hero{padding:30px 20px;min-height:0;border-radius:20px}
+ .kvh-sf{flex-wrap:wrap;border-radius:22px;padding:10px 12px}.kvh-sf input{flex:1 1 60%}.kvh-sf button{width:100%;justify-content:center}
+ .kvh-items{grid-template-columns:1fr}.kvh-it+.kvh-it{border-left:0;border-top:1px solid var(--c-ln)}
+ .kvh-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .kvh-feat{grid-template-columns:1fr}.kvh-feat img{width:100%;height:150px}
+ .kvh-anat{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.kvh-card img,.kvh-btn,.kvh-it{transition:none}.kvh-btn:hover{transform:none}.kvh-card:hover img{transform:none}}
+@media (forced-colors:active){.kvh-hero>img{display:none}}
+</style>
+<style id="kvn-news-css">
+/* ===== KAIVYRA news desk (v10) ===== */
+#desk.kvn-sec{padding:54px 0 40px}
+#desk .kvn{--c-card:#fff;--c-ink:#0b1b33;--c-mu:#566883;--c-ln:#dbe4f1;--c-sh:0 14px 34px -22px rgba(11,27,51,.45);--c-tag-bg:#e0ecff;--c-tag-ink:#1d4fb8;--c-soft:#f1f5fb;color:var(--c-ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+html[data-theme=dark] #desk .kvn{--c-card:#0e1a33;--c-ink:#e9eefb;--c-mu:#9bacc9;--c-ln:#1e2c49;--c-sh:0 14px 34px -22px #000;--c-tag-bg:#163058;--c-tag-ink:#9cc2ff;--c-soft:#0a1528}
+#desk .kvn *{box-sizing:border-box}
+#desk .kvn a{color:inherit}
+#desk .kvn-hero{position:relative;overflow:hidden;isolation:isolate;border-radius:22px;min-height:250px;display:flex;align-items:center;padding:32px 40px;color:#fff;background:linear-gradient(100deg,#030a1c 0%,#06183a 55%,#0a2a5e 100%)}
+#desk .kvn-hero>img{position:absolute;z-index:-1;right:0;top:0;height:100%;width:62%;object-fit:cover;object-position:left center;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%);mask-image:linear-gradient(90deg,transparent 0,#000 38%);filter:none!important}
+#desk .kvn-badge{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:99px;font:600 13px/1 Inter,sans-serif;color:#d9fbff;background:rgba(6,40,60,.7);border:1px solid rgba(34,211,238,.55)}
+#desk .kvn-badge::before{content:"";width:9px;height:9px;border-radius:50%;background:#2dd4a8;box-shadow:0 0 0 4px rgba(45,212,168,.22)}
+#desk .kvn-hero h2{margin:14px 0 8px;font:800 clamp(34px,4.6vw,54px)/1.05 Sora,Inter,sans-serif;letter-spacing:-.02em;color:#fff}
+#desk .kvn-hero h2 span{color:#22d3ee}
+#desk .kvn-hero p{margin:0;max-width:46ch;font:500 17px/1.5 Inter,sans-serif;color:#e3ecfb}
+#desk .kvn-hero .kvn-date{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font:500 13.5px/1.3 Inter,sans-serif;color:#b9cae6}
+#desk .kvn-hero .kvn-date svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#desk .kvn-chip{position:absolute;top:18px;right:20px;display:inline-flex;align-items:center;gap:8px;padding:8px 15px;border-radius:12px;font:600 13px/1 Inter,sans-serif;color:#fff;background:rgba(6,14,30,.72);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(6px)}
+#desk .kvn-chip::before{content:"";width:9px;height:9px;border-radius:50%;background:#ef4444;animation:kvnp 1.8s ease-in-out infinite}
+@keyframes kvnp{50%{opacity:.35}}
+#desk .kvn-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 18px}
+#desk .kvn-tab{appearance:none;cursor:pointer;padding:11px 20px;border-radius:14px;border:1px solid var(--c-ln);background:var(--c-card);color:var(--c-ink);font:600 14px/1 Inter,sans-serif;box-shadow:var(--c-sh);transition:background .18s,color .18s,border-color .18s}
+#desk .kvn-tab:hover{border-color:#3b82f6}
+#desk .kvn-tab[aria-selected=true]{background:linear-gradient(180deg,#2f7bff,#1558d6);border-color:transparent;color:#fff;box-shadow:0 12px 24px -12px rgba(31,122,255,.9)}
+#desk .kvn-tab.more{text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+#desk .kvn-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+#desk .kvn-l,#desk .kvn-r{min-width:0;display:flex;flex-direction:column;gap:18px}
+#desk .kvn-box{background:var(--c-card);border:1px solid var(--c-ln);border-radius:18px;box-shadow:var(--c-sh)}
+#desk .kvn-top{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;padding:12px}
+#desk .kvn-lead{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1fr);gap:16px;min-width:0}
+#desk .kvn-lead .pic{position:relative;border-radius:14px;overflow:hidden;min-height:230px;background:#06183a}
+#desk .kvn-lead .pic img,#desk .kvn-sc .pic img,#desk .kvn-mc .pic img{width:100%;height:100%;object-fit:cover;display:block}
+#desk .kvn-kind{position:absolute;left:10px;top:10px;padding:6px 11px;border-radius:9px;font:600 12px/1 Inter,sans-serif;color:#fff;background:#1f6bff}
+#desk .kvn-lead .tx{display:flex;flex-direction:column;min-width:0;padding:4px 0}
+#desk .kvn-lead h3{margin:0 0 10px;font:700 clamp(18px,1.9vw,23px)/1.25 Sora,Inter,sans-serif;letter-spacing:-.01em}
+#desk .kvn-lead h3 a,#desk .kvn-sc h4 a,#desk .kvn-mc h4 a,#desk .kvn-ups a{text-decoration:none}
+#desk .kvn-lead h3 a:hover,#desk .kvn-sc h4 a:hover,#desk .kvn-mc h4 a:hover,#desk .kvn-ups a:hover{text-decoration:underline;text-underline-offset:3px}
+#desk .kvn-lead p{margin:0;font:400 14px/1.55 Inter,sans-serif;color:var(--c-mu);display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+#desk .kvn-foot{margin-top:auto;padding-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font:500 12.5px/1.3 Inter,sans-serif;color:var(--c-mu)}
+#desk .kvn-read{margin-left:auto;padding:8px 14px;border-radius:99px;border:1px solid var(--c-ln);font:600 12.5px/1 Inter,sans-serif;color:#1d4fb8!important;text-decoration:none;white-space:nowrap}
+html[data-theme=dark] #desk .kvn-read{color:#9cc2ff!important}
+#desk .kvn-read:hover{background:var(--c-tag-bg)}
+#desk .kvn-side{display:flex;flex-direction:column;gap:12px;min-width:0}
+#desk .kvn-sc{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:start;padding-bottom:12px}
+#desk .kvn-sc+.kvn-sc{border-top:1px solid var(--c-ln);padding-top:12px;padding-bottom:0}
+#desk .kvn-sc .pic{border-radius:10px;overflow:hidden;height:86px;background:#06183a}
+#desk .kvn-sc h4,#desk .kvn-mc h4{margin:0 0 5px;font:700 14.5px/1.3 Sora,Inter,sans-serif;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+#desk .kvn-sc p{margin:0 0 5px;font:400 12.5px/1.4 Inter,sans-serif;color:var(--c-mu);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#desk .kvn-sc small,#desk .kvn-mc small{display:block;font:500 11.5px/1.3 Inter,sans-serif;color:var(--c-mu);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#desk .kvn-h{display:flex;align-items:center;gap:10px;margin:2px 0 -6px;font:700 20px/1.2 Sora,Inter,sans-serif}
+#desk .kvn-h::before{content:"";width:4px;height:22px;border-radius:3px;background:#1f6bff}
+#desk .kvn-h a{margin-left:auto;font:600 13px/1 Inter,sans-serif;color:#1d4fb8;text-decoration:none}
+html[data-theme=dark] #desk .kvn-h a{color:#9cc2ff}
+#desk .kvn-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#desk .kvn-mc{display:flex;flex-direction:column;overflow:hidden}
+#desk .kvn-mc .pic{position:relative;height:104px;background:#06183a}
+#desk .kvn-mc .b{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+#desk .kvn-mc h4{-webkit-line-clamp:3}
+#desk .kvn-mc p{margin:0;font:400 12.5px/1.4 Inter,sans-serif;color:var(--c-mu);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#desk .kvn-mc small{margin-top:auto;padding-top:4px}
+#desk .kvn-box.pad{padding:16px 18px}
+#desk .kvn-r h3{display:flex;align-items:center;gap:10px;margin:0 0 12px;font:700 16px/1.2 Sora,Inter,sans-serif}
+#desk .kvn-r h3 .lv{margin-left:auto;display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;font:600 12px/1 Inter,sans-serif;color:#0f7a55;background:rgba(16,185,129,.14)}
+#desk .kvn-r h3 .lv::before{content:"";width:7px;height:7px;border-radius:50%;background:#10b981}
+#desk .kvn-ups{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:12px}
+#desk .kvn-ups li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:10px;font:500 13.5px/1.35 Inter,sans-serif}
+#desk .kvn-ups li::before{content:"";width:9px;height:9px;margin-top:4px;border-radius:50%;background:#10b981}
+#desk .kvn-ups li:nth-child(n+2)::before{background:#ef4444}
+#desk .kvn-ups small{display:block;margin-top:3px;font:500 11.5px/1.3 Inter,sans-serif;color:var(--c-mu)}
+#desk .kvn-all{display:block;text-align:center;padding:10px;border-radius:99px;border:1px solid var(--c-ln);font:600 13px/1 Inter,sans-serif;color:#1d4fb8!important;text-decoration:none}
+html[data-theme=dark] #desk .kvn-all{color:#9cc2ff!important}
+#desk .kvn-all:hover{background:var(--c-tag-bg)}
+#desk .kvn-qf dl{margin:0;display:grid;gap:11px}
+#desk .kvn-qf dl div{display:flex;align-items:baseline;gap:10px;font:500 13.5px/1.3 Inter,sans-serif}
+#desk .kvn-qf dd{margin:0 0 0 auto;font:700 17px/1 Sora,Inter,sans-serif}
+#desk .kvn-qf p{margin:12px 0 0;font:400 11.5px/1.4 Inter,sans-serif;color:var(--c-mu)}
+#desk .kvn-anat{position:relative;display:flex;align-items:center;gap:10px;overflow:hidden;min-height:128px;padding:16px 18px;border-radius:18px;color:#fff!important;text-decoration:none;background:linear-gradient(110deg,#040c20,#0a2350);border:1px solid rgba(34,211,238,.18)}
+#desk .kvn-anat img{position:absolute;right:0;top:0;height:100%;width:46%;object-fit:cover;object-position:center;-webkit-mask-image:linear-gradient(90deg,transparent,#000 45%);mask-image:linear-gradient(90deg,transparent,#000 45%)}
+#desk .kvn-anat b{display:block;font:700 17px/1.2 Sora,Inter,sans-serif}
+#desk .kvn-anat small{display:block;margin:5px 0 10px;max-width:22ch;font:400 12.5px/1.4 Inter,sans-serif;color:#b9cae6}
+#desk .kvn-anat span.go{display:inline-block;padding:7px 14px;border-radius:99px;font:600 12.5px/1 Inter,sans-serif;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25)}
+#desk .kvn-anat div{position:relative}
+#desk .kvn-empty{padding:26px 18px;color:var(--c-mu);font:500 14px/1.5 Inter,sans-serif}
+#desk .kvn :focus-visible{outline:2px solid #22d3ee;outline-offset:2px}
+@media(max-width:1100px){#desk .kvn-grid{grid-template-columns:1fr}#desk .kvn-r{display:grid;grid-template-columns:1fr 1fr;align-items:start}#desk .kvn-anat{grid-column:1/-1}}
+@media(max-width:820px){#desk .kvn-top{grid-template-columns:1fr}#desk .kvn-three{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){#desk .kvn-hero{padding:24px 20px;min-height:0}#desk .kvn-hero>img{width:100%;opacity:.35}#desk .kvn-chip{display:none}#desk .kvn-lead{grid-template-columns:1fr}#desk .kvn-lead .pic{min-height:170px}#desk .kvn-three{grid-template-columns:1fr}#desk .kvn-r{grid-template-columns:1fr}#desk .kvn-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}#desk .kvn-tab{flex:none}}
+@media(prefers-reduced-motion:reduce){#desk .kvn-chip::before{animation:none}}
+.kvh-main>*{max-width:1320px;margin-left:auto;margin-right:auto}
+#platform .kvx-flow li b::before{content:none;display:none}
+</style>
+<link rel="stylesheet" href="./platform/home-modern.css?v=6">
+<link rel="stylesheet" href="./platform/home-v14-pro.css?v=1">
+<link rel="stylesheet" href="./platform/home-polish.css?v=1">
+<link rel="stylesheet" href="./platform/home-global.css?v=1">
+<link rel="stylesheet" href="./platform/home-pro.css?v=1">
+<link rel="stylesheet" href="./platform/home-linear.css?v=1">
+<style id="kvar-css">
+.kvar{padding:34px 0 8px;position:relative;z-index:2}
+.kvar-in{background:var(--w);border:1px solid var(--ln);border-radius:26px;padding:22px 22px 24px;box-shadow:var(--sh);position:relative;overflow:hidden}
+.kvar-in:before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,#0891b2,#0b5fd6,#7c3aed,#f59e0b,#10b981)}
+.kvar-hd{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:4px 2px 18px}
+.kvar-hd .ey{margin-bottom:6px}
+.kvar-hd h2{font-size:clamp(20px,2.4vw,28px);max-width:none;margin:0}
+.kvar-all{display:inline-flex;align-items:center;gap:8px;font:600 14px Inter,sans-serif;color:var(--pr);text-decoration:none;padding:9px 16px;border-radius:99px;border:1px solid var(--ln);transition:background .2s,border-color .2s,gap .2s}
+.kvar-all:hover{border-color:var(--pr);gap:12px;background:color-mix(in srgb,var(--pr) 8%,transparent)}
+.kvar-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.kvar-t{--a1:#0891b2;--a2:#0b5fd6;position:relative;display:flex;flex-direction:column;gap:6px;min-height:152px;padding:16px 16px 14px;border-radius:18px;text-decoration:none;color:var(--ink);background:linear-gradient(180deg,color-mix(in srgb,var(--a1) 7%,var(--w)),var(--w));border:1px solid var(--ln);overflow:hidden;isolation:isolate;transition:transform .25s var(--ease,ease),box-shadow .25s,border-color .25s}
+.kvar-t:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(160px 110px at 100% 0,color-mix(in srgb,var(--a1) 22%,transparent),transparent 70%);opacity:.55;transition:opacity .25s}
+.kvar-t:hover,.kvar-t:focus-visible{transform:translateY(-5px);border-color:var(--a1);box-shadow:0 18px 34px -18px color-mix(in srgb,var(--a1) 70%,#000)}
+.kvar-t:hover:before{opacity:1}
+.kvar-ic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--a1),var(--a2));box-shadow:0 10px 18px -8px var(--a1);transition:transform .3s}
+.kvar-t:hover .kvar-ic{transform:rotate(-6deg) scale(1.08)}
+.kvar-ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.kvar-t b{font:700 17px Sora,Inter,sans-serif;letter-spacing:-.02em;margin-top:6px}
+.kvar-t small{font-size:12.5px;line-height:1.45;color:var(--mu);padding-right:26px}
+.kvar-go{position:absolute;right:12px;bottom:12px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--a1) 14%,transparent);color:var(--a1);font-size:15px;transition:background .25s,color .25s,transform .25s}
+.kvar-t:hover .kvar-go{background:var(--a1);color:#fff;transform:translateX(3px)}
+.kvar-tg{position:absolute;right:12px;top:12px;font:700 9.5px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:99px;color:var(--a1);background:color-mix(in srgb,var(--a1) 13%,transparent)}
+.kvar-t.c2{--a1:#7c3aed;--a2:#4f46e5}.kvar-t.c3{--a1:#e11d48;--a2:#f59e0b}.kvar-t.c4{--a1:#d97706;--a2:#f59e0b}.kvar-t.c5{--a1:#059669;--a2:#0d9488}
+@media(max-width:1060px){.kvar-row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(190px,1fr);overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;margin:0 -2px;scrollbar-width:thin}.kvar-t{scroll-snap-align:start}}
+@media(max-width:600px){.kvar{padding-top:22px}.kvar-in{padding:16px 14px 16px;border-radius:20px}.kvar-row{grid-auto-columns:78%}}
+</style>
+</head>
+<body class="kv-home">
+<a class="skip" href="#main">Skip to content</a>
+<div id="kv-global-bar"></div>
+<main id="main">
+<div class="kvh-main" id="kvh-top">
+<section class="kvh-hero" aria-labelledby="kvh-h1">
+<img src="assets/home/hero.webp" width="952" height="708" alt="" decoding="async" fetchpriority="high">
+<div class="kvh-hero-in">
+<h1 id="kvh-h1">KAIVY<span>RA</span></h1>
+<h2>Where Medical Knowledge<br>Meets Scientific Discovery</h2>
+<p>Explore the latest research, understand complex medical concepts, and stay ahead in the world of healthcare.</p>
+<form class="kvh-sf" action="/research/" method="get" role="search" aria-label="Search medical research">
+<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+<label for="kvh-q" style="position:absolute;left:-9999px">Search medical research</label>
+<input id="kvh-q" name="q" type="search" maxlength="120" autocomplete="off" placeholder="Search anything... (e.g. Diabetes, Heart, SGLT2 trial)">
+<button type="submit">Search <span aria-hidden="true">&rarr;</span></button>
+</form>
+<div class="kvh-chips" aria-label="Popular topics">
+<a href="/research/"><span aria-hidden="true">&#128293;</span>Latest Research</a>
+<a href="/research/?q=heart+health"><span aria-hidden="true">&#10084;&#65039;</span>Heart Health</a>
+<a href="/research/?q=neurology"><span aria-hidden="true">&#129504;</span>Neurology</a>
+<a href="/research/?q=COVID-19"><span aria-hidden="true">&#129440;</span>COVID-19</a>
+<a href="/knowledge/atlas/">More <span aria-hidden="true">&#9662;</span></a>
+</div>
+</div>
+<p class="kvh-tag" aria-hidden="true">Learn.<br>Research.<br>Heal.</p>
+</section>
+
+<section class="kvar" id="arena-hub" aria-labelledby="kvar-h">
+<div class="wrap"><div class="kvar-in">
+<div class="kvar-hd"><div><span class="ey">Medical Arena</span><h2 id="kvar-h">Learn, practise and compete in one tap.</h2></div><a class="kvar-all" href="/arena/">Open Medical Arena <span aria-hidden="true">&rarr;</span></a></div>
+<nav class="kvar-row" aria-label="Medical Arena sections">
+<a class="kvar-t" href="/arena/#courses"><span class="kvar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5M9 8h7M9 12h5"/></svg></span><b>Courses</b><small>Syllabus hub for every health course.</small><span class="kvar-go" aria-hidden="true">&rarr;</span></a>
+<a class="kvar-t c2" href="/arena/#colleges"><span class="kvar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span><b>Colleges</b><small>Explore and compare institutions.</small><span class="kvar-go" aria-hidden="true">&rarr;</span></a>
+<a class="kvar-t c3" href="/arena/#qb"><span class="kvar-tg">Question Bank</span><span class="kvar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 8.5l1.6 1.6L12 7.5M8 15l1.6 1.6L12 14M14.5 9h2.5M14.5 15.5H17"/></svg></span><b>Cabra</b><small>Course-wise practice and timed mock tests.</small><span class="kvar-go" aria-hidden="true">&rarr;</span></a>
+<a class="kvar-t c4" href="/arena/#comm"><span class="kvar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg></span><b>Gravity</b><small>Feedback, reviews and verified badge.</small><span class="kvar-go" aria-hidden="true">&rarr;</span></a>
+<a class="kvar-t c5" href="/arena/#arena"><span class="kvar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span><b>Quizzes</b><small>Cases, duels and practice games.</small><span class="kvar-go" aria-hidden="true">&rarr;</span></a>
+</nav>
+</div></div>
+</section>
+
+<section class="kvg" id="gravity-live" aria-labelledby="kvg-h">
+<div class="wrap"><div class="kvg-in">
+<div class="kvg-info"><span class="ey">KAIVYRA Gravity</span><h2 id="kvg-h">Feedback, reviews and live chat, in one place.</h2>
+<p>Rate every feature, read honest reviews, get a verified badge and talk with fellow learners in real time. Every message is checked by an AI moderator.</p>
+<ul class="kvg-ft"><li><i>&#128172;</i><div><b>Live chat rooms</b><span>Public rooms anyone can read, plus replies and reactions.</span></div></li><li><i>&#11088;</i><div><b>Ratings and reviews</b><span>Rate each feature and see what the community thinks.</span></div></li><li><i>&#128737;</i><div><b>AI-moderated and verified</b><span>No links, no spam, verified reviewer badges.</span></div></li></ul>
+<div class="kvg-cta"><a class="p" href="/arena/#comm">Open Gravity &rarr;</a><a id="kvg-new" href="#" target="_blank" rel="noopener">Chat in new tab</a></div></div>
+<div class="kvg-live"><div class="kvg-bar"><em>Live community chat</em><a href="/arena/#comm">Full view &rarr;</a></div>
+<div class="kvg-fr"><iframe id="kvg-f" title="KAIVYRA live chat" loading="lazy" allow="clipboard-write"></iframe><div class="kvg-off" id="kvg-off"><div><b>Live chat server is not running.</b><br><code>START-KAIVYRA.bat</code> se start karo. Ye apne aap connect ho jayega.</div></div></div></div>
+</div></div>
+</section>
+
+<section class="kvh-strip" aria-label="Latest from Europe PMC">
+<div class="kvh-intel"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></i><div><b>Today&rsquo;s Medical Intelligence</b><small>Latest papers from Europe PMC</small></div></div>
+<div class="kvh-items">
+<a class="kvh-it" href="/research/?q=infectious+disease"><img src="assets/home/n-virus.webp" width="66" height="68" alt="" loading="lazy"><div><span class="t">Latest infectious disease research</span><span class="m">Europe PMC &middot; live search</span></div></a>
+<a class="kvh-it" href="/research/?q=drug+therapy"><img src="assets/home/n-pills.webp" width="66" height="68" alt="" loading="lazy"><div><span class="t">Latest drug therapy research</span><span class="m">Europe PMC &middot; live search</span></div></a>
+<a class="kvh-it" href="/research/?q=respiratory+disease"><img src="assets/home/n-lungs.webp" width="66" height="68" alt="" loading="lazy"><div><span class="t">Latest respiratory disease research</span><span class="m">Europe PMC &middot; live search</span></div></a>
+<a class="kvh-it" href="/research/?q=gene+therapy"><img src="assets/home/n-dna.webp" width="66" height="68" alt="" loading="lazy"><div><span class="t">Latest gene therapy research</span><span class="m">Europe PMC &middot; live search</span></div></a>
+</div>
+</section>
+
+<div class="kvh-grid">
+<div class="kvh-left">
+<h2 class="kvh-h">Explore Medical Science <a href="/knowledge/atlas/">Explore All &rarr;</a></h2>
+<div class="kvh-cards">
+<a class="kvh-card" href="/clinical/#anatomy-atlas"><img src="assets/home/s-anatomy.webp" width="324" height="206" alt="" loading="lazy"><span><b>Human Anatomy</b><small>Structure &amp; Function</small></span></a>
+<a class="kvh-card" href="/research/?q=biochemistry"><img src="assets/home/s-biochem.webp" width="324" height="206" alt="" loading="lazy"><span><b>Biochemistry</b><small>Molecules &amp; Reactions</small></span></a>
+<a class="kvh-card" href="/research/?q=pathology"><img src="assets/home/s-pathology.webp" width="324" height="206" alt="" loading="lazy"><span><b>Pathology</b><small>Diseases &amp; Mechanisms</small></span></a>
+<a class="kvh-card" href="/research/?q=neuroscience"><img src="assets/home/s-neuro.webp" width="324" height="206" alt="" loading="lazy"><span><b>Neuroscience</b><small>Brain &amp; Nervous System</small></span></a>
+<a class="kvh-card" href="/clinical/#rx-formulary"><img src="assets/home/s-pharma.webp" width="324" height="206" alt="" loading="lazy"><span><b>Pharmacology</b><small>Drugs &amp; Therapeutics</small></span></a>
+</div>
+
+<h2 class="kvh-h" style="margin-top:26px">Featured Research <a href="/research/">View All Research &rarr;</a></h2>
+<article class="kvh-feat" id="kvh-feat">
+<img src="assets/home/research.webp" width="322" height="172" alt="" loading="lazy">
+<div><span class="kvh-tagp">Latest systematic review</span><h4>Find the evidence behind any claim</h4><p class="meta">Europe PMC &middot; loads live</p><p class="desc">Search real publications, see the exact query used, and open the original source.</p></div>
+<a class="kvh-btn" href="/research/">Open research search <span aria-hidden="true">&rarr;</span></a>
+</article>
+<p class="kvh-note">Papers are the newest matching records in Europe PMC. KAIVYRA does not review or endorse them. See the <a href="/legal/">sources and disclaimer</a>.</p>
+</div>
+
+<div class="kvh-right">
+<section class="kvh-anat" aria-labelledby="kvh-anat-h">
+<header><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12L4 7.5M12 12v9"/></svg><h3 id="kvh-anat-h">Human Anatomy Atlas</h3><a href="/clinical/#anatomy-atlas">Open &rarr;</a></header>
+<img src="assets/home/heart.webp" width="556" height="332" alt="" loading="lazy">
+<ul><li>32-organ directory</li><li>Vascular and nervous layers</li><li>Zoom and callout pins</li></ul>
+</section>
+<section class="kvh-sec" aria-labelledby="kvh-foc-h">
+<h2 class="kvh-h" id="kvh-foc-h">Knowledge in Focus</h2>
+<div class="kvh-focus"><img src="assets/home/brain.webp" width="226" height="140" alt="" loading="lazy"><div><h4>How the Brain Works?</h4><p>Explore neuroscience in the Research Domain Atlas.</p><a href="/knowledge/atlas/">Learn More</a></div></div>
+</section>
+</div>
+</div>
+</div>
 
 <section id="pulse" class="alt"><div class="wrap" id="kvpulse" data-state="loading">
 <div class="hd rv"><div><p class="ey">Live evidence pulse</p><h2>See how much evidence exists before you read a paper.</h2><p class="lead">Counts load straight from Europe PMC and ClinicalTrials.gov each time you open this page.</p></div>
@@ -305,17 +655,37 @@ html[data-theme=dark] #kv-global-bar .kv-theme .moon{transform:rotate(90deg) sca
 </div>
 <p class="kvpu-note">The current year is partial and shown hatched. Registry entries are submitted by sponsors and are not verified by KAIVYRA. Counts show how much has been published, not whether a treatment works.</p>
 </div></section>
-<section id="desk"><div class="wrap">
-<div class="hd rv"><div><p class="ey">Live knowledge desk</p><h2>Eight ways to read today&rsquo;s medicine, one at a time.</h2><p class="lead">Each topic stays on screen for 30 seconds, then the next one appears. The feed refreshes every minute.</p></div></div>
-<div class="kvd rv" id="kvdesk" role="region" aria-label="Live knowledge desk">
-<div class="kvd-rail" id="kvd-rail" role="tablist" aria-label="Knowledge topics" aria-orientation="vertical"></div>
-<div class="kvd-main"><div class="kvd-top"><span class="kvd-live">Live</span><span class="kvd-upd" id="kvd-upd">Connecting to Europe PMC&hellip;</span></div>
-<div class="kvd-card" id="kvd-card" role="tabpanel" aria-live="off"></div>
-<div class="kvd-foot"><div class="kvd-bar" aria-hidden="true"><b id="kvd-bar"></b></div><div class="kvd-ctl"><button type="button" id="kvd-prev" aria-label="Previous topic">&lsaquo;</button><button type="button" id="kvd-pp" aria-label="Pause auto-advance">&#10074;&#10074;</button><button type="button" id="kvd-next" aria-label="Next topic">&rsaquo;</button></div></div></div></div>
+<section id="desk" class="kvn-sec"><div class="wrap">
+<div class="kvn" id="kvdesk" role="region" aria-label="Latest medical news">
+<header class="kvn-hero">
+<img src="assets/home/news-hero.webp" width="900" height="369" alt="" loading="lazy" decoding="async">
+<div>
+<span class="kvn-badge">Global Medical Intelligence</span>
+<h2>Latest Medical <span>News</span></h2>
+<p>Stay updated with the newest research and health updates indexed from around the world.</p>
+<p class="kvn-date"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span id="kvn-today"></span><span aria-hidden="true">&middot;</span><span id="kvd-upd">Connecting to Europe PMC&hellip;</span></p>
+</div>
+<span class="kvn-chip">Live feed</span>
+</header>
+<div class="kvn-tabs" id="kvn-tabs" role="tablist" aria-label="News categories"></div>
+<div class="kvn-grid" aria-live="polite">
+<div class="kvn-l">
+<div class="kvn-box kvn-top"><article class="kvn-lead" id="kvn-lead"></article><div class="kvn-side" id="kvn-side"></div></div>
+<h3 class="kvn-h">More Medical News <a href="/research/">View All News &rarr;</a></h3>
+<div class="kvn-three" id="kvn-three"></div>
+</div>
+<aside class="kvn-r" aria-label="Live updates and facts">
+<section class="kvn-box pad"><h3>Live Medical Updates <span class="lv">Live</span></h3><ul class="kvn-ups" id="kvn-ups"></ul><a class="kvn-all" href="/research/">View All Updates &rarr;</a></section>
+<section class="kvn-box pad kvn-qf"><h3>Quick Facts</h3><dl id="kvn-qf"><div><dt>Papers indexed, last 7 days</dt><dd>&hellip;</dd></div><div><dt>Open access, last 7 days</dt><dd>&hellip;</dd></div><div><dt>Clinical trial reports, 30 days</dt><dd>&hellip;</dd></div><div><dt>Systematic reviews, 30 days</dt><dd>&hellip;</dd></div></dl><p>Live counts from Europe PMC (PubMed-indexed records). They show how much is being published, not how well it works.</p></section>
+<a class="kvn-anat" href="/clinical/#anatomy-atlas"><img src="assets/home/heart.webp" width="556" height="332" alt="" loading="lazy"><div><b>Human Anatomy Atlas</b><small>Explore the body, organ by organ.</small><span class="go">Explore Now &rarr;</span></div></a>
+</aside>
+</div>
 <p class="kvd-src" id="kvd-src"><span>Official news sources:</span> <em>not connected yet. Topic 1 shows PubMed-indexed news items from Europe PMC until the news feed is set up.</em></p>
 <p class="kvd-src"><span>Also read at the source:</span> <a href="https://www.icmr.gov.in/press-releases" target="_blank" rel="noopener noreferrer">ICMR press releases</a> <a href="https://www.mohfw.gov.in/" target="_blank" rel="noopener noreferrer">MoHFW</a> <a href="https://pib.gov.in/newsite/pmreleases.aspx?mincode=31" target="_blank" rel="noopener noreferrer">PIB health ministry releases</a> <a href="https://www.who.int/news" target="_blank" rel="noopener noreferrer">WHO news</a></p>
 <p class="kvd-note">Items belong to their original publishers. ICMR and MoHFW publish no feed of their own, so their releases appear here only when the Press Information Bureau carries them. KAIVYRA shows headlines and short summaries with links only, and does not verify or endorse them, and no listed organisation is a partner of or endorses KAIVYRA. Other topics come from Europe PMC (PubMed-indexed records). A headline is not clinical advice. See a wrong or outdated item? <a href="mailto:the.kaivyra@gmail.com?subject=Report%20an%20item%20on%20the%20live%20desk">Report it</a>. Read the full <a href="/legal/">disclaimer, sources and takedown policy</a>.</p>
-</div></section>
+
+</div></div></section>
+
 <section id="browse"><div class="wrap"><div class="hd rv"><div><p class="ey">Browse medicine</p><h2>Start from a specialty, not a keyword.</h2><p class="lead">Each domain in the Research Domain Atlas opens topic pages with ready searches, trials and tools.</p></div><a class="lnk" href="/knowledge/atlas/">View all 50 domains &rarr;</a></div>
 <div class="dg rv"><a class="dc" href="/knowledge/atlas/#d02"><span>DOMAIN 02</span><b>Medicine / Internal Medicine</b><p>Comprehensive diagnosis, prevention and management of adult diseases.</p><div class="dt"><u>Internal Medicine</u><u>General Medicine</u></div></a><a class="dc" href="/knowledge/atlas/#d03"><span>DOMAIN 03</span><b>Cardiovascular Medicine</b><p>Heart, blood vessels, circulation and cardiovascular disease.</p><div class="dt"><u>Cardiology</u><u>Interventional Cardiology</u></div></a><a class="dc" href="/knowledge/atlas/#d04"><span>DOMAIN 04</span><b>Respiratory / Pulmonary</b><p>Lungs, airways, breathing disorders and respiratory physiology.</p><div class="dt"><u>Pulmonology</u><u>Respiratory Medicine</u></div></a><a class="dc" href="/knowledge/atlas/#d05"><span>DOMAIN 05</span><b>Gastrointestinal &amp; Hepatobiliary</b><p>Digestive system, liver, biliary tract and gastrointestinal disease.</p><div class="dt"><u>Gastroenterology</u><u>Interventional Gastroenterology</u></div></a><a class="dc" href="/knowledge/atlas/#d06"><span>DOMAIN 06</span><b>Kidney &amp; Genitourinary</b><p>Renal, urinary and genitourinary systems and their disorders.</p><div class="dt"><u>Nephrology</u><u>Interventional Nephrology</u></div></a><a class="dc" href="/knowledge/atlas/#d07"><span>DOMAIN 07</span><b>Endocrine &amp; Metabolic Medicine</b><p>Hormones, metabolism, diabetes and endocrine disorders.</p><div class="dt"><u>Endocrinology</u><u>Diabetology</u></div></a><a class="dc" href="/knowledge/atlas/#d08"><span>DOMAIN 08</span><b>Neurological Sciences</b><p>Brain, spinal cord, peripheral nerves and neurological disease.</p><div class="dt"><u>Neurology</u><u>Neurophysiology</u></div></a><a class="dc" href="/knowledge/atlas/#d09"><span>DOMAIN 09</span><b>Psychiatry &amp; Behavioral Sciences</b><p>Mental health, behavior, cognition and psychological science.</p><div class="dt"><u>Psychiatry</u><u>Child &amp; Adolescent Psychiatry</u></div></a><a class="dc" href="/knowledge/atlas/#d10"><span>DOMAIN 10</span><b>Musculoskeletal Medicine</b><p>Bones, joints, muscles, connective tissue and movement disorders.</p><div class="dt"><u>Orthopaedics</u><u>Trauma &amp; Orthopaedic Surgery</u></div></a><a class="dc" href="/knowledge/atlas/#d11"><span>DOMAIN 11</span><b>Skin &amp; Related Sciences</b><p>Skin, hair, nails and dermatological science.</p><div class="dt"><u>Dermatology</u><u>Pediatric Dermatology</u></div></a><a class="dc" href="/knowledge/atlas/#d12"><span>DOMAIN 12</span><b>Eye Sciences</b><p>Vision, ophthalmology, ocular biology and eye disease.</p><div class="dt"><u>Ophthalmology</u><u>Cornea &amp; External Disease</u></div></a><a class="dc" href="/knowledge/atlas/#d13"><span>DOMAIN 13</span><b>ENT / Head &amp; Neck</b><p>Ear, nose, throat, airway and head-and-neck medicine.</p><div class="dt"><u>Otolaryngology</u><u>Otology</u></div></a></div>
 <div class="az rv"><h3>All 50 domains, A to Z</h3><div><a href="/knowledge/atlas/#d34">AI, Digital &amp; Computational Medicine</a><a href="/knowledge/atlas/#d45">Advanced Cancer &amp; Immunotherapy</a><a href="/knowledge/atlas/#d44">Advanced Cardiovascular Technology</a><a href="/knowledge/atlas/#d43">Advanced Neuroscience &amp; Neurotechnology</a><a href="/knowledge/atlas/#d23">Anesthesia &amp; Perioperative Medicine</a><a href="/knowledge/atlas/#d35">Biomedical Engineering &amp; Technology</a><a href="/knowledge/atlas/#d16">Blood &amp; Transfusion Medicine</a><a href="/knowledge/atlas/#d15">Cancer Sciences</a><a href="/knowledge/atlas/#d03">Cardiovascular Medicine</a><a href="/knowledge/atlas/#d50">Cross-Cutting &amp; Emerging Research</a><a href="/knowledge/atlas/#d14">Dental &amp; Oral Sciences</a><a href="/knowledge/atlas/#d24">Diagnostic Imaging</a><a href="/knowledge/atlas/#d13">ENT / Head &amp; Neck</a><a href="/knowledge/atlas/#d28">Emergency, Trauma &amp; Critical Care</a><a href="/knowledge/atlas/#d07">Endocrine &amp; Metabolic Medicine</a><a href="/knowledge/atlas/#d40">Environmental, Occupational &amp; Extreme Medicine</a><a href="/knowledge/atlas/#d47">Evidence &amp; Validation</a><a href="/knowledge/atlas/#d12">Eye Sciences</a><a href="/knowledge/atlas/#d39">Forensic &amp; Legal Medicine</a><a href="/knowledge/atlas/#d01">Foundation &amp; Basic Medical Sciences</a><a href="/knowledge/atlas/#d46">Future / Convergence Medicine</a><a href="/knowledge/atlas/#d05">Gastrointestinal &amp; Hepatobiliary</a><a href="/knowledge/atlas/#d33">Gene &amp; Genome Engineering</a><a href="/knowledge/atlas/#d31">Genomic / Precision / Advanced Medicine</a><a href="/knowledge/atlas/#d29">Geriatrics &amp; Long-Term Care</a><a href="/knowledge/atlas/#d18">Immunology &amp; Allergy</a><a href="/knowledge/atlas/#d17">Infectious Diseases</a><a href="/knowledge/atlas/#d06">Kidney &amp; Genitourinary</a><a href="/knowledge/atlas/#d25">Laboratory &amp; Diagnostic Medicine</a><a href="/knowledge/atlas/#d38">Medical Ethics, Law &amp; Governance</a><a href="/knowledge/atlas/#d37">Medical Research &amp; Evidence Science</a><a href="/knowledge/atlas/#d02">Medicine / Internal Medicine</a><a href="/knowledge/atlas/#d41">Military &amp; Disaster Medicine</a><a href="/knowledge/atlas/#d10">Musculoskeletal Medicine</a><a href="/knowledge/atlas/#d08">Neurological Sciences</a><a href="/knowledge/atlas/#d30">Nutrition &amp; Lifestyle Medicine</a><a href="/knowledge/atlas/#d42">One Health &amp; Planetary Health</a><a href="/knowledge/atlas/#d20">Pediatrics</a><a href="/knowledge/atlas/#d36">Pharmaceutical &amp; Therapeutic Sciences</a><a href="/knowledge/atlas/#d22">Plastic, Reconstructive &amp; Aesthetic</a><a href="/knowledge/atlas/#d09">Psychiatry &amp; Behavioral Sciences</a><a href="/knowledge/atlas/#d27">Public &amp; Population Health</a><a href="/knowledge/atlas/#d32">Regenerative &amp; Cellular Medicine</a><a href="/knowledge/atlas/#d26">Rehabilitation &amp; Disability Sciences</a><a href="/knowledge/atlas/#d19">Reproductive &amp; Women&#x27;s Health</a><a href="/knowledge/atlas/#d49">Research Methods</a><a href="/knowledge/atlas/#d04">Respiratory / Pulmonary</a><a href="/knowledge/atlas/#d11">Skin &amp; Related Sciences</a><a href="/knowledge/atlas/#d21">Surgery</a><a href="/knowledge/atlas/#d48">Translation &amp; Impact</a></div></div></div></section>
@@ -335,9 +705,6 @@ html[data-theme=dark] #kv-global-bar .kv-theme .moon{transform:rotate(90deg) sca
 </div></section>
 
 <section id="tools"><div class="wrap"><div class="hd rv"><div><p class="ey">Clinical Intelligence</p><h2>Tools clinicians reach for.</h2><p class="lead">Thirteen interactive modules with their inputs, units and formulas visible.</p></div><a class="lnk" href="/clinical/">Open the full suite &rarr;</a></div><div class="ct rv"><a href="/clinical/#calculators"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7.5h7M9 12h.01M12 12h.01M15 12h.01M9 16h.01M12 16h.01M15 16h.01"/></svg><span><b>Clinical Calculators & ABG Analysis</b><small>CKD-EPI 2021, Cockcroft-Gault, QTc and acid-base analysis with validated inputs.</small></span></a><a href="/clinical/#score-suite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0M12 17l4-5"/></svg><span><b>Clinical Score Suite</b><small>SOFA, MELD-Na, CHA2DS2-VASc, Wells and more. Awaiting clinician review.</small></span></a><a href="/clinical/#telemetry"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-6 3 12 2-6h7"/></svg><span><b>ICU Telemetry</b><small>Simulated rhythms for learning to read the monitor.</small></span></a><a href="/clinical/#pvloop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span><b>Pressure-Volume Loop</b><small>Cardiac mechanics simulation you can adjust and watch.</small></span></a><a href="/clinical/#pkpd"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5s6 6.2 6 10.5a6 6 0 0 1-12 0c0-4.3 6-10.5 6-10.5z"/></svg><span><b>Pharmacokinetics & Pharmacodynamics</b><small>Concentration and effect simulation for drug behaviour.</small></span></a><a href="/clinical/#anatomy-atlas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5.5" r="2.5"/><path d="M12 9v6M7 11l5-2 5 2M9.5 21l2.5-6 2.5 6"/></svg><span><b>Human Anatomy Atlas</b><small>Interactive anatomy for study and reference.</small></span></a></div></div></section>
-
-<section id="trust" class="tb"><div class="wrap"><div class="rv"><p class="ey">Built for trust</p><h2>Enterprise-grade discipline, without the black box.</h2><p class="lead">Every design choice favours traceability, privacy and honest limits over polish. This is what you can verify today.</p></div>
-<div class="ent-num rv" role="list" aria-label="Platform at a glance"><div role="listitem"><b data-to="9">0</b><span>Integrated modules</span></div><div role="listitem"><b data-to="13">0</b><span>Clinical modules</span></div><div role="listitem"><b data-to="50">0</b><span>Research domains</span></div><div role="listitem"><b data-to="519">0</b><span>Atlas topics</span></div><div role="listitem"><b data-to="450">0</b><span>Inquiry prompts</span></div></div><div class="grid g3 rv" style="margin-top:0"><div class="ent-c"><i>01</i><h3>Source-linked by design</h3><p>Every record links to its publisher, DOI or registry entry. KAIVYRA does not host or reproduce full papers.</p></div><div class="ent-c"><i>02</i><h3>Hardened delivery</h3><p>HTTPS with HSTS, a strict Content-Security-Policy, frame protection, and camera, microphone and location disabled by policy.</p></div><div class="ent-c"><i>03</i><h3>Private by default</h3><p>Your Workspace lives in your browser only. Saved papers, notes and history are not uploaded anywhere.</p></div><div class="ent-c"><i>04</i><h3>Transparent AI</h3><p>Retrieval first: the exact query, numbered abstract excerpts and stated limits. No generative model writes answers.</p></div><div class="ent-c"><i>05</i><h3>Honest about limits</h3><p>Inferred labels are marked as inferred, and unreviewed calculators say so. No quality scores, no silent defaults.</p></div><div class="ent-c"><i>06</i><h3>Open infrastructure</h3><p>Built on Europe PMC and ClinicalTrials.gov with no keys and no paid services, keyboard operable and light on slow connections.</p></div></div></div></section>
 
 <section id="about"><div class="wrap"><div class="rv"><p class="ey">About</p><h2>Built on a simple promise: show the source.</h2><p class="lead">Select any card. The content opens right here, with no scrolling and no page change.</p></div><div class="grid g2 rv" id="ga"></div></div></section>
 <section id="focus" class="alt"><div class="wrap"><div class="rv"><p class="ey">Focus</p><h2>Six areas where better tools change outcomes.</h2><p class="lead">Each area opens as a full panel. Move between areas without leaving the page.</p></div><div class="grid g3 rv" id="gf"></div></div></section>
@@ -369,7 +736,7 @@ focus:{t:"Where we focus",i:[
 {k:"Medical education",s:"Learn the reasoning, not the answer",l:"Topic launchers turn broad subjects into targeted literature searches, so students meet primary sources early.",p:["<b>Diseases, anatomy, physiology</b> with curated entry searches.","<b>Genetics and pharmacology</b> from mechanisms to safety.","<b>Concepts</b> such as NNT, publication bias and confounding."],n:"Encyclopedia-style articles are not yet written or editorially reviewed.",h:"/knowledge/",a:"Open Knowledge Hub"},
 {k:"Digital health access",s:"Useful on any device",l:"Good tools should work on a modest phone and a slow connection, for every learner and clinician.",p:["<b>Keyboard and screen-reader</b> operable interfaces.","<b>Light, static pages</b> that load fast and cache sensibly.","<b>Honest errors</b> when a source is unreachable, never silent failure."],n:"Real-device and screen-reader testing is still pending.",h:"/future/",a:"See the roadmap"}]}};
 var dlg=document.getElementById('dlg'),side=document.getElementById('side'),pane=document.getElementById('pane'),cur='about',idx=0,last=null;
-function card(g,key,id){document.getElementById(id).innerHTML=D[key].i.map(function(o,n){return '<button class="open" data-open="'+key+':'+n+'" aria-haspopup="dialog"><span class="ic">'+(n+1)+'</span><h3>'+o.k+'</h3><p>'+o.s+'. '+o.l.split('. ')[0]+'.</p><span class="more">OPEN PANEL &rarr;</span></button>'}).join('')}
+function card(g,key,id){document.getElementById(id).innerHTML=D[key].i.map(function(o,n){return '<button class="open" data-open="'+key+':'+n+'" aria-haspopup="dialog"><span class="ic">'+(n+1)+'</span><h3>'+o.k+'</h3><p>'+o.s+'. '+o.l.split('. ')[0].replace(/\.$/,'')+'.</p><span class="more">OPEN PANEL &rarr;</span></button>'}).join('')}
 card(0,'about','ga');card(0,'focus','gf');
 function show(k,n){cur=k;idx=n;var g=D[k];
  side.innerHTML='<h4>'+g.t+'</h4>'+g.i.map(function(o,j){return '<button class="tab" role="tab" aria-selected="'+(j===n)+'" data-t="'+j+'"><span>'+(j+1)+'</span>'+o.k+'</button>'}).join('');
@@ -389,7 +756,7 @@ document.querySelectorAll('.open,.kvp-card').forEach(function(c){c.addEventListe
 var io=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
 /* neural field */
-(function(){var c=document.getElementById('fx'),x=c.getContext('2d'),W,H,P=[],m={x:-999,y:-999};
+(function(){var c=document.getElementById('fx');if(!c)return;var x=c.getContext('2d'),W,H,P=[],m={x:-999,y:-999};
 if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
 function rs(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;P=[];var n=Math.min(70,Math.floor(W*H/18000));for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}
 rs();addEventListener('resize',rs);c.parentNode.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});
@@ -399,8 +766,9 @@ x.fillStyle='rgba(34,211,238,.7)';x.beginPath();x.arc(a.x,a.y,1.6,0,6.3);x.fill(
 for(var j=i+1;j<P.length;j++){var b=P[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<130){x.strokeStyle='rgba(129,140,248,'+(.28*(1-d/130))+')';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}}
 requestAnimationFrame(f)}f()})();
 </script>
-<script src="./platform/platform.js?v=4" defer></script>
+<script src="./platform/platform.js?v=5" defer></script>
 <script src="./platform/research-client.js?v=3" defer></script>
+<script src="./platform/hero-fx.js?v=1" defer></script>
 <script>
 window.addEventListener('load',function(){var box=document.getElementById('kvp-live');if(!box||!window.KVResearch)return;
 var R=KVResearch,esc=R.esc;
@@ -453,18 +821,6 @@ root.addEventListener('click',function(e){var b=e.target.closest('button');if(!b
 root.querySelector('form').addEventListener('submit',function(e){e.preventDefault();load(input.value)});
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){io.disconnect();load(input.value)}},{rootMargin:'300px'});io.observe(root)}else load(input.value);
 })();
-(function(){
-var bar=document.getElementById('kv-global-bar');if(!bar)return;
-var last=window.scrollY,tick=false;
-function busy(){return bar.classList.contains('kvb-mobopen')||bar.querySelector('.kvb-menu.open,.kvb-search.open')}
-function upd(){tick=false;var y=Math.max(0,window.scrollY),d=y-last;
- if(y<80||busy())bar.classList.remove('kvb-hide');
- else if(d>6)bar.classList.add('kvb-hide');
- else if(d<-6)bar.classList.remove('kvb-hide');
- if(Math.abs(d)>6)last=y}
-window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
-bar.addEventListener('focusin',function(e){if(e.target.matches&&e.target.matches(':focus-visible'))bar.classList.remove('kvb-hide')});
-upd()})();
 </script>
 <script>
 (function(){
@@ -560,62 +916,123 @@ if(T){var cards=[].slice.call(T.children);if(cards.length>3){T.id=T.id||'kvx-tru
 })();
 (function(){
 var root=document.getElementById('kvdesk');if(!root)return;
-var EP='https://www.ebi.ac.uk/europepmc/webservices/rest/search',STEP=30000,REFRESH=60000,NM=document.querySelector('meta[name=kv-news-api]'),NEWS=(NM&&NM.content||'').trim();
-var CAT=[
-{t:'Current Medical News',d:'Newest news items indexed in PubMed, with date and source. Open the source to read it in full.',q:'(PUB_TYPE:"News" OR PUB_TYPE:"Newspaper Article") AND SRC:MED',go:['/research/?q=medical+news','Search the literature']},
-{t:'Science Explained',d:'Disease, biology, mechanism and research.',q:'(pathophysiology OR "mechanism of disease") AND PUB_TYPE:"Review" AND SRC:MED',go:['/knowledge/atlas/','Browse the Atlas']},
-{t:'Public Health Knowledge',d:'Practical information for the general public.',q:'"public health" AND SRC:MED',go:['/research/?q=public+health','Search public health']},
-{t:'Student Learning',d:'Definitions, diagrams, case studies and MCQs.',q:'"medical students" AND (education OR curriculum) AND SRC:MED',go:['/arena/','Practise in Medical Arena']},
-{t:'Clinical Connection',d:'Symptoms, diagnosis and treatment principles.',q:'("clinical features" OR "diagnosis and treatment") AND PUB_TYPE:"Review" AND SRC:MED',go:['/clinical/','Open clinical tools']},
-{t:'Myths vs Facts',d:'Scientific correction of common misinformation.',q:'(misinformation OR myth OR misconception) AND SRC:MED',go:['/research/?q=misinformation','Search the evidence']},
-{t:'Knowledge Assessment',d:'Quizzes and scenario-based questions.',q:'("multiple choice" OR "clinical vignette") AND "medical education" AND SRC:MED',go:['/arena/','Try a case']},
-{t:'References',d:'WHO, ICMR, MoHFW, peer-reviewed research and official guidelines.',q:'(PUB_TYPE:"Practice Guideline" OR PUB_TYPE:"Guideline") AND SRC:MED',go:['/research/?q=guideline','Search guidelines']}];
-var stale=false,data=CAT.map(function(){return null}),i=0,elapsed=0,paused=false,userPaused=false,hold=false,last=0,okAt=0;
-var rail=document.getElementById('kvd-rail'),card=document.getElementById('kvd-card'),bar=document.getElementById('kvd-bar'),upd=document.getElementById('kvd-upd'),pp=document.getElementById('kvd-pp');
-var dp=new DOMParser(),df=new Intl.DateTimeFormat('en',{day:'numeric',month:'short',year:'numeric'});
+var EP='https://www.ebi.ac.uk/europepmc/webservices/rest/search',REFRESH=60000,NM=document.querySelector('meta[name=kv-news-api]'),NEWS=(NM&&NM.content||'').trim();
+var TABS=[
+{k:'all',t:'All News',q:'(PUB_TYPE:"News" OR PUB_TYPE:"Newspaper Article") AND SRC:MED',alt:'SRC:MED AND HAS_ABSTRACT:y',img:'news-feat'},
+{k:'research',t:'Research',q:'SRC:MED AND PUB_TYPE:"Journal Article" AND HAS_ABSTRACT:y',img:'news-feat'},
+{k:'diseases',t:'Diseases',q:'(epidemiology OR "disease outbreak" OR pathophysiology) AND SRC:MED AND HAS_ABSTRACT:y',img:'n-lungs'},
+{k:'vaccines',t:'Vaccines',q:'(vaccine OR vaccination OR immunization) AND SRC:MED AND HAS_ABSTRACT:y',img:'news-vax'},
+{k:'public',t:'Public Health',q:'"public health" AND SRC:MED AND HAS_ABSTRACT:y',img:'s-pathology'},
+{k:'tech',t:'Medical Technology',q:'("medical device" OR "artificial intelligence" OR "digital health" OR robotic) AND SRC:MED AND HAS_ABSTRACT:y',img:'s-neuro'}];
+var IM=['news-feat','n-lungs','news-vax','s-pathology','s-neuro','s-pharma'];
+var cur=0,data={},okAt=0,stale=false;
+var dp=new DOMParser(),df={format:function(d){return new Intl.DateTimeFormat(document.documentElement.lang==='hi'?'hi-IN':'en',{day:'numeric',month:'short',year:'numeric'}).format(d)}};
+function $(i){return document.getElementById(i)}
 function txt(s){return dp.parseFromString(String(s||''),'text/html').body.textContent.replace(/\s+/g,' ').trim()}
+function cut(s,n){return s.length>n?s.slice(0,n).replace(/\s+\S*$/,'')+'…':s}
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
-function link(r){return'https://europepmc.org/article/'+encodeURIComponent(r.source||'MED')+'/'+encodeURIComponent(r.id)}
 function ok2(u){return typeof u==='string'&&/^https:\/\//.test(u)}
-function nE(r){return{t:txt(r.title).replace(/\.$/,''),u:link(r),m:[when(r),txt(r.journalTitle)||'PubMed record','Europe PMC']}}
 function fd(s){var d=new Date(s);return isNaN(d)?'':df.format(d)}
-function setSrc(list){var p=document.getElementById('kvd-src');if(!p)return;p.innerHTML='';p.appendChild(el('span','','Official news sources:'));var any=false;(list||[]).forEach(function(s){if(!s.ok||!ok2(s.home))return;any=true;var a=el('a','',s.name+' ('+s.country+')');a.href=s.home;a.target='_blank';a.rel='noopener noreferrer';p.appendChild(a);if(ok2(s.terms)){var t=el('a','','terms');t.href=s.terms;t.target='_blank';t.rel='noopener noreferrer';t.style.opacity='.75';p.appendChild(t)}});if(!any)p.appendChild(el('em','','none reachable right now.'))}
-function pick(list){var out=[],seen={};list.forEach(function(x){var k=x.source&&x.source.id||'';if(!seen[k]&&out.length<4){seen[k]=1;out.push(x)}});list.forEach(function(x){if(out.length<4&&out.indexOf(x)<0)out.push(x)});return out}
-function news(){var ac=window.AbortController?new AbortController():null,tm=ac?setTimeout(function(){ac.abort()},10000):0;return fetch(NEWS,{headers:{Accept:'application/json'},signal:ac?ac.signal:undefined}).then(function(r){clearTimeout(tm);if(!r.ok)throw 0;return r.json()}).then(function(j){setSrc(j.sources);stale=!!j.stale;var ok=(j.items||[]).filter(function(x){return x&&x.title&&ok2(x.url)});return pick(ok).map(function(x){var via=x.source&&x.source.attribution?x.source.attribution:'';return{t:String(x.title),u:x.url,s:x.summary?String(x.summary):'',a:via?'Source: '+via+'. Headline and excerpt belong to the publisher; the link opens the original.':'',m:[fd(x.date),x.source&&x.source.name,x.source&&x.source.country]}})})}
-if(NEWS){CAT[0].d='Headlines from official health bodies. Each item links to its original publisher.';CAT[0].go=['#kvd-src','See all sources']}
 function when(r){var d=r.firstPublicationDate?new Date(r.firstPublicationDate+'T00:00:00'):null;return d&&!isNaN(d)?df.format(d):(r.pubYear||'')}
-CAT.forEach(function(c,k){var b=el('button','kvd-tab');b.type='button';b.setAttribute('role','tab');b.id='kvd-t'+k;b.appendChild(el('i','',String(k+1)));b.appendChild(el('span','',c.t));b.addEventListener('click',function(){show(k,true)});rail.appendChild(b)});
+function kind(r){var p=JSON.stringify(r.pubTypeList||'').toLowerCase();return/systematic/.test(p)?'Systematic review':/review/.test(p)?'Review':/clinical trial|randomized/.test(p)?'Trial':/guideline/.test(p)?'Guideline':/news/.test(p)?'News':'Research'}
+function norm(r){var id=r.pmid||r.id;return{t:txt(r.title).replace(/\.$/,''),u:'https://europepmc.org/article/'+encodeURIComponent(r.source||'MED')+'/'+encodeURIComponent(id),s:cut(txt(r.abstractText),220),src:txt(r.journalTitle)||'PubMed record',d:when(r),k:kind(r)}}
+function q(query,n,core){var ac=window.AbortController?new AbortController():null,tm=ac?setTimeout(function(){ac.abort()},10000):0;
+ return fetch(EP+'?query='+encodeURIComponent(query)+'&format=json&resultType='+(core?'core':'lite')+'&pageSize='+n+'&sort='+encodeURIComponent('P_PDATE_D desc'),{headers:{Accept:'application/json'},signal:ac?ac.signal:undefined}).then(function(r){clearTimeout(tm);if(!r.ok)throw 0;return r.json()})}
+function pj(query){return q(query,9,true).then(function(j){return(j.resultList&&j.resultList.result||[]).filter(function(r){return(r.pmid||r.id)&&r.title}).map(norm)})}
+function setSrc(list){var p=$('kvd-src');if(!p)return;p.innerHTML='';p.appendChild(el('span','','Official news sources:'));var any=false;(list||[]).forEach(function(s){if(!s.ok||!ok2(s.home))return;any=true;var a=el('a','',s.name+' ('+s.country+')');a.href=s.home;a.target='_blank';a.rel='noopener noreferrer';p.appendChild(a);if(ok2(s.terms)){var t=el('a','','terms');t.href=s.terms;t.target='_blank';t.rel='noopener noreferrer';t.style.opacity='.75';p.appendChild(t)}});if(!any)p.appendChild(el('em','','none reachable right now.'))}
+function official(){if(!NEWS)return Promise.resolve([]);var ac=window.AbortController?new AbortController():null,tm=ac?setTimeout(function(){ac.abort()},10000):0;
+ return fetch(NEWS,{headers:{Accept:'application/json'},signal:ac?ac.signal:undefined}).then(function(r){clearTimeout(tm);if(!r.ok)throw 0;return r.json()}).then(function(j){setSrc(j.sources);stale=!!j.stale;
+  return(j.items||[]).filter(function(x){return x&&x.title&&ok2(x.url)}).slice(0,9).map(function(x){return{t:String(x.title),u:x.url,s:cut(txt(x.summary),220),src:(x.source&&x.source.name)||'Official source',d:fd(x.date),k:'Official'}})}).catch(function(){return[]})}
+function fetchTab(i){var T=TABS[i];
+ if(i===0)return official().then(function(o){if(o.length>=3)return o;return pj(T.q).then(function(a){return a.length>=3?a:pj(T.alt)})});
+ return pj(T.q)}
+function pic(src,cls){var d=el('div','pic'),im=el('img');im.src='assets/home/'+src+'.webp';im.alt='';im.loading='lazy';im.decoding='async';d.appendChild(im);return d}
+function lnk(t,u){var a=el('a','',t);a.href=u;a.target='_blank';a.rel='noopener noreferrer';return a}
+function meta(r){return[r.src,r.d].filter(Boolean).join(' · ')}
 function render(){
- var c=CAT[i],d=data[i];card.innerHTML='';card.setAttribute('aria-labelledby','kvd-t'+i);card.style.animation='none';void card.offsetWidth;card.style.animation='';
- card.appendChild(el('p','kvd-desc',c.d));
- if(d===null){card.appendChild(el('p','kvd-empty','Loading the latest items\u2026'))}
- else if(!d.length){card.appendChild(el('p','kvd-empty','Nothing could be loaded for this topic right now. It will retry within a minute.'))}
- else{var r=d[0],h=el('h3'),a=el('a','',r.t);a.href=r.u;a.target='_blank';a.rel='noopener noreferrer';h.appendChild(a);card.appendChild(h);
-  var m=el('div','kvd-meta');r.m.forEach(function(s){if(s)m.appendChild(el('span','',s))});card.appendChild(m);
-  if(r.s)card.appendChild(el('p','kvd-desc',r.s));
-  if(r.a)card.appendChild(el('p','kvd-cap',r.a));
-  if(d.length>1){var ul=el('ul','kvd-more');d.slice(1,4).forEach(function(x){var li=el('li'),b=el('a','',x.t);b.href=x.u;b.target='_blank';b.rel='noopener noreferrer';li.appendChild(b);li.appendChild(el('small','',x.m.filter(Boolean).slice(0,3).join(' \u00b7 ')));ul.appendChild(li)});card.appendChild(ul)}}
- var g=el('a','kvd-go',c.go[1]);g.href=c.go[0];card.appendChild(g)}
-function show(k,manual){i=(k+CAT.length)%CAT.length;elapsed=0;[].forEach.call(rail.children,function(b,j){b.setAttribute('aria-selected',String(j===i));b.tabIndex=j===i?0:-1});
- if(manual&&window.innerWidth<=900){var s=rail.children[i];if(s&&s.scrollIntoView)s.scrollIntoView({block:'nearest',inline:'center'})}render()}
-function pj(q){return fetch(EP+'?query='+encodeURIComponent(q)+'&format=json&resultType=lite&pageSize=4&sort='+encodeURIComponent('P_PDATE_D desc'),{headers:{Accept:'application/json'}}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){return(j.resultList&&j.resultList.result||[]).filter(function(r){return r.id&&r.title}).map(nE)})}
-function load(){var cur=i;Promise.allSettled(CAT.map(function(c,k){return k===0&&NEWS?news().then(function(a){return a&&a.length?a:pj(c.q)}):pj(c.q)})).then(function(rs){var any=false;rs.forEach(function(r,k){if(r.status==='fulfilled'){data[k]=r.value;any=true}else if(data[k]===null)data[k]=[]});
- if(any){okAt=Date.now();tickLabel()}else upd.textContent='Could not reach the data services. Retrying\u2026';if(i===cur&&(data[i]&&!card.querySelector('h3')))render()})}
-function tickLabel(){if(!okAt)return;var s=Math.round((Date.now()-okAt)/1000);upd.textContent=(stale?'Showing last saved headlines \u00b7 ':'')+'Updated '+(s<5?'just now':s<60?s+' s ago':Math.floor(s/60)+' min ago')+' \u00b7 next topic in '+Math.max(0,Math.ceil((STEP-elapsed)/1000))+' s'}
-function setPaused(p){userPaused=p;pp.innerHTML=p?'&#9654;':'&#10074;&#10074;';pp.setAttribute('aria-label',p?'Resume auto-advance':'Pause auto-advance')}
-document.getElementById('kvd-prev').addEventListener('click',function(){show(i-1,true)});
-document.getElementById('kvd-next').addEventListener('click',function(){show(i+1,true)});
-pp.addEventListener('click',function(){setPaused(!userPaused)});
-root.addEventListener('mouseenter',function(){hold=true});root.addEventListener('mouseleave',function(){hold=false});
-root.addEventListener('focusin',function(){hold=true});root.addEventListener('focusout',function(){hold=false});
-rail.addEventListener('keydown',function(e){var k=e.key==='ArrowDown'||e.key==='ArrowRight'?1:e.key==='ArrowUp'||e.key==='ArrowLeft'?-1:0;if(k){e.preventDefault();show(i+k,true);rail.children[i].focus()}});
-if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)setPaused(true);
-var vis=true;if('IntersectionObserver' in window)new IntersectionObserver(function(en){vis=en[0].isIntersecting},{threshold:.15}).observe(root);
-last=Date.now();setInterval(function(){var now=Date.now(),dt=now-last;last=now;
- if(!userPaused&&!hold&&vis&&!document.hidden){elapsed+=dt;if(elapsed>=STEP)show(i+1,false)}
- bar.style.width=Math.min(100,elapsed/STEP*100)+'%';tickLabel()},250);
-show(0,false);load();setInterval(function(){if(!document.hidden)load()},REFRESH);
+ var T=TABS[cur],d=data[T.k],L=$('kvn-lead'),S=$('kvn-side'),M=$('kvn-three'),U=$('kvn-ups');
+ [L,S,M,U].forEach(function(n){n.innerHTML=''});
+ if(d==null){L.appendChild(el('p','kvn-empty','Loading the latest items…'));return}
+ if(!d.length){L.appendChild(el('p','kvn-empty','Nothing could be loaded for this category right now. It will retry within a minute.'));return}
+ var a=d[0];L.style.display='';
+ var p=pic(T.img);p.appendChild(el('span','kvn-kind',a.k));L.appendChild(p);
+ var tx=el('div','tx'),h=el('h3');h.appendChild(lnk(a.t,a.u));tx.appendChild(h);if(a.s)tx.appendChild(el('p','',a.s));
+ var f=el('div','kvn-foot');f.appendChild(el('span','',meta(a)));var rd=lnk('Read More →',a.u);rd.className='kvn-read';f.appendChild(rd);tx.appendChild(f);L.appendChild(tx);
+ d.slice(1,3).forEach(function(r,j){var c=el('article','kvn-sc');c.appendChild(pic(j?'news-vax':'n-lungs'));var b=el('div'),h4=el('h4');h4.appendChild(lnk(r.t,r.u));b.appendChild(h4);if(r.s)b.appendChild(el('p','',cut(r.s,90)));b.appendChild(el('small','',meta(r)));c.appendChild(b);S.appendChild(c)});
+ d.slice(3,6).forEach(function(r,j){var c=el('article','kvn-mc kvn-box'),p2=pic(IM[(cur+j+3)%IM.length]);p2.appendChild(el('span','kvn-kind',r.k));c.appendChild(p2);var b=el('div','b'),h4=el('h4');h4.appendChild(lnk(r.t,r.u));b.appendChild(h4);if(r.s)b.appendChild(el('p','',cut(r.s,100)));b.appendChild(el('small','',meta(r)));c.appendChild(b);M.appendChild(c)});
+ d.slice(6,9).forEach(function(r){var li=el('li'),b=el('div');b.appendChild(lnk(cut(r.t,80),r.u));b.appendChild(el('small','',meta(r)));li.appendChild(b);U.appendChild(li)});
+ if(!U.children.length){var li=el('li');li.appendChild(el('div','','More items appear as the feed refreshes.'));U.appendChild(li)}
+}
+function show(i,focus){cur=i;[].forEach.call($('kvn-tabs').children,function(b,j){if(b.getAttribute('role')!=='tab')return;b.setAttribute('aria-selected',String(j===i));b.tabIndex=j===i?0:-1;if(focus&&j===i)b.focus()});render();load(i)}
+function tickLabel(){if(!okAt)return;var s=Math.round((Date.now()-okAt)/1000),hi=document.documentElement.lang==='hi';var ago=hi?(s<5?'अभी-अभी':s<60?s+' सेकंड पहले':Math.floor(s/60)+' मिनट पहले'):(s<5?'just now':s<60?s+' s ago':Math.floor(s/60)+' min ago');$('kvd-upd').textContent=(stale?(hi?'पिछली सहेजी सुर्खियाँ \u00b7 ':'Showing last saved headlines \u00b7 '):'')+(hi?'अपडेट: ':'Updated ')+ago+(hi?' \u00b7 हर मिनट रिफ्रेश':' \u00b7 refreshes every minute')}
+function load(i){var T=TABS[i];fetchTab(i).then(function(a){data[T.k]=a;okAt=Date.now();tickLabel();if(i===cur)render()}).catch(function(){if(data[T.k]==null)data[T.k]=[];if(i===cur)render();if(!okAt)$('kvd-upd').textContent='Could not reach the data services. Retrying…'})}
+/* tabs */
+var tabs=$('kvn-tabs');
+TABS.forEach(function(T,i){var b=el('button','kvn-tab',T.t);b.type='button';b.setAttribute('role','tab');b.addEventListener('click',function(){show(i,false)});b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(k){e.preventDefault();show((i+k+TABS.length)%TABS.length,true)}});tabs.appendChild(b)});
+var more=el('a','kvn-tab more','More ▾');more.href='/knowledge/atlas/';tabs.appendChild(more);
+$('kvn-today').textContent=df.format(new Date());
+/* quick facts: live Europe PMC counts */
+function ymd(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function rng(days){var e=new Date(),s=new Date(Date.now()-days*864e5);return'FIRST_PDATE:['+ymd(s)+' TO '+ymd(e)+']'}
+var nf=new Intl.NumberFormat('en');
+function facts(){var Q=['SRC:MED AND '+rng(7),'SRC:MED AND OPEN_ACCESS:y AND '+rng(7),'SRC:MED AND PUB_TYPE:"Clinical Trial" AND '+rng(30),'SRC:MED AND TITLE:"systematic review" AND '+rng(30)],dd=$('kvn-qf').querySelectorAll('dd');
+ Q.forEach(function(x,i){q(x,1,false).then(function(j){if(typeof j.hitCount==='number')dd[i].textContent=nf.format(j.hitCount)}).catch(function(){dd[i].textContent='n/a'})})}
+show(0,false);facts();
+function hashTab(){var m=/^#news-(\w+)$/.exec(location.hash);if(!m)return;for(var i=0;i<TABS.length;i++)if(TABS[i].k===m[1]){show(i,false);var d=$('desk');if(d)d.scrollIntoView({behavior:'smooth',block:'start'});break}}
+hashTab();addEventListener('hashchange',hashTab);
+setInterval(function(){if(!document.hidden){load(cur);tickLabel()}},REFRESH);
+setInterval(tickLabel,5000);
+document.addEventListener('kv:lang',function(){$('kvn-today').textContent=df.format(new Date());tickLabel();render()});
 })();
 </script>
+<script>
+(function(){
+'use strict';
+var API='https://www.ebi.ac.uk/europepmc/webservices/rest/search',parser=new DOMParser();
+function $(s,r){return(r||document).querySelector(s)}
+function txt(s){return(parser.parseFromString('<!doctype html><body>'+String(s||''),'text/html').body.textContent||'').replace(/\s+/g,' ').trim()}
+function cut(s,n){return s.length>n?s.slice(0,n).replace(/\s+\S*$/,'')+'…':s}
+function get(query,core){
+ var ac=window.AbortController?new AbortController():null,tm=ac?setTimeout(function(){ac.abort()},10000):0;
+ var u=API+'?query='+encodeURIComponent(query)+'&format=json&pageSize=1&sort=P_PDATE_D%20desc&resultType='+(core?'core':'lite');
+ return fetch(u,{headers:{Accept:'application/json'},signal:ac?ac.signal:undefined}).then(function(r){clearTimeout(tm);if(!r.ok)throw 0;return r.json()}).then(function(j){var a=j&&j.resultList&&j.resultList.result;return a&&a[0]||null});
+}
+function href(r){var id=r&&(r.pmid||r.id);return id?'https://europepmc.org/article/'+encodeURIComponent(r.source||'MED')+'/'+encodeURIComponent(id):''}
+function meta(r){return[txt(r.journalTitle)||'Europe PMC',r.pubYear].filter(Boolean).join(' · ')}
+
+/* intelligence strip: one latest paper per topic; the static cards stay if anything fails */
+var Q=['infectious disease','drug therapy','respiratory disease','gene therapy'];
+[].forEach.call(document.querySelectorAll('.kvh-it'),function(a,i){
+ get('('+Q[i]+') AND SRC:MED AND HAS_ABSTRACT:y').then(function(r){
+  var h=href(r);if(!r||!r.title||!h)return;
+  a.href=h;a.target='_blank';a.rel='noopener noreferrer';
+  $('.t',a).textContent=cut(txt(r.title),120);$('.m',a).textContent=meta(r);
+ }).catch(function(){});
+});
+
+/* featured research: newest systematic review with an abstract */
+var f=document.getElementById('kvh-feat');
+if(f)get('TITLE:"systematic review" AND HAS_ABSTRACT:y AND SRC:MED',true).then(function(r){
+ var h=href(r);if(!r||!r.title||!h)return;
+ $('h4',f).textContent=cut(txt(r.title),150);
+ $('.meta',f).textContent=meta(r);
+ var d=txt(r.abstractText);$('.desc',f).textContent=d?cut(d,230):'Open the record in Europe PMC to read the abstract.';
+ var b=$('.kvh-btn',f);b.href=h;b.target='_blank';b.rel='noopener noreferrer';b.innerHTML='Read paper <span aria-hidden="true">→</span>';
+}).catch(function(){});
+
+/* sidebar theme switch drives the existing toggle in the top bar */
+var D=document.documentElement,pill=$('.kvh-theme');
+if(pill){
+ var sync=function(){var dark=D.dataset.theme==='dark';[].forEach.call(pill.querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',String((b.dataset.t==='dark')===dark))})};
+ pill.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+  if((D.dataset.theme==='dark'?'dark':'light')!==b.dataset.t){var t=document.getElementById('kv-theme');if(t)t.click()}});
+ if(window.MutationObserver)new MutationObserver(sync).observe(D,{attributes:true,attributeFilter:['data-theme']});
+ sync();
+}
+})();
+</script>
+<script>(function(){var u=(window.KV_ADDA_URL||"https://kaivyra-community.onrender.com").replace(/\/$/,""),f=document.getElementById("kvg-f"),o=document.getElementById("kvg-off"),n=document.getElementById("kvg-new"),on=false;if(!f)return;n.href=u+"/#/chat";
+function ping(){var c=new AbortController(),t=setTimeout(function(){c.abort()},3000);fetch(u+"/status",{signal:c.signal}).then(function(){clearTimeout(t);if(!on){on=true;o.classList.remove("on");f.src=u+"/?embed=1#/chat"}}).catch(function(){clearTimeout(t);if(!on){o.classList.add("on");setTimeout(ping,4000)}})}
+ping()})();</script>
 </body>
 </html>

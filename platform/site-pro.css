@@ -1,0 +1,156 @@
+/* KAIVYRA site-pro v1
+   1) Home-page "Connect" band + dark footer, reused on every inner page
+   2) Professional click / hover / page-transition polish for all inner pages
+   Presentation only: no existing IDs, markup or behaviour is changed. */
+
+:root{
+  --kvs-grad:linear-gradient(120deg,#0891b2 0%,#0b5fd6 55%,#4f46e5 100%);
+  --kvs-ease:cubic-bezier(.2,.7,.2,1);
+}
+
+/* =====================================================================
+   1. PAGE TRANSITIONS (cross-document fade where supported)
+   ===================================================================== */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:kvs-out .16s ease both}
+::view-transition-new(root){animation:kvs-in .34s var(--kvs-ease) both}
+@keyframes kvs-out{to{opacity:0}}
+@keyframes kvs-in{from{opacity:0;transform:translateY(8px)}}
+
+/* page content rises in softly (backwards fill: no lingering transform, so fixed children are safe) */
+body.kv-page>main,body.kv-page>.kv-wrap{animation:kvs-rise .55s var(--kvs-ease) backwards}
+@keyframes kvs-rise{from{opacity:0;transform:translateY(14px)}}
+
+/* thin route-progress bar shown the instant any internal link is clicked */
+#kvs-prog{position:fixed;left:0;top:0;height:3px;width:100%;z-index:2147483000;pointer-events:none;
+  background:var(--kvs-grad);transform:scaleX(0);transform-origin:0 50%;opacity:0;
+  box-shadow:0 0 12px rgba(34,211,238,.65)}
+#kvs-prog.on{opacity:1;transform:scaleX(.78);transition:transform 6s cubic-bezier(.1,.8,.2,1),opacity .15s}
+body.kvs-leaving{cursor:progress}
+body.kvs-leaving>main,body.kvs-leaving>.kv-wrap{opacity:.55;transition:opacity .25s}
+
+/* =====================================================================
+   2. HEADINGS: confident page header with an accent bar
+   ===================================================================== */
+body.kv-page .kv-h1::after{content:"";display:block;width:76px;height:4px;border-radius:4px;margin-top:18px;
+  background:var(--kvs-grad);box-shadow:0 6px 18px -4px rgba(11,95,214,.6)}
+body.kv-page .kv-h2{position:relative;padding-left:14px}
+body.kv-page .kv-h2::before{content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:4px;border-radius:4px;background:var(--kvs-grad)}
+
+/* =====================================================================
+   3. CARDS, RESULTS, TABS: lift, glow, press
+   ===================================================================== */
+body.kv-page .kv-card,body.kv-page .kv-result{
+  transition:transform .28s var(--kvs-ease),box-shadow .28s var(--kvs-ease),border-color .25s,background .25s}
+body.kv-page a.kv-card{position:relative;overflow:hidden;text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent}
+body.kv-page a.kv-card::after{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--kvs-grad);
+  transform:scaleX(0);transform-origin:0 50%;transition:transform .4s var(--kvs-ease)}
+body.kv-page a.kv-card:hover{transform:translateY(-4px)}
+body.kv-page a.kv-card:hover::after{transform:scaleX(1)}
+body.kv-page a.kv-card:active{transform:translateY(-1px) scale(.992);transition-duration:.08s}
+body.kv-page .kv-result:hover{transform:translateY(-2px)}
+body.kv-page a.kv-card:focus-visible,body.kv-page .kv-btn:focus-visible,body.kv-page .kv-link:focus-visible,
+body.kv-page button:focus-visible,body.kv-page summary:focus-visible{
+  outline:2px solid var(--kv-cyan,#22d3ee);outline-offset:3px;border-radius:12px}
+
+/* =====================================================================
+   4. BUTTONS: press feedback and ripple
+   ===================================================================== */
+body.kv-page .kv-btn{position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent}
+body.kv-page .kv-btn{transition:transform .2s var(--kvs-ease),box-shadow .25s,filter .2s,background .2s,border-color .2s}
+body.kv-page .kv-btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px -12px rgba(11,95,214,.65);filter:brightness(1.05)}
+body.kv-page .kv-btn:active{transform:translateY(0) scale(.97);box-shadow:none;transition-duration:.06s}
+body.kv-page .kv-btn.ghost:hover{background:var(--kv-ring,rgba(34,211,238,.12));box-shadow:none}
+body.kv-page .kv-btn[disabled]{transform:none;box-shadow:none;filter:none}
+.kvs-ripple{position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,255,255,.38);
+  transform:scale(0);animation:kvs-rip .6s ease-out forwards}
+html.light .kvs-ripple{background:rgba(11,95,214,.22)}
+@keyframes kvs-rip{to{transform:scale(1);opacity:0}}
+
+/* inputs: friendly focus */
+body.kv-page .kv-input,body.kv-page .kv-select,body.kv-page .kv-textarea{transition:border-color .2s,box-shadow .2s,background .2s}
+
+/* newly rendered items (search results, lists) and below-the-fold blocks fade up */
+.kvs-new{animation:kvs-pop .45s var(--kvs-ease) backwards}
+@keyframes kvs-pop{from{opacity:0;transform:translateY(12px)}}
+.kvs-rv{opacity:0;transform:translateY(18px);transition:opacity .6s var(--kvs-ease),transform .6s var(--kvs-ease)}
+.kvs-rv.kvs-in{opacity:1;transform:none}
+
+/* scrollbar + selection */
+html{scrollbar-width:thin;scrollbar-color:rgba(100,130,180,.5) transparent}
+::selection{background:rgba(34,211,238,.32)}
+html{scroll-behavior:smooth}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .kvs-rv{opacity:1;transform:none}
+}
+
+/* =====================================================================
+   5. CONNECT BAND + FOOTER (identical look to the main page)
+   ===================================================================== */
+#kvs-end{display:block;margin-top:56px;font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;
+  -webkit-font-smoothing:antialiased;text-align:left;line-height:1.5}
+#kvs-end *{box-sizing:border-box}
+#kvs-end .kvs-wrap{max-width:1240px;margin:0 auto;padding:0 24px;box-sizing:content-box}
+#kvs-end a{text-decoration:none}
+
+/* band */
+.kvs-band{padding:8px 0 44px;background:transparent}
+.kvs-con{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center;
+  padding:38px 42px;border-radius:26px;color:#fff;
+  background:linear-gradient(125deg,#0b3fa8 0%,#0b5fd6 45%,#4f46e5 100%);
+  box-shadow:0 40px 70px -40px rgba(11,63,168,.8)}
+.kvs-con::before,.kvs-con::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.kvs-con::before{width:420px;height:420px;right:-120px;top:-180px;background:radial-gradient(circle,rgba(255,255,255,.2),transparent 65%)}
+.kvs-con::after{width:320px;height:320px;left:-90px;bottom:-170px;background:radial-gradient(circle,rgba(34,211,238,.28),transparent 65%)}
+.kvs-con>*{position:relative;z-index:1}
+.kvs-ey{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;padding:6px 14px;border-radius:999px;
+  font:600 12.5px Inter,sans-serif;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3)}
+.kvs-ey::before{content:"";width:7px;height:7px;border-radius:50%;background:#fff}
+.kvs-con h2{margin:0;max-width:16ch;color:#fff;font:800 clamp(26px,3vw,36px)/1.12 Sora,Inter,sans-serif;letter-spacing:-.025em;
+  background:none;-webkit-text-fill-color:#fff;padding:0}
+.kvs-con h2::before,.kvs-con h2::after{display:none}
+.kvs-lead{margin:12px 0 0;max-width:52ch;font-size:16px;line-height:1.65;color:#dbe7ff}
+.kvs-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.kvs-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:11px;cursor:pointer;
+  font:700 15px Inter,sans-serif;color:#4a2f00;background:#ffb703;border:1.5px solid transparent;
+  box-shadow:0 14px 26px -14px rgba(0,0,0,.6);transition:transform .2s var(--kvs-ease),box-shadow .2s,background .2s}
+.kvs-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(255,183,3,.75)}
+.kvs-btn:active{transform:scale(.97)}
+.kvs-btn.o{color:#fff;background:transparent;border-color:rgba(255,255,255,.55);box-shadow:none}
+.kvs-btn.o:hover{background:rgba(255,255,255,.14);box-shadow:none}
+.kvs-lk{display:grid;gap:10px;width:100%;max-width:460px;justify-self:end}
+.kvs-lk a{display:flex;align-items:center;gap:16px;padding:16px 20px;border-radius:15px;color:#fff;
+  font:700 15px Inter,sans-serif;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+  backdrop-filter:blur(6px);transition:transform .25s var(--kvs-ease),background .25s,border-color .25s}
+.kvs-lk a:hover{transform:translateX(5px);background:rgba(255,255,255,.24);border-color:rgba(255,255,255,.45)}
+.kvs-lk small{display:block;font:400 12.5px Inter,sans-serif;color:#dbe7ff}
+.kvs-lk svg{width:22px;height:22px;flex:none}
+
+/* footer */
+.kvs-foot{position:relative;background:#050f24;color:#b9cae6;padding:46px 0 112px}
+.kvs-foot::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--kvs-grad)}
+.kvs-fg{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:32px;align-items:start;padding-bottom:22px}
+.kvs-fg strong{display:block;color:#fff;font:800 24px Sora,Inter,sans-serif}
+.kvs-fg p{margin:12px 0 0;max-width:36ch;font-size:14px;line-height:1.6;color:#8ea3c4}
+.kvs-fg h4{margin:0 0 14px;font:700 12px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7f93b4}
+.kvs-fg a{display:block;padding:5px 0;font-size:14.5px;color:#b9cae6;transition:color .2s,transform .2s}
+.kvs-fg a:hover{color:#67e8f9;transform:translateX(2px)}
+.kvs-fb{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;gap:12px 16px;
+  justify-content:space-between;font-size:12.5px;color:#6f84a6}
+
+@media(max-width:1040px){
+  .kvs-con{grid-template-columns:1fr}
+  .kvs-lk{justify-self:stretch;max-width:none}
+  .kvs-fg{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  #kvs-end .kvs-wrap{padding:0 16px}
+  .kvs-con{padding:28px 22px}
+  .kvs-fg{grid-template-columns:1fr}
+}
+
+/* pages whose <body> has its own side padding: let the footer run edge to edge */
+body.kv-er #kvs-end{margin-left:-16px;margin-right:-16px;margin-bottom:-28px}

@@ -1,0 +1,80 @@
+/* KAIVYRA v14 pro: loaded last. Same content, tighter and more modern layout (~20%+ shorter page). */
+
+/* ===== hero: animated scenes behind the body image ===== */
+.kvh-hero{--fx:255,77,109}
+.kvx-fx{position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none;background:#030a1c}
+.kvx-fx canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.6s ease;will-change:opacity}
+.kvx-fx canvas.on{opacity:1}
+.kvh-hero>img{mix-blend-mode:screen}               /* dark image background lets the scenes through; body stays intact */
+.kvh-hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(3,9,24,.70) 0,rgba(3,9,24,.38) 42%,transparent 72%)}
+.kvx-ui{position:absolute;right:20px;top:16px;z-index:3;display:flex;align-items:center;gap:14px;padding:7px 8px 7px 14px;border-radius:99px;background:rgba(6,14,34,.55);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font:600 12px/1 Inter,sans-serif;color:#e6f0ff}
+.kvx-cap{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}.kvx-cap i{width:7px;height:7px;border-radius:50%;background:rgb(var(--fx));box-shadow:0 0 10px rgb(var(--fx));transition:.6s}.kvx-cap small{font-weight:500;color:#9db3d6}
+.kvx-dots{display:flex;gap:4px}.kvx-dots button{position:relative;width:26px;height:22px;border:0;background:none;padding:0;cursor:pointer}
+.kvx-dots button::before{content:"";position:absolute;left:3px;right:3px;top:10px;height:3px;border-radius:3px;background:rgba(255,255,255,.22)}
+.kvx-dots button::after{content:"";position:absolute;left:3px;top:10px;height:3px;border-radius:3px;background:rgb(var(--fx));width:0}
+.kvx-dots button.on::after{animation:kvxp 7s linear forwards}@keyframes kvxp{to{width:calc(100% - 6px)}}
+.kvx-still .kvx-dots button.on::after{animation:none;width:calc(100% - 6px)}
+@media(max-width:760px){.kvx-cap small{display:none}.kvx-ui{right:12px;top:12px}}
+@media(prefers-reduced-motion:reduce){.kvx-dots button.on::after{animation:none;width:calc(100% - 6px)}}
+
+/* ===== rhythm: tighter vertical spacing everywhere ===== */
+#pulse,#desk,#browse,#platform,#tools,#about,#focus,#contact{padding:48px 0}
+.kvh-main{padding-bottom:20px}
+.hd{margin-bottom:22px}
+#pulse h2,#browse h2,#platform h2,#tools h2,#about h2,#focus h2,#contact h2{font-size:clamp(26px,3vw,38px);margin-bottom:8px}
+#pulse .lead,#browse .lead,#platform .lead,#tools .lead,#about .lead,#focus .lead{font-size:16px}
+.ey{margin-bottom:10px}
+
+/* ===== evidence pulse ===== */
+#pulse .kvpu-chips{margin:0 0 14px}
+#pulse .kvpu-c{padding:18px 22px 14px}
+#pulse .kvpu-note{margin-top:12px}
+
+/* ===== news desk ===== */
+#desk .kvn-hero{min-height:190px;padding:24px 34px}
+#desk .kvn-hero h2{font-size:clamp(30px,3.8vw,44px);margin:10px 0 6px}
+
+/* ===== browse medicine ===== */
+#browse .dg{gap:12px}
+#browse .dc{padding:15px 16px;gap:6px;border-radius:16px}
+#browse .dc p{-webkit-line-clamp:2;font-size:13px;line-height:1.45}
+#browse .dc b{font-size:15.5px}
+#browse .az{margin-top:20px;padding:20px 22px;border-radius:18px}
+
+/* ===== platform ===== */
+#platform .kvx-flow{margin:22px 0 16px;gap:10px}
+#platform .kvx-flow li{padding:14px 15px;gap:6px}
+#platform .grid{margin-top:14px;gap:12px}
+#platform .g4 .kvp-card.w2{grid-column:span 1}          /* four cards in one row, no orphan */
+#platform .kvp-card{padding:20px;gap:8px;border-radius:18px}
+#platform .kvp-card h3{font-size:18px}#platform .kvp-card p{font-size:13.5px;line-height:1.5}
+#platform .kvp-card .viz{max-height:34px;overflow:hidden}
+#platform .kvx-kn{margin-top:20px;padding:24px 28px;border-radius:22px;gap:26px}
+#platform .kvx-kn h3{font-size:22px;margin-bottom:8px}
+#platform .kvx-tbl{margin-top:18px}
+#platform .kvx-tbl caption{padding:16px 22px 6px;font-size:16px}
+#platform .kvx-tbl th,#platform .kvx-tbl td{padding:9px 22px}
+#platform .kvp-live{margin-top:16px}
+
+/* ===== tools ===== */
+#tools .ct{gap:12px}#tools .ct a{padding:16px 18px;border-radius:16px}
+
+/* ===== about + focus: heading left, cards right (Google/NVIDIA style) ===== */
+#about .wrap,#focus .wrap{display:grid;grid-template-columns:minmax(240px,.78fr) 2fr;gap:44px;align-items:start}
+#about .wrap>.rv:first-child,#focus .wrap>.rv:first-child{position:sticky;top:96px}
+#about .grid,#focus .grid{margin-top:0;gap:12px}
+#about .open,#focus .open{padding:18px 20px;gap:6px;border-radius:18px}
+#about .open h3,#focus .open h3{font-size:17px}
+#about .open p,#focus .open p{font-size:13.5px;line-height:1.5}
+#focus .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* ===== contact + footer ===== */
+#contact{padding:32px 0 40px}
+.ent-con{padding:34px 38px;gap:28px;border-radius:26px}
+.ent-con h2{font-size:clamp(26px,3vw,36px)}
+footer{padding-top:36px!important}
+footer .fg{gap:28px!important;padding-bottom:22px!important}
+
+/* ===== responsive ===== */
+@media(max-width:1040px){#about .wrap,#focus .wrap{grid-template-columns:1fr;gap:20px}#about .wrap>.rv:first-child,#focus .wrap>.rv:first-child{position:static}#focus .g3{grid-template-columns:repeat(2,minmax(0,1fr))}#platform .g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){#pulse,#desk,#browse,#platform,#tools,#about,#focus,#contact{padding:38px 0}#focus .g3,#about .g2{grid-template-columns:1fr}#platform .g4{grid-template-columns:1fr}.ent-con{padding:26px 22px}}

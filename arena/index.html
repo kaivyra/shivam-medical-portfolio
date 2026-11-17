@@ -8,15 +8,23 @@
 <link rel="canonical" href="https://kaivyra.in/arena/">
 <link rel="icon" href="/assets/favicon.png">
 <link rel="stylesheet" href="/platform/platform.css">
+<link rel="stylesheet" href="/platform/modern.css?v=6">
+<link rel="stylesheet" href="/platform/site-pro.css?v=1">
 <style>
-html,body{height:100%;margin:0}
-body.kv-page{padding-top:var(--kv-bar-h,76px);overflow:hidden}
+html,body{margin:0}
+body.kv-page{padding-top:var(--kv-bar-h,76px)}
 #kv-app{display:block;width:100%;height:calc(100vh - var(--kv-bar-h,76px));height:calc(100dvh - var(--kv-bar-h,76px));border:0;background:#0a1322}
 </style>
 </head>
 <body class="kv-page" data-kv-section="arena">
 <div id="kv-global-bar"></div>
-<iframe id="kv-app" src="/arena/app.html" title="Medical Arena" allow="clipboard-write" loading="eager"></iframe>
+<iframe id="kv-app" title="Medical Arena" allow="clipboard-write" loading="eager"></iframe>
+<script>
+(function(){var f=document.getElementById("kv-app"),ok=/^#(hub|courses|colleges|arena|study|qb|comm)$/;
+function h(){return ok.test(location.hash)?location.hash:""}
+f.src="/arena/app.html?v=30"+h();
+addEventListener("hashchange",function(){try{if(h())f.contentWindow.location.hash=h()}catch(e){}});})();
+</script>
 <noscript><p style="padding:24px;color:#eef2f9">JavaScript is required. <a href="/arena/app.html" style="color:#22d3ee">Open Medical Arena directly</a>.</p></noscript>
 <script src="/platform/platform.js"></script>
 </body>

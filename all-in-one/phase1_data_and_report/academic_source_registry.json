@@ -1,0 +1,167 @@
+{
+  "schema_version": "0.1.0",
+  "generated_on": "2026-11-08",
+  "status": "PARTIALLY_VERIFIED",
+  "verification_policy": "verified_* means the identifier was seen on the named page on the date recorded. Moore and Terminologia Anatomica remain pending.",
+  "sources": [
+    {
+      "source_id": "SRC-TB-001",
+      "type": "textbook",
+      "title": "Gray's Anatomy: The Anatomical Basis of Clinical Practice, 42nd edition",
+      "editor": "Standring S",
+      "publisher": "Elsevier",
+      "year": 2020,
+      "identifiers": {
+        "isbn": "978-0-7020-7705-0"
+      },
+      "verification_status": "verified_catalogue",
+      "note": "ISBN 9780702077050, 42nd edition, Elsevier, Standring (ed.), found on the Elsevier educator page and a library catalogue (pub. Oct 2020; catalogue shows 2021). Page counts differ by market, so none is recorded.",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "source_id": "SRC-TB-002",
+      "type": "textbook",
+      "title": "Clinically Oriented Anatomy",
+      "author": "Moore KL, Dalley AF, Agur AMR",
+      "publisher": "Wolters Kluwer",
+      "edition": "confirm current edition",
+      "identifiers": {},
+      "verification_status": "pending_live_check",
+      "note": "Edition, year and ISBN to be confirmed."
+    },
+    {
+      "source_id": "SRC-TB-003",
+      "type": "textbook",
+      "title": "Terminologia Anatomica (international anatomical terminology)",
+      "publisher": "FIPAT / Thieme",
+      "identifiers": {},
+      "verification_status": "pending_live_check",
+      "note": "Confirm the edition used for nomenclature."
+    },
+    {
+      "source_id": "SRC-GL-001",
+      "type": "clinical_guideline",
+      "title": "2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease",
+      "identifiers": {
+        "pmid": "33332150",
+        "doi": "10.1161/CIR.0000000000000923"
+      },
+      "verification_status": "verified_via_secondary_index",
+      "note": "Citation and identifiers match the Guideline Central record. PubMed was opened for the separate Executive Summary (PMID 33332149, DOI 10.1161/CIR.0000000000000932, Circulation 2021;143(5):e35-e71), not for this full-guideline record. Do not mix the two.",
+      "verified_on": "2026-11-08",
+      "citation": "Otto CM et al. Circulation. 2021 Feb 2;143(5):e72-e227 (erratum e229)."
+    },
+    {
+      "source_id": "SRC-GL-002",
+      "type": "official_summary",
+      "title": "Top Things to Know: 2020 ACC/AHA VHD Guideline",
+      "publisher": "American Heart Association (professional.heart.org)",
+      "url": "https://professional.heart.org/en/science-news/2020-acc-aha-guideline-for-the-management-of-patients-with-valvular-heart-disease/top-things-to-know",
+      "verification_status": "opened",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "source_id": "SRC-GL-003",
+      "type": "official_summary",
+      "title": "2020 ACC/AHA Heart Valve Disease Guideline: Key Perspectives, Parts 2 and 3",
+      "publisher": "American College of Cardiology (acc.org)",
+      "urls": [
+        "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2020/12/16/22/00/2020-ACC-AHA-VHD-GL-Pt-2-GL-VHD",
+        "https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2020/12/16/22/01/2020-ACC-AHA-VHD-GL-Pt-3-GL-VHD"
+      ],
+      "verification_status": "opened",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "source_id": "SRC-GOV-001",
+      "type": "government_curriculum",
+      "title": "Competency Based Undergraduate Curriculum (UG CBME)",
+      "publisher": "National Medical Commission, India",
+      "url": "https://www.nmc.org.in/information-desk/for-colleges/ug-curriculum/",
+      "verification_status": "page_exists_documents_not_downloaded",
+      "verified_on": "2026-11-08",
+      "note": "Page states the document is under copyright protection. Volume PDFs were not obtainable here. NMC withdrew CBME 2024 on 5 Sep 2024 and published a revised version, so confirm which version is current before mapping."
+    },
+    {
+      "source_id": "SRC-GOV-002",
+      "type": "government_pg_syllabus",
+      "title": "NMC MD Human Anatomy (revised) PG syllabus",
+      "publisher": "National Medical Commission, India",
+      "url": "https://www.nmc.org.in/wp-content/uploads/2022/revised/MD_Human_Anatomy_( revised ).pdf",
+      "verification_status": "fetch_failed_client_error",
+      "verified_on": "2026-11-08",
+      "note": "Official nmc.org.in URL returned a client error when opened on 2026-11-08. Re-try from a browser."
+    },
+    {
+      "source_id": "SRC-GOV-003",
+      "type": "government_pg_syllabus",
+      "title": "NMC MD Physiology PG syllabus",
+      "publisher": "National Medical Commission, India",
+      "url": "https://www.nmc.org.in/wp-content/uploads/2019/09/MD-Physiology-1.pdf",
+      "verification_status": "cited_by_a_college_page_not_opened",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "source_id": "SRC-GOV-004",
+      "type": "government_curriculum_copy",
+      "title": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "publisher": "National Medical Commission, India (copy hosted by Amala Institute of Medical Sciences, KUHS)",
+      "url": "https://iqac.amalaims.org/storage/app/uploads/public/694/639/5c9/6946395c9fdfa608875508.pdf",
+      "verification_status": "opened_and_read_third_party_copy",
+      "verified_on": "2026-11-08",
+      "note": "Anatomy section read (82 topics, 413 competencies; Physiology read up to PY5.11). A third-party copy, not the official file; the NMC page itself says the document is copyright protected, so only codes and short paraphrases are stored here."
+    },
+    {
+      "source_id": "SRC-DS-001",
+      "type": "peer_reviewed_dataset",
+      "title": "MedMCQA: A Large-scale Multi-Subject Multi-Choice Dataset for Medical domain Question Answering",
+      "authors": "Pal A, Umapathi LK, Sankarasubbu M",
+      "venue": "Proceedings of Machine Learning Research 174 (CHIL 2022)",
+      "urls": [
+        "https://proceedings.mlr.press/v174/pal22a.html",
+        "https://arxiv.org/abs/2203.14371",
+        "https://huggingface.co/datasets/openlifescienceai/medmcqa"
+      ],
+      "license": "Apache-2.0 (per Hugging Face dataset card)",
+      "content": "194k AIIMS and NEET-PG exam MCQs, 21 subjects, about 2.4k topics; fields id, question, opa-opd, cop, choice_type, exp, subject_name, topic_name",
+      "verification_status": "dataset_card_and_paper_page_seen",
+      "verified_on": "2026-11-08",
+      "note": "Card text says cop is 1-4 in one place and lists a-d class labels in another. The importer detects the base from the data and refuses to import if unclear."
+    },
+    {
+      "source_id": "SRC-DS-002",
+      "type": "peer_reviewed_dataset",
+      "title": "PubMedQA: A Dataset for Biomedical Research Question Answering",
+      "authors": "Jin Q, Dhingra B, Liu Z, Cohen W, Lu X",
+      "venue": "EMNLP-IJCNLP 2019",
+      "urls": [
+        "https://arxiv.org/abs/1909.06146",
+        "https://pubmedqa.github.io",
+        "https://huggingface.co/datasets/qiaojin/PubMedQA"
+      ],
+      "license": "MIT (per dataset card)",
+      "content": "1,000 expert-labelled yes/no/maybe questions over PubMed abstracts (pqa_labeled); each row carries its PubMed ID",
+      "verification_status": "dataset_card_and_paper_page_seen",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "source_id": "SRC-API-001",
+      "type": "api_documentation",
+      "title": "Hugging Face dataset viewer API (/rows: dataset, config, split, offset, length max 100)",
+      "url": "https://huggingface.co/docs/dataset-viewer/quick_start",
+      "verification_status": "documentation_seen",
+      "verified_on": "2026-11-08",
+      "note": "Documented for exploration, not bulk access. Use Parquet files for large pulls."
+    }
+  ],
+  "prototype_records_not_carried_over": [
+    {
+      "prototype_record_id": "RES-ANAT-004-001",
+      "reason": "Title/journal/identifier combination could not be confirmed; excluded until verified."
+    },
+    {
+      "prototype_record_id": "RES-ANAT-004-002",
+      "reason": "Title/journal/identifier combination could not be confirmed; excluded until verified."
+    }
+  ]
+}

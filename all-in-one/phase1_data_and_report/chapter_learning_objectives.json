@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1.0",
+  "generated_on": "2026-11-08",
+  "status": "DRAFT_UNREVIEWED",
+  "chapters": [
+    {
+      "chapter_id": "ANAT-004",
+      "title": "Thorax I: Mediastinum, Pericardium, Heart & Great Vessels",
+      "learning_objectives": [
+        "Describe the gross anatomy of the heart, pericardium and great vessels, using standard anatomical terminology.",
+        "Relate cardiac structure to function, including valve action, coronary supply and the conducting system.",
+        "Apply cardiac anatomy to clinical scenarios such as myocardial infarction, heart block, tamponade and valve disease.",
+        "Interpret basic radiological and cross-sectional images of the thorax and heart."
+      ],
+      "derived_from_subchapters": [
+        "ANAT-004.01",
+        "ANAT-004.02",
+        "ANAT-004.03",
+        "ANAT-004.04",
+        "ANAT-004.05",
+        "ANAT-004.06",
+        "ANAT-004.07",
+        "ANAT-004.08",
+        "ANAT-004.09",
+        "ANAT-004.10"
+      ],
+      "review_status": "not_reviewed"
+    }
+  ],
+  "other_chapters_note": "Learning objectives for the remaining 99 chapters have not been authored."
+}

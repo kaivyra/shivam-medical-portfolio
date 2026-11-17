@@ -1,0 +1,34 @@
+level,subject,chapter,question,A,B,C,D,answer,explanation,source,reviewed
+MBBS,ANAT,"Upper Limb: Osteology, Brachial Plexus, Compartments & Joints",Which nerve supplies the muscles of the anterior compartment of the arm?,Radial,Musculocutaneous,Ulnar,Axillary,B,"Biceps brachii, brachialis and coracobrachialis are supplied by the musculocutaneous nerve.",AI-drafted starter; proposed syllabus link AN11.2 (NMC UG Vol I 2024),0
+MBBS,ANAT,"Thorax I: Mediastinum, Pericardium, Heart & Great Vessels",Which structures form the right border of the heart on a PA chest X-ray?,Right ventricle only,"SVC, right atrium, IVC",Left atrium,Aortic arch,B,"The right heart border is the SVC, right atrium and IVC.",AI-drafted starter; proposed syllabus link AN25.7 (NMC UG Vol I 2024),0
+MBBS,ANAT,"Upper Limb: Osteology, Brachial Plexus, Compartments & Joints",Nerve most commonly injured in a fracture of the surgical neck of the humerus?,Radial,Median,Axillary,Ulnar,C,The axillary nerve winds around the surgical neck.,AI-drafted starter; proposed syllabus link AN10.3 (NMC UG Vol I 2024),0
+MBBS,PHYS,,Which ion mainly produces the plateau (phase 2) of the ventricular myocyte action potential?,Na⁺ influx,Ca²⁺ influx via L-type channels,K⁺ influx,Cl⁻ efflux,B,Inward L-type Ca²⁺ current balances outward K⁺ current.,AI-drafted starter,0
+MBBS,PHYS,,Normal GFR of a healthy young adult is about,12.5 mL/min,125 mL/min,1250 mL/min,12 mL/min,B,About 125 mL/min (~180 L/day).,AI-drafted starter,0
+MBBS,BIOC,,Rate-limiting enzyme of glycolysis?,Hexokinase,Phosphofructokinase-1,Pyruvate kinase,Enolase,B,"PFK-1 is the main regulated, rate-limiting step.",AI-drafted starter,0
+MBBS,BIOC,,Vitamin K-dependent clotting factors are,"II, VII, IX, X","I, V, VIII, XIII","XI, XII","III, IV",A,"Factors II, VII, IX, X (plus proteins C and S).",AI-drafted starter,0
+MBBS,PATH,,Reed–Sternberg cells are characteristic of,Hodgkin lymphoma,Burkitt lymphoma,CLL,Multiple myeloma,A,Classic diagnostic cell of Hodgkin lymphoma.,AI-drafted starter,0
+MBBS,PATH,,"t(9;22), the Philadelphia chromosome, is characteristic of",CML,AML M3,Burkitt lymphoma,Follicular lymphoma,A,"BCR-ABL fusion, typical of CML.",AI-drafted starter,0
+MBBS,MICR,,Gram-positive cocci in clusters that are coagulase-positive?,S. epidermidis,S. aureus,S. pyogenes,E. faecalis,B,Coagulase positivity identifies S. aureus.,AI-drafted starter,0
+MBBS,PHAR,,Antidote for paracetamol poisoning?,Naloxone,Flumazenil,N-acetylcysteine,Atropine,C,NAC replenishes glutathione.,AI-drafted starter,0
+MBBS,PHAR,,First-line drug in anaphylaxis?,IV hydrocortisone,IM adrenaline,Oral antihistamine,Salbutamol,B,Intramuscular adrenaline is first-line.,AI-drafted starter,0
+MBBS,CMED,,Best measure of central tendency for skewed data?,Mean,Median,Range,Standard deviation,B,The median is robust to outliers and skew.,AI-drafted starter,0
+MBBS,PAED,,Most common cyanotic congenital heart disease beyond infancy?,Tetralogy of Fallot,TGA,Truncus arteriosus,TAPVC,A,Tetralogy of Fallot.,AI-drafted starter,0
+MBBS,OBGY,,Most common site of ectopic pregnancy?,Isthmus,Ampulla of fallopian tube,Ovary,Cervix,B,About 70% occur in the ampulla.,AI-drafted starter,0
+MBBS,SURG,,Charcot’s triad in ascending cholangitis is,"Fever, jaundice, RUQ pain","Pain, vomiting, distension","Fever, rash, arthritis","Jaundice, ascites, encephalopathy",A,"Fever, jaundice and right upper quadrant pain.",AI-drafted starter,0
+MBBS,OPHT,,Leading cause of blindness worldwide?,Cataract,Glaucoma,Trachoma,Myopia,A,Cataract is the leading cause of blindness globally.,AI-drafted starter,0
+MBBS,RADI,,Initial investigation for suspected acute subarachnoid haemorrhage?,MRI spine,Non-contrast CT head,EEG,Skull X-ray,B,Non-contrast CT is most sensitive in the first hours.,AI-drafted starter,0
+MBBS,GMED,,"ST elevation in II, III and aVF suggests",Anterior MI,Inferior MI,Lateral MI,Pericarditis only,B,"Inferior wall MI, most often from the right coronary artery.",AI-drafted starter,0
+MD/MS,GMED,,Anion gap = ?,Na − (Cl + HCO₃),Na + K,Cl − HCO₃,Na × Cl,A,Normal ≈ 8–12 mEq/L (without K).,AI-drafted starter,0
+MD/MS,GMED,,First-line drug for status epilepticus?,IV lorazepam,Oral phenytoin,IV paracetamol,Carbamazepine,A,"A benzodiazepine, e.g. IV lorazepam, is first-line.",AI-drafted starter,0
+MD/MS,MICR,,Most common cause of community-acquired pneumonia?,Streptococcus pneumoniae,Klebsiella,Pseudomonas,Legionella,A,S. pneumoniae.,AI-drafted starter,0
+MD/MS,SURG,,Most common site of abdominal aortic aneurysm?,Suprarenal,Infrarenal,Thoracic,Iliac,B,Infrarenal aorta.,AI-drafted starter,0
+MD/MS,OBGY,,Drug of choice for seizure prophylaxis in severe pre-eclampsia?,Diazepam,Phenytoin,Magnesium sulphate,Levetiracetam,C,MgSO₄ is the drug of choice.,AI-drafted starter,0
+MD/MS,PHAR,,Which is a strong CYP3A4 inducer?,Rifampicin,Ketoconazole,Erythromycin,Grapefruit juice,A,Rifampicin induces CYP3A4; the others inhibit it.,AI-drafted starter,0
+DM/MCh,PAED,,Which is NOT a component of tetralogy of Fallot?,VSD,RVOT obstruction,Left ventricular hypertrophy,Overriding aorta,C,The tetrad includes right (not left) ventricular hypertrophy.,AI-drafted starter,0
+DM/MCh,SURG,,Milan criteria for liver transplant in HCC (single tumour)?,≤5 cm,≤8 cm,≤10 cm,Any size,A,"One tumour ≤5 cm, or up to 3 nodules each ≤3 cm.",AI-drafted starter,0
+DM/MCh,GMED,,Amiodarone belongs to Vaughan-Williams class,I,II,III,IV,C,Class III: potassium channel blockers.,AI-drafted starter,0
+DM/MCh,SURG,,Pancoast tumour typically causes,Horner syndrome,SVC obstruction only,Hoarseness only,Pleural effusion only,A,Apical tumour involving the sympathetic chain.,AI-drafted starter,0
+PhD,*,,Type I error means,Rejecting a true null hypothesis,Accepting a false null hypothesis,Low power,Selection bias,A,"A false positive, probability α.",AI-drafted starter,0
+PhD,*,,Comparing means of two independent normally distributed groups uses,Unpaired t-test,Chi-square,Log-rank test,Spearman correlation,A,Unpaired (independent samples) t-test.,AI-drafted starter,0
+PhD,*,,Hazard ratios are usually estimated with,Cox proportional hazards model,Linear regression,ANOVA,Mann–Whitney U,A,Cox regression for time-to-event data.,AI-drafted starter,0
+PhD,*,,The CONSORT statement is a reporting guideline for,Randomised controlled trials,Systematic reviews,Observational studies,Diagnostic accuracy,A,"CONSORT: RCTs (PRISMA: reviews, STROBE: observational, STARD: diagnostic).",AI-drafted starter,0

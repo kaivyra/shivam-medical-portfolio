@@ -1,0 +1,719 @@
+{
+  "schema_version": "0.1.0",
+  "chapter_id": "ANAT-004",
+  "generated_on": "2026-11-08",
+  "status": "DRAFT_BLUEPRINTS_UNREVIEWED",
+  "review_record": null,
+  "approval_note": "No medical reviewer has reviewed these blueprints. review_record is intentionally null. Do not display as reviewed.",
+  "subchapters": [
+    {
+      "subchapter_id": "ANAT-004.01",
+      "title": "External Features, Orientation, Borders, Surfaces & Chambers of the Human Heart",
+      "learning_objectives": [
+        {
+          "id": "ANAT-004.01.LO1",
+          "statement": "Describe the position of the heart in the middle mediastinum and its attitudinal (in-body) orientation, including apex, base, surfaces and borders."
+        },
+        {
+          "id": "ANAT-004.01.LO2",
+          "statement": "Identify the four chambers and the external sulci (coronary, anterior and posterior interventricular) and relate them to the underlying chambers."
+        },
+        {
+          "id": "ANAT-004.01.LO3",
+          "statement": "Explain which chambers form each border and surface seen on a PA chest radiograph."
+        },
+        {
+          "id": "ANAT-004.01.LO4",
+          "statement": "Distinguish the anatomical \"base\" (posterior surface) from the inferior (diaphragmatic) surface."
+        }
+      ],
+      "prerequisites": [
+        "Thoracic cage and mediastinal divisions (ANAT-001 general/thoracic orientation)",
+        "Basic cardiac embryology: heart tube looping (HIST-035)"
+      ],
+      "key_concepts_and_terminology": [
+        "Middle mediastinum",
+        "Apex and apex beat",
+        "Base of heart (posterior surface)",
+        "Sternocostal and diaphragmatic surfaces",
+        "Coronary sulcus",
+        "Anterior and posterior interventricular sulci",
+        "Crux of the heart",
+        "Right, left, inferior and superior borders",
+        "Terminologia Anatomica nomenclature"
+      ],
+      "clinical_applications": [
+        "Cardiac silhouette on PA chest radiograph and what each border represents",
+        "Apex beat location and shifts in disease",
+        "Sites for percussion and auscultation relative to surface anatomy",
+        "Why anterior chest trauma most often involves the right ventricle"
+      ],
+      "diagrams_models_and_practicals": [
+        "Rotatable 3D heart with attitudinal orientation toggle (valentine vs in-body)",
+        "Labelled PA chest radiograph overlay",
+        "Dissection-style annotated photographs (license required)",
+        "Practical: surface marking of heart borders on a volunteer or manikin"
+      ],
+      "assessment_objectives": [
+        "Label the borders and surfaces on a diagram",
+        "Identify which chamber forms the right border and the apex",
+        "Short answer: describe the surface anatomy of the heart",
+        "Image-based question on a PA radiograph silhouette"
+      ],
+      "reference_requirements": {
+        "textbook_source_ids": [
+          "SRC-TB-001",
+          "SRC-TB-002",
+          "SRC-TB-003"
+        ],
+        "literature_needs": [
+          "Chapter on the heart in a standard gross anatomy atlas/textbook",
+          "Review literature on attitudinal heart anatomy (search needed; no citation recorded yet)"
+        ],
+        "citations_recorded": [],
+        "note": "No specific page numbers, DOIs or PMIDs are recorded. Citations must be added only after live verification."
+      },
+      "curriculum_mapping": {
+        "status": "unmapped",
+        "note": "Competency codes in the prototype were not verified against the official document; see medical_curriculum_crosswalk.json."
+      },
+      "content_status": "blueprint_only_no_prose_content",
+      "review_status": "not_reviewed"
+    },
+    {
+      "subchapter_id": "ANAT-004.02",
+      "title": "Pericardium: Fibrous & Serous Layers, Transverse & Oblique Pericardial Sinuses & Tamponade",
+      "learning_objectives": [
+        {
+          "id": "ANAT-004.02.LO1",
+          "statement": "Describe the fibrous and serous (parietal and visceral) pericardium, their attachments and nerve supply."
+        },
+        {
+          "id": "ANAT-004.02.LO2",
+          "statement": "Locate the transverse and oblique pericardial sinuses and state their boundaries."
+        },
+        {
+          "id": "ANAT-004.02.LO3",
+          "statement": "Explain the anatomical basis and clinical consequences of pericardial effusion and cardiac tamponade."
+        },
+        {
+          "id": "ANAT-004.02.LO4",
+          "statement": "Identify landmarks used for pericardiocentesis and the structures at risk."
+        }
+      ],
+      "prerequisites": [
+        "ANAT-004.01",
+        "Serous membrane concept: parietal vs visceral layers"
+      ],
+      "key_concepts_and_terminology": [
+        "Fibrous pericardium",
+        "Serous pericardium: parietal and visceral (epicardium)",
+        "Pericardial cavity and fluid",
+        "Transverse sinus",
+        "Oblique sinus",
+        "Phrenic nerve and pericardiacophrenic vessels",
+        "Pericardiosternal ligaments"
+      ],
+      "clinical_applications": [
+        "Cardiac tamponade (Beck triad concept) and why the fibrous pericardium cannot stretch acutely",
+        "Pericardiocentesis approaches and structures at risk",
+        "Constrictive pericarditis",
+        "Use of the transverse sinus in cardiac surgery to clamp the great arteries"
+      ],
+      "diagrams_models_and_practicals": [
+        "3D pericardial layers with transparency control",
+        "Animated pericardial sinuses",
+        "Echocardiography image of pericardial effusion (licensed)",
+        "Practical: simulated pericardiocentesis on a manikin"
+      ],
+      "assessment_objectives": [
+        "MCQ on the boundaries of the transverse sinus",
+        "Case: hypotension with distended neck veins after chest trauma",
+        "Short answer: nerve supply of the pericardium"
+      ],
+      "reference_requirements": {
+        "textbook_source_ids": [
+          "SRC-TB-001",
+          "SRC-TB-002",
+          "SRC-TB-003"
+        ],
+        "literature_needs": [
+          "Gross anatomy textbook chapter on the mediastinum and pericardium",
+          "Guideline or review on pericardial disease (search needed; no citation recorded yet)"
+        ],
+        "citations_recorded": [],
+        "note": "No specific page numbers, DOIs or PMIDs are recorded. Citations must be added only after live verification."
+      },
+      "curriculum_mapping": {
+        "status": "unmapped",
+        "note": "Competency codes in the prototype were not verified against the official document; see medical_curriculum_crosswalk.json."
+      },
+      "content_status": "blueprint_only_no_prose_content",
+      "review_status": "not_reviewed"
+    },
+    {
+      "subchapter_id": "ANAT-004.03",
+      "title": "Right Atrium & Right Ventricle: Internal Morphology, Crista Terminalis, Septomarginal Trabecula & Infundibulum",
+      "learning_objectives": [
+        {
+          "id": "ANAT-004.03.LO1",
+          "statement": "Describe the internal features of the right atrium (sinus venarum, pectinate muscles, crista terminalis, fossa ovalis, openings)."
+        },
+        {
+          "id": "ANAT-004.03.LO2",
+          "statement": "Describe the right ventricle inflow and outflow components, trabeculae carneae, papillary muscles and the septomarginal trabecula."
+        },
+        {
+          "id": "ANAT-004.03.LO3",
+          "statement": "Identify the Triangle of Koch and state its boundaries."
+        },
+        {
+          "id": "ANAT-004.03.LO4",
+          "statement": "Relate right-sided structures to common congenital and acquired lesions."
+        }
+      ],
+      "prerequisites": [
+        "ANAT-004.01",
+        "Embryology of the sinus venosus and atrial septation (HIST-035)"
+      ],
+      "key_concepts_and_terminology": [
+        "Sinus venarum vs atrium proper",
+        "Crista terminalis",
+        "Pectinate muscles",
+        "Fossa ovalis and limbus",
+        "Openings of SVC, IVC and coronary sinus",
+        "Triangle of Koch",
+        "Trabeculae carneae",
+        "Papillary muscles (anterior, posterior, septal)",
+        "Septomarginal trabecula (moderator band)",
+        "Supraventricular crest and infundibulum"
+      ],
+      "clinical_applications": [
+        "Atrial septal defects and patent foramen ovale at the fossa ovalis",
+        "Catheter ablation landmarks (Triangle of Koch, cavotricuspid isthmus)",
+        "Right ventricular infarction concept",
+        "Right bundle branch conduction through the moderator band"
+      ],
+      "diagrams_models_and_practicals": [
+        "3D right heart opened as an anatomical window",
+        "Highlight toggle for Triangle of Koch",
+        "Echocardiographic four-chamber view correlation",
+        "Practical: identify features on a plastinated or model heart"
+      ],
+      "assessment_objectives": [
+        "Label the internal features of the right atrium",
+        "MCQ: boundaries of the Triangle of Koch",
+        "Compare right and left ventricle internal morphology (table)"
+      ],
+      "reference_requirements": {
+        "textbook_source_ids": [
+          "SRC-TB-001",
+          "SRC-TB-002",
+          "SRC-TB-003"
+        ],
+        "literature_needs": [
+          "Gross anatomy textbook chapter on the heart",
+          "Electrophysiology anatomy reviews (search needed; no citation recorded yet)"
+        ],
+        "citations_recorded": [],
+        "note": "No specific page numbers, DOIs or PMIDs are recorded. Citations must be added only after live verification."
+      },
+      "curriculum_mapping": {
+        "status": "unmapped",
+        "note": "Competency codes in the prototype were not verified against the official document; see medical_curriculum_crosswalk.json."
+      },
+      "content_status": "blueprint_only_no_prose_content",
+      "review_status": "not_reviewed"
+    },
+    {
+      "subchapter_id": "ANAT-004.04",
+      "title": "Left Atrium & Left Ventricle: Pulmonary Venous Inflow, Aortic Vestibule & Wall Thickness Morphometry",
+      "learning_objectives": [
+        {
+          "id": "ANAT-004.04.LO1",
+          "statement": "Describe the internal features of the left atrium and left atrial appendage and the four pulmonary vein openings."
+        },
+        {
+          "id": "ANAT-004.04.LO2",
+          "statement": "Describe the left ventricular inflow and outflow tracts, papillary muscles and the aortic vestibule."
+        },
+        {
+          "id": "ANAT-004.04.LO3",
+          "statement": "Compare right and left ventricular wall thickness and explain the physiological reason."
+        },
+        {
+          "id": "ANAT-004.04.LO4",
+          "statement": "Relate the posterior relations of the left atrium to the oesophagus and explain clinical consequences of left atrial enlargement."
+        }
+      ],
+      "prerequisites": [
+        "ANAT-004.01",
+        "ANAT-004.03",
+        "Basic pressure and wall stress concepts (PHYS-014)"
+      ],
+      "key_concepts_and_terminology": [
+        "Left atrial appendage",
+        "Pulmonary vein openings",
+        "Interatrial septum (valve of the foramen ovale)",
+        "Left ventricular wall and trabeculation",
+        "Anterolateral and posteromedial papillary muscles",
+        "Aortic vestibule",
+        "Membranous and muscular interventricular septum",
+        "Law of Laplace (conceptual)"
+      ],
+      "clinical_applications": [
+        "Mitral stenosis and left atrial enlargement: oesophageal relation, dysphagia, thrombus risk in the appendage",
+        "Hypertensive concentric hypertrophy",
+        "Ventricular septal defect locations",
+        "Papillary muscle rupture after infarction"
+      ],
+      "diagrams_models_and_practicals": [
+        "3D left heart opened as an anatomical window with wall thickness measurement tool",
+        "Echocardiographic parasternal long-axis correlation",
+        "Practical: wall thickness comparison on cut heart specimens"
+      ],
+      "assessment_objectives": [
+        "MCQ: Laplace law and wall thickness",
+        "Label structures on a left heart diagram",
+        "Short answer: posterior relations of the left atrium"
+      ],
+      "reference_requirements": {
+        "textbook_source_ids": [
+          "SRC-TB-001",
+          "SRC-TB-002",
+          "SRC-TB-003"
+        ],
+        "literature_needs": [
+          "Gross anatomy textbook chapter on the heart",
+          "Valvular heart disease guideline (see source registry; live verification pending)"
+        ],
+        "citations_recorded": [],
+        "note": "No specific page numbers, DOIs or PMIDs are recorded. Citations must be added only after live verification."
+      },
+      "curriculum_mapping": {
+        "status": "unmapped",
+        "note": "Competency codes in the prototype were not verified against the official document; see medical_curriculum_crosswalk.json."
+      },
+      "content_status": "blueprint_only_no_prose_content",
+      "review_status": "not_reviewed"
+    },
+    {
+      "subchapter_id": "ANAT-004.05",
+      "title": "Fibrous Cardiac Skeleton, Atrioventricular (Tricuspid/Mitral) & Semilunar Valves: Mechanics & Auscultation",
+      "learning_objectives": [
+        {
+          "id": "ANAT-004.05.LO1",
+          "statement": "Describe the fibrous skeleton and its functions, including electrical insulation between atria and ventricles."
+        },
+        {
+          "id": "ANAT-004.05.LO2",
+          "statement": "Describe the structure of the tricuspid, mitral, aortic and pulmonary valves, including cusps, chordae tendineae and papillary muscles."
+        },
+        {
+          "id": "ANAT-004.05.LO3",
+          "statement": "Explain valve opening and closing in relation to the cardiac cycle."
+        },
+        {
+          "id": "ANAT-004.05.LO4",
+          "statement": "State the surface projection and best auscultation sites of each valve and relate them to heart sounds."
+        }
+      ],
+      "prerequisites": [
+        "ANAT-004.03",
+        "ANAT-004.04",
+        "Cardiac cycle basics (PHYS-014)"
+      ],
+      "key_concepts_and_terminology": [
+        "Annuli fibrosi and fibrous trigones",
+        "Cusps, commissures and lunulae",
+        "Chordae tendineae",
+        "Valve projection on the chest wall vs auscultation site",
+        "First and second heart sounds (conceptual link)",
+        "Aortic sinuses"
+      ],
+      "clinical_applications": [
+        "Stenosis and regurgitation (anatomical basis only at this level)",
+        "Rheumatic involvement of the mitral valve",
+        "Infective endocarditis predilection",
+        "Accessory pathways crossing the fibrous skeleton (pre-excitation)"
+      ],
+      "diagrams_models_and_practicals": [
+        "3D valve plane with open/closed animation",
+        "Auscultation area overlay on chest wall model",
+        "Heart sound audio synchronised to cardiac cycle (licensed audio required)",
+        "Practical: auscultation on a simulator"
+      ],
+      "assessment_objectives": [
+        "Match valve to surface projection and auscultation site",
+        "MCQ: functions of the fibrous skeleton",
+        "Short answer: structure of an atrioventricular valve apparatus"
+      ],
+      "reference_requirements": {
+        "textbook_source_ids": [
+          "SRC-TB-001",
+          "SRC-TB-002",
+          "SRC-TB-003"
+        ],
+        "literature_needs": [
+          "Gross anatomy textbook chapter on the heart",
+          "Valvular heart disease guideline (see source registry; live verification pending)"
+        ],
+        "citations_recorded": [],
+        "note": "No specific page numbers, DOIs or PMIDs are recorded. Citations must be added only after live verification."
+      },
+      "curriculum_mapping": {
+        "status": "unmapped",
+        "note": "Competency codes in the prototype were not verified against the official document; see medical_curriculum_crosswalk.json."
+      },
+      "content_status": "blueprint_only_no_prose_content",
+      "review_status": "not_reviewed"
+    },
+    {
+      "subchapter_id": "ANAT-004.06",
+      "title": "Coronary Arterial Circulation: Right & Left Coronary Arteries, Dominance, Anastomoses & Ischemic Territories",
+      "learning_objectives": [
+        {
+          "id": "ANAT-004.06.LO1",
+          "statement": "Describe the origin, course and main branches of the right and left coronary arteries."
+        },
+        {
+          "id": "ANAT-004.06.LO2",
+          "statement": "Define right, left and co-dominance and state the usual territories supplied by each major branch."
+        },
+        {
+          "id": "ANAT-004.06.LO3",
+          "statement": "Explain the clinical significance of coronary anastomoses and end-artery behaviour."
+        },
+        {
+          "id": "ANAT-004.06.LO4",
+          "statement": "Correlate occluded coronary segments with expected regions of ischaemia and typical ECG lead groups."
+        }
+      ],
+      "prerequisites": [
+        "ANAT-004.01",
+        "ANAT-004.04"
+      ],
+      "key_concepts_and_terminology": [
+        "Aortic sinuses and coronary ostia",
+        "Left main, LAD, circumflex",
+        "Right coronary artery, marginal and posterior interventricular branches",
+        "Dominance",
+        "SA nodal and AV nodal arteries (origin variability)",
+        "Collateral circulation",
+        "Diastolic coronary perfusion"
+      ],
+      "clinical_applications": [
+        "Myocardial infarction territories and ECG localisation",
+        "Angiography views and interpretation",
+        "Bypass graft targets",
+        "Variability in nodal artery origin and conduction consequences"
+      ],
+      "diagrams_models_and_practicals": [
+        "3D coronary tree with dominance toggle",
+        "Coronary angiogram image correlation (licensed)",
+        "Interactive territory overlay by artery",
+        "Practical: trace branches on a model heart"
+      ],
+      "assessment_objectives": [
+        "Label coronary branches on a diagram",
+        "Case: ST elevation pattern mapped to a vessel",
+        "MCQ: definition of dominance"
+      ],
+      "reference_requirements": {
+        "textbook_source_ids": [
+          "SRC-TB-001",
+          "SRC-TB-002",
+          "SRC-TB-003"
+        ],
+        "literature_needs": [
+          "Gross anatomy textbook chapter on the heart",
+          "Anatomical variation studies of the coronary arteries (search needed; no citation recorded yet)"
+        ],
+        "citations_recorded": [],
+        "note": "No specific page numbers, DOIs or PMIDs are recorded. Citations must be added only after live verification."
+      },
+      "curriculum_mapping": {
+        "status": "unmapped",
+        "note": "Competency codes in the prototype were not verified against the official document; see medical_curriculum_crosswalk.json."
+      },
+      "content_status": "blueprint_only_no_prose_content",
+      "review_status": "not_reviewed"
+    },
+    {
+      "subchapter_id": "ANAT-004.07",
+      "title": "Venous Drainage of the Heart: Coronary Sinus, Great/Middle/Small Cardiac Veins & Thebesian System",
+      "learning_objectives": [
+        {
+          "id": "ANAT-004.07.LO1",
+          "statement": "Describe the coronary sinus, its tributaries and its opening into the right atrium."
+        },
+        {
+          "id": "ANAT-004.07.LO2",
+          "statement": "Name the great, middle and small cardiac veins and the anterior cardiac veins."
+        },
+        {
+          "id": "ANAT-004.07.LO3",
+          "statement": "Explain the role of the smallest (Thebesian) veins."
+        },
+        {
+          "id": "ANAT-004.07.LO4",
+          "statement": "Relate coronary venous anatomy to its clinical uses."
+        }
+      ],
+      "prerequisites": [
+        "ANAT-004.06",
+        "ANAT-004.03"
+      ],
+      "key_concepts_and_terminology": [
+        "Coronary sinus and its valve",
+        "Great, middle and small cardiac veins",
+        "Oblique vein of the left atrium",
+        "Anterior cardiac veins",
+        "Smallest cardiac veins (venae cordis minimae)"
+      ],
+      "clinical_applications": [
+        "Coronary sinus access for pacing leads in cardiac resynchronisation therapy",
+        "Retrograde cardioplegia delivery",
+        "Coronary sinus as a landmark in the Triangle of Koch"
+      ],
+      "diagrams_models_and_practicals": [
+        "3D venous layer toggle",
+        "Fluoroscopic venogram correlation (licensed)",
+        "Practical: identify the coronary sinus ostium in a model"
+      ],
+      "assessment_objectives": [
+        "Label cardiac veins",
+        "MCQ: tributaries of the coronary sinus",
+        "Short answer: clinical uses of the coronary sinus"
+      ],
+      "reference_requirements": {
+        "textbook_source_ids": [
+          "SRC-TB-001",
+          "SRC-TB-002",
+          "SRC-TB-003"
+        ],
+        "literature_needs": [
+          "Gross anatomy textbook chapter on the heart",
+          "Anatomical review of the coronary venous system (search needed; no citation recorded yet)"
+        ],
+        "citations_recorded": [],
+        "note": "No specific page numbers, DOIs or PMIDs are recorded. Citations must be added only after live verification."
+      },
+      "curriculum_mapping": {
+        "status": "unmapped",
+        "note": "Competency codes in the prototype were not verified against the official document; see medical_curriculum_crosswalk.json."
+      },
+      "content_status": "blueprint_only_no_prose_content",
+      "review_status": "not_reviewed"
+    },
+    {
+      "subchapter_id": "ANAT-004.08",
+      "title": "Conducting System of the Heart: SA Node, Internodal Tracts, AV Node, Bundle of His & Purkinje Network",
+      "learning_objectives": [
+        {
+          "id": "ANAT-004.08.LO1",
+          "statement": "Locate the sinoatrial node, atrioventricular node, bundle of His, bundle branches and Purkinje network."
+        },
+        {
+          "id": "ANAT-004.08.LO2",
+          "statement": "Describe the blood supply and autonomic innervation of the nodes."
+        },
+        {
+          "id": "ANAT-004.08.LO3",
+          "statement": "State why the AV node delays conduction and why the fibrous skeleton matters."
+        },
+        {
+          "id": "ANAT-004.08.LO4",
+          "statement": "Correlate nodal anatomy with common conduction disturbances."
+        }
+      ],
+      "prerequisites": [
+        "ANAT-004.03",
+        "ANAT-004.05",
+        "Cardiac action potential and pacemaker physiology (PHYS-014)"
+      ],
+      "key_concepts_and_terminology": [
+        "SA node at the SVC-right atrium junction",
+        "Atrioventricular node within the Triangle of Koch",
+        "Bundle of His piercing the fibrous skeleton",
+        "Right and left bundle branches (left fascicles)",
+        "Purkinje fibres",
+        "Nodal arterial supply",
+        "Sympathetic and parasympathetic modulation"
+      ],
+      "clinical_applications": [
+        "Sinus bradycardia and AV block after inferior myocardial infarction",
+        "Bundle branch block",
+        "Wolff-Parkinson-White concept",
+        "Catheter ablation of AV nodal re-entry (landmark relevance)"
+      ],
+      "diagrams_models_and_practicals": [
+        "3D conduction pathway animation synchronised with a simple ECG trace",
+        "Highlight toggle for each component",
+        "Practical: ECG correlation exercise"
+      ],
+      "assessment_objectives": [
+        "Sequence the conduction pathway",
+        "Case: inferior ST elevation with heart block",
+        "MCQ: location of the AV node"
+      ],
+      "reference_requirements": {
+        "textbook_source_ids": [
+          "SRC-TB-001",
+          "SRC-TB-002",
+          "SRC-TB-003"
+        ],
+        "literature_needs": [
+          "Gross anatomy textbook chapter on the heart",
+          "Reviews on conduction system anatomy (search needed; no citation recorded yet)"
+        ],
+        "citations_recorded": [],
+        "note": "No specific page numbers, DOIs or PMIDs are recorded. Citations must be added only after live verification."
+      },
+      "curriculum_mapping": {
+        "status": "unmapped",
+        "note": "Competency codes in the prototype were not verified against the official document; see medical_curriculum_crosswalk.json."
+      },
+      "content_status": "blueprint_only_no_prose_content",
+      "review_status": "not_reviewed"
+    },
+    {
+      "subchapter_id": "ANAT-004.09",
+      "title": "Extrinsic Cardiac Innervation (Superficial & Deep Cardiac Plexuses), Visceral Referred Pain & Lymphatics",
+      "learning_objectives": [
+        {
+          "id": "ANAT-004.09.LO1",
+          "statement": "Describe the sympathetic and parasympathetic supply to the heart and the cardiac plexuses."
+        },
+        {
+          "id": "ANAT-004.09.LO2",
+          "statement": "Explain the anatomical basis of referred cardiac pain."
+        },
+        {
+          "id": "ANAT-004.09.LO3",
+          "statement": "Describe the lymphatic drainage of the heart."
+        },
+        {
+          "id": "ANAT-004.09.LO4",
+          "statement": "Predict the effects of sympathetic and vagal stimulation on heart rate and contractility."
+        }
+      ],
+      "prerequisites": [
+        "ANAT-004.01",
+        "Autonomic nervous system overview (ANAT-010)"
+      ],
+      "key_concepts_and_terminology": [
+        "Superficial and deep cardiac plexuses",
+        "Cervical and upper thoracic sympathetic cardiac nerves",
+        "Vagal cardiac branches",
+        "Visceral afferents and referred pain dermatomes",
+        "Lymphatic drainage to tracheobronchial nodes"
+      ],
+      "clinical_applications": [
+        "Angina pain pattern and referral to arm, jaw and epigastrium",
+        "Cardiac denervation after transplantation",
+        "Vagal manoeuvres in supraventricular tachycardia"
+      ],
+      "diagrams_models_and_practicals": [
+        "2D schematic of cardiac plexuses (3D optional later)",
+        "Referred pain body map",
+        "Practical: map referred pain zones on a body diagram"
+      ],
+      "assessment_objectives": [
+        "Explain referred pain from the heart",
+        "MCQ: effect of vagal stimulation",
+        "Short answer: cardiac plexuses and their sources"
+      ],
+      "reference_requirements": {
+        "textbook_source_ids": [
+          "SRC-TB-001",
+          "SRC-TB-002",
+          "SRC-TB-003"
+        ],
+        "literature_needs": [
+          "Gross anatomy textbook chapters on the thorax and autonomic system",
+          "Reviews on cardiac innervation (search needed; no citation recorded yet)"
+        ],
+        "citations_recorded": [],
+        "note": "No specific page numbers, DOIs or PMIDs are recorded. Citations must be added only after live verification."
+      },
+      "curriculum_mapping": {
+        "status": "unmapped",
+        "note": "Competency codes in the prototype were not verified against the official document; see medical_curriculum_crosswalk.json."
+      },
+      "content_status": "blueprint_only_no_prose_content",
+      "review_status": "not_reviewed"
+    },
+    {
+      "subchapter_id": "ANAT-004.10",
+      "title": "Great Vessels of the Superior & Middle Mediastinum: Aortic Arch, SVC, Pulmonary Trunk & Cross-Sectional CT/MRI Anatomy",
+      "learning_objectives": [
+        {
+          "id": "ANAT-004.10.LO1",
+          "statement": "Describe the course and branches of the ascending aorta and aortic arch."
+        },
+        {
+          "id": "ANAT-004.10.LO2",
+          "statement": "Describe the formation and relations of the superior vena cava and the pulmonary trunk and arteries."
+        },
+        {
+          "id": "ANAT-004.10.LO3",
+          "statement": "Identify the great vessels and cardiac chambers on axial CT and MRI slices."
+        },
+        {
+          "id": "ANAT-004.10.LO4",
+          "statement": "Explain the clinical importance of the aortopulmonary window and relations of the recurrent laryngeal nerve."
+        }
+      ],
+      "prerequisites": [
+        "ANAT-004.01",
+        "Basics of CT/MRI orientation (RADI-099)"
+      ],
+      "key_concepts_and_terminology": [
+        "Ascending aorta and aortic sinuses",
+        "Aortic arch branches",
+        "SVC and brachiocephalic veins",
+        "Pulmonary trunk and bifurcation",
+        "Ligamentum arteriosum",
+        "Aortopulmonary window",
+        "Left recurrent laryngeal nerve relation",
+        "Axial slice orientation conventions"
+      ],
+      "clinical_applications": [
+        "Aortic aneurysm and dissection (anatomical basis)",
+        "SVC obstruction syndrome",
+        "Hoarseness from compression of the left recurrent laryngeal nerve",
+        "Pulmonary embolism at the pulmonary trunk bifurcation"
+      ],
+      "diagrams_models_and_practicals": [
+        "3D great vessels with slice plane scrubber",
+        "Annotated axial CT series (licensed or open-licensed dataset needed)",
+        "Practical: identify vessels on CT slices"
+      ],
+      "assessment_objectives": [
+        "Identify vessels on an axial CT image",
+        "MCQ: branches of the aortic arch",
+        "Case: hoarseness with a mediastinal mass"
+      ],
+      "reference_requirements": {
+        "textbook_source_ids": [
+          "SRC-TB-001",
+          "SRC-TB-002",
+          "SRC-TB-003"
+        ],
+        "literature_needs": [
+          "Gross anatomy textbook chapters on the mediastinum and radiological anatomy",
+          "Radiological anatomy references (search needed; no citation recorded yet)"
+        ],
+        "citations_recorded": [],
+        "note": "No specific page numbers, DOIs or PMIDs are recorded. Citations must be added only after live verification."
+      },
+      "curriculum_mapping": {
+        "status": "unmapped",
+        "note": "Competency codes in the prototype were not verified against the official document; see medical_curriculum_crosswalk.json."
+      },
+      "content_status": "blueprint_only_no_prose_content",
+      "review_status": "not_reviewed"
+    }
+  ]
+}

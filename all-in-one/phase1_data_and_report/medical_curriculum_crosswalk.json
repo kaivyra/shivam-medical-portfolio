@@ -1,0 +1,250 @@
+{
+  "schema_version": "0.1.0",
+  "generated_on": "2026-11-08",
+  "status": "PROPOSED_ANATOMY_ONLY",
+  "explanation": "Anatomy chapter ranges were compared against the text of NMC UG Curriculum Vol I 2024 (a copy hosted by Amala Institute of Medical Sciences, read on 2026-11-08). Nothing is marked confirmed: a human must confirm against the file downloaded from nmc.org.in.",
+  "required_sources_to_obtain": [
+    {
+      "name": "NMC Competency Based Medical Education curriculum, Anatomy (and other subject volumes)",
+      "version": "to be recorded from the downloaded document",
+      "status": "document_not_yet_obtained"
+    }
+  ],
+  "mapping_record_template": {
+    "subchapter_id": "",
+    "competency_code": "",
+    "source_document": "",
+    "document_version": "",
+    "mapping_status": "unmapped | proposed | confirmed",
+    "mapped_by": "",
+    "mapped_on": ""
+  },
+  "mappings": [
+    {
+      "subchapter_id": "ANAT-004.01",
+      "competency_code": "AN22.2",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.01",
+      "competency_code": "AN25.7",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.01",
+      "competency_code": "AN25.9",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.02",
+      "competency_code": "AN22.1",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.03",
+      "competency_code": "AN22.2",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.04",
+      "competency_code": "AN22.2",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.05",
+      "competency_code": "AN22.6",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.05",
+      "competency_code": "AN25.9",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.06",
+      "competency_code": "AN22.3",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.06",
+      "competency_code": "AN22.4",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.07",
+      "competency_code": "AN22.5",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.08",
+      "competency_code": "AN22.7",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.10",
+      "competency_code": "AN21.11",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.10",
+      "competency_code": "AN23.3",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.10",
+      "competency_code": "AN23.4",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    },
+    {
+      "subchapter_id": "ANAT-004.10",
+      "competency_code": "AN25.7",
+      "source_document": "NMC Competency Based Undergraduate Curriculum for the Indian Medical Graduate, Volume I, 2024",
+      "document_version": "2024 (third-party hosted copy)",
+      "mapping_status": "proposed",
+      "mapped_by": "AI draft, needs human confirmation",
+      "mapped_on": "2026-11-08"
+    }
+  ],
+  "located_sources": [
+    "SRC-GOV-001",
+    "SRC-GOV-004"
+  ],
+  "chapter_range_checks": [
+    {
+      "chapter_id": "ANAT-001",
+      "prototype_range": "AN1.1-AN4.5",
+      "document_range": "AN1.1-AN4.5",
+      "check": "matches",
+      "mapping_status": "proposed"
+    },
+    {
+      "chapter_id": "ANAT-002",
+      "prototype_range": "AN8.1-AN13.8",
+      "document_range": "AN8.1-AN13.8",
+      "check": "matches",
+      "mapping_status": "proposed"
+    },
+    {
+      "chapter_id": "ANAT-003",
+      "prototype_range": "AN14.1-AN20.9",
+      "document_range": "AN14.1-AN20.10",
+      "check": "prototype ends AN20.9, document ends AN20.10 (topic 20 has 10 competencies)",
+      "mapping_status": "proposed"
+    },
+    {
+      "chapter_id": "ANAT-004",
+      "prototype_range": "AN21.1-AN25.9",
+      "document_range": "AN21.1-AN25.9",
+      "check": "matches topics 21-25 as a whole, but those topics also contain thoracic cage, lungs and trachea",
+      "mapping_status": "proposed"
+    },
+    {
+      "chapter_id": "ANAT-005",
+      "prototype_range": "AN21.3-AN24.6",
+      "document_range": "AN24.1-AN24.6",
+      "check": "prototype range overlaps the heart chapter. Proposed set: AN21.3, AN21.9, AN24.1-AN24.6, AN25.1, AN47.13-AN47.14 (diaphragm)",
+      "mapping_status": "proposed"
+    },
+    {
+      "chapter_id": "ANAT-006",
+      "prototype_range": "AN44.1-AN47.14",
+      "document_range": "AN44.1-AN47.14",
+      "check": "matches",
+      "mapping_status": "proposed"
+    },
+    {
+      "chapter_id": "ANAT-007",
+      "prototype_range": "AN48.1-AN53.4",
+      "document_range": "AN48.1-AN53.4",
+      "check": "matches",
+      "mapping_status": "proposed"
+    },
+    {
+      "chapter_id": "ANAT-008",
+      "prototype_range": "AN26.1-AN38.3",
+      "document_range": "AN26.1-AN38.3",
+      "check": "matches",
+      "mapping_status": "proposed"
+    },
+    {
+      "chapter_id": "ANAT-009",
+      "prototype_range": "AN39.1-AN43.9",
+      "document_range": "AN39.1-AN43.9",
+      "check": "matches",
+      "mapping_status": "proposed"
+    },
+    {
+      "chapter_id": "ANAT-010",
+      "prototype_range": "AN56.1-AN64.3",
+      "document_range": "AN56.1-AN64.3",
+      "check": "matches",
+      "mapping_status": "proposed"
+    }
+  ],
+  "gaps": [
+    "ANAT-004.09 (cardiac innervation, referred pain, lymphatics) has no direct competency in Topics 21-25.",
+    "Heart development, fetal circulation and congenital anomalies (AN25.2-AN25.6) are in the document but not covered by any ANAT-004 subchapter blueprint.",
+    "Anatomy topics 5-7, 55 and 65-82 (general CVS/lymphatics/nervous system, surface marking, histology, genetics, embryology) are outside the 10 anatomy chapters. Check whether HIST/GENE chapters cover them.",
+    "Only Anatomy was compared. Other subjects remain unmapped. PY5.1-PY5.x (cardiovascular physiology) exist in the same document but no PHYS chapter has been mapped."
+  ]
+}

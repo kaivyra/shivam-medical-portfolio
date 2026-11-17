@@ -1,0 +1,200 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KAIVYRA Exam Practice</title><meta name="description" content="Chapter-wise medical exam practice for MBBS, MD/MS, DM/MCh and PhD with daily streaks."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%2304202b%27/%3E%3Cpath d=%27M9 8v16M9 16l9-8M9 16l9 8%27 stroke=%27%2322d3c5%27 stroke-width=%273.5%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
+<style>
+:root{color-scheme:dark;--panel:#ffffff0a;--panel2:#ffffff14;--line:#ffffff1f;--t:#e8f3fb;--m:#9db7c9;--p:#22d3c5;--pt:#04202b;--ok:#34d399;--bad:#ff7b7b;--amber:#f5c46b;--d:0}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;color:var(--t);background:#04111f linear-gradient(180deg,#0b3a5b 0,#072a45 35%,#04111f 100%) fixed;font:16px/1.55 system-ui,-apple-system,"Segoe UI","Noto Sans","Noto Sans Devanagari",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0;background:#01060f;opacity:calc(var(--d)*.55);pointer-events:none;z-index:-1;transition:opacity .8s}
+h1{font-size:1.7rem;line-height:1.25;margin:6px 0 4px;font-weight:700}h2{font-size:1.05rem;margin:0}p{margin:.4em 0}.m{color:var(--m);font-size:.9rem}.lead{color:var(--m);margin:0 0 18px}
+button{font:inherit;color:inherit;cursor:pointer;min-height:44px}button:disabled{cursor:not-allowed}
+button:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #7ce7de;outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}.mid{max-width:880px;padding-top:22px}.quiz{max-width:760px;padding-top:22px}
+.topbar{position:sticky;top:0;z-index:5;background:#04111fed;border-bottom:1px solid var(--line)}
+.bar-in{display:flex;align-items:center;gap:14px;min-height:60px}.brand{background:none;border:0;padding:0;display:flex;align-items:baseline;gap:10px;min-height:44px}
+.brand b{font-size:1.15rem;letter-spacing:.06em}.brand span{color:var(--m);font-size:.85rem}
+.hud{margin-left:auto;display:flex;align-items:center;gap:18px}.goal{display:flex;align-items:center;gap:10px;font-size:.9rem;white-space:nowrap}.goal .bar{width:110px}
+.streak{display:flex;align-items:center;gap:6px;color:var(--m);font-size:.9rem;white-space:nowrap}.streak.on{color:var(--amber)}.ic{width:18px;height:18px;fill:currentColor}
+.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 14px;min-height:36px;text-decoration:none;font-size:.9rem;white-space:nowrap}
+.bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#22d3c5,#38bdf8);transition:width .4s}
+.layout{display:grid;grid-template-columns:250px 1fr;grid-template-areas:"nav main" "acct main";grid-template-rows:auto 1fr;gap:0 32px;align-items:start;padding-top:24px}
+.nav{grid-area:nav;position:sticky;top:84px}.main{grid-area:main;min-width:0}.acct{grid-area:acct;margin-top:16px}
+.levels{display:flex;flex-direction:column;gap:6px}.levels button{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.levels span{color:var(--m);font-size:.82rem}.levels .on{background:var(--p);border-color:var(--p);color:var(--pt)}.levels .on span{color:#0b4a52}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:12px}.stat{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat b{display:block;font-size:1.5rem;line-height:1.2}.stat span{color:var(--m);font-size:.82rem}
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}.sec:first-of-type{margin-top:6px}
+.sub{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.tile{display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.tile:hover:not(:disabled){border-color:var(--p);background:var(--panel2)}.tile .t1{font-weight:700}.tile .t2,.tile .t3{color:var(--m);font-size:.85rem}.tile .bar{margin-top:8px}.tile:disabled{opacity:.55}
+.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.9rem;color:var(--m);margin-bottom:6px}.crumbs button{background:none;border:0;padding:0 2px;min-height:32px;color:var(--p);text-decoration:underline}.crumbs [aria-current]{color:var(--t)}
+.rows{display:flex;flex-direction:column;gap:8px}.row-i{display:grid;grid-template-columns:2rem 1fr auto;gap:12px;align-items:center;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.row-i:hover{border-color:var(--p)}.row-i .num{color:var(--m);font-weight:700}.row-i b{display:block;font-weight:600;margin-bottom:6px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 18px;padding:0}.facts li{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.85rem;color:var(--m)}
+.quizzes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.qz{display:flex;flex-direction:column;gap:8px;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.qz .qn{font-weight:700}.qz .qs{color:var(--m);font-size:.82rem}.pips{display:flex;gap:4px}.pips i{flex:1;height:5px;border-radius:3px;background:var(--line)}.pips .on{background:var(--ok)}
+.qz.now{border-color:var(--p);box-shadow:0 0 0 2px #22d3c533}.qz.now .qs{color:var(--p)}.qz.lock{opacity:.5}.qz:hover:not(:disabled){background:var(--panel2)}
+.qcard{padding:22px}.qhead{display:flex;justify-content:space-between;gap:12px;margin-bottom:10px;font-size:.9rem;color:var(--m)}.qhead b{color:var(--t)}
+.q{font-size:1.25rem;line-height:1.6;white-space:pre-wrap;margin:18px 0 16px;font-weight:600}
+.opt{display:flex;gap:14px;width:100%;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:8px 0}
+.opt:hover:not(:disabled){border-color:var(--p)}.opt:disabled{cursor:default}.L{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--panel2);font-weight:700;font-size:.9rem}
+.opt.ok{border-color:var(--ok);background:#34d3991f}.opt.no{border-color:var(--bad);background:#ff7b7b1f}
+.fb{border-left:4px solid var(--line);background:var(--panel);border-radius:0 10px 10px 0;padding:12px 16px;margin:16px 0}.fb.ok{border-color:var(--ok)}.fb.no{border-color:var(--bad)}.fb summary{cursor:pointer;color:var(--m);font-size:.9rem}
+.pri{background:var(--p);border:0;color:var(--pt);font-weight:700;border-radius:10px;padding:10px 22px}.alt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 18px}
+.hint{color:var(--m);font-size:.8rem;margin-top:14px}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.center{justify-content:center;text-align:center}
+.score{font-size:3.2rem;font-weight:700;line-height:1.1;margin:8px 0}.tag{display:inline-block;border-radius:999px;padding:3px 12px;font-size:.85rem;font-weight:700}.tag.ok{background:#34d39926;color:var(--ok)}.tag.no{background:#ff7b7b26;color:var(--bad)}
+.tbl{width:100%;border-collapse:collapse}.tbl th{text-align:left;color:var(--m);font-weight:400;font-size:.85rem;padding:8px 10px;border-bottom:1px solid var(--line)}.tbl td{padding:10px;border-bottom:1px solid var(--line)}.tbl .me td{background:#22d3c514}.tbl .r{text-align:right}
+input{font:inherit;flex:1;min-width:130px;min-height:44px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:#ffffff10;color:var(--t)}
+.link{background:none;border:0;padding:0;min-height:0;color:var(--p);text-decoration:underline}code{font-size:.9em;background:#ffffff14;padding:1px 5px;border-radius:5px}
+.foot{padding-top:28px;padding-bottom:40px;color:var(--m);font-size:.82rem}
+@media(max-width:860px){.layout{grid-template-columns:1fr;grid-template-areas:"nav" "main" "acct"}.nav{position:static}.levels{flex-direction:row;overflow-x:auto}.levels button{flex:none}.levels span{display:none}.stat{margin-bottom:6px}}
+@media(max-width:560px){.brand span,.streak span{display:none}.goal .bar{width:70px}.hud{gap:12px}h1{font-size:1.45rem}.qcard{padding:16px}.q{font-size:1.1rem}}
+@media(hover:none){.hint{display:none}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style><style>html{scroll-behavior:smooth}@keyframes kvf{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}.card,.tile,.qz,.row-i{animation:kvf .22s ease-out both}button,a{transition:background-color .18s,border-color .18s,opacity .18s,transform .18s}button:active:not(:disabled){transform:scale(.98)}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}</style></head><body><div id="app"><p style="padding:24px">Loading…</p></div><noscript><p style="padding:24px">Please enable JavaScript to use KAIVYRA.</p></noscript>
+<script>
+// ---------- SAMPLE BANK [level, subject, question, options, answerIndex, explanation] ----------
+// Small hand-written starter set. NOT a substitute for a reviewed bank; real scale comes from the API (see README_QUIZ.md).
+const B=[
+['MBBS','ANAT','Which nerve supplies the muscles of the anterior compartment of the arm?',['Radial','Musculocutaneous','Ulnar','Axillary'],1,'Biceps brachii, brachialis and coracobrachialis are supplied by the musculocutaneous nerve.'],
+['MBBS','ANAT','Which structures form the right border of the heart on a PA chest X-ray?',['Right ventricle only','SVC, right atrium, IVC','Left atrium','Aortic arch'],1,'The right heart border is the SVC, right atrium and IVC.'],
+['MBBS','ANAT','Nerve most commonly injured in a fracture of the surgical neck of the humerus?',['Radial','Median','Axillary','Ulnar'],2,'The axillary nerve winds around the surgical neck.'],
+['MBBS','PHYS','Which ion mainly produces the plateau (phase 2) of the ventricular myocyte action potential?',['Na⁺ influx','Ca²⁺ influx via L-type channels','K⁺ influx','Cl⁻ efflux'],1,'Inward L-type Ca²⁺ current balances outward K⁺ current.'],
+['MBBS','PHYS','Normal GFR of a healthy young adult is about',['12.5 mL/min','125 mL/min','1250 mL/min','12 mL/min'],1,'About 125 mL/min (~180 L/day).'],
+['MBBS','BIOC','Rate-limiting enzyme of glycolysis?',['Hexokinase','Phosphofructokinase-1','Pyruvate kinase','Enolase'],1,'PFK-1 is the main regulated, rate-limiting step.'],
+['MBBS','BIOC','Vitamin K-dependent clotting factors are',['II, VII, IX, X','I, V, VIII, XIII','XI, XII','III, IV'],0,'Factors II, VII, IX, X (plus proteins C and S).'],
+['MBBS','PATH','Reed–Sternberg cells are characteristic of',['Hodgkin lymphoma','Burkitt lymphoma','CLL','Multiple myeloma'],0,'Classic diagnostic cell of Hodgkin lymphoma.'],
+['MBBS','PATH','t(9;22), the Philadelphia chromosome, is characteristic of',['CML','AML M3','Burkitt lymphoma','Follicular lymphoma'],0,'BCR-ABL fusion, typical of CML.'],
+['MBBS','MICR','Gram-positive cocci in clusters that are coagulase-positive?',['S. epidermidis','S. aureus','S. pyogenes','E. faecalis'],1,'Coagulase positivity identifies S. aureus.'],
+['MBBS','PHAR','Antidote for paracetamol poisoning?',['Naloxone','Flumazenil','N-acetylcysteine','Atropine'],2,'NAC replenishes glutathione.'],
+['MBBS','PHAR','First-line drug in anaphylaxis?',['IV hydrocortisone','IM adrenaline','Oral antihistamine','Salbutamol'],1,'Intramuscular adrenaline is first-line.'],
+['MBBS','CMED','Best measure of central tendency for skewed data?',['Mean','Median','Range','Standard deviation'],1,'The median is robust to outliers and skew.'],
+['MBBS','PAED','Most common cyanotic congenital heart disease beyond infancy?',['Tetralogy of Fallot','TGA','Truncus arteriosus','TAPVC'],0,'Tetralogy of Fallot.'],
+['MBBS','OBGY','Most common site of ectopic pregnancy?',['Isthmus','Ampulla of fallopian tube','Ovary','Cervix'],1,'About 70% occur in the ampulla.'],
+['MBBS','SURG','Charcot’s triad in ascending cholangitis is',['Fever, jaundice, RUQ pain','Pain, vomiting, distension','Fever, rash, arthritis','Jaundice, ascites, encephalopathy'],0,'Fever, jaundice and right upper quadrant pain.'],
+['MBBS','OPHT','Leading cause of blindness worldwide?',['Cataract','Glaucoma','Trachoma','Myopia'],0,'Cataract is the leading cause of blindness globally.'],
+['MBBS','RADI','Initial investigation for suspected acute subarachnoid haemorrhage?',['MRI spine','Non-contrast CT head','EEG','Skull X-ray'],1,'Non-contrast CT is most sensitive in the first hours.'],
+['MBBS','GMED','ST elevation in II, III and aVF suggests',['Anterior MI','Inferior MI','Lateral MI','Pericarditis only'],1,'Inferior wall MI, most often from the right coronary artery.'],
+['MD/MS','GMED','Anion gap = ?',['Na − (Cl + HCO₃)','Na + K','Cl − HCO₃','Na × Cl'],0,'Normal ≈ 8–12 mEq/L (without K).'],
+['MD/MS','GMED','First-line drug for status epilepticus?',['IV lorazepam','Oral phenytoin','IV paracetamol','Carbamazepine'],0,'A benzodiazepine, e.g. IV lorazepam, is first-line.'],
+['MD/MS','MICR','Most common cause of community-acquired pneumonia?',['Streptococcus pneumoniae','Klebsiella','Pseudomonas','Legionella'],0,'S. pneumoniae.'],
+['MD/MS','SURG','Most common site of abdominal aortic aneurysm?',['Suprarenal','Infrarenal','Thoracic','Iliac'],1,'Infrarenal aorta.'],
+['MD/MS','OBGY','Drug of choice for seizure prophylaxis in severe pre-eclampsia?',['Diazepam','Phenytoin','Magnesium sulphate','Levetiracetam'],2,'MgSO₄ is the drug of choice.'],
+['MD/MS','PHAR','Which is a strong CYP3A4 inducer?',['Rifampicin','Ketoconazole','Erythromycin','Grapefruit juice'],0,'Rifampicin induces CYP3A4; the others inhibit it.'],
+['DM/MCh','PAED','Which is NOT a component of tetralogy of Fallot?',['VSD','RVOT obstruction','Left ventricular hypertrophy','Overriding aorta'],2,'The tetrad includes right (not left) ventricular hypertrophy.'],
+['DM/MCh','SURG','Milan criteria for liver transplant in HCC (single tumour)?',['≤5 cm','≤8 cm','≤10 cm','Any size'],0,'One tumour ≤5 cm, or up to 3 nodules each ≤3 cm.'],
+['DM/MCh','GMED','Amiodarone belongs to Vaughan-Williams class',['I','II','III','IV'],2,'Class III: potassium channel blockers.'],
+['DM/MCh','SURG','Pancoast tumour typically causes',['Horner syndrome','SVC obstruction only','Hoarseness only','Pleural effusion only'],0,'Apical tumour involving the sympathetic chain.'],
+['PhD','*','Type I error means',['Rejecting a true null hypothesis','Accepting a false null hypothesis','Low power','Selection bias'],0,'A false positive, probability α.'],
+['PhD','*','Comparing means of two independent normally distributed groups uses',['Unpaired t-test','Chi-square','Log-rank test','Spearman correlation'],0,'Unpaired (independent samples) t-test.'],
+['PhD','*','Hazard ratios are usually estimated with',['Cox proportional hazards model','Linear regression','ANOVA','Mann–Whitney U'],0,'Cox regression for time-to-event data.'],
+['PhD','*','The CONSORT statement is a reporting guideline for',['Randomised controlled trials','Systematic reviews','Observational studies','Diagnostic accuracy'],0,'CONSORT: RCTs (PRISMA: reviews, STROBE: observational, STARD: diagnostic).']
+].map(a=>({lv:a[0],dom:a[1],q:a[2],options:a[3],answer:a[4],explanation:a[5]}));
+
+// ---------- state ----------
+const LV=['MBBS','MD/MS','DM/MCh','PhD'],$=s=>document.querySelector(s);
+let T=null,V={v:'home'},Q=null,SRV=false,ST=null;
+const ld=()=>{try{return JSON.parse(localStorage.getItem('kq1'))||{}}catch(e){return{}}};
+let S=ld();S.p=S.p||{};S.d=S.d||{};S.s=S.s||{n:0,last:'',best:0};S.lv=S.lv||'MBBS';S.api=S.api||'';
+const sv=()=>{try{localStorage.setItem('kq1',JSON.stringify(S))}catch(e){}};
+const day=(o=0)=>{const x=new Date();x.setDate(x.getDate()+o);return x.toLocaleDateString('en-CA')};
+const td=()=>{if(S.d.day!==day())S.d={day:day(),n:0};return S.d};
+const streak=()=>S.s.last===day()||S.s.last===day(-1)?S.s.n:0;
+const doms=()=>T?T.domains:[...new Set(B.map(b=>b.dom).filter(d=>d!=='*'))].map(c=>({code:c,name:c,chapters:[]}));
+const chs=d=>d.chapters.length?d.chapters.map(c=>c.title):Array.from({length:10},(_,i)=>'Topic '+(i+1));
+const pk=(c)=>c.lv+'|'+c.dom+'|'+c.ci;
+const done=c=>S.p[pk(c)]||0, phs=c=>S.p[pk(c)+'|'+c.qz]||0;
+const esc=s=>String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
+
+// ---------- question source: API first, sample bank fallback ----------
+const ok=q=>q&&q.q&&Array.isArray(q.options)&&q.options.length>1&&Number.isInteger(q.answer)&&q.answer>=0&&q.answer<q.options.length;
+function rng(s){let h=2166136261;for(const ch of s)h=Math.imul(h^ch.charCodeAt(0),16777619);return()=>{h+=0x6D2B79F5;let t=Math.imul(h^h>>>15,1|h);t^=t+Math.imul(t^t>>>7,61|t);return((t^t>>>14)>>>0)/4294967296}}
+function local(c){let p=B.filter(b=>b.lv===c.lv&&(b.dom===c.dom||b.dom==='*'));
+ if(p.length<10)p=p.concat(B.filter(b=>b.dom===c.dom&&b.lv!==c.lv));
+ const r=rng([c.lv,c.dom,c.ci,c.qz,c.ph,c.at||0].join());return p.map(x=>[r(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]).slice(0,10)}
+async function getQs(c){
+ const AP=S.api||(SRV?'/api/questions':'');if(AP){try{const u=new URL(AP,location.href);Object.entries({level:c.lv,subject:c.dom,chapter:c.chTitle,quiz:c.qz+1,phase:c.ph+1,attempt:c.at||0,n:10}).forEach(([k,v])=>u.searchParams.set(k,v));
+  const j=await(await fetch(u)).json(),a=(j.questions||j).filter(ok);if(a.length>=5)return{qs:a.slice(0,10),src:'API'}}catch(e){}}
+ return{qs:local(c),src:'sample bank'}}
+
+// ---------- views ----------
+const GR=[['Basic sciences',['ANAT','PHYS','BIOC','CELL','HIST','GENE']],['Para-clinical subjects',['PATH','MICR','PHAR','FMTX','CMED']],['Clinical subjects',['GMED','SURG','OBGY','PAED','ORTH','OPHT','ORLH','PSYC','RADI']]];
+const LD={'MBBS':'Undergraduate','MD/MS':'Postgraduate','DM/MCh':'Super-specialty','PhD':'Research'};
+const L=k=>'ABCD'[k]||k+1,ADM=()=>location.hash==='#admin',fmt=n=>n.toLocaleString('en-IN');
+const bar=p=>`<div class="bar"><i style="width:${Math.round(p*100)}%"></i></div>`;
+const FLAME='<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.8 3.6 5 5.6 5 10.5a5 5 0 0 1-10 0c0-1.8.8-3 1.8-4 .1 1.7.9 2.6 1.9 2.8C10 8.5 10.4 5 12 2z"/></svg>';
+function qn(lv,d){let p=B.filter(b=>b.lv===lv&&(b.dom===d||b.dom==='*'));if(p.length<10)p=p.concat(B.filter(b=>b.dom===d&&b.lv!==lv));
+ if(!ST)return p.length;const g=k=>ST[k]||0;return Math.max(p.length,g(lv+'|'+d)+(lv==='PhD'?g('PhD|*'):0))}
+function crumbs(a){return`<nav class="crumbs" aria-label="Breadcrumb">${a.map((c,i)=>i<a.length-1?`<button data-a="go" data-v="${c[1]}">${esc(c[0])}</button><span aria-hidden="true">/</span>`:`<span aria-current="page">${esc(c[0])}</span>`).join('')}</nav>`}
+function hdr(){const d=td(),n=Math.min(d.n,50),st=streak();
+ return`<header class="topbar"><div class="wrap bar-in"><button class="brand" data-a="go" data-v="home"><b>KAIVYRA</b><span>Exam practice</span></button><div class="hud"><div class="goal" title="Daily goal: 50 questions"><span>Today <b>${n}</b>/50</span>${bar(n/50)}</div><div class="streak${st?' on':''}" title="Days in a row with 50 questions">${FLAME}<b>${st}</b><span>day streak</span></div>${SRV?(S.tok?`<button class="chip" data-a="lbopen">${esc(S.name)}</button>`:`<button class="chip" data-a="signin">Sign in</button>`):''}</div></div></header>`}
+function adminBox(){return`<div class="card"><b>Admin</b><p class="m">${SRV?'Server connected. Questions come from its database.':'No server found. The built-in sample set is in use, so questions repeat.'}${T?'':' The chapter list did not load. Open this page through server.py, not by double-click.'}</p><p class="m">Question API: an endpoint returning <code>{"questions":[{"q","options","answer","explanation"}]}</code> for <code>?level&amp;subject&amp;chapter&amp;quiz&amp;phase&amp;attempt&amp;n=10</code>.</p><div class="row"><input id="api" placeholder="https://your-server/api/questions" aria-label="API URL" value="${esc(S.api)}"><button class="alt" data-a="api">Save</button></div></div>`}
+function acct(){return S.tok?`<div class="card row"><span>Signed in as <b>${esc(S.name)}</b></span><button class="link" data-a="lbopen">Leaderboard</button><button class="link" data-a="out">Sign out</button></div>`
+ :`<div class="card"><h2>Join the leaderboard</h2><p class="m">Choose a name and a PIN of 4 or more characters. Use the same pair next time to sign back in.</p><div class="row"><input id="nm" placeholder="Name" aria-label="Name"><input id="pin" type="password" placeholder="PIN" aria-label="PIN"></div><div class="row" style="margin-top:10px"><button class="pri" data-a="join">Join or sign in</button><button class="link" data-a="lbopen">See the leaderboard</button></div></div>`}
+function home(){
+ const all=doms(),known=new Set(GR.flatMap(g=>g[1])),groups=GR.map(([t,c])=>[t,all.filter(d=>c.includes(d.code))]);const rest=all.filter(d=>!known.has(d.code));if(rest.length)groups.push(['Other',rest]);
+ const tile=d=>{const cs=chs(d),n=cs.length,q=qn(S.lv,d.code);let t=0;cs.forEach((_,i)=>t+=done({lv:S.lv,dom:d.code,ci:i}));
+  return`<button class="tile" ${q?'':'disabled'} data-a="dom" data-d="${d.code}"><span class="t1">${esc(d.name)}</span><span class="t2">${n} chapters</span><span class="t3">${q?`${fmt(q)} ${q===1?'question':'questions'} · ${t} of ${n*10} quizzes done`:'No questions yet'}</span>${bar(q?t/(n*10):0)}</button>`};
+ const doneN=Object.entries(S.p).filter(([k])=>k.split('|').length===3&&k.startsWith(S.lv+'|')).reduce((a,[,v])=>a+v,0);
+ return hdr()+`<div class="wrap layout"><aside class="nav"><nav class="levels" aria-label="Exam level">${LV.map(l=>`<button class="${l===S.lv?'on':''}" aria-pressed="${l===S.lv}" data-a="lv" data-l="${l}"><b>${l}</b><span>${LD[l]}</span></button>`).join('')}</nav><div class="card stat"><div><b>${doneN}</b><span>quizzes finished</span></div><div><b>${S.s.best}</b><span>best streak</span></div></div></aside>
+ <main class="main"><h1>Subjects</h1><p class="lead">${LD[S.lv]} level. Pick a subject, then a chapter. Every chapter has 10 quizzes.</p>${groups.filter(g=>g[1].length).map(([t,ds])=>`<div class="sec"><h2>${t}</h2><span class="m">${ds.length} subjects</span></div><div class="sub">${ds.map(tile).join('')}</div>`).join('')}${ADM()?adminBox():''}</main>${SRV?`<section id="acct" class="acct">${acct()}</section>`:''}</div>`}
+function lb(){return hdr()+`<div class="wrap mid">${crumbs([['Subjects','home'],['Leaderboard']])}<h1>Leaderboard</h1><p class="lead">Ranked by current streak (days with 50 questions), then by total questions.</p>`+(V.rows.length?`<div class="card" style="padding:6px"><table class="tbl"><thead><tr><th>#</th><th>Name</th><th class="r">Streak</th><th class="r">Best</th><th class="r">Questions</th></tr></thead><tbody>${V.rows.map((r,i)=>`<tr class="${r.name===S.name?'me':''}"><td>${i+1}</td><td>${esc(r.name)}</td><td class="r">${r.streak}</td><td class="r">${r.best}</td><td class="r">${fmt(r.total)}</td></tr>`).join('')}</tbody></table></div>`:'<div class="card">Nobody has joined yet. Join from the home page and you will be first.</div>')+'</div>'}
+function chap(){const d=doms().find(x=>x.code===V.d),cs=chs(d);
+ return hdr()+`<div class="wrap mid">${crumbs([['Subjects','home'],[d.name]])}<h1>${esc(d.name)}</h1><p class="lead">${S.lv} · ${cs.length} chapters · 10 quizzes in each</p><div class="rows">${cs.map((t,i)=>{const n=done({lv:S.lv,dom:d.code,ci:i});
+  return`<button class="row-i" data-a="ch" data-i="${i}"><span class="num">${i+1}</span><span><b>${esc(t)}</b>${bar(n/10)}</span><span class="m">${n} of 10 quizzes</span></button>`}).join('')}</div></div>`}
+function ladder(){const d=doms().find(x=>x.code===V.d),c={lv:S.lv,dom:d.code,ci:V.i},n=done(c);
+ return hdr()+`<div class="wrap mid">${crumbs([['Subjects','home'],[d.name,'chap'],['Chapter '+(V.i+1)]])}<h1>${esc(chs(d)[V.i])}</h1><ul class="facts"><li>5 phases of 10 questions in each quiz</li><li>Pass mark: 6 of 10</li><li>Pass all 5 phases to unlock the next quiz</li></ul><div class="quizzes">${Array.from({length:10},(_,q)=>{
+  const p=S.p[pk(c)+'|'+q]||0,k=q<n?'done':q===n?'now':'lock',ph=q<n?5:q===n?p:0,t=q<n?'Finished':q===n?(p?`Resume at phase ${Math.min(p+1,5)}`:'Start here'):'Locked';
+  return`<button class="qz ${k}" ${q>n?'disabled':''} data-a="quiz" data-q="${q}"><span class="qn">Quiz ${q+1}</span><span class="pips">${[0,1,2,3,4].map(i=>`<i class="${i<ph?'on':''}"></i>`).join('')}</span><span class="qs">${t}</span></button>`}).join('')}</div></div>`}
+function qcrumbs(){const d=doms().find(x=>x.code===Q.c.dom);return crumbs([['Subjects','home'],[d.name,'chap'],['Chapter '+(Q.c.ci+1),'ladder'],['Quiz '+(Q.c.qz+1)]])}
+function play(){const q=Q.qs[Q.i],a=Q.sel!==undefined,ok=Q.sel===q.answer,more=Q.i+1<Q.qs.length;
+ return hdr()+`<div class="wrap quiz">${qcrumbs()}<section class="card qcard"><div class="qhead"><span>Quiz ${Q.c.qz+1} · <b>Phase ${Q.c.ph+1} of 5</b></span><span>Question <b>${Q.i+1}</b> of ${Q.qs.length}</span></div>${bar(Q.i/Q.qs.length)}
+ <h2 class="q">${esc(q.q)}</h2><div role="group" aria-label="Answer options">${q.options.map((o,k)=>`<button class="opt ${a?(k===q.answer?'ok':k===Q.sel?'no':''):''}" ${a?'disabled':''} data-a="ans" data-k="${k}"><span class="L">${L(k)}</span><span>${esc(o)}</span></button>`).join('')}</div>
+ ${a?`<div class="fb ${ok?'ok':'no'}" role="status"><b>${ok?'Correct':'Not quite. Correct answer: '+L(q.answer)}</b>${q.explanation?`<p>${esc(q.explanation)}</p>`:''}<details><summary>About this question</summary><p class="m">Source: ${esc(q.source||Q.src)}</p>${q.reviewed!==true?'<p class="m">Not yet checked by a doctor. Confirm with your textbook before relying on it.</p>':''}</details></div><button class="pri" data-a="next">${more?'Next question':'See result'}</button>`:''}
+ <p class="hint">Keyboard: A to D to answer, Enter for the next question.</p></section></div>`}
+function result(){const n=Q.qs.length,need=Math.ceil(n*.6),pass=Q.score>=need,c=Q.c,last=c.ph===4;
+ const msg=pass?(last?`Quiz ${c.qz+1} complete.${c.qz===9?' You have finished this chapter.':' The next quiz is unlocked.'}`:`Phase ${c.ph+1} passed. Phase ${c.ph+2} is unlocked.`):`Not passed yet. You need ${need} of ${n}. Retrying gives you a fresh set.`;
+ return hdr()+`<div class="wrap quiz">${qcrumbs()}<section class="card qcard center" style="flex-direction:column"><div class="score">${Q.score} / ${n}</div><p><span class="tag ${pass?'ok':'no'}">${pass?'Passed':'Not passed'}</span></p><p>${msg}</p><div class="row center" style="margin-top:14px">${pass&&!last?`<button class="pri" data-a="phase" data-p="${c.ph+1}">Start phase ${c.ph+2}</button>`:''}${!pass?`<button class="pri" data-a="phase" data-p="${c.ph}">Retry phase ${c.ph+1}</button>`:''}<button class="alt" data-a="go" data-v="ladder">Back to quizzes</button></div></section></div>`}
+function empty(){return hdr()+`<div class="wrap mid">${crumbs([['Subjects','home']])}<h1>No questions here yet</h1><p class="lead">This subject has no questions at this level yet. Try another level or subject.</p></div>`}
+let LK='';const FOOT='<footer class="wrap foot"><p>Practice material only. Check answers against standard textbooks. The source and review status appear under every answer.</p></footer>';
+function render(){const tot=Object.entries(S.p).filter(([k])=>k.split('|').length===3).reduce((a,[,v])=>a+v,0);
+ document.documentElement.style.setProperty('--d',Math.min(1,tot/60));
+ $('#app').innerHTML=({home,chap,ladder,play,result,lb,empty})[V.v]()+FOOT;
+ const k=V.v+(V.v==='play'?Q.c.qz+'.'+Q.c.ph+'.'+Q.i:'');if(k!==LK)window.scrollTo(0,0);LK=k;
+ if(V.v==='play'&&Q.sel!==undefined)document.querySelector('.fb')?.scrollIntoView({block:'nearest',behavior:'smooth'})}
+document.addEventListener('keydown',e=>{if(V.v!=='play'||e.ctrlKey||e.metaKey||e.altKey||/INPUT|TEXTAREA/.test(e.target.tagName))return;
+ const k=e.key.toLowerCase(),i='abcd'.includes(k)&&k.length===1?'abcd'.indexOf(k):'1234'.indexOf(k);
+ if(Q.sel===undefined&&i>=0&&k.length===1){document.querySelectorAll('.opt')[i]?.click()}else if(Q.sel!==undefined&&e.key==='Enter'&&e.target.tagName!=='BUTTON'){document.querySelector('[data-a=next]')?.click()}});
+
+// ---------- actions ----------
+async function start(c){$('#app').innerHTML='<p class="card">Loading questions…</p>';const r=await getQs(c);if(!r.qs.length){V.v='empty';render();return}Q={c,qs:r.qs,src:r.src,i:0,score:0};V.v='play';render()}
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,D=b.dataset;
+ if(a==='lbopen'){e.preventDefault();try{V={v:'lb',rows:(await(await fetch('/api/leaderboard')).json()).top}}catch(x){return alert('Leaderboard needs server.py running')}render()}
+ else if(a==='join'){try{const r=await fetch('/api/join',{method:'POST',body:JSON.stringify({name:$('#nm').value,pin:$('#pin').value})}),j=await r.json();if(!r.ok)return alert(j.error);S.tok=j.token;S.name=j.name;sv();render()}catch(x){alert('Server not reachable')}}
+ else if(a==='out'){delete S.tok;delete S.name;sv();render()}
+ else if(a==='lv'){S.lv=D.l;sv();render()}
+ else if(a==='api'){S.api=$('#api').value.trim();sv();alert(S.api?'API saved. Used on next quiz; falls back to sample bank if it fails.':'API cleared.')}
+ else if(a==='signin'){document.getElementById('acct')?.scrollIntoView({behavior:'smooth'});document.getElementById('nm')?.focus()}
+ else if(a==='go'){V.v=D.v;render()}
+ else if(a==='dom'){V={v:'chap',d:D.d};render()}
+ else if(a==='ch'){V={...V,v:'ladder',i:+D.i};render()}
+ else if(a==='quiz'){const d=doms().find(x=>x.code===V.d),c={lv:S.lv,dom:V.d,ci:V.i,chTitle:chs(d)[V.i],qz:+D.q,ph:0};c.ph=Math.min(phs(c),4);if(done(c)>c.qz)c.ph=0;start(c)}
+ else if(a==='phase'){start({...Q.c,ph:+D.p,at:+D.p===Q.c.ph?(Q.c.at||0)+1:0})}
+ else if(a==='ans'&&Q.sel===undefined){Q.sel=+D.k;const q=Q.qs[Q.i];if(Q.sel===q.answer)Q.score++;
+  const d=td();d.n++;if(d.n===50){S.s.n=(S.s.last===day(-1)?S.s.n:0)+1;S.s.last=day();S.s.best=Math.max(S.s.best,S.s.n);setTimeout(()=>alert('🔥 Daily 50 done! Streak: '+S.s.n+(S.s.n===1?' day':' days')+'. Come back tomorrow to keep the chain.'),50)}
+  if(S.tok)fetch('/api/answered',{method:'POST',body:JSON.stringify({token:S.tok})}).catch(()=>{});sv();render()}
+ else if(a==='next'){Q.i++;Q.sel=undefined;if(Q.i<Q.qs.length)render();else{const c=Q.c,k=pk(c);
+  if(Q.score/Q.qs.length>=.6){if(c.ph===4){S.p[k+'|'+c.qz]=5;if(done(c)===c.qz)S.p[k]=c.qz+1}else S.p[k+'|'+c.qz]=Math.max(phs(c),c.ph+1)}
+  sv();V.v='result';render()}}});
+const tx=fetch('phase1_data_and_report/master_medical_taxonomy.json').then(r=>r.json()).then(j=>{T=j}).catch(()=>{});
+const pg=fetch('/api/ping').then(r=>r.json()).then(j=>{SRV=!!j.ok}).catch(()=>{});
+const st=fetch('/api/stats').then(r=>r.json()).then(j=>{ST=j.counts}).catch(()=>{});
+Promise.all([tx,pg,st]).then(render);
+window.addEventListener('hashchange',render);
+</script><script>
+/* One step back inside the quiz: question -> chapter ladder -> chapters -> start. Anything else falls through to site history. */
+window.__kvBack=function(){
+  var v=V.v;
+  if(v==='play'||v==='result'||v==='empty'){if(V.i!=null){V.v='ladder';render();return true}V.v='chap';render();return true}
+  if(v==='ladder'){V={v:'chap',d:V.d};render();return true}
+  if(v==='chap'||v==='lb'){V={v:'home'};render();return true}
+  return false;
+};
+</script><script src="/platform/kv-dock.js?v=1" defer></script><link rel="stylesheet" href="/platform/site-pro.css?v=1"><script src="/platform/site-pro.js?v=1" defer></script></body></html>

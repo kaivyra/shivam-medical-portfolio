@@ -53,6 +53,12 @@
     map: '<path d="M3.5 6.5l5.5-2 6 2 5.5-2v13l-5.5 2-6-2-5.5 2zM9 4.5v13M15 6.5v13"/>',
     mail: '<rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/>',
     phone: '<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>',
+    home: '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+    flask: '<path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7.5 15h9"/>',
+    chart: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+    spark: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    moon: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
     dot: '<circle cx="12" cy="12" r="3"/>'
   };
   function icon(n) { return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (ICONS[n] || ICONS.dot) + '</svg>'; }
@@ -84,6 +90,7 @@
       { h: 'Overview and reference', items: ['command-center', 'anatomy-atlas', 'symptom-checker', 'clinical-atlas', 'cloud-repo'].map(clin) },
       { h: 'Calculate and score', items: ['calculators', 'score-suite', 'rx-formulary', 'physician-finance'].map(clin) },
       { h: 'Simulate', items: ['cellular-electrophys', 'pvloop', 'telemetry', 'pkpd'].map(clin) } ] },
+    { id: 'emergency-lab', label: 'Emergency Virtual Room', href: '/emergency-lab/', tip: 'Advanced Emergency & Critical Care Simulation Lab' },
     { id: 'arena', label: 'Medical Arena', href: '/arena/', tip: 'Daily cases, campaigns and practice' },
     { id: 'workspace', label: 'Workspace', href: '/workspace/', tip: 'Saved papers and notes, private to this browser', count: true },
     { id: 'about', label: 'About', w: 920, rail: 'about', groups: [
@@ -161,11 +168,67 @@
     return out;
   }
 
+
+  /* Detailed drawer tree: [href,label,sub] ; ['-',heading] = sub-heading ; sub numbers = chapter counts */
+  function drawerTree() {
+    var cl = function (g) { return g.items.map(function (m) { return [m.href, m.label, m.sub]; }); };
+    function grp(id) { return NAV.filter(function (n) { return n.id === id; })[0]; }
+    function flat(id) { var o = []; grp(id).groups.forEach(function (g) { o.push(['-', g.h]); cl(g).forEach(function (x) { o.push(x); }); }); return o; }
+    return [
+      { l: 'Global Medical News', ic: 'atlas', href: '/#desk', items: [['-', 'Live news desk'], ['/#news-all', 'All News', 'Latest indexed headlines'], ['/#news-research', 'Research', 'New journal articles'], ['/#news-diseases', 'Diseases', 'Outbreaks and epidemiology'], ['/#news-vaccines', 'Vaccines', 'Vaccination and immunization'], ['/#news-public', 'Public Health', 'Population-level health'], ['/#news-tech', 'Medical Technology', 'Devices, AI and digital health'], ['-', 'On the page'], ['/#desk', 'Live Medical Updates', 'Refreshes automatically'], ['/#desk', 'Quick Facts', 'Live counts from Europe PMC']] },
+      { l: 'Medical Learning', ic: 'book', href: '/all-in-one/', items: [['-', 'Start'], ['/all-in-one/', 'Open Medical Learning', 'All subjects in one place'], ['/all-in-one/quiz.html', 'Practice Quiz', 'Test yourself'], ['-', '20 subjects (chapters)'], ['/all-in-one/','Human Anatomy','10'],['/all-in-one/','Human Physiology','8'],['/all-in-one/','Medical Biochemistry','7'],['/all-in-one/','Cell & Molecular Biology','5'],['/all-in-one/','Histology & Embryology','6'],['/all-in-one/','Genetics & Genomics','4'],['/all-in-one/','Pathology','8'],['/all-in-one/','Microbiology & Immunology','7'],['/all-in-one/','Pharmacology','7'],['/all-in-one/','Forensic Medicine & Toxicology','4'],['/all-in-one/','Community Medicine & Public Health','5'],['/all-in-one/','General Medicine & Allied Clinical Sciences','7'],['/all-in-one/','General Surgery & Allied Surgical Sciences','5'],['/all-in-one/','Obstetrics & Gynaecology','4'],['/all-in-one/','Paediatrics','3'],['/all-in-one/','Orthopaedics','2'],['/all-in-one/','Ophthalmology','2'],['/all-in-one/','ENT / Otorhinolaryngology','2'],['/all-in-one/','Psychiatry & Behavioural Sciences','2'],['/all-in-one/','Radiology, Anaesthesiology, Emergency & Critical Care','2']] },
+      { l: 'Report Analyzer', ic: 'analyzer', href: '/analyzer/', items: [['/analyzer/', 'Open Report Analyzer', 'Plain-language lab report reading'], ['/analyzer/', 'English and Hindi', 'Read results in your language'], ['/legal/', 'Not medical advice', 'Read the disclaimer']] },
+      { l: 'Public Health', ic: 'shield', href: '/research/?q=public+health', items: [['-', 'Search the literature'], ['/research/?q=public+health', 'Public health'], ['/research/?q=epidemiology', 'Epidemiology'], ['/research/?q=vaccination+coverage', 'Vaccination'], ['/research/?q=infectious+disease+outbreak', 'Infectious disease outbreaks'], ['/research/?q=maternal+and+child+health', 'Maternal and child health'], ['/research/?q=nutrition+and+malnutrition', 'Nutrition'], ['/research/?q=non-communicable+diseases', 'Non-communicable diseases'], ['/research/?q=mental+health', 'Mental health'], ['/trials/', 'Clinical Trials', 'Registered studies']] },
+      { l: 'Science Explained', ic: 'flask', href: '/knowledge/', items: [['/knowledge/', 'Knowledge Hub', 'Search 519 topics and 450 inquiry prompts'], ['/knowledge/atlas/', 'Research Domain Atlas', '50 domains, 519 topics'], ['/knowledge/framework/', 'Medical Inquiry Framework', '15 lenses, 450 dimensions']] },
+      { l: 'Discover', ic: 'research', href: '/research/', items: flat('discover') },
+      { l: 'Evidence', ic: 'scale', href: '/evidence-lab/', items: flat('evidence').concat([['-', 'Inside Evidence Lab'], ['/evidence-lab/', 'Compare studies'], ['/evidence-lab/', 'Appraisal checklist'], ['/evidence-lab/', 'Study design guide'], ['/evidence-lab/', 'Conflicting evidence']]) },
+      { l: 'Clinical', ic: 'rx', href: '/clinical/', items: flat('clinical') },
+      { l: 'Medical Arena', ic: 'arena', href: '/arena/', items: [['/arena/', 'Daily Gauntlet', 'A new challenge each day'], ['/arena/', 'Blitz Duel', 'Fast head-to-head rounds'], ['/arena/', 'Diagnosis Detective', 'Case-based reasoning'], ['/arena/', 'Drug Match', 'Pharmacology practice'], ['/arena/', 'Academy', 'Guided practice']] },
+      { l: 'Emergency Virtual Room', ic: 'ecg', href: '/emergency-lab/', items: [['/emergency-lab/', 'Open the virtual room', 'Live monitor, exam, tests, treatment'], ['/emergency-lab/', 'Case library', 'Emergency and critical-care cases'], ['/emergency-lab/', 'Student, Junior Dr, Senior Dr modes', 'Choose how much guidance you get'], ['/emergency-lab/', 'Scored debrief', 'Review what you did and when']] },
+      { l: 'Workspace', ic: 'folder', href: '/workspace/', items: [['/workspace/', 'Saved papers and notes', 'Private to this browser']] },
+      { l: 'About', ic: 'info', href: '/?panel=about:0', items: flat('about').concat([['-', 'More'], ['/future/', 'What is not built yet'], ['/legal/', 'Disclaimer, sources and takedown policy']]) }
+    ];
+  }
+
+  function drawerHTML(page) {
+    var L = [['/', 'Home', 'home'], ['/#desk', 'Global Medical News', 'atlas'], ['/knowledge/', 'Science Explained', 'flask'], ['/research/?q=public+health', 'Public Health', 'shield'],
+      ['/all-in-one/', 'Medical Learning', 'book'], ['/clinical/', 'Clinical Knowledge', 'rx'], ['/evidence-lab/', 'Evidence vs Myths', 'scale'], ['/knowledge/atlas/', 'Knowledge Lab', 'chart'], ['/legal/', 'References', 'layers']];
+    var h = '<div class="kvb-dh"><a class="kvb-dbrand" href="/" aria-label="KAIVYRA home">' + LOGO + '<span><b>KAIVYRA</b><small>Medical Knowledge Hub</small></span></a><button type="button" class="kvb-dx" aria-label="Close menu">×</button></div>';
+    h += '<a class="kvb-feat" href="/emergency-lab/"><i>' + icon('ecg') + '</i><span><b>Advanced Emergency Virtual Room</b><small>Emergency and critical-care simulation lab</small></span></a>';
+    h += '<ul class="kvb-dl">' + L.map(function (x) { return '<li><a href="' + x[0] + '"' + (normPath(x[0]) === page && x[0].indexOf('#') < 0 ? ' aria-current="page"' : '') + '>' + icon(x[2]) + x[1] + '</a></li>'; }).join('') + '</ul>';
+    h += '<h6>Explore everything</h6><div class="kvb-dg">';
+    drawerTree().forEach(function (g) {
+      h += '<details><summary><i>' + icon(g.ic) + '</i><span>' + esc(g.l) + '</span>' + CHEV + '</summary><div>';
+      h += '<a class="kvb-all" href="' + esc(g.href) + '">' + esc('Open') + ' ' + esc(g.l) + ' →</a>';
+      g.items.forEach(function (m) {
+        if (m[0] === '-') { h += '<p>' + esc(m[1]) + '</p>'; return; }
+        h += '<a href="' + esc(m[0]) + '"><b>' + esc(m[1]) + '</b>' + (m[2] ? (/^\d+$/.test(m[2]) ? '<em>' + m[2] + '</em>' : '<small>' + esc(m[2]) + '</small>') : '') + '</a>';
+      });
+      h += '</div></details>';
+    });
+    h += '</div>';
+    h += '<div class="kvb-promo"><p>Advancing<b>Medical Science</b>Together</p></div>';
+    h += '<div class="kvb-dfoot"><div class="kvb-seg" role="group" aria-label="Language"><button type="button" data-lang="en" lang="en">English</button><button type="button" data-lang="hi" lang="hi">हिन्दी</button></div>' +
+      '<div class="kvb-seg kvb-th" role="group" aria-label="Colour theme"><button type="button" data-theme-btn="light" aria-label="Light theme">' + icon('sun') + '</button><button type="button" data-theme-btn="dark" aria-label="Dark theme">' + icon('moon') + '</button></div></div>';
+    return h;
+  }
+
+  /* The full navigation belongs to the home page only (body.kv-home). Inner pages never get a second bar:
+     they use their own navigation (if they have one) or none. Back + Home come from /platform/kv-dock.js on every page. */
+  var SHOW_INNER_BAR = false;
+  function renderInner(host) {
+    document.documentElement.classList.add('kv-inner');
+    if (!SHOW_INNER_BAR) { host.style.display = 'none'; document.documentElement.classList.add('kv-nobar'); return; }
+    host.classList.add('kvb-inner');
+    host.innerHTML = '<nav class="kvs" aria-label="KAIVYRA"><a class="kvs-brand" href="/" aria-label="KAIVYRA home">' + LOGO + '<span>KAIVYRA</span></a><a class="kvs-home" href="/">\u2190 Home</a></nav>';
+  }
+
   function build() {
     var host = document.getElementById('kv-global-bar');
     if (!host) { host = document.createElement('div'); host.id = 'kv-global-bar'; document.body.insertBefore(host, document.body.firstChild); }
+    if (!document.body.classList.contains('kv-home')) { renderInner(host); return; }
     var act = activeId(), page = normPath(location.pathname), html = '', MENUS = [], coarse = false;
-    html += '<nav class="kvb" aria-label="KAIVYRA"><a class="kvb-brand" href="/" aria-label="KAIVYRA home">' + LOGO + '<span>KAIVYRA</span></a>';
+    html += '<nav class="kvb" aria-label="KAIVYRA"><button class="kvb-ham" type="button" id="kvb-burger" aria-label="Open menu" aria-expanded="false" aria-controls="kvb-drawer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><a class="kvb-brand" href="/" aria-label="KAIVYRA home">' + LOGO + '<span>KAIVYRA</span></a>';
     html += '<ul class="kvb-nav" id="kvb-nav">';
     NAV.forEach(function (n) {
       html += '<li>';
@@ -181,8 +244,8 @@
     html += '<button class="kvb-sbtn" type="button" id="kvb-sbtn" aria-label="Search research" aria-expanded="false"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 14l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>';
     html += '<form class="kvb-search" id="kvb-form" role="search" action="/research/" method="get"><label class="kv-sr" for="kvb-q" style="position:absolute;left:-9999px">Search medical research</label><input id="kvb-q" name="q" type="search" placeholder="Search PubMed-indexed research" autocomplete="off" maxlength="200" role="combobox" aria-expanded="false" aria-controls="kvb-sug" aria-autocomplete="list"><div class="kvb-sug" id="kvb-sug" role="listbox" hidden></div><p class="kvb-sh">Press Enter to search publications. Jump anywhere with ' + kbd() + '</p></form>';
     html += '<button class="kvb-lang" type="button" id="kvb-lang" aria-haspopup="true" aria-expanded="false" aria-label="Language">EN' + CHEV + '</button>';
-    html += '<div class="kvb-menu kvb-lm" id="kvb-lm" role="menu"><div class="kvb-panel kvb-simple"><a role="menuitem" href="#" aria-current="true" data-lang="en">English</a><a role="menuitem" href="#" aria-disabled="true" tabindex="-1">\u0939\u093f\u0928\u094d\u0926\u0940 <small>Translation in progress</small></a></div></div>';
-    html += '</div><button class="kvb-burger" type="button" aria-label="Open menu" aria-expanded="false" id="kvb-burger">\u2630</button></nav>';
+    html += '<div class="kvb-menu kvb-lm" id="kvb-lm" role="menu"><div class="kvb-panel kvb-simple"><a role="menuitem" href="#" data-lang="en" lang="en">English</a><a role="menuitem" href="#" data-lang="hi" lang="hi">\u0939\u093f\u0928\u094d\u0926\u0940</a></div></div>';
+    html += '</div><a class="kvb-cta" id="kvb-ai" href="/ai-lab/" title="KAIVYRA AI" aria-label="Open KAIVYRA AI">' + LOGO.replace('<svg ', '<svg class="kvb-logo" ') + '<span>KAIVYRA AI</span></a></nav>';
     html += '<span class="kvb-ind" aria-hidden="true"></span><span class="kvb-prog" aria-hidden="true"></span>';
     host.innerHTML = html;
 
@@ -215,7 +278,7 @@
       if (m.id === 'lang') return;
       if (mobile()) { m.el.style.left = ''; m.el.style.width = ''; return; }
       var w = Math.min(m.w, window.innerWidth - 32), br = host.getBoundingClientRect(), r = m.btn.getBoundingClientRect();
-      var left = r.left - br.left + r.width / 2 - w / 2; left = Math.max(16, Math.min(left, window.innerWidth - w - 16));
+      var left = r.left - br.left + r.width / 2 - w / 2; left = Math.max(16 - br.left, Math.min(left, window.innerWidth - w - 16 - br.left));
       m.el.style.width = w + 'px'; m.el.style.left = left + 'px';
     }
     function closeMenu(m) { m.el.classList.remove('open'); m.btn.setAttribute('aria-expanded', 'false'); m.pinned = false; m.byHover = false; }
@@ -228,12 +291,12 @@
       place(m); settle();
     }
     function focusFirst(m) { var f = m.el.querySelector('a'); if (f) f.focus(); }
-    function closeMobile() { host.classList.remove('kvb-mobopen'); bar.classList.remove('mob-open'); burger.setAttribute('aria-expanded', 'false'); burger.textContent = '\u2630'; document.documentElement.classList.remove('kvb-lock'); }
+    function closeMobile() { if (document.body.classList.contains('kvb-dopen') && window.__kvSetDrawer) window.__kvSetDrawer(false); }
 
     MENUS.forEach(function (m) {
       if (m.id === 'lang') {
         m.btn.addEventListener('click', function (e) { e.stopPropagation(); closeSearch(); var o = !m.el.classList.contains('open'); closeMenus(m); if (o) { m.el.classList.add('open'); m.btn.setAttribute('aria-expanded', 'true'); m.pinned = true; } else closeMenu(m); });
-        m.el.addEventListener('click', function (e) { e.preventDefault(); closeMenus(); });
+        m.el.addEventListener('click', function (e) { e.preventDefault(); var a = e.target.closest('a[data-lang]'); if (a && window.KVI18N) window.KVI18N.set(a.getAttribute('data-lang')); closeMenus(); });
         return;
       }
       var li = m.btn.parentNode;
@@ -353,32 +416,81 @@
 
     /* ---- global handlers ---- */
     document.addEventListener('click', function (e) { if (!host.contains(e.target)) { closeMenus(); closeSearch(); } });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeMenus(); closeSearch(); if (bar.classList.contains('mob-open')) { closeMobile(); burger.focus(); } } });
-    burger.addEventListener('click', function () {
-      var o = !bar.classList.contains('mob-open'); bar.classList.toggle('mob-open', o); host.classList.toggle('kvb-mobopen', o); burger.setAttribute('aria-expanded', String(o)); burger.textContent = o ? '\u2715' : '\u2630';
-      document.documentElement.classList.toggle('kvb-lock', o); if (!o) closeMenus();
+    /* ---- left drawer (hamburger): every section of the site, language and theme ---- */
+    ['kvb-drawer', 'kvb-scrim'].forEach(function (id) { var o = document.getElementById(id); if (o) o.parentNode.removeChild(o); });
+    var scrim = document.createElement('div'); scrim.className = 'kvb-scrim'; scrim.id = 'kvb-scrim';
+    var dr = document.createElement('aside'); dr.className = 'kvb-drawer'; dr.id = 'kvb-drawer'; dr.setAttribute('aria-label', 'Site sections'); dr.innerHTML = drawerHTML(page);
+    document.body.appendChild(scrim); document.body.appendChild(dr);
+    function drawerOpen() { return document.body.classList.contains('kvb-dopen'); }
+    function setDrawer(o) {
+      document.body.classList.toggle('kvb-dopen', o);
+      burger.setAttribute('aria-expanded', String(o)); burger.setAttribute('aria-label', o ? 'Close menu' : 'Open menu');
+      if (o) { closeMenus(); closeSearch(); dr.classList.toggle('no-theme', !document.getElementById('kv-theme')); var a = dr.querySelector('.kvb-feat'); if (a) try { a.focus({ preventScroll: true }); } catch (e) { } }
+    }
+    window.__kvSetDrawer = setDrawer;
+    /* KAIVYRA AI panel: loaded on first hover/focus/click so it never slows the page */
+    var aiBtn = document.getElementById('kvb-ai'), aiLoad = null;
+    function loadAI() {
+      if (aiLoad) return aiLoad;
+      aiLoad = new Promise(function (res, rej) {
+        var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = '/platform/ai.css?v=5'; document.head.appendChild(l);
+        var sc = document.createElement('script'); sc.src = '/platform/ai.js?v=5'; sc.onload = function () { res(window.KVAI); }; sc.onerror = function () { aiLoad = null; rej(); }; document.head.appendChild(sc);
+      });
+      return aiLoad;
+    }
+    if (aiBtn) {
+      ['pointerenter', 'focus', 'touchstart'].forEach(function (ev) { aiBtn.addEventListener(ev, loadAI, { once: true, passive: true }); });
+      aiBtn.addEventListener('click', function (e) { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); setDrawer(false); loadAI().then(function (k) { k.open(); }).catch(function () { location.href = '/ai-lab/'; }); });
+    }
+    window.__kvOpenAI = function (q) { loadAI().then(function (k) { k.open(q); }); };
+    burger.addEventListener('click', function (e) { e.stopPropagation(); setDrawer(!drawerOpen()); });
+    scrim.addEventListener('click', function () { setDrawer(false); });
+    dr.addEventListener('click', function (e) {
+      if (e.target.closest('.kvb-dx')) { setDrawer(false); burger.focus(); return; }
+      var lb = e.target.closest('[data-lang]'); if (lb) { if (window.KVI18N) window.KVI18N.set(lb.getAttribute('data-lang')); return; }
+      var tb = e.target.closest('[data-theme-btn]'); if (tb) { var cur = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light'; var t0 = document.getElementById('kv-theme'); if (t0 && cur !== tb.getAttribute('data-theme-btn')) t0.click(); syncDr(); return; }
+      if (e.target.closest('a')) setDrawer(false);
     });
+    function syncDr() {
+      var l = window.KVI18N ? window.KVI18N.get() : 'en', th = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+      Array.prototype.forEach.call(dr.querySelectorAll('[data-lang]'), function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === l)); });
+      Array.prototype.forEach.call(dr.querySelectorAll('[data-theme-btn]'), function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-theme-btn') === th)); });
+      lbtn.innerHTML = (l === 'hi' ? 'हिं' : 'EN') + CHEV;
+      Array.prototype.forEach.call(lmenu.querySelectorAll('[data-lang]'), function (a) { if (a.getAttribute('data-lang') === l) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+    }
+    document.addEventListener('kv:lang', syncDr);
+    if (window.MutationObserver) new MutationObserver(syncDr).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    syncDr();
+    document.addEventListener('click', function (e) { if (!host.contains(e.target)) { closeMenus(); closeSearch(); } });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeMenus(); closeSearch(); if (drawerOpen()) { setDrawer(false); burger.focus(); } } });
     var rz = null;
     addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(function () { if (!mobile()) closeMobile(); MENUS.forEach(function (m) { if (m.el.classList.contains('open')) place(m); }); settle(); }, 80); });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(settle);
     settle();
 
-    var tick = false;
+    var tick = false, lastY = window.pageYOffset, t0 = Date.now();
+    host.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches(':focus-visible')) host.classList.remove('kvb-hide'); });
     function onScroll() {
       if (tick) return; tick = true;
       requestAnimationFrame(function () {
         tick = false; var y = window.pageYOffset, max = document.documentElement.scrollHeight - window.innerHeight;
-        host.classList.toggle('kvb-scrolled', y > 6); prog.style.transform = 'scaleX(' + (max > 240 ? Math.min(1, y / max) : 0) + ')';
+        host.classList.toggle('kvb-scrolled', y > 6);
+        // v9: any scroll (more than 4px) hides the bar at once, together with open menus; it returns only at the top of the page
+        if (y > 4) { if (!host.classList.contains('kvb-hide')) { closeMenus(); closeSearch(); host.classList.add('kvb-hide'); } }
+        else host.classList.remove('kvb-hide');
+        lastY = y;
+        prog.style.transform = 'scaleX(' + (max > 240 ? Math.min(1, y / max) : 0) + ')';
       });
     }
     addEventListener('scroll', onScroll, { passive: true }); onScroll();
   }
 
   function footer() {
+    // v10: the footer is now the same Connect band + footer as the main page, rendered by site-pro.js
     if (document.getElementById('kv-footer-skip')) return;
-    var f = document.getElementById('kv-footer'); if (!f) return;
-    f.innerHTML = '<div class="in"><div><strong>KAIVYRA</strong>: scientific information and education. Not a substitute for professional medical care. Not for diagnosis or treatment decisions. ' +
-      'In an emergency call your local emergency number (India: 112).</div><div><a href="/#kaivyra-policy-footer-box">Terms, Disclaimer & Privacy</a> · <a href="/future/">Roadmap</a> · <a href="mailto:the.kaivyra@gmail.com">the.kaivyra@gmail.com</a></div></div>';
+    if (!document.querySelector('link[href*="site-pro.css"]')) { var c = document.createElement('link'); c.rel = 'stylesheet'; c.href = '/platform/site-pro.css?v=1'; document.head.appendChild(c); }
+    if (window.KVSitePro) { window.KVSitePro.mountFooter(); return; }
+    if (!document.querySelector('script[data-kvs]')) { var j = document.createElement('script'); j.src = '/platform/site-pro.js?v=1'; j.setAttribute('data-kvs', '1'); document.head.appendChild(j); }
   }
 
   function init() {
@@ -389,7 +501,9 @@
     if (document.body.classList.contains('kv-page') && !document.querySelector('.kv-skip')) {
       var s = document.createElement('a'); s.className = 'kv-skip'; s.href = '#kv-main'; s.textContent = 'Skip to content'; document.body.insertBefore(s, document.body.firstChild);
     }
+    if (!window.__kvDock && !document.querySelector('script[data-kv-dock]')) { var ds = document.createElement('script'); ds.src = '/platform/kv-dock.js?v=1'; ds.setAttribute('data-kv-dock', '1'); document.head.appendChild(ds); }
     build(); footer();
+    if (!window.KVI18N && !document.querySelector('script[data-kvi]')) { var is = document.createElement('script'); is.src = '/platform/i18n.js?v=1'; is.setAttribute('data-kvi', '1'); is.async = false; document.head.appendChild(is); }
     if (!window.KVPalette && !document.querySelector('script[data-kvp-boot]')) { var ps = document.createElement('script'); ps.src = '/platform/palette.js?v=2'; ps.defer = true; ps.setAttribute('data-kvp-boot', '1'); document.head.appendChild(ps); }
     // Preserve a saved light/dark preference where the page supports it
     try { if (localStorage.getItem('kv_theme') === 'light') document.documentElement.classList.add('light'); } catch (e) {}
